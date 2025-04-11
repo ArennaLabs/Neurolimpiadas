@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Competiciones Municipales</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <style>
+    .neurolimpiadas-font{
+      color: white;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-300">
+
+  <nav class="bg-white shadow w-full">
+    <div class="flex items-center justify-between h-16">
+      
+      <a href="home.html" class="flex-shrink-0">
+        <img class="h-16 w-16" src="/static/img/logo.png" alt="Logo de la Empresa">
+      </a>
+      
+      <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
+      <div class="hidden lg:flex space-x-4">
+        <a href="#inicio" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
+        <a href="#competiciones" class="px-3 py-2 text-gray-600 hover:text-gray-800">Competiciones</a>
+        <a href="/templeate/noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
+        <a href="/templeate/contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanaos</a>
+      </div>
+      
+      <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
+      <div class="lg:hidden relative px-4">
+        <button id="menu-toggle" 
+                class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <!-- Icono de hamburguesa -->
+          <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        
+        <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
+        <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+          <a href="#inicio" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
+          <a href="#competiciones" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Competiciones</a>
+          <a href="#noticias" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
+          <a href="#contactanaos" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanaos</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sección Principal (Hero) -->
+  <section id="inicio" class="relative h-[50vh] bg-cover bg-center" style="background-image: url('/static/img/fondo.png');">
+    <!-- Capa oscura semitransparente para contraste -->
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+  
+    <div class="relative h-full">
+      <div class="absolute top-[20%] w-full text-center">
+        <h1 class="text-white text-5xl font-bold">Neurolimpiadas</h1>
+      </div>
+    </div>
+  </section>
+
+  <section id="mapa" class="py-10 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <h2 class="text-center text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-800 mb-4">
+        Selecciona una Isla
+      </h2>
+      
+      <div class="relative">
+        <img class="mx-auto w-4/5" src="/static/img/canarias.png" usemap="#image-map">
+        <map name="image-map">
+          <area target="" alt="La palma" onclick="seleccionarIsla('La Palma')" title="La palma" href="javascript:void(0)" coords="9,51,19,46,30,54,32,67,20,87,13,72,13,64" shape="poly">
+          <area target="" alt="El Hierro" onclick="seleccionarIsla('El Hierro')" title="El Hierro" href="javascript:void(0)" coords="11,143,13" shape="circle">
+          <area target="" alt="La Gomera" onclick="seleccionarIsla('La Gomera')" title="La Gomera" href="javascript:void(0)" coords="65,113,9" shape="circle">
+          <area target="" alt="Tenerife" onclick="seleccionarIsla('Tenerife')" title="Tenerife" href="javascript:void(0)" coords="85,91,97,89,108,88,117,85,121,75,132,72,148,72,137,82,128,90,124,100,118,120,102,127" shape="poly">
+          <area target="" alt="Gran Canarias" onclick="seleccionarIsla('Gran Canaria')" title="Gran Canarias" href="javascript:void(0)" coords="178,126,22" shape="circle">
+          <area target="" alt="Fuerteventura" onclick="seleccionarIsla('Fuerteventura')" title="Fuerteventura" href="javascript:void(0)" coords="252,115,262,113,272,104,271,95,276,85,285,69,285,60,297,57,301,65,299,75,297,83,299,97,291,103,278,108,272,113,268,120" shape="poly">
+          <area target="" alt="Lanzarote" onclick="seleccionarIsla('Lanzarote')" title="Lanzarote" href="javascript:void(0)" coords="296,46,303,48,306,42,314,42,324,35,326,23,325,15,317,22,308,26,299,31" shape="poly">
+        </map>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tercera Sección: Detalle de Isla y Selector de Municipios -->
+  <section id="detalle" class="py-10 bg-gray-50 hidden">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="flex flex-col md:flex-row gap-8">
+        
+        <!-- Contenedor para la imagen (SVG inline) de la isla seleccionada -->
+        <div class="md:w-1/2">
+          <div  id="imagen-isla" class="w-full max-w-[512px] max-h-[512px] mx-auto"></div>
+        </div>
+        
+        <!-- Información de la Isla y Selector de Municipios -->
+        <div class="md:w-1/2 flex flex-col gap-4">
+          <h2 id="titulo-isla" class="text-3xl font-bold text-gray-800">Detalles de la Isla</h2>
+          <p id="descripcion-isla" class="text-gray-600">
+            Aquí se mostrarán detalles y pruebas de la isla seleccionada.
+          </p>
+          <h3 class="text-2xl font-semibold text-gray-800">Municipios</h3>
+          <ul id="lista-municipios" class="space-y-2">
+            <!-- Se llenará dinámicamente según la isla seleccionada -->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="equipos-section" class="hidden p-4">
+    <!-- Título centrado -->
+    <h2 id="equipos-title" class="text-2xl font-bold text-center mb-4">Equipos de Municipio</h2>
+    <!-- Tabla de equipos -->
+    <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-200">
+        <thead>
+          <tr>
+            <th class="py-2 px-4 border-b">Nombre del equipo</th>
+            <th class="py-2 px-4 border-b">Integrantes</th>
+            <th class="py-2 px-4 border-b">Estado</th>
+          </tr>
+        </thead>
+        <tbody id="equipos-body">
+          <!-- Aquí se inyectarán las filas dinámicamente -->
+          <tr>
+            <td class="py-2 px-4 border-b text-center" colspan="3">No hay datos disponibles.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+  <footer class="bg-gray-800 text-gray-300 py-8">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+      <div class="mb-4 md:mb-0">
+        <p class="text-sm">© 2025 Neurolimpiadas.Expertos en envejesimienmto activo</p>
+      </div>
+      <div class="flex space-x-4">
+
+        <a href="#" class="hover:text-white"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://www.instagram.com/elclubdelmayor/reels/?hl=es" target="_blank" class="text-white hover:text-white"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/static/js/imageMapResizer.min.js"></script>
+  <script>
+      
+      imageMapResize();
+      const menuToggle = document.getElementById('menu-toggle');
+      const mobileDropdown = document.getElementById('mobile-dropdown');
+
+      menuToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileDropdown.classList.toggle('hidden');
+      });
+
+      window.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !mobileDropdown.contains(e.target)) {
+          mobileDropdown.classList.add('hidden');
+        }
+      });
+
+      // Datos de ejemplo de municipios para cada isla, con colores de Tailwind (para la lista)
+      const municipiosPorIsla = {
+        'La Palma': [
+          { nombre: 'Santa Cruz de La Palma', color: '#ff5733 '},
+          { nombre: 'Los Llanos de Aridane', color: '#df7b29 ' }
+        ],
+        'El Hierro': [
+          { nombre: 'Valverde', color: '#f9d629' },
+          { nombre: 'La Frontera', color: '#d8ec54' }
+        ],
+        'Tenerife': [
+          { nombre: 'Santa Cruz de Tenerife', color: 'bg-blue-500' },
+          { nombre: 'La Laguna', color: 'bg-blue-300' }
+        ],
+        'Gran Canaria': [
+          { nombre: 'Las Palmas de Gran Canaria', color: 'bg-green-500' },
+          { nombre: 'Maspalomas', color: 'bg-green-300' }
+        ],
+        'Fuerteventura': [
+          { nombre: 'Puerto del Rosario', color: 'bg-red-500' },
+          { nombre: 'Corralejo', color: 'bg-red-300' }
+        ],
+        'Lanzarote': [
+          { nombre: 'Arrecife', color: '#36d35a', equipos:[{nombre:"Equipo1",nro_integrante:"Data equipo 1",estado:"Clasificado"},{nombre:"Equipo2",nro_integrante:"Data equipo 2",estado:"Clasificado"}] },
+          { nombre: 'Teguise', color: '#299fdf' }
+        ],
+        'La Gomera': [
+          { nombre: 'San Sebastián de La Gomera', color: 'bg-indigo-500' },
+          { nombre: 'Valverde', color: 'bg-indigo-300' }
+        ]
+      };
+
+      // Rutas de las imágenes (para formato no SVG)
+      const imagenesIslas = {
+        'La Palma': '/static/img/islas/La_Palma.png',
+        'El Hierro': '/static/img/islas/El_Hierro.png',
+        'Tenerife': '/static/img/islas/Tenerife.svg',
+        'Gran Canaria': '/static/img/islas/Grancanarias.svg',
+        'Fuerteventura': '/static/img/islas/Fuerteventura.png',
+        'Lanzarote': '/static/img/islas/Lanzarote.svg',
+        'La Gomera': '/static/img/islas/La_Gomera.png'
+      };
+      function seleccionarMunicipio(isla, nombreMunicipio) {
+        
+        
+        document.getElementById('equipos-title').textContent = `Equipos de ${nombreMunicipio}`;
+
+        // Obtenemos el contenedor del cuerpo de la tabla
+        const registro_tabla = document.getElementById('equipos-body');
+        registro_tabla.innerHTML = '';  // Limpiamos su contenido previo
+
+        // Verifica que exista la isla en tu estructura
+        if (municipiosPorIsla[isla]) {
+          // Buscar el municipio por nombre dentro del arreglo
+          const municipioSeleccionado = municipiosPorIsla[isla].find(m => m.nombre === nombreMunicipio);
+
+          if (municipioSeleccionado) {
+            // Verifica que el municipio tenga la propiedad "equipos"
+            if (municipioSeleccionado.equipos && municipioSeleccionado.equipos.length > 0) {
+              document.getElementById('equipos-section').classList.remove('hidden');
+              municipioSeleccionado.equipos.forEach(equipo => {
+                // Acumula cada fila sin sobrescribir
+                registro_tabla.innerHTML += `<tr>
+                    <td class="py-2 px-4 border-b text-center">${equipo.nombre}</td>
+                    <td class="py-2 px-4 border-b text-center">${equipo.nro_integrante}</td>
+                    <td class="py-2 px-4 border-b text-center">${equipo.estado}</td>
+                  </tr>`;
+              });
+            } else {
+              constdocument.getElementById("Notificacion").classList.remove("hidden")
+              const text_notificaion = "Este municipio no tiene ningun equipo"
+              
+            }
+          } else {
+            // Mensaje si el municipio no se encontró en la isla indicada
+            registro_tabla.innerHTML = `<tr>
+              <td colspan="3" class="py-2 px-4 border-b">Municipio no encontrado en ${isla}</td>
+            </tr>`;
+          }
+        } else {
+          // Mensaje si la isla no existe
+          registro_tabla.innerHTML = `<tr>
+            <td colspan="3" class="py-2 px-4 border-b">La isla ${isla} no existe en la base de datos</td>
+          </tr>`;
+        }
+
+        // Desplazar la vista a la sección de municipios (u otra sección de interés)
+        document.getElementById('equipos-section').scrollIntoView({ behavior: 'smooth' });
+      }
+
+
+      function seleccionarIsla(isla) {
+        // Para las islas que disponemos del SVG inline (en este ejemplo, Tenerife)
+        if(isla === "Tenerife") {
+          document.getElementById('imagen-isla').innerHTML = `
+            <!-- SVG de Tenerife inline con interactividad -->
+            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 777.74173 413.26299">
+              <style type="text/css">
+                .municipio.puertcruz:hover { fill: #f87171 !important; }
+                .municipio.adeje:hover { fill: #f87171 !important; }
+                .municipio.arafo:hover { fill: #fb923c !important; }
+                .municipio.arico:hover { fill: #facc15 !important; }
+                .municipio.arona:hover { fill: #4ade80 !important; }
+                .municipio.buenavista:hover { fill: #34d399 !important; }
+                .municipio.candelaria:hover { fill: #60a5fa !important; }
+                .municipio.fasnia:hover { fill: #818cf8 !important; }
+                .municipio.garachico:hover { fill: #a78bfa !important; }
+                .municipio.granadilla:hover { fill: #f472b6 !important; }
+                .municipio.laguancha:hover { fill: #f9a8d4 !important; }
+                .municipio.guia:hover { fill: #fcd34d !important; }
+                .municipio.guiemar:hover { fill: #bef264 !important; }
+                .municipio.icod:hover { fill: #67e8f9 !important; }
+                .municipio.matanza:hover { fill: #6ee7b7 !important; }
+                .municipio.orotava:hover { fill: #a5b4fc !important; }
+                .municipio.losrealejos:hover { fill: #fca5a5 !important; }
+                .municipio.rosario:hover { fill: #fcd34d !important; }
+                .municipio.laguna:hover { fill: #93c5fd !important; }
+                .municipio.sanjuan:hover { fill: #bfdbfe !important; }
+                .municipio.sanmiguel:hover { fill: #bef264 !important; }
+                .municipio.santacruz:hover { fill: #fdba74 !important; }
+                .municipio.santaursula:hover { fill: #f87171 !important; }
+                .municipio.teide:hover { fill: #34d399 !important; }
+                .municipio.sauzal:hover { fill: #60a5fa !important; }
+                .municipio.lossilos:hover { fill: #a78bfa !important; }
+                .municipio.tacoronte:hover { fill: #f472b6 !important; }
+                .municipio.tanque:hover { fill: #f9a8d4 !important; }
+                .municipio.tegueste:hover { fill: #fcd34d !important; }
+                .municipio.victoria:hover { fill: #bef264 !important; }
+                .municipio.vilaflor:hover { fill: #67e8f9 !important; }
+              </style>
+              <g id="Tenerife" transform="matrix(3.333396,0,0,3.333396,-1478.717,-458.2248)" style="fill:#fff8dc;stroke:black;stroke-width:1.166">
+                <!--Adeje-->
+                <path class="municipio adeje" d="M521.74797,228.01566L519.34803,236.17622L517.66806,237.85634L513.82815,246.97696L514.54814,252.73736L512.62818,256.57762L512.86818,260.41789L504.22837,269.2985L501.10845,269.2985L500.14847,263.5381L499.18849,261.85799L494.3886,258.49776L494.6286,257.05766L493.66862,257.29767L493.18863,255.61756L491.50867,255.61756L491.74866,254.41748L490.3087,254.41748L482.62887,241.21657L489.10872,238.8164L497.74852,237.85634L505.18835,234.49611L516.2281,224.41541L519.58802,226.09553L521.74797,228.01566z"/>
+                <!--Arafo-->
+                <path class="municipio arafo" d="M581.74659,170.17169L580.78661,172.57185L588.70643,179.0523L591.10637,182.41253L597.58622,186.25279L602.38611,186.25279L598.06621,189.85304L591.10637,187.69289L583.42655,188.41294L578.86665,186.97284L570.22685,187.21286L570.94684,183.61261L575.02674,181.21245L575.98672,175.93208L577.66668,172.81187L581.74659,170.17169z"/>
+                <!--Arico-->
+                <path class="municipio arico" d="M538.30759,222.7353L539.98755,222.25527L544.06746,217.45494L548.86735,215.05477L551.26729,212.89462L552.22727,209.53439L553.66723,207.37424L553.18725,203.29396L555.58719,201.85386L572.6268,217.45494L576.7067,222.97532L580.78661,224.65543L581.50659,227.29561L585.10651,229.21574L586.30648,231.13588L585.10651,232.57598L585.5865,234.97614L584.62652,237.13629L585.82649,238.8164L585.3465,240.01649L584.14653,240.01649L583.18655,242.65667L585.5865,244.5768L583.42655,247.21698L581.98658,246.73695L581.0266,247.457L581.0266,249.13711L579.10665,249.13711L578.38666,251.53728L575.26674,253.45741L575.02674,256.33761L572.86679,257.05766L570.22685,260.89792L565.90695,255.37754L563.987,251.53728L559.90709,250.3372L558.94711,249.13711L555.58719,242.41665L550.06732,238.33637L544.30745,228.25568L541.18752,227.29561L538.30759,222.7353z"/>
+                <!--Arona-->
+                <path class="municipio arona" d="M526.30787,258.01772L526.30787,268.09841L527.26784,271.21863L526.78785,287.29973L525.58788,288.97985L523.90792,287.77977L521.98797,288.2598L520.548,287.29973L518.62804,288.73983L517.66806,288.49982L515.50811,290.65996L512.38819,290.17993L509.50825,288.73983L507.82829,286.57968L508.78827,281.05931L507.5883,279.61921L507.10831,275.53893L505.18835,274.09883L505.42835,275.53893L503.74839,273.61879L501.82843,273.85881L499.90847,272.89874L501.10845,269.2985L504.22837,269.2985L512.86818,260.41789L512.62818,256.57762L514.54814,252.73736L517.90806,255.37754L521.50798,255.13752L526.30787,258.01772z"/>
+                <!--Buenavista del Norte-->
+                <path class="municipio buenavista" d="M476.14902,168.25156L474.94905,175.45205L474.94905,185.53274L475.66903,189.13299L479.02896,192.49322L476.86901,194.65337L478.06898,199.21368L474.94905,199.4537L474.46906,200.41377L471.10914,202.09388L469.42918,204.97408L467.74922,204.73406L466.54924,201.85386L467.02923,200.41377L464.38929,196.81352L462.22934,195.85345L461.74935,192.49322L458.14944,189.37301L457.66945,186.97284L455.5095,184.81269L452.38957,183.3726L451.1896,183.61261L450.22962,180.97243L451.90958,177.6122L455.5095,176.41212L457.66945,177.13217L461.02937,175.21203L461.74935,175.93208L464.1493,174.97202L465.10928,173.2919L467.74922,173.2919L467.74922,172.09182L471.10914,169.69166L473.02909,169.93167L473.26909,168.97161L476.14902,168.25156z"/>
+                <!--Candelaria-->
+                <path class="municipio candelaria" d="M591.58636,163.21121L594.2263,163.93126L598.78619,163.21121L602.38611,164.89133L602.62611,165.85139L605.26605,167.53151L610.54592,168.97161L607.90598,171.8518L604.30607,174.01195L603.1061,179.53233L601.66613,180.73241L602.38611,186.25279L597.58622,186.25279L591.10637,182.41253L588.70643,179.0523L580.78661,172.57185L581.74659,170.17169L586.78647,168.73159L586.78647,166.33142L588.22644,164.65131L591.58636,163.21121z"/>
+                <!--Fasnia-->
+                <path class="municipio fasnia" d="M562.54703,198.0136L564.70698,202.81393L575.98672,207.85428L577.66668,210.97449L580.30662,213.13464L585.10651,215.05477L588.22644,217.69495L590.86638,218.65502L590.38639,221.53522L586.06649,227.53563L587.02647,229.45576L586.30648,231.13588L585.10651,229.21574L581.50659,227.29561L580.78661,224.65543L576.7067,222.97532L572.6268,217.45494L555.58719,201.85386L560.14709,197.05354L561.34706,196.81352L562.54703,198.0136z"/>
+                <!--Garachico-->
+                <path class="municipio garachico" d="M501.10845,172.33184L500.86845,180.25238L499.18849,182.89256L502.30842,195.85345L506.14833,201.61385L510.70823,206.17416L499.18849,200.8938L495.34858,196.33349L493.66862,191.77317L492.70864,187.21286L493.90861,179.29232L493.42862,176.1721L490.0687,176.1721L489.34872,177.6122L486.70878,178.57227L485.26881,176.65213L491.98866,174.01195L492.70864,174.97202L494.14861,173.77194L497.74852,175.21203L501.10845,172.33184z"/>
+                <!--Granadilla-->
+                <path class="municipio granadilla" d="M533.02771,224.1754L538.30759,222.7353L541.18752,227.29561L544.30745,228.25568L550.06732,238.33637L555.58719,242.41665L558.94711,249.13711L559.90709,250.3372L563.987,251.53728L565.90695,255.37754L570.22685,260.89792L567.82691,262.81805L567.10693,266.17828L564.22699,266.65832L563.02702,269.53851L561.10706,270.7386L560.62707,272.1787L559.18711,272.1787L557.74714,275.05889L556.30717,275.05889L555.58719,277.21904L553.42724,277.45906L553.18725,279.13917L553.90723,280.33926L551.98727,282.73942L549.34733,280.81929L538.06759,281.77935L537.34761,278.17911L535.66765,276.01896L535.90764,271.45865L537.10762,269.53851L536.86762,264.01813L537.34761,259.45782L534.46768,254.65749L534.22768,251.29726L532.30773,248.65708L532.06773,246.0169L534.70767,243.1367L533.5077,240.73654L534.70767,237.85634L534.22768,229.69578L532.78772,228.25568L533.02771,224.1754z"/>
+                <!--La Guancha-->
+                <path class="municipio laguancha" d="M515.9881,169.21162L518.14805,168.49157L518.86804,165.85139L519.58802,166.81146L520.308,166.33142L521.50798,166.81146L523.18794,166.33142L524.6279,168.01154L523.66793,170.17169L525.58788,173.77194L525.58788,175.45205L529.1878,180.01236L530.38777,184.81269L536.38763,195.61344L527.26784,197.53357L529.1878,195.61344L529.42779,192.97325L526.54786,186.25279L523.18794,182.89256L521.74797,177.37218L520.06801,175.93208L515.9881,169.21162z"/>
+                <!--Guía de Isora-->
+                <path class="municipio guia" d="M472.54911,219.37507L481.18891,210.49446L491.50867,205.93415L497.98852,205.2141L509.98824,207.13423L516.94808,207.13423L514.54814,212.41459L516.2281,224.41541L505.18835,234.49611L497.74852,237.85634L489.10872,238.8164L482.62887,241.21657L481.4289,235.69619L479.98893,234.01607L478.06898,233.77606L477.109,230.65584L475.90903,229.69578L475.42904,227.29561L474.46906,227.0556L473.26909,225.37548L473.74908,222.25527L472.54911,219.37507z"/>
+                <path class="municipio puertcruz" d="M546.94739,164.41129L548.38736,162.97119L548.86735,163.69124L550.06732,162.97119L551.26729,161.29108L553.90723,161.5311L554.62721,160.81105L555.1072,161.5311L559.90709,161.77111L560.62707,164.65131L557.02716,165.37136L555.58719,168.01154L551.50728,167.77152L550.54731,169.45164L548.62735,168.97161L546.94739,164.41129z"/>
+                <!--Güímar-->
+                <path class="municipio guiemar" d="M602.38611,186.25279L604.30607,192.25321L603.82608,196.5735L597.34623,203.29396L597.34623,207.13423L590.86638,218.65502L588.22644,217.69495L585.10651,215.05477L580.30662,213.13464L577.66668,210.97449L575.98672,207.85428L564.70698,202.81393L562.54703,198.0136L566.14695,195.1334L566.38694,193.45329L569.98686,188.89297L570.22685,187.21286L578.86665,186.97284L583.42655,188.41294L591.10637,187.69289L598.06621,189.85304L602.38611,186.25279z"/>
+                <!--Icod de los Vinos-->
+                <path class="municipio icod" d="M515.9881,169.21162L520.06801,175.93208L521.74797,177.37218L523.18794,182.89256L526.54786,186.25279L529.42779,192.97325L529.1878,195.61344L527.26784,197.53357L519.82802,199.4537L516.94808,207.13423L510.70823,206.17416L506.14833,201.61385L502.30842,195.85345L499.18849,182.89256L500.86845,180.25238L501.10845,172.33184L502.78841,171.8518L503.2684,173.2919L504.46837,173.53192L506.38832,170.17169L508.06829,171.37177L511.42821,171.37177L512.86818,170.41171L513.34816,167.77152L513.82815,168.73159L515.9881,169.21162z"/>
+                <!--La Matanza-->
+                <path class="municipio matanza" d="M578.62666,146.89009L585.5865,152.41047L586.30648,154.3306L589.18642,157.45081L591.34637,161.77111L591.58636,163.21121L588.22644,164.65131L589.18642,162.73118L586.06649,159.13093L582.70657,158.41088L573.34678,153.85057L574.54675,152.17045L573.58678,150.25032L575.26674,150.0103L575.50673,148.81022L578.14667,149.05024L578.62666,146.89009z"/>
+                <!--La Orotava-->
+                <path class="municipio orotava" d="M559.90709,161.77111L565.42696,159.37095L564.46699,161.5311L563.747,163.69124L569.50687,169.21162L572.6268,170.89174L575.98672,175.93208L575.02674,181.21245L570.94684,183.61261L570.22685,187.21286L569.98686,188.89297L566.38694,193.45329L566.14695,195.1334L562.54703,198.0136L561.34706,196.81352L560.14709,197.05354L555.58719,201.85386L553.18725,203.29396L553.66723,207.37424L552.22727,209.53439L551.26729,212.89462L548.86735,215.05477L544.06746,217.45494L539.98755,222.25527L538.30759,222.7353L533.02771,224.1754L532.30773,226.09553L527.98783,228.49569L521.74797,228.01566L519.58802,226.09553L516.2281,224.41541L514.54814,212.41459L516.94808,207.13423L519.82802,199.4537L527.26784,197.53357L536.38763,195.61344L540.70753,193.45329L541.42752,200.17375L547.90737,198.49363L550.06732,194.65337L551.0273,184.09264L549.10734,172.57185L550.54731,169.45164L551.50728,167.77152L555.58719,168.01154L557.02716,165.37136L560.62707,164.65131L559.90709,161.77111z"/>
+                <!--Los Realejos-->
+                <path class="municipio losrealejos" d="M532.30773,168.01154L538.30759,168.49157L539.74756,166.57144L540.70753,167.53151L542.38749,167.29149L544.78744,165.37136L546.22741,165.61138L546.94739,164.41129L548.62735,168.97161L550.54731,169.45164L549.10734,172.57185L551.0273,184.09264L550.06732,194.65337L547.90737,198.49363L541.42752,200.17375L540.70753,193.45329L532.30773,176.89215L531.58774,170.17169L532.30773,168.01154z"/>
+                <!--El Rosario-->
+                <path class="municipio rosario" d="M598.5462,151.93044L602.38611,146.17004L608.86596,148.09017L611.5059,150.49034L612.70587,150.97037L612.70587,152.8905L611.26591,155.05065L608.62597,158.6509L611.26591,161.77111L615.34581,162.25114L615.34581,161.29108L618.70574,164.65131L615.10582,167.77152L612.46588,167.29149L611.26591,168.73159L610.54592,168.97161L605.26605,167.53151L602.62611,165.85139L602.38611,164.89133L598.78619,163.21121L594.2263,163.93126L591.58636,163.21121L591.82636,161.77111L594.46629,158.17086L597.82622,153.61055L597.58622,151.93044L598.5462,151.93044z"/>
+                <!--San Cristóbal de la Laguna-->
+                <path class="municipio laguna" d="M591.10637,128.1688L594.46629,126.24867L594.70629,124.80857L598.5462,122.16839L603.34609,122.64842L606.22602,121.44834L606.46602,120.48828L611.7459,119.04818L612.70587,114.24785L615.10582,112.80775L616.30579,113.04776L617.02577,114.9679L619.42572,114.00783L622.06566,115.68795L623.26563,114.9679L624.22561,115.20791L625.42558,113.28778L628.30551,114.72788L629.98548,123.84851L629.50549,125.76864L626.86555,126.96872L625.18559,133.44917L628.7855,136.32936L629.0255,137.52945L625.90557,147.61014L623.74562,149.29025L622.78564,154.81063L620.62569,155.53068L620.62569,153.61055L613.90585,152.17045L612.70587,150.97037L611.5059,150.49034L608.86596,148.09017L602.38611,146.17004L598.5462,151.93044L599.98617,145.69001L601.18614,145.44999L600.46616,139.20956L593.98631,133.44917L591.10637,128.1688 z M605.98603,139.68959L611.5059,135.3693L614.62583,133.20915L615.8258,134.64925L619.18572,133.20915L621.10568,131.049L623.26563,126.7287L619.90571,125.04859L611.7459,122.64842L609.82594,122.88844L607.186,127.92879L601.66613,131.28902L601.18614,136.32936L605.98603,139.68959z"/>
+                <!--San Juan de la Rambla-->
+                <path class="municipio sanjuan" d="M524.6279,168.01154L527.02785,167.05147L528.9478,168.49157L532.30773,168.01154L531.58774,170.17169L532.30773,176.89215L540.70753,193.45329L536.38763,195.61344L530.38777,184.81269L529.1878,180.01236L525.58788,175.45205L525.58788,173.77194L523.66793,170.17169L524.6279,168.01154z"/>
+                <!--San Miguel de Abona-->
+                <path class="municipio sanmiguel" d="M532.30773,248.65708L534.22768,251.29726L534.46768,254.65749L537.34761,259.45782L536.86762,264.01813L537.10762,269.53851L535.90764,271.45865L535.66765,276.01896L537.34761,278.17911L538.06759,281.77935L530.62777,284.41954L528.22782,287.53975L526.78785,287.29973L527.26784,271.21863L526.30787,268.09841L526.30787,258.01772L526.30787,254.41748L531.58774,250.81723L532.30773,248.65708z"/>
+                <!--Santa Cruz de Tenerife-->
+                <path class="municipio santacruz" d="M659.75,108.25L659.03125,108.96875L659.5,109.21875L659.75,109.4375L659.75,108.25 z M660,110.15625L657.59375,111.125L655.90625,111.125L652.78125,113.78125L642,117.125L636.9375,114.96875L632.875,115.4375L628.78125,113.0625L628.3125,114.71875L630,123.84375L629.5,125.78125L626.875,126.96875L625.1875,133.4375L628.78125,136.34375L629.03125,137.53125L625.90625,147.625L623.75,149.28125L622.78125,154.8125L620.625,155.53125L620.625,153.625L613.90625,152.15625L612.71875,150.96875L612.71875,152.875L611.28125,155.0625L608.625,158.65625L611.28125,161.78125L615.34375,162.25L615.34375,161.28125L618.71875,164.65625L621.59375,162.25L623.03125,159.84375L627.09375,156.5L629.25,153.125L634.78125,150.96875L635.5,147.125L635.75,146.15625L638.375,141.625L641.5,140.40625L641.25,139.9375L643.1875,140.15625L643.65625,139.21875L647.5,137.78125L645.34375,139.6875L649.4375,137.53125L652.0625,134.40625L654.46875,134.15625L655.65625,132.5L660.21875,130.34375L663.8125,131.0625L665.03125,127.6875L666.21875,126.71875L668.625,127.6875L667.65625,126.25L668.15625,123.125L670.3125,121.21875L670.3125,119.0625L668.875,118.34375L669.09375,116.40625L667.90625,114.96875L666.46875,114.71875L666.21875,113.0625L666.9375,112.5625L660,110.15625z"/>
+                <!--Santa Úrsula-->
+                <path class="municipio santaursula" d="M569.74686,155.53068L571.90681,159.13093L572.86679,158.6509L574.54675,159.37095L576.7067,161.77111L577.90668,165.37136L580.78661,168.01154L581.74659,170.17169L577.66668,172.81187L575.98672,175.93208L572.6268,170.89174L569.50687,169.21162L563.747,163.69124L564.46699,161.5311L565.42696,159.37095L567.10693,155.29067L568.0669,154.81063L569.74686,155.53068z"/>
+                <!--Santiago del Teide-->
+                <path class="municipio teide" d="M482.14888,192.73324L485.50881,193.21327L499.18849,200.8938L510.70823,206.17416L516.94808,207.13423L509.98824,207.13423L497.98852,205.2141L491.50867,205.93415L481.18891,210.49446L472.54911,219.37507L471.82912,218.89504L472.54911,218.17499L472.06912,216.01484L471.10914,215.29479L472.06912,215.05477L471.82912,213.61467L473.02909,211.69454L472.54911,207.85428L469.90917,206.41418L470.14916,205.2141L469.42918,204.97408L471.10914,202.09388L474.46906,200.41377L474.94905,199.4537L478.06898,199.21368L476.86901,194.65337L479.02896,192.49322L480.70892,193.45329L482.14888,192.73324z"/>
+                <!--El Sauzal-->
+                <path class="municipio sauzal" d="M585.5865,140.40964L588.70643,143.52986L591.10637,148.09017L592.06635,152.65049L594.46629,158.17086L591.82636,161.77111L591.58636,163.21121L591.34637,161.77111L589.18642,157.45081L586.30648,154.3306L585.5865,152.41047L578.62666,146.89009L578.38666,145.93002L580.30662,144.48992L579.58664,143.52986L581.2666,144.48992L581.74659,142.56979L585.5865,140.40964z"/>
+                <!--Los Silos-->
+                <path class="municipio lossilos" d="M485.26881,176.65213L485.9888,180.73241L481.66889,190.33307L482.14888,192.73324L480.70892,193.45329L479.02896,192.49322L475.66903,189.13299L474.94905,185.53274L474.94905,175.45205L476.14902,168.25156L477.34899,168.49157L477.34899,169.93167L481.18891,172.81187L482.62887,173.2919L483.10886,172.33184L485.26881,176.65213z"/>
+                <!--Tacoronte-->
+                <path class="municipio tacoronte" d="M591.10637,128.1688L593.98631,133.44917L600.46616,139.20956L601.18614,145.44999L599.98617,145.69001L598.5462,151.93044L597.58622,151.93044L597.82622,153.61055L594.46629,158.17086L592.06635,152.65049L591.10637,148.09017L588.70643,143.52986L585.5865,140.40964L587.02647,136.56938L586.78647,135.84933L587.98644,134.16922L588.22644,131.049L591.10637,128.1688z"/>
+                <!--El Tanque-->
+                <path class="municipio tanque" d="M485.26881,176.65213L486.70878,178.57227L489.34872,177.6122L490.0687,176.1721L493.42862,176.1721L493.90861,179.29232L492.70864,187.21286L493.66862,191.77317L495.34858,196.33349L499.18849,200.8938L485.50881,193.21327L482.14888,192.73324L481.66889,190.33307L485.9888,180.73241L485.26881,176.65213z"/>
+                <!--Tegueste-->
+                <path class="municipio tegueste" d="M605.98603,139.68959L601.18614,136.32936L601.66613,131.28902L607.186,127.92879L609.82594,122.88844L611.7459,122.64842L619.90571,125.04859L623.26563,126.7287L621.10568,131.049L619.18572,133.20915L615.8258,134.64925L614.62583,133.20915L611.5059,135.3693L605.98603,139.68959z"/>
+                <!--La Victoria-->
+                <path class="municipio victoria" d="M573.34678,153.85057L582.70657,158.41088L586.06649,159.13093L589.18642,162.73118L588.22644,164.65131L586.78647,166.33142L586.78647,168.73159L581.74659,170.17169L580.78661,168.01154L577.90668,165.37136L576.7067,161.77111L574.54675,159.37095L572.86679,158.6509L571.90681,159.13093L569.74686,155.53068L573.34678,153.85057z"/>
+                <!--Vilaflor-->
+                <path class="municipio vilaflor" d="M533.02771,224.1754L532.78772,228.25568L534.22768,229.69578L534.70767,237.85634L533.5077,240.73654L534.70767,243.1367L532.06773,246.0169L532.30773,248.65708L531.58774,250.81723L526.30787,254.41748L526.30787,258.01772L521.50798,255.13752L517.90806,255.37754L514.54814,252.73736L513.82815,246.97696L517.66806,237.85634L519.34803,236.17622L521.74797,228.01566L527.98783,228.49569L532.30773,226.09553L533.02771,224.1754z"/>
+                <!--Contorno de Tenerife-->
+                <path style="fill:none;stroke-width:2.33;stroke-linejoin:round"
+                d="M659.74999,108.25L659.03124,108.96875L659.74999,109.4375L659.74999,108.25 z M659.99999,110.15625L657.59374,111.125L655.90624,111.125L652.78124,113.78125L641.99999,117.125L636.93749,114.96875L632.87499,115.4375L628.78124,113.0625L628.31249,114.71875L625.43749,113.28125L624.21874,115.21875L623.24999,114.96875L622.06249,115.6875L619.43749,114L617.03124,114.96875L616.31249,113.0625L615.09374,112.8125L612.71874,114.25L611.74999,119.0625L606.46874,120.5L606.21874,121.4375L603.34374,122.65625L598.53124,122.15625L594.71874,124.8125L594.46874,126.25L592.78124,127.21875L591.09374,128.15625L588.21874,131.0625L587.99999,134.15625L586.78124,135.84375L587.03124,136.5625L585.59374,140.40625L581.74999,142.5625L581.28124,144.5L579.59374,143.53125L580.31249,144.5L578.37499,145.9375L578.62499,146.875L578.15624,149.0625L575.49999,148.8125L575.28124,150L573.59374,150.25L574.53124,152.15625L573.34374,153.84375L569.74999,155.53125L568.06249,154.8125L567.09374,155.28125L565.43749,159.375L559.90624,161.78125L555.09374,161.53125L554.62499,160.8125L553.90624,161.53125L551.28124,161.28125L550.06249,162.96875L548.87499,163.6875L548.37499,162.96875L547.65624,163.6875L546.93749,164.40625L546.21874,165.625L544.78124,165.375L542.37499,167.28125L540.71874,167.53125L539.74999,166.5625L538.31249,168.5L535.18749,168.25L532.31249,168L528.93749,168.5L527.03124,167.0625L525.81249,167.53125L524.62499,168L523.18749,166.34375L521.49999,166.8125L520.31249,166.34375L519.59374,166.8125L518.87499,165.84375L518.15624,168.5L515.99999,169.21875L513.84374,168.71875L513.34374,167.78125L512.87499,170.40625L511.43749,171.375L508.06249,171.375L506.37499,170.15625L504.46874,173.53125L503.28124,173.28125L502.78124,171.84375L501.09374,172.34375L497.74999,175.21875L494.15624,173.78125L492.71874,174.96875L491.99999,174L485.28124,176.65625L483.09374,172.34375L482.62499,173.28125L481.18749,172.8125L477.34374,169.9375L477.34374,168.5L476.15624,168.25L473.28124,168.96875L473.03124,169.9375L471.09374,169.6875L467.74999,172.09375L467.74999,173.28125L465.09374,173.28125L464.15624,174.96875L461.74999,175.9375L461.03124,175.21875L457.65624,177.125L455.49999,176.40625L451.90624,177.625L450.21874,180.96875L451.18749,183.625L452.37499,183.375L455.49999,184.8125L457.65624,186.96875L458.15624,189.375L461.74999,192.5L462.21874,195.84375L464.37499,196.8125L467.03124,200.40625L466.56249,201.84375L467.74999,204.71875L469.43749,204.96875L470.15624,205.21875L469.90624,206.40625L472.56249,207.84375L473.03124,211.6875L471.84374,213.625L472.06249,215.0625L471.09374,215.28125L472.06249,216L472.56249,218.1875L471.84374,218.90625L472.56249,219.375L473.74999,222.25L473.28124,225.375L474.46874,227.0625L475.43749,227.28125L475.90624,229.6875L477.09374,230.65625L478.06249,233.78125L479.99999,234.03125L481.43749,235.6875L482.62499,241.21875L490.31249,254.40625L491.74999,254.40625L491.49999,255.625L493.18749,255.625L493.65624,257.3125L494.62499,257.0625L494.37499,258.5L499.18749,261.84375L500.15624,263.53125L501.09374,269.3125L499.90624,272.90625L501.84374,273.84375L503.74999,273.625L505.43749,275.53125L505.18749,274.09375L507.09374,275.53125L507.59374,279.625L508.78124,281.0625L507.84374,286.59375L509.49999,288.75L512.37499,290.1875L515.49999,290.65625L517.65624,288.5L518.62499,288.75L520.56249,287.3125L521.99999,288.25L523.90624,287.78125L525.59374,288.96875L526.78124,287.3125L528.21874,287.53125L530.62499,284.40625L538.06249,281.78125L549.34374,280.8125L551.99999,282.75L553.90624,280.34375L553.18749,279.125L553.43749,277.46875L555.59374,277.21875L556.31249,275.0625L557.74999,275.0625L559.18749,272.1875L560.62499,272.1875L561.09374,270.75L563.03124,269.53125L564.21874,266.65625L567.09374,266.1875L567.81249,262.8125L570.21874,260.90625L572.87499,257.0625L575.03124,256.34375L575.28124,253.46875L578.37499,251.53125L579.09374,249.125L581.03124,249.125L581.03124,247.46875L581.99999,246.75L583.43749,247.21875L585.59374,244.5625L583.18749,242.65625L584.15624,240.03125L585.34374,240.03125L585.81249,238.8125L584.62499,237.125L585.59374,234.96875L585.09374,232.5625L586.31249,231.125L587.03124,229.46875L586.06249,227.53125L590.37499,221.53125L590.87499,218.65625L597.34374,207.125L597.34374,203.28125L603.81249,196.5625L604.31249,192.25L603.34374,189.125L602.37499,186.25L601.65624,180.71875L603.09374,179.53125L604.31249,174L607.90624,171.84375L610.53124,168.96875L611.28124,168.71875L612.46874,167.28125L615.09374,167.78125L618.71874,164.65625L621.59374,162.25L623.03124,159.84375L627.09374,156.5L629.24999,153.125L634.78124,150.96875L635.49999,147.125L635.74999,146.15625L638.37499,141.625L641.49999,140.40625L641.24999,139.9375L643.18749,140.15625L643.65625,139.21875L647.49999,137.78125L645.34374,139.6875L649.43749,137.53125L652.0625,134.40625L654.46874,134.15625L655.65625,132.5L660.21874,130.34375L663.8125,131.0625L665.03125,127.6875L666.21874,126.71875L668.62499,127.6875L667.65624,126.25L668.15624,123.125L670.31249,121.21875L670.31249,119.0625L668.87499,118.34375L669.09374,116.40625L667.90624,114.96875L666.46874,114.71875L666.21874,113.0625L666.9375,112.5625L659.99999,110.15625z"/>
+              </g>
+            </svg>
+          `;
+
+          
+        } else if (isla === "Lanzarote"){
+          document.getElementById('imagen-isla').innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 777.74173 413.26299">
+            <style type="text/css">
+                /* Se definen los colores de hover para cada municipio */
+                .municipio.arrecife:hover { fill: #f87171 !important; }
+                .municipio.haria:hover { fill: #fb923c !important; }
+                .municipio.sanbartolome:hover { fill: #facc15 !important; }
+                .municipio.teguise:hover { fill: #4ade80 !important; }
+                .municipio.tias:hover { fill: #34d399 !important; }
+                .municipio.tinajo:hover { fill: #60a5fa !important; }
+                .municipio.yaiza:hover { fill: #818cf8 !important; }
+            </style>
+
+            <g id="Lanzarote y Chinijos" transform="matrix(4.57435,0,0,4.57435,-2267.325,-174.3258)" style="fill:#fff8dc;stroke:black;stroke-width:1.166 ">
+              
+              <a onclick="seleccionarMunicipio('Lanzarote', 'arrecife')" xlink:title="Arecife" href="javascript:void(0)">
+              <path class="municipio arrecife" d="M 604.30607,117.36806 L 601.90612,120.24826 L 602.62611,120.24826 L 602.38611,120.72829 L 601.66613,120.48828 L 601.18614,120.96831 L 598.5462,120.96831 L 597.82622,121.68836 L 593.98631,122.40841 L 593.02633,110.88762 L 593.74631,110.88762 L 595.42627,111.12763 L 599.50618,109.92755 L 599.74617,110.88762 L 600.22616,110.6476 L 599.74617,112.80775 L 600.46616,114.72788 L 603.58608,115.92796 L 604.30607,117.36806 z "/>
+              </a> 
+              
+              <a onclick="seleccionarMunicipio('Lanzarote', 'arrecife')" xlink:title="Haria" href="javascript:void(0)">
+              <path class="municipio haria" d="M 607.1875,18.71875 L 605.5,19.90625 L 605.03125,19.6875 L 603.09375,23.03125 L 603.34375,25.6875 L 604.0625,25.90625 L 604.78125,26.15625 L 606.46875,25.4375 L 607.90625,25.6875 L 611.75,21.59375 L 608.15625,18.71875 L 607.1875,18.71875 z M 602.375,43.4375 L 601.65625,44.15625 L 601.90625,45.59375 L 601.90625,47.28125 L 603.34375,46.8125 L 603.8125,43.9375 L 603.34375,43.4375 L 602.875,43.9375 L 602.375,43.4375 z M 607.90625,46.5625 L 606.46875,48 L 606.21875,50.40625 L 605.28125,51.375 L 605.5,54.25 L 604.53125,55.4375 L 604.53125,57.375 L 603.59375,58.5625 L 600.9375,59.75 L 600.21875,60.96875 L 601.1875,62.65625 L 602.625,62.40625 L 602.625,62.875 L 602.875,63.375 L 604.3125,62.40625 L 605.28125,62.875 L 607.1875,60.96875 L 608.875,61.4375 L 609.09375,60.25 L 610.3125,59.28125 L 611.28125,57.125 L 612,56.875 L 612,55.4375 L 612.71875,53.75 L 613.4375,53.28125 L 613.90625,53.53125 L 615.09375,52.5625 L 614.875,51.375 L 613.1875,49.4375 L 610.3125,48.96875 L 607.90625,46.5625 z M 615.59375,58.3125 L 614.15625,60.46875 L 610.53125,62.65625 L 610.3125,65.28125 L 608.875,66.5 L 607.1875,72 L 605.75,73.9375 L 605.28125,79.9375 L 604.0625,81.375 L 604.53125,84.71875 L 608.625,86.40625 L 611.75,89.53125 L 617.28125,92.40625 L 619.65625,93.125 L 620.15625,92.40625 L 620.15625,88.8125 L 618.71875,88.09375 L 618.9375,87.375 L 617.03125,85.6875 L 617.03125,82.5625 L 620.625,78.25 L 624,76.8125 L 624.9375,74.15625 L 624,73.6875 L 625.4375,70.3125 L 625.4375,66.25 L 624.71875,64.8125 L 622.78125,64.3125 L 621.8125,62.875 L 621.09375,63.125 L 618.71875,60.96875 L 616.53125,60.96875 L 615.59375,58.3125 z "/>
+              </a> 
+              <a onclick="seleccionarMunicipio('Lanzarote', 'arrecife')" xlink:title="San Bartolome" href="javascript:void(0)">
+              <path class="municipio sanbartolome" d="M 581.0266,105.84727 L 582.46657,105.36724 L 585.82649,107.04735 L 591.34637,107.28737 L 593.74631,110.88762 L 593.02633,110.88762 L 593.98631,122.40841 L 591.58636,123.12846 L 589.9064,124.56856 L 582.94656,115.20791 L 580.54662,110.40758 L 579.10665,110.16757 L 581.0266,105.84727 z "/>     
+              </a> 
+              <a onclick="seleccionarMunicipio('Lanzarote', 'arrecife')" xlink:title="Teguise" href="javascript:void(0)">
+              <path class="municipio teguise"  d="M 604.06607,81.36559 L 604.54606,84.72582 L 608.62597,86.40593 L 611.7459,89.52615 L 617.26577,92.40635 L 619.66571,93.1264 L 617.74576,98.16674 L 616.78578,99.12681 L 617.50576,101.04694 L 616.30579,103.68712 L 617.50576,105.84727 L 617.26577,107.04735 L 616.54579,107.7674 L 615.10582,108.24744 L 614.86582,110.16757 L 613.90585,111.60767 L 612.70587,111.60767 L 612.94587,113.04776 L 611.5059,113.04776 L 607.426,115.68795 L 606.70601,116.88803 L 605.74603,116.64801 L 605.50604,117.36806 L 604.30607,117.36806 L 603.58608,115.92796 L 600.46616,114.72788 L 599.74617,112.80775 L 600.22616,110.6476 L 599.74617,110.88762 L 599.50618,109.92755 L 595.42627,111.12763 L 593.74631,110.88762 L 591.34637,107.28737 L 585.82649,107.04735 L 582.46657,105.36724 L 581.0266,105.84727 L 582.94656,97.68671 L 582.46657,92.88638 L 580.30662,84.4858 L 582.46657,84.24579 L 582.70657,85.68589 L 583.90654,85.9259 L 586.54648,83.28572 L 588.22644,82.80569 L 590.14639,81.36559 L 593.74631,81.84562 L 598.78619,85.68589 L 602.62611,83.76575 L 604.06607,81.36559 z " />
+              </a> 
+              <a onclick="seleccionarMunicipio('Lanzarote', 'arrecife')" xlink:title="Tias" href="javascript:void(0)">
+              <path class="municipio tias" d="M 572.14681,114.9679 L 579.10665,110.16757 L 580.54662,110.40758 L 582.94656,115.20791 L 589.9064,124.56856 L 589.18642,126.24867 L 584.38653,128.1688 L 583.18655,129.36889 L 577.66668,129.84892 L 576.7067,129.36889 L 571.18683,130.08894 L 570.22685,120.24826 L 572.14681,114.9679 z "/>
+              </a> 
+              <a onclick="seleccionarMunicipio('Lanzarote', 'arrecife')" xlink:title="Tinajo" href="javascript:void(0)">
+              <path class="municipio tinajo" d="M 550.06732,103.68712 L 556.06718,97.92673 L 558.94711,97.20668 L 560.14709,94.80651 L 565.66696,93.84645 L 566.38694,93.1264 L 569.26688,94.32648 L 570.94684,91.92631 L 572.6268,91.92631 L 574.30676,90.72623 L 574.78675,89.04612 L 577.18669,87.60602 L 578.38666,86.64595 L 579.34664,86.64595 L 578.38666,85.68589 L 578.86665,84.24579 L 580.30662,84.4858 L 582.46657,92.88638 L 582.94656,97.68671 L 581.0266,105.84727 L 579.10665,110.16757 L 572.14681,114.9679 L 562.30704,112.32772 L 550.06732,103.68712 z "/>
+              </a> 
+              <a onclick="seleccionarMunicipio('Lanzarote', 'arrecife')" xlink:title="Yaiza" href="javascript:void(0)">
+              <path class="municipio yaiza" d="M 550.06732,103.68712 L 562.30704,112.32772 L 572.14681,114.9679 L 570.22685,120.24826 L 571.18683,130.08894 L 563.747,133.20915 L 561.82705,138.2495 L 562.06704,139.68959 L 559.90709,141.36971 L 557.50715,143.76988 L 557.02716,145.93002 L 554.62721,147.85016 L 553.90723,145.20997 L 551.74728,143.28984 L 549.82732,144.48992 L 547.42738,142.80981 L 545.74742,143.04983 L 544.54745,144.24991 L 542.86748,143.04983 L 541.42752,142.80981 L 539.74756,143.04983 L 537.8276,144.48992 L 537.10762,143.52986 L 537.34761,139.92961 L 535.90764,137.52945 L 537.58761,135.84933 L 540.22754,135.3693 L 540.70753,133.44917 L 541.90751,132.72912 L 542.62749,131.049 L 544.06746,130.32895 L 546.22741,127.68877 L 545.26743,125.76864 L 545.50742,123.36847 L 545.02743,122.64842 L 545.74742,120.96831 L 545.26743,118.80816 L 545.98741,117.36806 L 545.26743,114.48786 L 545.98741,110.16757 L 548.62735,104.64719 L 550.06732,103.68712 z " />
+              </a> 
+              <path
+                style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1.70022349;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                d="M 607.18749,18.71875 L 605.49999,19.90625 L 605.03124,19.6875 L 603.09374,23.03125 L 603.34374,25.6875 L 604.06249,25.90625 L 604.78124,26.15625 L 606.46874,25.4375 L 607.90624,25.6875 L 611.74999,21.59375 L 608.15624,18.71875 L 607.18749,18.71875 z M 602.37499,43.4375 L 601.65624,44.15625 L 601.90624,47.28125 L 603.34374,46.8125 L 603.81249,43.9375 L 603.34374,43.4375 L 602.87499,43.9375 L 602.37499,43.4375 z M 607.90624,46.5625 L 606.46874,48 L 606.21874,50.40625 L 605.28124,51.375 L 605.49999,54.25 L 604.53124,55.4375 L 604.53124,57.375 L 603.59374,58.5625 L 600.93749,59.75 L 600.21874,60.96875 L 601.18749,62.65625 L 602.62499,62.40625 L 602.62499,62.875 L 602.87499,63.375 L 604.31249,62.40625 L 605.28124,62.875 L 607.18749,60.96875 L 608.87499,61.4375 L 609.09374,60.25 L 610.31249,59.28125 L 611.28124,57.125 L 611.99999,56.875 L 611.99999,55.4375 L 612.71874,53.75 L 613.43749,53.28125 L 613.90624,53.53125 L 615.09374,52.5625 L 614.87499,51.375 L 613.18749,49.4375 L 610.31249,48.96875 L 607.90624,46.5625 z M 615.59374,58.3125 L 614.15624,60.46875 L 610.53124,62.65625 L 610.31249,65.28125 L 608.87499,66.5 L 607.18749,72 L 605.74999,73.9375 L 605.28124,79.9375 L 604.06249,81.375 L 602.62499,83.78125 L 598.78124,85.6875 L 593.74999,81.84375 L 590.15624,81.375 L 588.21874,82.8125 L 586.53124,83.28125 L 583.90624,85.9375 L 582.71874,85.6875 L 582.46874,84.25 L 580.31249,84.5 L 578.87499,84.25 L 578.37499,85.6875 L 579.34374,86.65625 L 578.37499,86.65625 L 577.18749,87.59375 L 574.78124,89.03125 L 574.31249,90.71875 L 572.62499,91.9375 L 570.93749,91.9375 L 569.28124,94.3125 L 566.37499,93.125 L 565.65624,93.84375 L 560.15624,94.8125 L 558.93749,97.21875 L 556.06249,97.9375 L 550.06249,103.6875 L 548.62499,104.65625 L 545.99999,110.15625 L 545.28124,114.5 L 545.99999,117.375 L 545.28124,118.8125 L 545.74999,120.96875 L 545.03124,122.65625 L 545.49999,123.375 L 545.28124,125.78125 L 546.21874,127.6875 L 544.06249,130.34375 L 542.62499,131.0625 L 541.90624,132.71875 L 540.71874,133.4375 L 540.21874,135.375 L 537.59374,135.84375 L 535.90624,137.53125 L 537.34374,139.9375 L 537.09374,143.53125 L 537.81249,144.5 L 539.74999,143.0625 L 541.43749,142.8125 L 542.87499,143.0625 L 544.56249,144.25 L 545.74999,143.0625 L 547.43749,142.8125 L 549.81249,144.5 L 551.74999,143.28125 L 553.90624,145.21875 L 554.62499,147.84375 L 557.03124,145.9375 L 557.49999,143.78125 L 559.90624,141.375 L 562.06249,139.6875 L 561.81249,138.25 L 563.74999,133.21875 L 571.18749,130.09375 L 576.71874,129.375 L 577.65624,129.84375 L 583.18749,129.375 L 584.37499,128.15625 L 589.18749,126.25 L 589.90624,124.5625 L 591.59374,123.125 L 593.99999,122.40625 L 597.81249,121.6875 L 598.53124,120.96875 L 601.18749,120.96875 L 601.65624,120.5 L 602.37499,120.71875 L 602.62499,120.25 L 601.90624,120.25 L 603.09374,118.8125 L 604.31249,117.375 L 605.49999,117.375 L 605.74999,116.65625 L 606.71874,116.875 L 607.43749,115.6875 L 611.49999,113.0625 L 612.93749,113.0625 L 612.71874,111.59375 L 613.90624,111.59375 L 614.87499,110.15625 L 615.09374,108.25 L 616.53124,107.78125 L 617.28124,107.0625 L 617.49999,105.84375 L 616.31249,103.6875 L 617.49999,101.0625 L 616.78124,99.125 L 617.74999,98.15625 L 619.65624,93.125 L 620.15624,92.40625 L 620.15624,88.8125 L 618.71874,88.09375 L 618.93749,87.375 L 617.03124,85.6875 L 617.03124,82.5625 L 620.62499,78.25 L 623.99999,76.8125 L 624.93749,74.15625 L 623.99999,73.6875 L 625.43749,70.3125 L 625.43749,66.25 L 624.71874,64.8125 L 622.78124,64.3125 L 621.81249,62.875 L 621.09374,63.125 L 618.71874,60.96875 L 616.53124,60.96875 L 615.59374,58.3125 z "
+            />
+            </g>
+          </svg>
+          `;
+
+        }else if (isla === "Gran Canaria"){
+        document.getElementById('imagen-isla').innerHTML = `
+        <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+        <!-- Creator: ESRI ArcMap 9.0.0.535 -->
+        <svg
+          xmlns:dc="http://purl.org/dc/elements/1.1/"
+          xmlns:cc="http://web.resource.org/cc/"
+          xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+          xmlns:svg="http://www.w3.org/2000/svg"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+          xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+          width="512"
+          height="512"
+          viewBox="0 0 777.74173 413.26299"
+          
+          <metadata
+            id="metadata227">
+            <rdf:RDF>
+              <cc:Work
+                rdf:about="">
+                <dc:format>image/svg+xml</dc:format>
+                <dc:type
+                  rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+              </cc:Work>
+            </rdf:RDF>
+          </metadata>
+          
+          <style type="text/css">
+            /* Se definen los colores de hover para cada municipio de Gran Canaria */
+            .municipio.agaete:hover { fill: #f87171 !important; }
+            .municipio.aguimes:hover { fill: #fb923c !important; }
+            .municipio.artenara:hover { fill: #facc15 !important; }
+            .municipio.arucas:hover { fill: #4ade80 !important; }
+            .municipio.firgas:hover { fill: #34d399 !important; }
+            .municipio.galdar:hover { fill: #60a5fa !important; }
+            .municipio.ingenio:hover { fill: #818cf8 !important; }
+            .municipio.mogan:hover { fill: #f87171 !important; }
+            .municipio.moya:hover { fill: #fb923c !important; }
+            .municipio.laspalmasdegrancanaria:hover { fill: #facc15 !important; }
+            .municipio.sanbartolomedetirajana:hover { fill: #4ade80 !important; }
+            .municipio.sannicolasdetolentino:hover { fill: #34d399 !important; }
+            .municipio.santabrigida:hover { fill: #60a5fa !important; }
+            .municipio.santaluciadetirajana:hover { fill: #818cf8 !important; }
+            .municipio.santamariadetiadeguiadegrancanaria:hover { fill: #f87171 !important; }
+            .municipio.tejeda:hover { fill: #fb923c !important; }
+            .municipio.telde:hover { fill: #facc15 !important; }
+            .municipio.teror:hover { fill: #4ade80 !important; }
+            .municipio.valleseco:hover { fill: #34d399 !important; }
+            .municipio.valsequillodegrancanaria:hover { fill: #60a5fa !important; }
+            .municipio.vegadesanmateo:hover { fill: #818cf8 !important; }
+          </style>
+        
+          <g id="Gran Canaria" transform="matrix(4.57435,0,0,4.57435,-522.8544,-1371.662)" style="fill:#fff8dc;stroke:black;stroke-width:1.166">
+            
+            <path
+              class="municipio agaete"
+              d="M 169.91608,324.02226 L 171.59604,323.06219 L 172.31603,320.90204 L 174.95597,319.46194 L 176.87592,316.34173 L 177.59591,313.70155 L 176.63593,312.02143 L 177.8359,311.30138 L 177.59591,309.14123 L 178.07589,309.14123 L 181.19582,310.1013 L 185.27573,315.62168 L 185.99571,315.62168 L 189.11564,322.10212 L 187.67567,323.06219 L 187.67567,323.78224 L 184.79574,324.50229 L 182.87578,323.30221 L 181.19582,324.74231 L 179.75586,324.02226 L 174.47598,328.34255 L 170.87606,328.82259 L 170.15608,328.34255 L 170.63607,327.14247 L 169.43609,324.98232 L 169.91608,324.02226 z "
+              />
+            <path
+              class="municipio aguimes"
+              d="M 240.71445,357.38455 L 239.27448,359.78471 L 240.23446,362.42489 L 240.95444,363.38496 L 241.91442,363.14494 L 240.71445,364.34503 L 240.95444,367.22522 L 239.99447,367.94527 L 238.31451,367.46524 L 237.11453,369.38537 L 236.15456,369.38537 L 236.15456,368.18529 L 234.47459,367.22522 L 232.79463,367.22522 L 233.03463,366.50517 L 228.47473,366.02514 L 227.75475,364.82506 L 224.15483,364.58504 L 216.955,362.66491 L 215.51503,361.46483 L 214.31506,353.54428 L 214.07506,349.94404 L 209.75516,346.58381 L 213.83507,347.78389 L 216.47501,350.18405 L 217.19499,349.464 L 224.39483,350.18405 L 228.95472,355.94445 L 232.07465,356.18447 L 233.99461,354.98438 L 235.43457,356.18447 L 240.71445,357.38455 z "
+              />
+            <path
+              class="municipio artenara"
+              d="M 169.91608,324.02226 L 169.43609,324.98232 L 170.63607,327.14247 L 170.15608,328.34255 L 170.87606,328.82259 L 174.47598,328.34255 L 179.75586,324.02226 L 181.19582,324.74231 L 182.87578,323.30221 L 184.79574,324.50229 L 186.23571,325.22234 L 187.91567,325.46236 L 190.31561,327.86252 L 193.67553,329.0626 L 195.59549,330.5027 L 193.91553,331.70278 L 191.0356,334.58298 L 188.87565,335.06301 L 184.79574,334.34297 L 183.11578,336.74313 L 180.95583,336.98315 L 180.71583,337.94321 L 177.35591,336.74313 L 174.71597,338.18323 L 173.99599,339.62333 L 168.9561,337.94321 L 169.67609,333.86293 L 169.1961,331.46277 L 164.6362,328.10254 L 165.59618,326.90245 L 165.83618,325.22234 L 169.91608,324.02226 z "
+              />
+            <path
+              class="municipio arucas"
+              d="M 206.87523,302.90081 L 209.27518,302.90081 L 210.95514,302.18076 L 210.95514,301.70072 L 211.67512,301.94074 L 212.15511,301.22069 L 213.35508,300.98067 L 215.51503,303.14082 L 215.99502,302.42077 L 218.39496,303.62085 L 219.35494,303.38084 L 221.51489,305.54099 L 220.07493,308.18117 L 219.11495,308.42118 L 219.59494,309.38125 L 219.11495,309.38125 L 218.63496,312.26145 L 217.67498,312.26145 L 217.67498,313.22151 L 215.03504,314.90163 L 214.55505,316.58175 L 212.6351,317.06178 L 208.79519,316.34173 L 208.0752,315.14165 L 209.75516,312.02143 L 208.79519,311.06137 L 210.47515,306.50105 L 209.99516,304.10089 L 209.03518,303.38084 L 208.55519,304.10089 L 208.55519,303.38084 L 206.15525,304.58092 L 206.87523,303.62085 L 206.87523,302.90081 z "
+              />
+            <path
+              class="municipio firgas"
+              d="M 206.15525,304.58092 L 208.55519,303.38084 L 208.55519,304.10089 L 209.03518,303.38084 L 209.99516,304.10089 L 210.47515,306.50105 L 208.79519,311.06137 L 209.75516,312.02143 L 208.0752,315.14165 L 208.79519,316.34173 L 203.27531,318.26186 L 203.51531,316.58175 L 204.23529,314.66161 L 203.51531,313.94156 L 204.47529,311.06137 L 206.63524,307.46112 L 206.15525,305.54099 L 206.15525,304.58092 z "
+              />
+            <path
+              class="municipio galdar"
+              d="M 178.07589,309.14123 L 177.35591,308.42118 L 178.07589,306.26104 L 179.27587,305.781 L 179.03587,304.10089 L 178.31589,303.62085 L 179.75586,301.46071 L 177.59591,299.78059 L 177.35591,298.34049 L 179.03587,299.06054 L 180.47584,298.58051 L 181.19582,297.38043 L 182.39579,297.38043 L 182.87578,299.30056 L 185.27573,300.02061 L 188.39566,298.58051 L 189.35563,298.82053 L 190.7956,301.70072 L 190.7956,303.14082 L 191.75558,304.58092 L 190.07562,305.06095 L 191.27559,310.1013 L 192.47556,310.34132 L 191.51558,312.50146 L 191.75558,316.58175 L 191.51558,320.42201 L 192.95555,321.86211 L 192.71556,323.78224 L 195.1155,326.66244 L 195.59549,330.5027 L 193.67553,329.0626 L 190.31561,327.86252 L 187.91567,325.46236 L 186.23571,325.22234 L 184.79574,324.50229 L 187.67567,323.78224 L 187.67567,323.06219 L 189.11564,322.10212 L 185.99571,315.62168 L 185.27573,315.62168 L 181.19582,310.1013 L 178.07589,309.14123 z "
+              />
+            <path
+              class="municipio ingenio"
+              d="M 212.15511,344.90369 L 212.87509,346.34379 L 215.75503,346.82382 L 225.3548,346.34379 L 227.03477,347.06384 L 230.63468,347.30386 L 230.87468,348.26392 L 233.51462,349.464 L 237.35453,348.50394 L 239.99447,349.22399 L 240.23446,350.42407 L 241.43443,351.38414 L 240.95444,353.7843 L 240.71445,357.38455 L 235.43457,356.18447 L 233.99461,354.98438 L 232.07465,356.18447 L 228.95472,355.94445 L 224.39483,350.18405 L 217.19499,349.464 L 216.47501,350.18405 L 213.83507,347.78389 L 209.75516,346.58381 L 207.59521,345.62374 L 210.71514,345.14371 L 211.67512,345.38372 L 212.15511,344.90369 z "
+              />
+            <path
+              class="municipio mogan"
+              d="M 186.23571,354.98438 L 185.99571,355.94445 L 185.03573,356.6645 L 184.31575,363.62498 L 186.4757,366.98521 L 186.95569,371.78554 L 186.23571,373.94569 L 185.27573,374.66573 L 185.99571,376.82588 L 185.03573,378.506 L 184.31575,381.62621 L 184.79574,382.58628 L 184.79574,383.30633 L 184.55574,383.78636 L 184.79574,384.02638 L 184.79574,386.66656 L 184.31575,388.34667 L 182.63579,389.54676 L 181.91581,389.78677 L 182.1558,388.82671 L 180.71583,386.18653 L 179.51586,385.70649 L 178.79588,386.42654 L 178.55588,385.46648 L 176.63593,384.02638 L 176.87592,383.54634 L 176.39593,383.78636 L 176.15594,383.06631 L 175.67595,383.78636 L 173.99599,382.58628 L 174.23598,381.86623 L 173.03601,381.14618 L 172.79602,380.18611 L 171.11605,380.18611 L 169.67609,378.02597 L 168.71611,377.78595 L 168.23612,376.58587 L 165.11619,375.6258 L 164.15622,374.66573 L 162.95624,372.98562 L 161.27628,371.78554 L 159.11633,366.50517 L 163.19624,363.86499 L 166.79615,357.62456 L 168.47612,356.6645 L 168.23612,353.54428 L 172.07603,348.98397 L 173.75599,346.58381 L 177.11592,347.30386 L 180.71583,346.58381 L 182.39579,348.26392 L 181.91581,350.66409 L 181.19582,351.86417 L 181.43582,352.58422 L 182.63579,353.54428 L 185.03573,354.02432 L 186.23571,354.98438 z "
+                />
+            <path
+              class="municipio moya"
+              d="M 201.11536,302.66079 L 202.79532,303.38084 L 206.87523,302.90081 L 206.87523,303.62085 L 206.15525,304.58092 L 206.15525,305.54099 L 206.63524,307.46112 L 204.47529,311.06137 L 203.51531,313.94156 L 204.23529,314.66161 L 203.51531,316.58175 L 203.27531,318.26186 L 202.07534,318.74189 L 200.39538,320.42201 L 201.11536,320.66203 L 199.6754,322.58216 L 199.4354,325.22234 L 197.27545,327.6225 L 195.59549,330.5027 L 195.1155,326.66244 L 193.91553,323.30221 L 194.87551,319.94198 L 197.27545,316.58175 L 201.59535,312.02143 L 200.63537,309.14123 L 201.11536,302.66079 z "
+              />
+            <path
+              class="municipio laspalmasdegrancanaria"
+              d="M 235.19458,302.90081 L 233.99461,302.90081 L 233.51462,302.90081 L 233.51462,303.86087 L 232.79463,302.90081 L 232.79463,304.10089 L 232.31464,305.30097 L 233.27462,305.30097 L 233.27462,305.54099 L 232.31464,306.74107 L 233.27462,308.18117 L 233.51462,308.42118 L 233.99461,308.6612 L 235.91456,312.74148 L 234.95458,316.58175 L 235.67457,318.50188 L 234.2346,321.62209 L 235.43457,323.78224 L 235.19458,324.98232 L 236.15456,326.42242 L 239.03449,328.34255 L 237.83452,328.82259 L 235.43457,328.34255 L 234.47459,326.90245 L 233.51462,326.66244 L 230.15469,327.86252 L 228.23474,329.54264 L 226.79477,329.54264 L 227.99474,327.86252 L 225.3548,326.42242 L 222.71487,322.34214 L 216.715,324.74231 L 216.23501,324.02226 L 213.83507,324.50229 L 213.11509,323.54222 L 214.31506,322.34214 L 215.03504,319.94198 L 217.19499,317.78183 L 215.99502,316.58175 L 217.67498,313.22151 L 217.67498,312.26145 L 218.63496,312.26145 L 219.11495,309.38125 L 219.59494,309.38125 L 219.11495,308.42118 L 220.07493,308.18117 L 221.51489,305.54099 L 222.71487,305.06095 L 224.87482,307.70114 L 229.19472,306.50105 L 232.07465,303.14082 L 231.83465,300.74066 L 229.9147,299.54057 L 230.39469,297.86046 L 231.83465,297.62044 L 233.75461,295.46029 L 236.87454,295.94033 L 237.59452,297.14041 L 237.11453,298.58051 L 238.07451,298.82053 L 237.11453,299.06054 L 236.87454,304.82094 L 236.63454,300.02061 L 236.15456,301.94074 L 235.19458,302.90081 z "
+              />
+            <path
+              class="municipio sanbartolomedetirajana"
+              d="M 207.59521,345.62374 L 209.75516,346.58381 L 210.71514,348.26392 L 210.47515,349.70402 L 209.75516,351.14412 L 207.35522,352.82423 L 208.3152,354.98438 L 208.0752,358.58463 L 209.75516,359.5447 L 212.15511,362.42489 L 210.47515,363.62498 L 212.6351,367.46524 L 212.3951,368.18529 L 215.27504,368.42531 L 218.15497,370.34544 L 218.39496,369.14536 L 220.79491,369.62539 L 222.95486,368.66532 L 232.55464,378.98603 L 229.6747,380.18611 L 220.31492,381.62621 L 216.47501,384.26639 L 214.07506,384.26639 L 211.67512,386.66656 L 206.63524,388.34667 L 205.19527,389.30674 L 204.23529,393.86705 L 202.55533,394.5871 L 197.99544,394.10707 L 194.63551,391.22687 L 192.95555,392.18694 L 188.87565,390.50682 L 186.7157,389.30674 L 184.79574,389.78677 L 184.07576,390.50682 L 184.07576,391.22687 L 182.63579,389.54676 L 184.31575,388.34667 L 184.79574,386.66656 L 184.79574,384.02638 L 184.55574,383.78636 L 184.79574,383.30633 L 184.79574,382.58628 L 184.31575,381.62621 L 185.03573,378.506 L 185.99571,376.82588 L 185.27573,374.66573 L 186.23571,373.94569 L 186.95569,371.78554 L 186.4757,366.98521 L 184.31575,363.62498 L 185.03573,356.6645 L 185.99571,355.94445 L 186.23571,354.98438 L 188.15566,353.54428 L 192.71556,348.74395 L 192.95555,346.58381 L 196.07548,345.62374 L 198.23543,342.98356 L 198.95541,343.46359 L 198.71542,344.66367 L 200.63537,345.86376 L 204.23529,343.94362 L 206.15525,344.18364 L 207.59521,345.62374 z "
+              />
+            <path
+              class="municipio sannicolasdetolentino"
+              d="M 164.6362,328.10254 L 169.1961,331.46277 L 169.67609,333.86293 L 168.9561,337.94321 L 169.43609,343.46359 L 171.35605,345.62374 L 172.07603,348.98397 L 168.23612,353.54428 L 168.47612,356.6645 L 166.79615,357.62456 L 163.19624,363.86499 L 159.11633,366.50517 L 155.51641,358.82465 L 152.63648,355.2244 L 152.39649,353.30427 L 153.59646,347.30386 L 152.39649,341.78348 L 153.83645,339.38331 L 153.83645,338.18323 L 154.55644,337.7032 L 155.75641,333.86293 L 154.79643,331.9428 L 156.47639,331.22275 L 158.15635,331.70278 L 160.79629,330.98273 L 164.6362,328.10254 z "
+              />
+            <path
+                class="municipio santabrigida"
+              d="M 211.19513,327.14247 L 216.715,324.74231 L 222.71487,322.34214 L 225.3548,326.42242 L 227.99474,327.86252 L 226.79477,329.54264 L 221.51489,330.5027 L 220.55491,331.70278 L 218.15497,332.42283 L 216.715,332.42283 L 215.99502,333.86293 L 214.31506,331.46277 L 213.11509,330.74272 L 212.3951,328.58257 L 211.19513,327.14247 z "
+                />
+            <path
+                class="municipio santaluciadetirajana"
+              d="M 236.15456,369.38537 L 235.43457,369.62539 L 234.47459,371.06549 L 233.51462,375.14577 L 233.99461,376.58587 L 232.55464,378.98603 L 222.95486,368.66532 L 220.79491,369.62539 L 218.39496,369.14536 L 218.15497,370.34544 L 215.27504,368.42531 L 212.3951,368.18529 L 212.6351,367.46524 L 210.47515,363.62498 L 212.15511,362.42489 L 209.75516,359.5447 L 208.0752,358.58463 L 208.3152,354.98438 L 207.35522,352.82423 L 209.75516,351.14412 L 210.47515,349.70402 L 210.71514,348.26392 L 209.75516,346.58381 L 214.07506,349.94404 L 214.31506,353.54428 L 215.51503,361.46483 L 216.955,362.66491 L 224.15483,364.58504 L 227.75475,364.82506 L 228.47473,366.02514 L 233.03463,366.50517 L 232.79463,367.22522 L 234.47459,367.22522 L 236.15456,368.18529 L 236.15456,369.38537 z "
+              />
+            <path
+                class="municipio Sansantamariadetiadeguiadegrancanaria"
+              d="M 189.35563,298.82053 L 191.51558,297.14041 L 192.47556,298.10048 L 192.71556,297.62044 L 194.15552,299.30056 L 193.91553,300.02061 L 194.63551,301.22069 L 195.3555,301.22069 L 196.07548,302.66079 L 197.27545,302.18076 L 198.71542,303.38084 L 201.11536,302.66079 L 200.63537,309.14123 L 201.59535,312.02143 L 197.27545,316.58175 L 194.87551,319.94198 L 193.91553,323.30221 L 195.1155,326.66244 L 192.71556,323.78224 L 192.95555,321.86211 L 191.51558,320.42201 L 191.75558,316.58175 L 191.51558,312.50146 L 192.47556,310.34132 L 191.27559,310.1013 L 190.07562,305.06095 L 191.75558,304.58092 L 190.7956,303.14082 L 190.7956,301.70072 L 189.35563,298.82053 z "
+              />
+            <path
+                class="municipio tejeda"
+              stroke-miterlimit="10"
+              d="M 199.4354,335.78306 L 200.39538,338.66326 L 204.23529,343.94362 L 200.63537,345.86376 L 198.71542,344.66367 L 198.95541,343.46359 L 198.23543,342.98356 L 196.07548,345.62374 L 192.95555,346.58381 L 192.71556,348.74395 L 188.15566,353.54428 L 186.23571,354.98438 L 185.03573,354.02432 L 182.63579,353.54428 L 181.43582,352.58422 L 181.19582,351.86417 L 181.91581,350.66409 L 182.39579,348.26392 L 180.71583,346.58381 L 177.11592,347.30386 L 173.75599,346.58381 L 172.07603,348.98397 L 171.35605,345.62374 L 169.43609,343.46359 L 168.9561,337.94321 L 173.99599,339.62333 L 174.71597,338.18323 L 177.35591,336.74313 L 180.71583,337.94321 L 180.95583,336.98315 L 183.11578,336.74313 L 184.79574,334.34297 L 188.87565,335.06301 L 191.0356,334.58298 L 193.91553,331.70278 L 195.59549,330.5027 L 197.27545,331.46277 L 198.71542,332.90287 L 199.4354,335.78306"
+              />
+            <path
+                class="municipio telde"
+              d="M 226.79477,329.54264 L 228.23474,329.54264 L 230.15469,327.86252 L 233.51462,326.66244 L 234.47459,326.90245 L 235.43457,328.34255 L 237.83452,328.82259 L 239.03449,328.34255 L 240.71445,329.0626 L 241.19444,331.9428 L 243.35439,333.3829 L 242.8744,334.34297 L 243.35439,335.06301 L 243.11439,336.02308 L 244.07437,336.2631 L 244.55436,337.46318 L 242.39441,339.14329 L 242.8744,341.06343 L 241.91442,340.82341 L 241.43443,341.78348 L 241.43443,343.46359 L 242.15442,343.46359 L 242.39441,343.94362 L 241.67443,345.14371 L 242.63441,345.86376 L 241.91442,346.34379 L 242.15442,347.06384 L 244.31437,347.78389 L 244.31437,349.22399 L 246.23432,350.18405 L 245.99433,351.38414 L 243.59438,349.94404 L 241.43443,351.38414 L 240.23446,350.42407 L 239.99447,349.22399 L 237.35453,348.50394 L 233.51462,349.464 L 230.87468,348.26392 L 230.63468,347.30386 L 227.03477,347.06384 L 225.3548,346.34379 L 215.75503,346.82382 L 212.87509,346.34379 L 212.15511,344.90369 L 212.3951,344.42366 L 214.31506,345.14371 L 216.47501,344.42366 L 217.67498,343.46359 L 220.07493,342.74354 L 221.51489,340.34338 L 225.83479,338.90328 L 226.07479,337.46318 L 226.55478,336.98315 L 226.07479,333.86293 L 225.3548,333.3829 L 221.51489,333.62292 L 220.07493,332.66285 L 218.15497,332.42283 L 220.55491,331.70278 L 221.51489,330.5027 L 226.79477,329.54264 z "
+              />
+            <path
+                class="municipio teror"
+              d="M 217.67498,313.22151 L 215.99502,316.58175 L 217.19499,317.78183 L 215.03504,319.94198 L 214.31506,322.34214 L 213.11509,323.54222 L 213.83507,324.50229 L 216.23501,324.02226 L 216.715,324.74231 L 211.19513,327.14247 L 206.63524,330.02267 L 204.71528,329.78265 L 204.71528,328.82259 L 205.67526,328.34255 L 205.91525,326.42242 L 204.95527,324.02226 L 208.79519,316.34173 L 212.6351,317.06178 L 214.55505,316.58175 L 215.03504,314.90163 L 217.67498,313.22151 z "
+              />
+            <path
+                class="municipio valleseco"
+              d="M 203.27531,318.26186 L 208.79519,316.34173 L 204.95527,324.02226 L 205.91525,326.42242 L 205.67526,328.34255 L 204.71528,328.82259 L 204.71528,329.78265 L 202.07534,331.70278 L 198.71542,332.90287 L 197.27545,331.46277 L 195.59549,330.5027 L 197.27545,327.6225 L 199.4354,325.22234 L 199.6754,322.58216 L 201.11536,320.66203 L 200.39538,320.42201 L 202.07534,318.74189 L 203.27531,318.26186 z "
+              />
+            <path
+                class="municipio valsequillodegrancanaria"
+              d="M 218.15497,332.42283 L 220.07493,332.66285 L 221.51489,333.62292 L 225.3548,333.3829 L 226.07479,333.86293 L 226.55478,336.98315 L 226.07479,337.46318 L 225.83479,338.90328 L 221.51489,340.34338 L 220.07493,342.74354 L 217.67498,343.46359 L 216.47501,344.42366 L 214.31506,345.14371 L 212.3951,344.42366 L 212.15511,344.90369 L 211.67512,345.38372 L 210.71514,345.14371 L 207.59521,345.62374 L 208.55519,342.50353 L 208.79519,337.94321 L 211.19513,336.02308 L 214.79505,334.823 L 215.99502,333.86293 L 216.715,332.42283 L 218.15497,332.42283 z "
+              />
+            <path
+              class="municipio vegadesanmateo"
+              d="M 204.71528,329.78265 L 206.63524,330.02267 L 211.19513,327.14247 L 212.3951,328.58257 L 213.11509,330.74272 L 214.31506,331.46277 L 215.99502,333.86293 L 214.79505,334.823 L 211.19513,336.02308 L 208.79519,337.94321 L 208.55519,342.50353 L 207.59521,345.62374 L 206.15525,344.18364 L 204.23529,343.94362 L 200.39538,338.66326 L 198.71542,332.90287 L 202.07534,331.70278 L 204.71528,329.78265 z "
+              />
+            <path
+              style="fill:none;fill-rule:evenodd;stroke:black;stroke-width:1.70022349;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+              d="M 233.75,295.46875 L 231.84375,297.625 L 230.40625,297.875 L 229.90625,299.53125 L 231.84375,300.75 L 232.0625,303.15625 L 229.1875,306.5 L 224.875,307.6875 L 222.71875,305.0625 L 221.5,305.53125 L 219.34375,303.375 L 218.40625,303.625 L 216,302.40625 L 215.5,303.15625 L 213.34375,300.96875 L 212.15625,301.21875 L 211.6875,301.9375 L 210.96875,301.6875 L 210.96875,302.1875 L 209.28125,302.90625 L 206.875,302.90625 L 202.78125,303.375 L 201.125,302.65625 L 198.71875,303.375 L 197.28125,302.1875 L 196.0625,302.65625 L 195.34375,301.21875 L 194.625,301.21875 L 193.90625,300.03125 L 194.15625,299.3125 L 192.71875,297.625 L 192.46875,298.09375 L 191.5,297.125 L 190.3125,297.875 L 189.34375,298.8125 L 188.40625,298.59375 L 185.28125,300.03125 L 182.875,299.3125 L 182.40625,297.375 L 181.1875,297.375 L 180.46875,298.59375 L 179.03125,299.0625 L 177.34375,298.34375 L 177.59375,299.78125 L 179.75,301.46875 L 178.3125,303.625 L 179.03125,304.09375 L 179.28125,305.78125 L 178.0625,306.25 L 177.34375,308.40625 L 177.59375,308.65625 L 178.0625,309.15625 L 177.59375,309.15625 L 177.84375,311.3125 L 176.625,312.03125 L 177.59375,313.6875 L 176.875,316.34375 L 174.96875,319.46875 L 172.3125,320.90625 L 171.59375,323.0625 L 170.625,323.53125 L 169.90625,324.03125 L 165.84375,325.21875 L 165.59375,326.90625 L 164.625,328.09375 L 160.78125,330.96875 L 158.15625,331.6875 L 156.46875,331.21875 L 154.78125,331.9375 L 155.75,333.875 L 154.5625,337.71875 L 153.84375,338.1875 L 153.84375,339.375 L 152.40625,341.78125 L 153.59375,347.3125 L 152.40625,353.3125 L 152.625,355.21875 L 155.53125,358.8125 L 159.125,366.5 L 161.28125,371.78125 L 162.96875,373 L 164.15625,374.65625 L 165.125,375.625 L 168.25,376.59375 L 168.71875,377.78125 L 169.6875,378.03125 L 171.125,380.1875 L 172.78125,380.1875 L 173.03125,381.15625 L 174.25,381.875 L 174,382.59375 L 175.6875,383.78125 L 176.15625,383.0625 L 176.40625,383.78125 L 176.875,383.53125 L 176.625,384.03125 L 178.5625,385.46875 L 178.78125,386.4375 L 179.53125,385.71875 L 180.71875,386.1875 L 182.15625,388.8125 L 181.90625,389.78125 L 182.625,389.53125 L 184.0625,391.21875 L 184.0625,390.5 L 184.78125,389.78125 L 186.71875,389.3125 L 188.875,390.5 L 192.96875,392.1875 L 194.625,391.21875 L 198,394.09375 L 202.5625,394.59375 L 204.25,393.875 L 205.1875,389.3125 L 206.625,388.34375 L 211.6875,386.65625 L 214.0625,384.28125 L 216.46875,384.28125 L 220.3125,381.625 L 229.6875,380.1875 L 232.5625,379 L 234,376.59375 L 233.5,375.15625 L 234.46875,371.0625 L 235.4375,369.625 L 235.6875,369.625 L 236.15625,369.375 L 237.125,369.375 L 238.3125,367.46875 L 240,367.9375 L 240.96875,367.21875 L 240.71875,364.34375 L 241.90625,363.15625 L 240.96875,363.375 L 240.25,362.4375 L 239.28125,359.78125 L 240,358.59375 L 240.71875,357.375 L 240.96875,353.78125 L 241.4375,351.375 L 243.59375,349.9375 L 246,351.375 L 246.21875,350.1875 L 244.3125,349.21875 L 244.3125,347.78125 L 242.15625,347.0625 L 241.90625,346.34375 L 242.625,345.875 L 241.6875,345.15625 L 242.40625,343.9375 L 242.15625,343.46875 L 241.4375,343.46875 L 241.4375,341.78125 L 241.90625,340.8125 L 242.875,341.0625 L 242.40625,339.15625 L 244.5625,337.46875 L 244.0625,336.25 L 243.125,336.03125 L 243.34375,335.0625 L 242.875,334.34375 L 243.34375,333.375 L 241.1875,331.9375 L 240.71875,329.0625 L 239.03125,328.34375 L 236.15625,326.4375 L 235.1875,324.96875 L 235.4375,323.78125 L 234.25,321.625 L 235.6875,318.5 L 234.96875,316.59375 L 235.90625,312.75 L 234,308.65625 L 233.5,308.40625 L 233.28125,308.1875 L 232.3125,306.75 L 233.28125,305.53125 L 233.28125,305.3125 L 232.3125,305.3125 L 232.78125,304.09375 L 232.78125,302.90625 L 233.5,303.875 L 233.5,302.90625 L 234,302.90625 L 235.1875,302.90625 L 236.15625,301.9375 L 236.625,300.03125 L 236.875,304.8125 L 237.125,299.0625 L 238.0625,298.8125 L 237.125,298.59375 L 237.59375,297.125 L 236.875,295.9375 L 233.75,295.46875 z "
+                />
+          </g>
+        </svg>
+
+        `;
+
+
+        }
+        else {
+          // Para las islas que no tienen SVG inline, se puede seguir usando la imagen normal
+          const imagen = document.getElementById('imagen-isla');
+          imagen.innerHTML = `<img class="w-full w-[512px] w-h-[512px] object-contain mx-auto" src="${imagenesIslas[isla] || ''}" alt="Imagen de ${isla}">`;
+        }
+        
+        // Muestra la sección de detalles
+        document.getElementById('detalle').classList.remove('hidden');
+        
+        // Actualiza el título y la descripción
+        document.getElementById('titulo-isla').textContent = isla;
+        document.getElementById('descripcion-isla').textContent = 'Detalles y pruebas de la isla ' + isla;
+        
+        // Limpia y carga la lista de municipios asociados
+        const lista = document.getElementById('lista-municipios');
+        lista.innerHTML = '';
+        if (municipiosPorIsla[isla]) {
+          municipiosPorIsla[isla].forEach(municipio => {
+            const li = document.createElement('li');
+            li.innerHTML = `<span><i class="fas fa-tshirt fa-lg" style="color: ${municipio.color};"></i></span><span>${municipio.nombre}</span>`;
+            li.className = 'bg-gray-200 p-4 rounded flex items-center space-x-2 cursor-pointer hover:bg-gray-500';
+            li.style.cursor ="pointer"
+            
+     
+            li.addEventListener("click",() =>{
+              
+              seleccionarMunicipio(isla,municipio.nombre)
+              if (municipio.equipos){
+                seleccionarMunicipio(isla,municipio.nombre)
+                
+              }else{
+              const mensaje = "No se ha encontrado ningun equipo en este municipio"
+              document.getElementById('Notificacion').innerText = mensaje
+            }
+            });
+            
+            
+            lista.appendChild(li);
+          });
+        }else{
+          const li= document.createElement("li");
+          li.textContent = "No hay municipios para esta isla";
+          contenedor.appendChild(li);
+        }
+        
+        // Desplaza la vista suavemente a la sección de detalles
+        document.getElementById('detalle').scrollIntoView({ behavior: 'smooth' });
+      }
+
+  </script>
+    
+
+  
+</body>
+</html>

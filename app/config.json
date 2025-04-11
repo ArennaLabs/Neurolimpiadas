@@ -1,0 +1,13 @@
+{
+    "PROJECT_NAME": "Muestra Proyectos",
+    "HOST": "0.0.0.0",
+    "PORT": 8000,
+    "MYSQL_USER": "arenna",
+    "MYSQL_PASSWORD": "wg-VN2BKUdCfJdJW1jPMA9OrBuqV0PjSY0KIEk_TObY=",
+    "MYSQL_HOST": "localhost",
+    "MYSQL_PORT": "3306",
+    "MYSQL_DATABASE": "muestra_proyectos",
+    "SECRET_KEY": "eDC9gR2ObP9oGmnnPTzOxCj6-XjattqFgotIjdXanl4=",
+    "ALGORITHM": "HS256",
+    "ACCESS_TOKEN_EXPIRE_MINUTES": 30
+}

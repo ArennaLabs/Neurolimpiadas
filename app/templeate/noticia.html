@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="bg-white shadow w-full">
+        <div class="flex items-center justify-between h-16">
+            
+            <a href="home.html" class="flex-shrink-0">
+            <img class="h-16 w-16" src="/static/img/logo.png" alt="Logo de la Empresa">
+            </a>
+            
+            <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
+            <div class="hidden lg:flex space-x-4">
+            <a href="/templeate/home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
+            <a href="#competiciones" class="px-3 py-2 text-gray-600 hover:text-gray-800">Competiciones</a>
+            <a href="/templeate/noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
+            <a href="/templeate/contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanaos</a>
+            </div>
+            
+            <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
+            <div class="lg:hidden relative px-4">
+            <button id="menu-toggle" 
+                    class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                <!-- Icono de hamburguesa -->
+                <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+            
+            <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
+            <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+                <a href="#inicio" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
+                <a href="#competiciones" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Competiciones</a>
+                <a href="#noticias" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
+                <a href="#contactanaos" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanaos</a>
+            </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold mb-6">Últimas Noticias</h1>
+
+        <!-- NOTICIA PRINCIPAL -->
+        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <img src="/static/img/noticias/21601.png" 
+                alt="Imagen de la noticia principal" 
+                class="w-full h-auto rounded-lg mb-4 ">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-2">Título de la Noticia Principal</h2>
+            <p class="text-gray-600 mb-4">
+            Descripción breve de la noticia principal. Esta sección se utiliza para destacar la información más importante.
+            </p>
+            <a href="#" class="text-blue-600 font-semibold hover:underline">Leer más</a>
+        </section>  
+    </div>
+</body>
+</html>

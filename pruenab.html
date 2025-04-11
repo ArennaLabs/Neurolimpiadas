@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle de Noticia</title>
+  <!-- Incluir Tailwind CSS (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-300 text-white">
+    <nav class="bg-white shadow w-full">
+        <div class="flex items-center justify-between h-16">
+          
+          <a href="home.html" class="flex-shrink-0">
+            <img class="h-16 w-16" src="/static/img/logo.png" alt="Logo de la Empresa">
+          </a>
+          
+          <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
+          <div class="hidden lg:flex space-x-4">
+            <a href="#inicio" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
+            <a href="#competiciones" class="px-3 py-2 text-gray-600 hover:text-gray-800">Competiciones</a>
+            <a href="/templeate/noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
+            <a href="/templeate/contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanaos</a>
+          </div>
+          
+          <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
+          <div class="lg:hidden relative px-4">
+            <button id="menu-toggle" 
+                    class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <!-- Icono de hamburguesa -->
+              <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            
+            <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
+            <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+              <a href="#inicio" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
+              <a href="#competiciones" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Competiciones</a>
+              <a href="#noticias" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
+              <a href="#contactanaos" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanaos</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+  <!-- Contenedor principal, centrado con márgenes y relleno -->
+  <div class="container mx-auto px-4 py-8 max-w-4xl">
+    
+    <!-- Primera sección: tipo de noticia, título, descripción y fecha -->
+    <section class="mb-8">
+      <!-- Tipo de noticia destacado en otro color -->
+      <span class="text-red-500 uppercase font-semibold tracking-wider">
+        Tipo de noticia:ejm "Competicion Insular Tenerife"
+      </span>
+      <!-- Título principal -->
+      <h1 class="text-3xl font-bold mt-2 mb-4">
+        Titulo de la notici
+      </h1>
+      <!-- Breve descripción -->
+      <p class="text-gray-300 mb-2">
+        descripcion breve de la noticia
+      </p>
+      <!-- Fecha de publicación en otro color -->
+      <p class="text-gray-500 text-sm">
+        Fecha de la noticia
+      </p>
+    </section>
+
+    <!-- Segunda sección: imagen responsiva adaptada al ancho -->
+    <section class="mb-8">
+      <img
+        src="/static/img/noticias/noticias1.png"
+        alt="Imagen descriptiva de la noticia"
+        class="w-full h-auto object-cover"
+      />
+    </section>
+
+    <!-- Tercera sección: contenido de la noticia -->
+    <section>
+        <p class="mb-4">
+          La recién inaugurada "Olimpiadas de la Sabiduría y Fuerza" reunió a 
+          competidores senior de todo el país, quienes demostraron que la 
+          edad es solo un número. En este emocionante certamen, personas 
+          mayores se enfrentaron en una serie de retos que pusieron a 
+          prueba tanto su condición física como sus habilidades mentales, 
+          destacando el valor y la experiencia adquirida a lo largo de los años.
+        </p>
+        <p class="mb-4">
+          Las pruebas físicas incluyeron circuitos de agilidad, 
+          carreras de velocidad y desafíos de resistencia, diseñados 
+          especialmente para resaltar la fortaleza y el dinamismo de los 
+          participantes. Paralelamente, se llevaron a cabo competiciones 
+          mentales que desafiaron su capacidad de resolución de problemas, 
+          memoria y lógica, haciendo de la jornada una experiencia integral y estimulante.
+        </p>
+        <p>
+          Este evento se convirtió en un homenaje a la vitalidad y la sabiduría, 
+          demostrando que la determinación y el espíritu competitivo no 
+          tienen fecha de caducidad. Los organizadores celebraron la ocasión 
+          como una inspiración para todas las generaciones, reafirmando que, 
+          con pasión y entrenamiento, siempre es posible superar cualquier límite.
+        </p>
+      </section>
+
+  </div>
+</body>
+</html>
