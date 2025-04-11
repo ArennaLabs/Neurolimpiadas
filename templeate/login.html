@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        arenna: {
+                            green: '#2BB673', // Color verde del logo
+                            hover: '#229A61'  // Versión más oscura para hover
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gray-50 flex items-center justify-center p-4">
+    <!-- Modal de selección de proyecto -->
+    <div id="projectModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center backdrop-blur-sm">
+        <div class="bg-white rounded-xl p-6 w-full max-w-md shadow-2xl">
+            <h2 class="text-xl font-bold mb-4 text-arenna-green">Selecciona un proyecto</h2>
+            <div id="projectList" class="space-y-3">
+                <!-- Los proyectos se insertarán aquí dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulario de login -->
+    <div class="bg-white rounded-xl shadow-2xl p-8 w-full max-w-md">
+        <div class="flex justify-center mb-8">
+            <img src="/static/img/logo/arenna_logo_verde.png" alt="Logo empresa" class="max-w-[200px] h-auto">
+        </div>
+
+        <div class="flex justify-center mb-8">
+            <h1 class="text-2xl font-bold text-arenna-green">Analizar tus proyectos</h1>
+        </div>
+
+        <form id="loginForm" class="space-y-6">
+            <div>
+                <input 
+                    type="text" 
+                    name="Usuario" 
+                    placeholder="Usuario" 
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-arenna-green focus:border-transparent transition-all duration-300 shadow-sm"
+                >
+            </div>
+            <div>
+                <input 
+                    type="password" 
+                    name="password" 
+                    placeholder="Contraseña" 
+                    required
+                    class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-arenna-green focus:border-transparent transition-all duration-300 shadow-sm"
+                >
+            </div>
+            <button 
+                type="submit"
+                class="w-full bg-arenna-green text-white py-3 rounded-lg hover:bg-arenna-hover transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-arenna-green focus:ring-offset-2 font-semibold shadow-lg hover:shadow-xl"
+            >
+                Iniciar Sesión
+            </button>
+        </form>
+    </div>
+    <!-- Alert/Pop-up de error -->
+    <div id="errorPopup" class="hidden fixed top-4 right-4 bg-red-100 border-l-4 border-red-500 text-red-700 p-4 rounded-lg shadow-lg transition-all duration-300 transform translate-x-full">
+        <div class="flex items-center">
+            <div class="flex-shrink-0">
+                <!-- Icono de error -->
+                <svg class="h-5 w-5 text-red-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <div class="ml-3">
+                <p class="text-sm font-medium">Credenciales inválidas</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const MOCK_USERS = {
+        "Neurolimpiadas": {
+            "password": "12345",
+            "name": "Usuario Prueba 1",
+            "projects": [
+                {
+                    "id": 1,
+                    "name": "Arenna",
+                    "domain": "https://arennalabs.com/"
+                },              
+            ]
+        },
+        "Piconia": {
+            "password": "12345",
+            "name": "Usuario Prueba 2",
+            "projects": [
+                {
+                    "id": 3,
+                    "name": "Piconia",
+                    "domain": "https://www.picconia.com/"
+                }
+            ]
+        }
+        };
+        
+        function showProjectModal(projects) {
+            const modal = document.getElementById('projectModal');
+            const projectList = document.getElementById('projectList');
+            
+            projectList.innerHTML = '';
+            
+            projects.forEach(project => {
+                const button = document.createElement('button');
+                button.className = 'w-full p-4 text-left hover:bg-gray-50 rounded-lg transition-all duration-200 border border-gray-100 hover:border-arenna-green hover:text-arenna-green font-medium';
+                button.innerHTML = project.name;
+                button.onclick = () => {
+                    window.location.href = project.domain;
+                };
+                projectList.appendChild(button);
+            });
+            
+            modal.classList.remove('hidden');
+        }
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const formData = new FormData(e.target);
+            const Usuario = formData.get('Usuario');
+            const password = formData.get('password');
+
+            // Validar credenciales
+            const user = MOCK_USERS[Usuario];
+            if (!user || user.password !== password) {
+                showError();
+                return;
+            }
+
+            // Si el usuario tiene múltiples proyectos, mostrar modal
+            if (user.projects.length > 1) {
+                showProjectModal(user.projects);
+            } else if (user.projects.length === 1) {
+                // Redirigir directamente si solo tiene un proyecto
+                window.location.href = user.projects[0].domain;
+            } else {
+                alert('Usuario sin proyectos asignados');
+            }
+        });
+
+        function showError() {
+            const popup = document.getElementById('errorPopup');
+            popup.classList.remove('hidden', 'translate-x-full');
+            popup.classList.add('translate-x-0');
+
+            // Ocultar después de 7 segundos
+            setTimeout(() => {
+                popup.classList.add('translate-x-full');
+                setTimeout(() => {
+                    popup.classList.add('hidden');
+                }, 300); // Esperar a que termine la animación
+            }, 7000);
+        }
+        // ...existing code...
+    </script>
+</body>
+</html>
+
