@@ -16,52 +16,60 @@
 </head>
 
 <body class="bg-gray-300">
-
-  <nav class="bg-white shadow w-full">
-    <div class="flex items-center justify-between h-16">
-      
-      <a href="home.html" class="flex-shrink-0">
-        <img class="h-16 w-16" src="/static/img/logo.png" alt="Logo de la Empresa">
-      </a>
-      
-      <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
-      <div class="hidden lg:flex space-x-4">
-        <a href="#inicio" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
-        <a href="#competiciones" class="px-3 py-2 text-gray-600 hover:text-gray-800">Competiciones</a>
-        <a href="/templeate/noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
-        <a href="/templeate/contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanaos</a>
-      </div>
-      
-      <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
-      <div class="lg:hidden relative px-4">
-        <button id="menu-toggle" 
-                class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <!-- Icono de hamburguesa -->
-          <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+  <section id="inicio" class="relative h-screen overflow-hidden">
+    <nav class="bg-white shadow w-full">
+      <div class="flex items-center justify-between h-16">
         
-        <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
-        <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-          <a href="#inicio" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
-          <a href="#competiciones" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Competiciones</a>
-          <a href="#noticias" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
-          <a href="#contactanaos" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanaos</a>
+        <a href="home.html" class="flex-shrink-0">
+          <img class="h-16 w-32" src="../static/img/logo.png" alt="Logo de la Empresa">
+        </a>
+        
+        <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
+        <div class="hidden lg:flex space-x-4">
+          <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
+          <a href="#competiciones" class="px-3 py-2 text-gray-600 hover:text-gray-800">Competiciones</a>
+          <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
+          <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
+        </div>
+        
+        <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
+        <div class="lg:hidden relative px-4">
+          <button id="menu-toggle" 
+                  class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <!-- Icono de hamburguesa -->
+            <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          
+          <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
+          <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+            <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
+            <a href="#competiciones" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Competiciones</a>
+            <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
+            <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
+          </div>
         </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- Sección Principal (Hero) -->
-  <section id="inicio" class="relative h-[50vh] bg-cover bg-center" style="background-image: url('/static/img/fondo.png');">
-    <!-- Capa oscura semitransparente para contraste -->
-    <div class="absolute inset-0 bg-black opacity-50"></div>
-  
-    <div class="relative h-full">
-      <div class="absolute top-[20%] w-full text-center">
-        <h1 class="text-white text-5xl font-bold">Neurolimpiadas</h1>
+    <!-- Sección Principal (Hero) -->
+    <!-- Contenedor del slider -->
+    <div class="slider-container relative h-full w-full">
+      <!-- Imágenes del slider (añade más según necesites) -->
+      <div class="slides absolute inset-0 flex h-full w-full">
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('../static/img/slider/1.jpg');"></div>
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('../static/img/slider/2.jpeg');"></div>
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('../static/img/slider/3.webp');"></div>
+      </div>
+      
+      <!-- Capa oscura semitransparente para mejor contraste -->
+      <div class="absolute inset-0 bg-black opacity-60"></div>
+      
+      <!-- Logo centrado vertical y horizontalmente -->
+      <div class="absolute inset-0 flex items-center justify-center">
+        <img src="../static/img/neurolimpiadas canarias.png" alt="Neurolimpiadas" class="w-4/5 max-w-7xl z-10">
       </div>
     </div>
   </section>
@@ -73,7 +81,7 @@
       </h2>
       
       <div class="relative">
-        <img class="mx-auto w-4/5" src="/static/img/canarias.png" usemap="#image-map">
+        <img class="mx-auto w-4/5" src="../static/img/canarias.png" alt="Mapa de las Islas Canarias" usemap="#image-map">
         <map name="image-map">
           <area target="" alt="La palma" onclick="seleccionarIsla('La Palma')" title="La palma" href="javascript:void(0)" coords="9,51,19,46,30,54,32,67,20,87,13,72,13,64" shape="poly">
           <area target="" alt="El Hierro" onclick="seleccionarIsla('El Hierro')" title="El Hierro" href="javascript:void(0)" coords="11,143,13" shape="circle">
@@ -104,7 +112,7 @@
             Aquí se mostrarán detalles y pruebas de la isla seleccionada.
           </p>
           <h3 class="text-2xl font-semibold text-gray-800">Municipios</h3>
-          <ul id="lista-municipios" class="space-y-2">
+          <ul id="lista-municipios" class="space-y-2 overflow-y-auto max-h-[320px]">
             <!-- Se llenará dinámicamente según la isla seleccionada -->
           </ul>
         </div>
@@ -134,10 +142,26 @@
       </table>
     </div>
   </section>
+
+  <!-- Sección de Colabora -->
+  <section class="w-full">
+    <div class="max-w-full pt-16 px-8 md:px-24">
+        <!-- {/* Encabezado con línea separadora */} -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
+                <h2 class="font-medium text-lg tracking-wider">COLABORA:</h2>
+            </div>
+        </div>
+
+        <div class="h-px w-full bg-gray-200 mb-8"></div>
+    </div>
+    
+  </section>
   <footer class="bg-gray-800 text-gray-300 py-8">
     <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
       <div class="mb-4 md:mb-0">
-        <p class="text-sm">© 2025 Neurolimpiadas.Expertos en envejesimienmto activo</p>
+        <p class="text-sm">© 2025 Neurolimpiadas. Expertos en envejecimiento activo</p>
       </div>
       <div class="flex space-x-4">
 
@@ -147,7 +171,7 @@
     </div>
   </footer>
 
-  <script src="/static/js/imageMapResizer.min.js"></script>
+  <script src="../static/js/imageMapResizer.min.js"></script>
   <script>
       
       imageMapResize();
@@ -168,44 +192,117 @@
       // Datos de ejemplo de municipios para cada isla, con colores de Tailwind (para la lista)
       const municipiosPorIsla = {
         'La Palma': [
-          { nombre: 'Santa Cruz de La Palma', color: '#ff5733 '},
-          { nombre: 'Los Llanos de Aridane', color: '#df7b29 ' }
+          { nombre: 'Barlovento', color: '#ff5733' },
+          { nombre: 'Breña Alta', color: '#df7b29' },
+          { nombre: 'Breña Baja', color: '#ff5733' },
+          { nombre: 'Fuencaliente de La Palma', color: '#df7b29' },
+          { nombre: 'Garafía', color: '#ff5733' },
+          { nombre: 'Los Llanos de Aridane', color: '#df7b29' },
+          { nombre: 'El Paso', color: '#ff5733' },
+          { nombre: 'Puntagorda', color: '#df7b29' },
+          { nombre: 'Puntallana', color: '#ff5733' },
+          { nombre: 'San Andrés y Sauces', color: '#df7b29' },
+          { nombre: 'Santa Cruz de La Palma', color: '#ff5733' },
+          { nombre: 'Tazacorte', color: '#df7b29' },
+          { nombre: 'Tijarafe', color: '#ff5733' },
+          { nombre: 'Villa de Mazo', color: '#df7b29' }
         ],
         'El Hierro': [
-          { nombre: 'Valverde', color: '#f9d629' },
-          { nombre: 'La Frontera', color: '#d8ec54' }
+          { nombre: 'El Pinar de El Hierro', color: '#f9d629' },
+          { nombre: 'La Frontera', color: '#d8ec54' },
+          { nombre: 'Valverde', color: '#f9d629' }
         ],
         'Tenerife': [
-          { nombre: 'Santa Cruz de Tenerife', color: 'bg-blue-500' },
-          { nombre: 'La Laguna', color: 'bg-blue-300' }
+          { nombre: 'Adeje', color: '#f87171' },
+          { nombre: 'Arafo', color: '#fb923c' },
+          { nombre: 'Arico', color: '#facc15' },
+          { nombre: 'Arona', color: '#4ade80' },
+          { nombre: 'Buenavista del Norte', color: '#34d399' },
+          { nombre: 'Candelaria', color: '#60a5fa' },
+          { nombre: 'El Rosario', color: '#fcd34d' },
+          { nombre: 'El Sauzal', color: '#60a5fa' },
+          { nombre: 'El Tanque', color: '#f9a8d4' },
+          { nombre: 'Fasnia', color: '#818cf8' },
+          { nombre: 'Garachico', color: '#a78bfa' },
+          { nombre: 'Granadilla de Abona', color: '#f472b6' },
+          { nombre: 'Guía de Isora', color: '#fcd34d' },
+          { nombre: 'Güímar', color: '#bef264' },
+          { nombre: 'Icod de los Vinos', color: '#67e8f9' },
+          { nombre: 'La Guancha', color: '#f9a8d4' },
+          { nombre: 'La Matanza de Acentejo', color: '#6ee7b7' },
+          { nombre: 'La Orotava', color: '#a5b4fc' },
+          { nombre: 'La Victoria de Acentejo', color: '#bef264' },
+          { nombre: 'Los Realejos', color: '#fca5a5' },
+          { nombre: 'Puerto de la Cruz', color: '#f87171' },
+          { nombre: 'San Cristóbal de La Laguna', color: '#93c5fd' },
+          { nombre: 'San Juan de la Rambla', color: '#bfdbfe' },
+          { nombre: 'San Miguel de Abona', color: '#bef264' },
+          { nombre: 'Santa Cruz de Tenerife', color: '#fdba74' },
+          { nombre: 'Santa Úrsula', color: '#f87171' },
+          { nombre: 'Santiago del Teide', color: '#34d399' },
+          { nombre: 'Tacoronte', color: '#f472b6' },
+          { nombre: 'Tegueste', color: '#fcd34d' },
+          { nombre: 'Vilaflor de Chasna', color: '#67e8f9' }
         ],
         'Gran Canaria': [
+          { nombre: 'Agaete', color: 'bg-green-500' },
+          { nombre: 'Agüimes', color: 'bg-green-300' },
+          { nombre: 'Artenara', color: 'bg-green-500' },
+          { nombre: 'Arucas', color: 'bg-green-300' },
+          { nombre: 'Firgas', color: 'bg-green-500' },
+          { nombre: 'Gáldar', color: 'bg-green-300' },
+          { nombre: 'Ingenio', color: 'bg-green-500' },
+          { nombre: 'La Aldea de San Nicolás', color: 'bg-green-300' },
           { nombre: 'Las Palmas de Gran Canaria', color: 'bg-green-500' },
-          { nombre: 'Maspalomas', color: 'bg-green-300' }
+          { nombre: 'Mogán', color: 'bg-green-300' },
+          { nombre: 'Moya', color: 'bg-green-500' },
+          { nombre: 'San Bartolomé de Tirajana', color: 'bg-green-300' },
+          { nombre: 'Santa Brígida', color: 'bg-green-500' },
+          { nombre: 'Santa Lucía de Tirajana', color: 'bg-green-300' },
+          { nombre: 'Santa María de Guía de Gran Canaria', color: 'bg-green-500' },
+          { nombre: 'Tejeda', color: 'bg-green-300' },
+          { nombre: 'Telde', color: 'bg-green-500' },
+          { nombre: 'Teror', color: 'bg-green-300' },
+          { nombre: 'Valleseco', color: 'bg-green-500' },
+          { nombre: 'Valsequillo de Gran Canaria', color: 'bg-green-300' },
+          { nombre: 'Vega de San Mateo', color: 'bg-green-500' }
         ],
         'Fuerteventura': [
+          { nombre: 'Antigua', color: 'bg-red-500' },
+          { nombre: 'Betancuria', color: 'bg-red-300' },
+          { nombre: 'La Oliva', color: 'bg-red-500' },
+          { nombre: 'Pájara', color: 'bg-red-300' },
           { nombre: 'Puerto del Rosario', color: 'bg-red-500' },
-          { nombre: 'Corralejo', color: 'bg-red-300' }
+          { nombre: 'Tuineje', color: 'bg-red-300' }
         ],
         'Lanzarote': [
-          { nombre: 'Arrecife', color: '#36d35a', equipos:[{nombre:"Equipo1",nro_integrante:"Data equipo 1",estado:"Clasificado"},{nombre:"Equipo2",nro_integrante:"Data equipo 2",estado:"Clasificado"}] },
-          { nombre: 'Teguise', color: '#299fdf' }
+          { nombre: 'Arrecife', color: '#36d35a', equipos: [{ nombre: "Equipo1", nro_integrante: "Data equipo 1", estado: "Clasificado" }, { nombre: "Equipo2", nro_integrante: "Data equipo 2", estado: "Clasificado" }] },
+          { nombre: 'Haría', color: '#299fdf' },
+          { nombre: 'San Bartolomé', color: '#36d35a' },
+          { nombre: 'Teguise', color: '#299fdf' },
+          { nombre: 'Tías', color: '#36d35a' },
+          { nombre: 'Tinajo', color: '#299fdf' },
+          { nombre: 'Yaiza', color: '#36d35a' }
         ],
         'La Gomera': [
-          { nombre: 'San Sebastián de La Gomera', color: 'bg-indigo-500' },
-          { nombre: 'Valverde', color: 'bg-indigo-300' }
-        ]
+          { nombre: 'Agulo', color: 'bg-indigo-500' },
+          { nombre: 'Alajeró', color: 'bg-indigo-300' },
+          { nombre: 'Hermigua', color: 'bg-indigo-500' },
+          { nombre: 'San Sebastián de La Gomera', color: 'bg-indigo-300' },
+          { nombre: 'Valle Gran Rey', color: 'bg-indigo-500' },
+          { nombre: 'Vallehermoso', color: 'bg-indigo-300' }
+        ],
       };
 
       // Rutas de las imágenes (para formato no SVG)
       const imagenesIslas = {
-        'La Palma': '/static/img/islas/La_Palma.png',
-        'El Hierro': '/static/img/islas/El_Hierro.png',
-        'Tenerife': '/static/img/islas/Tenerife.svg',
-        'Gran Canaria': '/static/img/islas/Grancanarias.svg',
-        'Fuerteventura': '/static/img/islas/Fuerteventura.png',
-        'Lanzarote': '/static/img/islas/Lanzarote.svg',
-        'La Gomera': '/static/img/islas/La_Gomera.png'
+        'La Palma': '../static/img/islas/La_Palma.png',
+        'El Hierro': '../static/img/islas/El_Hierro.png',
+        'Tenerife': '../static/img/islas/Tenerife.svg',
+        'Gran Canaria': '../static/img/islas/Grancanarias.svg',
+        'Fuerteventura': '../static/img/islas/Fuerteventura.png',
+        'Lanzarote': '../static/img/islas/Lanzarote.svg',
+        'La Gomera': '../static/img/islas/La_Gomera.png'
       };
       function seleccionarMunicipio(isla, nombreMunicipio) {
         
@@ -411,7 +508,7 @@
           </svg>
           `;
 
-        }else if (isla === "Gran Canaria"){
+        } else if (isla === "Gran Canaria"){
         document.getElementById('imagen-isla').innerHTML = `
         <?xml version="1.0" encoding="UTF-8" standalone="no"?>
         <!-- Creator: ESRI ArcMap 9.0.0.535 -->
@@ -559,8 +656,6 @@
         </svg>
 
         `;
-
-
         }
         else {
           // Para las islas que no tienen SVG inline, se puede seguir usando la imagen normal
@@ -581,8 +676,8 @@
         if (municipiosPorIsla[isla]) {
           municipiosPorIsla[isla].forEach(municipio => {
             const li = document.createElement('li');
-            li.innerHTML = `<span><i class="fas fa-tshirt fa-lg" style="color: ${municipio.color};"></i></span><span>${municipio.nombre}</span>`;
-            li.className = 'bg-gray-200 p-4 rounded flex items-center space-x-2 cursor-pointer hover:bg-gray-500';
+            li.innerHTML = `<span><i class="fas fa-tshirt fa-lg" style="color: ${municipio.color};"></i></span><span class="ml-4">${municipio.nombre}</span>`;
+            li.class = 'bg-gray-200 p-4 rounded flex items-center space-x-2 cursor-pointer hover:bg-gray-500';
             li.style.cursor ="pointer"
             
      
@@ -610,9 +705,10 @@
         // Desplaza la vista suavemente a la sección de detalles
         document.getElementById('detalle').scrollIntoView({ behavior: 'smooth' });
       }
-
   </script>
-    
+  
+  <!-- Importar JS -->
+  <script src="../static/js/slider.js"></script>
 
   
 </body>
