@@ -144,17 +144,44 @@
   </section>
 
   <!-- Sección de Colabora -->
-  <section class="w-full">
-    <div class="max-w-full pt-16 px-8 md:px-24">
-        <!-- {/* Encabezado con línea separadora */} -->
+  <section class="w-full bg-gray-100 py-10">
+    <div class="max-w-full px-8 md:px-24">
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
             <div class="flex items-center mb-4 md:mb-0">
                 <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
-                <h2 class="font-medium text-lg tracking-wider">COLABORA:</h2>
+                <h2 class="font-medium text-lg tracking-wider">COLABORAN:</h2>
             </div>
         </div>
 
         <div class="h-px w-full bg-gray-200 mb-8"></div>
+        
+        <!-- Logos de ayuntamientos -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="flex justify-center items-center">
+                <img src="../static/img/colabora/1.png" alt="Granadilla de Abona" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="../static/img/colabora/2.png" alt="Villa de Mazo" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="../static/img/colabora/3.png" alt="Puerto del Rosario" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="../static/img/colabora/4.png" alt="Arrecife" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+            <div class="flex justify-center items-center">
+              <img src="../static/img/colabora/5.png" alt="Santiago del Teide" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="../static/img/colabora/6.webp" alt="Betancuria" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="../static/img/colabora/7.png" alt="El Rosario" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="../static/img/colabora/8.png" alt="Los Llanos de Aridane" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+        </div>
     </div>
     
   </section>
@@ -660,7 +687,7 @@
         else {
           // Para las islas que no tienen SVG inline, se puede seguir usando la imagen normal
           const imagen = document.getElementById('imagen-isla');
-          imagen.innerHTML = `<img class="w-full w-[512px] w-h-[512px] object-contain mx-auto" src="${imagenesIslas[isla] || ''}" alt="Imagen de ${isla}">`;
+          imagen.innerHTML = `<img class="w-full max-w-[512px] max-h-[512px] object-contain mx-auto" src="${imagenesIslas[isla] || ''}" alt="Imagen de ${isla}">`;
         }
         
         // Muestra la sección de detalles
