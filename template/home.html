@@ -75,15 +75,77 @@
   </section>
 
   <!-- Introducción a Neurolimpiadas -->
-  <section class="py-10 bg-gray-50">
-    <div class="max-w-full mx-auto flex flex-col md:flex-row items-center gap-8">
-      <div class="md:w-1/2 bg-[#4672b5] p-6 flex items-center justify-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-4">Neurolimpiadas</h2>
+  <section class="bg-gradient-to-b from-gray-50 to-gray-100 py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Título principal centrado -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold text-[#4672b5] mb-4">
+          ¿Qué son las Neurolimpiadas?
+        </h2>
+        <div class="w-24 h-1 bg-[#4672b5] mx-auto"></div>
       </div>
-      <div class="md:w-1/2 flex justify-center">
-        <p class="text-gray-600 text-lg">Las Neurolimpiadas son un evento deportivo que promueve el envejecimiento activo y la inclusión social de las personas mayores. A través de diversas competiciones, buscamos fomentar la actividad física, la socialización y el bienestar emocional de nuestros participantes.</p>
+  
+      <!-- Contenedor principal con grid -->
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <!-- Columna de texto -->
+        <div class="space-y-6">
+          <p class="text-gray-700 text-lg leading-relaxed">
+            Las Neurolimpiadas son un innovador programa deportivo diseñado específicamente para personas mayores que busca:
+          </p>
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <svg class="w-6 h-6 text-[#4672b5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p class="text-gray-600">Fomentar el envejecimiento activo y saludable</p>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <svg class="w-6 h-6 text-[#4672b5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p class="text-gray-600">Promover la socialización y el bienestar emocional</p>
+            </div>
+            <div class="flex items-start space-x-4">
+              <div class="flex-shrink-0">
+                <svg class="w-6 h-6 text-[#4672b5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <p class="text-gray-600">Desarrollar habilidades psicomotoras y neurológicas</p>
+            </div>
+          </div>
+          <p class="text-gray-700 text-lg leading-relaxed">
+            Su objetivo principal es mejorar la calidad de vida de los mayores, promoviendo un estilo de vida saludable y activo.
+          </p>
+          <p class="text-gray-700 text-lg leading-relaxed">
+            Las Neurolimpiadas se organizan a nivel insular, con competiciones que incluyen pruebas físicas y cognitivas. 
+          </p>
+        </div>
+  
+        <!-- Columna de imagen/ilustración -->
+        <div class="relative">
+          <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-xl">
+            <img src="/static/img/neurolimpiadas-actividades.jpg" alt="Actividades Neurolimpiadas" class="object-cover">
+          </div>
+        </div>
+      </div>
+  
+      <!-- Botón de "Saber más" -->
+      <div class="mt-12 text-center">
+        <a href="https://www.neurolimpiadas.com/" target="_blank" 
+           class="inline-flex items-center px-8 py-3 border border-transparent text-lg font-medium rounded-full text-white bg-[#4672b5] hover:bg-[#3b5f8d] transition duration-300 shadow-lg hover:shadow-xl">
+          Saber más
+          <svg class="ml-2 -mr-1 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
       </div>
     </div>
+  </section>
 
   <section id="mapa" class="py-10 bg-white">
     <div class="max-w-7xl mx-auto px-4">
@@ -151,6 +213,43 @@
           </tr>
         </tbody>
       </table>
+    </div>
+  </section>
+
+  <!-- Sección de próximo evento -->
+  <section class="w-full bg-gray-100 py-10">
+    <div class="max-w-full px-8 md:px-24">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+          <div class="flex items-center mb-4 md:mb-0">
+              <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
+              <h2 class="font-medium text-lg tracking-wider">PRÓXIMO EVENTO</h2>
+          </div>
+      </div>
+
+      <div class="h-px w-full bg-gray-200 mb-8"></div>
+
+      <!-- Cartel del evento e información básica como ubicación, fecha y hora -->
+      <div class="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+          <img src="/static/img/eventos/la_palma/cartel.jpg" alt="Próximo evento" class="w-full md:w-1/2 h-full object-cover">
+          <div class="p-6 flex flex-col justify-between">
+              <h3 class="text-2xl font-semibold text-gray-800 mb-2">Llegan las NeurOlimpiadas Canarias 2024</h3>
+              <p align="justify" class="text-gray-600 mb-4">La Palma será la sede de esta gran cita que fomenta el envejecimiento activo a través de actividades físicas y mentales para mayores de las islas.</p>
+              <p align="justify" class="text-gray-600 mb-4">Del 29 de noviembre al 1 de diciembre, el Pabellón Multiusos Roberto Rodríguez Estrello en Santa Cruz de La Palma acogerá competiciones, repescas y emocionantes finales, cerrando con la entrega de trofeos en una gran ceremonia de clausura.</p>
+              <!-- Sección de imagenes de Agenda -->
+              <div class="flex items-center mb-4 md:mb-0">
+                <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
+                <h2 class="font-medium text-lg tracking-wider">AGENDA</h2>
+              </div>
+              <div class="flex flex-wrap justify-center mb-4">
+                  <img src="/static/img/eventos/la_palma/29.jpg" alt="Agenda 29 de Noviembre" class="w-1/2 md:w-1/3 lg:w-1/4 p-2">
+                  <img src="/static/img/eventos/la_palma/30.jpg" alt="Agenda 30 de Noviembre" class="w-1/2 md:w-1/3 lg:w-1/4 p-2">
+                  <img src="/static/img/eventos/la_palma/1.jpg" alt="Agenda 1 de Diciembre" class="w-1/2 md:w-1/3 lg:w-1/4 p-2">
+              </div>
+              <!-- Ubicación -->
+              <p class="text-gray-600 mb-4"><b>Ubicación:</b> Pabellón Multiusos Roberto Rodríguez Estrello, Santa Cruz de La Palma</p>
+              <p class="text-gray-600 mb-4"><b>Fecha:</b> 29 de noviembre al 1 de diciembre de 2024</p>
+              <a href="#" class="mt-4 text-[#4672b5] hover:text-[#3b5f8d] font-medium">Leer más</a>
+          </div>
     </div>
   </section>
 
@@ -775,8 +874,6 @@
   </script>
   
   <!-- Importar JS -->
-  <script src="../static/js/slider.js"></script>
-
-  
+  <script src="../static/js/slider.js"></script>  
 </body>
 </html>
