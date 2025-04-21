@@ -1,61 +1,165 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Detalle de Noticia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        arenna: {
+                            blue: '#4672b5',
+                            hover: '#3a5d94'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
+<body class="bg-gray-50">
+    <!-- Navegación -->
     <nav class="bg-white shadow w-full">
-        <div class="flex items-center justify-between h-16">
-            
+        <div class="flex items-center justify-between h-16 px-4">
             <a href="home.html" class="flex-shrink-0">
-            <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
+                <img class="h-16 w-32" src="../static/img/logo.png" alt="Logo de la Empresa">
             </a>
             
-            <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
+            <!-- Menú de escritorio -->
             <div class="hidden lg:flex space-x-4">
-            <a href="/templeate/home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
-            <a href="#competiciones" class="px-3 py-2 text-gray-600 hover:text-gray-800">Competiciones</a>
-            <a href="/templeate/noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
-            <a href="/templeate/contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
-            </div>
-            
-            <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
-            <div class="lg:hidden relative px-4">
-            <button id="menu-toggle" 
-                    class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                <!-- Icono de hamburguesa -->
-                <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                        d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-            </button>
-            
-            <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
-            <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-                <a href="#inicio" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
-                <a href="#competiciones" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Competiciones</a>
-                <a href="#noticias" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
-                <a href="#Contactanos" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
-            </div>
+                <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
+                <a href="#competiciones" class="px-3 py-2 text-gray-600 hover:text-gray-800">Competiciones</a>
+                <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
+                <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
             </div>
         </div>
     </nav>
-    <div class="container mx-auto p-4">
-        <h1 class="text-3xl font-bold mb-6">Últimas Noticias</h1>
 
-        <!-- NOTICIA PRINCIPAL -->
-        <section class="bg-white rounded-lg shadow-md p-6 mb-8">
-            <img src="/static/img/noticias/21601.png" 
-                alt="Imagen de la noticia principal" 
-                class="w-full h-auto rounded-lg mb-4 ">
-            <h2 class="text-2xl font-semibold text-gray-800 mb-2">Título de la Noticia Principal</h2>
-            <p class="text-gray-600 mb-4">
-            Descripción breve de la noticia principal. Esta sección se utiliza para destacar la información más importante.
+    <!-- Contenido principal -->
+    <main class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Categoría -->
+        <div class="mb-6">
+            <span class="bg-arenna-blue text-white text-sm font-medium px-3 py-1 rounded-full">
+                Deportes
+            </span>
+        </div>
+
+        <!-- Título -->
+        <h1 class="text-4xl font-bold text-gray-900 mb-4">
+            Ocho equipos representarán a Fuerteventura en las Neurolimpiadas Canarias
+        </h1>
+
+        <!-- Descripción breve -->
+        <p class="text-xl text-gray-600 mb-6 font-light leading-relaxed">
+            Éxito del proyecto Neuromajo 2024 del Cabildo de Fuerteventura con diversas pruebas para el bienestar y salud de las personas mayores.
+        </p>
+
+        <!-- Fecha y meta información -->
+        <div class="flex items-center text-gray-500 text-sm mb-8">
+            <span class="mr-4">
+                <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                18 Noviembre, 2024
+            </span>
+            
+        </div>
+
+        <!-- Imagen principal -->
+        <div class="mb-8">
+            <img src="../static/img/noticias/3.jpg" 
+                 alt="Neurolimpiadas Canarias" 
+                 class="w-full h-[500px] object-cover rounded-lg shadow-lg">
+        </div>
+
+        <!-- Contenido de la noticia -->
+        <article class="prose prose-lg max-w-none">
+            <p class="mb-4">
+                Las Neurolimpiadas Canarias 2024 contarán con una destacada representación majorera tras el éxito del proyecto Neuromajo, impulsado por el Cabildo de Fuerteventura a través de la Consejería de Deportes que dirige Claudio Gutiérrez.
             </p>
-            <a href="#" class="text-blue-600 font-semibold hover:underline">Leer más</a>
-        </section>  
+            <p class="mb-4">
+                Un total de ocho equipos de la isla participarán en esta competición regional que busca promover el envejecimiento activo y saludable entre las personas mayores del archipiélago.
+            </p>
+            <h2 class="text-2xl font-bold text-gray-800 my-6">Desarrollo de la competición</h2>
+            <p class="mb-4">
+                Las pruebas se desarrollaron en diferentes modalidades que combinan ejercicio físico y estimulación cognitiva, adaptadas específicamente para personas mayores. Entre las actividades destacaron:
+            </p>
+            <ul class="list-disc pl-6 mb-4">
+                <li>Ejercicios de memoria y coordinación</li>
+                <li>Pruebas de habilidad y precisión</li>
+                <li>Actividades de trabajo en equipo</li>
+                <li>Juegos tradicionales adaptados</li>
+            </ul>
+            <p class="mb-4">
+                La participación en estas actividades no solo contribuye a mantener una buena forma física, sino que también fomenta la socialización y el bienestar emocional de los participantes.
+            </p>
+        </article>
+    </main>
+
+    <!-- Botón de volver a noticias -->
+    <div class="fixed bottom-8 right-8">
+        <a href="noticias.html" 
+           class="bg-arenna-blue hover:bg-arenna-hover text-white px-6 py-3 rounded-full shadow-lg transition-colors duration-300 flex items-center">
+            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            </svg>
+            Volver a Noticias
+        </a>
     </div>
 </body>
+<script>
+    async function cargarNoticia() {
+        try {
+            // Obtener el ID de la noticia de la URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const noticiaId = urlParams.get('id');
+    
+            // Cargar el JSON de noticias
+            const response = await fetch('../data/noticias.json');
+            const data = await response.json();
+    
+            // Encontrar la noticia específica
+            const noticia = data.noticias.find(n => n.id === noticiaId);
+            if (!noticia) {
+                window.location.href = 'noticias.html';
+                return;
+            }
+    
+            // Actualizar el contenido de la página
+            document.querySelector('.bg-arenna-blue').textContent = noticia.categoria;
+            document.querySelector('h1').textContent = noticia.titulo;
+            document.querySelector('.text-xl.text-gray-600').textContent = noticia.descripcion;
+            document.querySelector('.mr-4').textContent = noticia.fecha;
+            document.querySelector('img').src = noticia.imagen;
+    
+            // Renderizar el contenido dinámicamente
+            const article = document.querySelector('article');
+            article.innerHTML = '';
+            
+            noticia.contenido.forEach(item => {
+                switch(item.tipo) {
+                    case 'parrafo':
+                        article.innerHTML += `<p class="mb-4">${item.texto}</p>`;
+                        break;
+                    case 'titulo':
+                        article.innerHTML += `<h2 class="text-2xl font-bold text-gray-800 my-6">${item.texto}</h2>`;
+                        break;
+                    case 'lista':
+                        const lista = `<ul class="list-disc pl-6 mb-4">
+                            ${item.items.map(i => `<li>${i}</li>`).join('')}
+                        </ul>`;
+                        article.innerHTML += lista;
+                        break;
+                }
+            });
+        } catch (error) {
+            console.error('Error cargando la noticia:', error);
+        }
+    }
+    
+    document.addEventListener('DOMContentLoaded', cargarNoticia);
+    </script>
 </html>
