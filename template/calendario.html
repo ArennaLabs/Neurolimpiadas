@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calendario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        arenna: {
+                            green: '#2BB673',
+                            hover: '#229A61'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-gray-50">
+    <nav class="bg-white shadow w-full">
+        <div class="flex items-center justify-between h-16">
+          
+          <a href="home.html" class="flex-shrink-0">
+            <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
+          </a>
+          
+          <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
+          <div class="hidden lg:flex space-x-4">
+            <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
+            <a href="neurolimpiadas.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Sobre Neurolimpiadas</a>
+            <a href="equipos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clubes</a>
+            <a href="calendario.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Calendario</a>
+            <a href="clasificaciones.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clasificaciones</a>
+            <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
+            <a href="galeria.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Galería</a>
+            <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
+          </div>
+          
+          <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
+          <div class="lg:hidden relative px-4">
+            <button id="menu-toggle" 
+                    class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <!-- Icono de hamburguesa -->
+              <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            
+            <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
+            <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+              <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
+              <a href="neurolimpiadas.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sobre Neurolimpiadas</a>
+              <a href="equipos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clubes</a>
+              <a href="calendario.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Calendario</a>
+              <a href="clasificaciones.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clasificaciones</a>
+              <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
+              <a href="galeria.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Galería</a>
+              <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-2xl p-6">
+        <!-- Cabecera del calendario -->
+        <div class="flex items-center justify-between mb-6">
+            <button id="prevMonth" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+            </button>
+            <h2 id="monthYear" class="text-xl font-bold "></h2>
+            <button id="nextMonth" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+
+        <!-- Días de la semana -->
+        <div class="grid grid-cols-7 gap-2 mb-2">
+            <div class="text-center font-semibold text-sm text-gray-600">Dom</div>
+            <div class="text-center font-semibold text-sm text-gray-600">Lun</div>
+            <div class="text-center font-semibold text-sm text-gray-600">Mar</div>
+            <div class="text-center font-semibold text-sm text-gray-600">Mié</div>
+            <div class="text-center font-semibold text-sm text-gray-600">Jue</div>
+            <div class="text-center font-semibold text-sm text-gray-600">Vie</div>
+            <div class="text-center font-semibold text-sm text-gray-600">Sáb</div>
+        </div>
+
+        <!-- Días del mes -->
+        <div id="calendarDays" class="grid grid-cols-7 gap-2">
+            <!-- Los días se insertarán aquí dinámicamente -->
+        </div>
+    </div>
+
+    <div id="eventModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div class="bg-white rounded-xl p-6 w-full max-w-md">
+            <h3 class="text-lg font-bold  mb-4">Crear Evento</h3>
+            <form id="eventForm" class="space-y-4">
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Título del evento</label>
+                    <input type="text" id="eventTitle" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-arenna-green focus:border-transparent">
+                </div>
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Fechas seleccionadas</label>
+                    <p id="selectedDates" class="mt-1 text-sm text-gray-600"></p>
+                </div>
+                <div class="flex justify-end space-x-3">
+                    <button type="button" id="cancelEvent" class="px-4 py-2 border rounded-lg hover:bg-gray-100">
+                        Cancelar
+                    </button>
+                    <button type="submit" class="px-4 py-2 bg-arenna-green text-white rounded-lg hover:bg-arenna-hover">
+                        Guardar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        class Calendar {
+            constructor() {
+                this.date = new Date();
+                this.currentMonth = this.date.getMonth();
+                this.currentYear = this.date.getFullYear();
+                
+                this.monthYear = document.getElementById('monthYear');
+                this.calendarDays = document.getElementById('calendarDays');
+                
+                this.setupEventListeners();
+                this.render();
+                this.selectedStartDate = null;
+                this.selectedEndDate = null;
+                this.events = {};
+                this.setupModalEventListeners();
+            }
+
+            setupEventListeners() {
+                document.getElementById('prevMonth').addEventListener('click', () => {
+                    this.currentMonth--;
+                    if (this.currentMonth < 0) {
+                        this.currentMonth = 11;
+                        this.currentYear--;
+                    }
+                    this.render();
+                });
+
+                document.getElementById('nextMonth').addEventListener('click', () => {
+                    this.currentMonth++;
+                    if (this.currentMonth > 11) {
+                        this.currentMonth = 0;
+                        this.currentYear++;
+                    }
+                    this.render();
+                });
+            }
+
+            render() {
+                const firstDay = new Date(this.currentYear, this.currentMonth, 1);
+                const lastDay = new Date(this.currentYear, this.currentMonth + 1, 0);
+                const startingDay = firstDay.getDay();
+                const monthLength = lastDay.getDate();
+
+                // Actualizar el título del mes y año
+                const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
+                                  'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+                this.monthYear.textContent = `${monthNames[this.currentMonth]} ${this.currentYear}`;
+
+                // Limpiar el calendario
+                this.calendarDays.innerHTML = '';
+
+                // Añadir espacios en blanco para el inicio del mes
+                for (let i = 0; i < startingDay; i++) {
+                    this.addDay('');
+                }
+
+                // Añadir los días del mes
+                for (let i = 1; i <= monthLength; i++) {
+                    this.addDay(i);
+                }
+            }
+
+            addDay(day) {
+                const dayElement = document.createElement('div');
+                dayElement.className = `
+                    aspect-square flex items-center justify-center rounded-lg
+                    ${day ? 'hover:bg-gray-100 cursor-pointer' : ''}
+                    ${day ? 'text-gray-700' : ''}
+                `;
+                dayElement.textContent = day;
+
+                // Marcar el día actual
+                const isToday = this.isToday(day);
+                if (isToday) {
+                    dayElement.className += ' bg-blue-600 text-white hover:bg-arenna-hover';
+                }
+
+                this.calendarDays.appendChild(dayElement);
+            }
+
+            isToday(day) {
+                const today = new Date();
+                return day === today.getDate() && 
+                       this.currentMonth === today.getMonth() && 
+                       this.currentYear === today.getFullYear();
+            }
+            // setupModalEventListeners() {
+            //     const modal = document.getElementById('eventModal');
+            //     const cancelButton = document.getElementById('cancelEvent');
+            //     const eventForm = document.getElementById('eventForm');
+
+            //     cancelButton.addEventListener('click', () => {
+            //         modal.classList.add('hidden');
+            //         this.clearSelection();
+            //     });
+
+            //     eventForm.addEventListener('submit', (e) => {
+            //         e.preventDefault();
+            //         this.saveEvent();
+            //     });
+            // }
+
+            // addDay(day) {
+            //     const dayElement = document.createElement('div');
+            //     const date = day ? new Date(this.currentYear, this.currentMonth, day) : null;
+            //     const dateString = date ? date.toISOString().split('T')[0] : '';
+                
+            //     let classes = [
+            //         'aspect-square',
+            //         'flex',
+            //         'items-center',
+            //         'justify-center',
+            //         'rounded-lg',
+            //         day ? 'hover:bg-gray-100 cursor-pointer' : '',
+            //         day ? 'text-gray-700' : ''
+            //     ];
+
+            //     // Marcar días seleccionados
+            //     if (date && this.isInSelectedRange(date)) {
+            //         classes.push('bg-arenna-green bg-opacity-20');
+            //     }
+
+            //     // Marcar días con eventos
+            //     if (date && this.events[dateString]) {
+            //         classes.push('border-2 border-arenna-green');
+            //     }
+
+            //     // Marcar el día actual
+            //     if (this.isToday(day)) {
+            //         classes.push('bg-arenna-green text-white hover:bg-arenna-hover');
+            //     }
+
+            //     dayElement.className = classes.filter(Boolean).join(' ');
+            //     dayElement.textContent = day;
+
+            //     if (day) {
+            //         dayElement.addEventListener('click', () => this.handleDateClick(date));
+            //     }
+
+            //     this.calendarDays.appendChild(dayElement);
+            // }
+
+            // handleDateClick(date) {
+            //     if (!this.selectedStartDate) {
+            //         this.selectedStartDate = date;
+            //     } else if (!this.selectedEndDate) {
+            //         if (date < this.selectedStartDate) {
+            //             this.selectedEndDate = this.selectedStartDate;
+            //             this.selectedStartDate = date;
+            //         } else {
+            //             this.selectedEndDate = date;
+            //         }
+            //         this.showEventModal();
+            //     } else {
+            //         this.clearSelection();
+            //         this.selectedStartDate = date;
+            //     }
+            //     this.render();
+            // }
+
+            // isInSelectedRange(date) {
+            //     if (!this.selectedStartDate) return false;
+            //     if (!this.selectedEndDate) return date.toDateString() === this.selectedStartDate.toDateString();
+            //     return date >= this.selectedStartDate && date <= this.selectedEndDate;
+            // }
+
+            // showEventModal() {
+            //     const modal = document.getElementById('eventModal');
+            //     const selectedDates = document.getElementById('selectedDates');
+            //     selectedDates.textContent = `${this.selectedStartDate.toLocaleDateString()} - ${this.selectedEndDate.toLocaleDateString()}`;
+            //     modal.classList.remove('hidden');
+            // }
+
+            // saveEvent() {
+            //     const title = document.getElementById('eventTitle').value;
+            //     if (!title) return;
+
+            //     const currentDate = new Date(this.selectedStartDate);
+            //     while (currentDate <= this.selectedEndDate) {
+            //         const dateString = currentDate.toISOString().split('T')[0];
+            //         this.events[dateString] = title;
+            //         currentDate.setDate(currentDate.getDate() + 1);
+            //     }
+
+            //     document.getElementById('eventModal').classList.add('hidden');
+            //     this.clearSelection();
+            //     this.render();
+            // }
+
+            // clearSelection() {
+            //     this.selectedStartDate = null;
+            //     this.selectedEndDate = null;
+            //     document.getElementById('eventTitle').value = '';
+            // }
+        }
+
+        // Inicializar el calendario
+        const calendar = new Calendar();
+    </script>
+</body>
+</html>

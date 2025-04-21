@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Neurolimpiadas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <nav class="bg-white shadow w-full">
+        <div class="flex items-center justify-between h-16">
+          
+          <a href="home.html" class="flex-shrink-0">
+            <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
+          </a>
+          
+          <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
+          <div class="hidden lg:flex space-x-4">
+            <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
+            <a href="neurolimpiadas.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Sobre Neurolimpiadas</a>
+            <a href="equipos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clubes</a>
+            <a href="calendario.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Calendario</a>
+            <a href="clasificaciones.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clasificaciones</a>
+            <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
+            <a href="galeria.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Galería</a>
+            <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
+          </div>
+          
+          <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
+          <div class="lg:hidden relative px-4">
+            <button id="menu-toggle" 
+                    class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <!-- Icono de hamburguesa -->
+              <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                      d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+            
+            <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
+            <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+              <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
+              <a href="neurolimpiadas.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sobre Neurolimpiadas</a>
+              <a href="equipos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clubes</a>
+              <a href="calendario.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Calendario</a>
+              <a href="clasificaciones.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clasificaciones</a>
+              <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
+              <a href="galeria.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Galería</a>
+              <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+</body>
+</html>
