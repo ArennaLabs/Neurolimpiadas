@@ -1,0 +1,25 @@
+Por hacer:
+Neurolimpiadas -> Resumen sobre la competición, valores, quiénes pueden participar, normativas
+
+Clubes -> Listado, Información de cada equipo
+
+Calendario -> Jornadas pasadas y próximas, fechas y horarios (Eventos -> Información destacada: Ubicación, Fecha, Hora)
+
+Resultados/Clasificaciones -> Tabla de posiciones, enfrentamientos y resultado
+
+Galería Multimedia
+
+Política de Privaciadad
+Aviso Legal
+
+
+Mejorar:
+
+Inicio -> Introducción a Neurolimpiadas, mapa por municipios, próximo evento, noticias recientes, colaboradores.
+
+Contacto -> Formulario, Datos de contacto, Preguntas Frecuentes
+
+Noticias/Archivo/Hemeroteca -> Artículos de prensa, crónicas, anuncios (Filtrar por categoría, fecha...)
+
+
+Hechas:
