@@ -20,7 +20,7 @@
     </script>
 </head>
 <body class="min-h-screen bg-gray-50">
-    <nav class="bg-white shadow w-full">
+    <nav class="bg-white shadow w-full mb-6">
         <div class="flex items-center justify-between h-16">
           
           <a href="home.html" class="flex-shrink-0">
@@ -64,70 +64,69 @@
           </div>
         </div>
       </nav>
-    <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-2xl p-6">
-        <!-- Cabecera del calendario -->
-        <div class="flex items-center justify-between mb-6">
-            <button id="prevMonth" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+    
+    <!-- Reemplazar el div contenedor actual del calendario por este -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-4">
+        <!-- Contenedor del calendario (ocupará 2 columnas) -->
+        <div class="lg:col-span-2 bg-white rounded-xl shadow-2xl p-6">
+            <!-- Cabecera del calendario -->
+            <div class="flex items-center justify-between mb-6">
+                <button id="prevMonth" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                    </svg>
+                </button>
+                <h2 id="monthYear" class="text-xl font-bold "></h2>
+                <button id="nextMonth" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Días de la semana -->
+            <div class="grid grid-cols-7 gap-2 mb-2">
+                <div class="text-center font-semibold text-sm text-gray-600">Lun</div>
+                <div class="text-center font-semibold text-sm text-gray-600">Mar</div>
+                <div class="text-center font-semibold text-sm text-gray-600">Mié</div>
+                <div class="text-center font-semibold text-sm text-gray-600">Jue</div>
+                <div class="text-center font-semibold text-sm text-gray-600">Vie</div>
+                <div class="text-center font-semibold text-sm text-gray-600">Sáb</div>
+                <div class="text-center font-semibold text-sm text-gray-600">Dom</div>
+            </div>
+
+            <!-- Días del mes -->
+            <div id="calendarDays" class="grid grid-cols-7 gap-2">
+                <!-- Los días se insertarán aquí dinámicamente -->
+            </div>
+        </div>
+
+        <!-- Nueva sección de Próximos Eventos -->
+        <div class="bg-white rounded-xl shadow-2xl p-6">
+            <h2 class="text-xl font-bold text-gray-800 mb-6 flex items-center">
+                <svg class="w-6 h-6 mr-2 text-[#4672b5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-            </button>
-            <h2 id="monthYear" class="text-xl font-bold "></h2>
-            <button id="nextMonth" class="p-2 hover:bg-gray-100 rounded-lg transition-colors">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-            </button>
-        </div>
-
-        <!-- Días de la semana -->
-        <div class="grid grid-cols-7 gap-2 mb-2">
-            <div class="text-center font-semibold text-sm text-gray-600">Dom</div>
-            <div class="text-center font-semibold text-sm text-gray-600">Lun</div>
-            <div class="text-center font-semibold text-sm text-gray-600">Mar</div>
-            <div class="text-center font-semibold text-sm text-gray-600">Mié</div>
-            <div class="text-center font-semibold text-sm text-gray-600">Jue</div>
-            <div class="text-center font-semibold text-sm text-gray-600">Vie</div>
-            <div class="text-center font-semibold text-sm text-gray-600">Sáb</div>
-        </div>
-
-        <!-- Días del mes -->
-        <div id="calendarDays" class="grid grid-cols-7 gap-2">
-            <!-- Los días se insertarán aquí dinámicamente -->
-        </div>
-    </div>
-
-    <div id="eventModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-        <div class="bg-white rounded-xl p-6 w-full max-w-md">
-            <h3 class="text-lg font-bold  mb-4">Crear Evento</h3>
-            <form id="eventForm" class="space-y-4">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Título del evento</label>
-                    <input type="text" id="eventTitle" class="mt-1 w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-arenna-green focus:border-transparent">
-                </div>
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Fechas seleccionadas</label>
-                    <p id="selectedDates" class="mt-1 text-sm text-gray-600"></p>
-                </div>
-                <div class="flex justify-end space-x-3">
-                    <button type="button" id="cancelEvent" class="px-4 py-2 border rounded-lg hover:bg-gray-100">
-                        Cancelar
-                    </button>
-                    <button type="submit" class="px-4 py-2 bg-arenna-green text-white rounded-lg hover:bg-arenna-hover">
-                        Guardar
-                    </button>
-                </div>
-            </form>
+                Próximos Eventos
+            </h2>
+            <div id="upcoming-events" class="space-y-4">
+                <!-- Los eventos se insertarán aquí dinámicamente -->
+            </div>
         </div>
     </div>
 
     <script>
         class Calendar {
             constructor() {
+                // Inicializar la fecha actual
                 this.date = new Date();
+                // Obtener el mes actual
                 this.currentMonth = this.date.getMonth();
+                // Obtener el año actual
                 this.currentYear = this.date.getFullYear();
                 
+                // Obtener los elementos del DOM
                 this.monthYear = document.getElementById('monthYear');
                 this.calendarDays = document.getElementById('calendarDays');
                 
@@ -135,10 +134,17 @@
                 this.render();
                 this.selectedStartDate = null;
                 this.selectedEndDate = null;
-                this.events = {};
+                this.events = {
+                    // Ejemplo de eventos
+                    '2025-04-21': { title: 'Competición Regional', type: 'competition' },
+                    '2025-04-25': { title: 'Entrenamiento Especial', type: 'training' },
+                    '2025-05-01': { title: 'Final Provincial', type: 'competition' }
+                };
+                this.renderUpcomingEvents();
                 this.setupModalEventListeners();
             }
 
+            // Método para configurar los event listeners de los botones de navegación
             setupEventListeners() {
                 document.getElementById('prevMonth').addEventListener('click', () => {
                     this.currentMonth--;
@@ -162,8 +168,13 @@
             render() {
                 const firstDay = new Date(this.currentYear, this.currentMonth, 1);
                 const lastDay = new Date(this.currentYear, this.currentMonth + 1, 0);
-                const startingDay = firstDay.getDay();
+                
+                // Ajustar el día de inicio (0 = Domingo, 1 = Lunes, ..., 6 = Sábado)
+                let startingDay = firstDay.getDay() - 1;
+                if (startingDay === -1) startingDay = 6; // Si es domingo, ajustar a 6
+                
                 const monthLength = lastDay.getDate();
+                const prevMonthLastDay = new Date(this.currentYear, this.currentMonth, 0).getDate();
 
                 // Actualizar el título del mes y año
                 const monthNames = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 
@@ -173,149 +184,108 @@
                 // Limpiar el calendario
                 this.calendarDays.innerHTML = '';
 
-                // Añadir espacios en blanco para el inicio del mes
-                for (let i = 0; i < startingDay; i++) {
-                    this.addDay('');
+                // Calcular el número total de días a mostrar
+                const totalDays = startingDay + monthLength;
+                const rows = Math.ceil(totalDays / 7);
+                const daysNeeded = rows * 7;
+
+                // Añadir días del mes anterior
+                for (let i = startingDay - 1; i >= 0; i--) {
+                    const day = prevMonthLastDay - i;
+                    this.addDay(day, true, false);
                 }
 
-                // Añadir los días del mes
+                // Añadir los días del mes actual
                 for (let i = 1; i <= monthLength; i++) {
-                    this.addDay(i);
+                    this.addDay(i, false, false);
+                }
+
+                // Añadir solo los días necesarios del mes siguiente
+                const remainingDays = daysNeeded - (startingDay + monthLength);
+                for (let i = 1; i <= remainingDays; i++) {
+                    this.addDay(i, true, true);
                 }
             }
 
-            addDay(day) {
+            addDay(day, inactive = false, isNextMonth = false) {
                 const dayElement = document.createElement('div');
                 dayElement.className = `
                     aspect-square flex items-center justify-center rounded-lg
-                    ${day ? 'hover:bg-gray-100 cursor-pointer' : ''}
-                    ${day ? 'text-gray-700' : ''}
+                    ${inactive ? 'text-gray-400' : 'text-gray-700'}
+                    ${inactive ? '' : 'hover:bg-gray-100 cursor-pointer'}
                 `;
                 dayElement.textContent = day;
 
-                // Marcar el día actual
-                const isToday = this.isToday(day);
-                if (isToday) {
-                    dayElement.className += ' bg-blue-600 text-white hover:bg-arenna-hover';
+                // Marcar el día actual (solo para el mes actual)
+                if (!inactive && this.isToday(day)) {
+                    dayElement.className += ' bg-[#4672b5] text-white hover:bg-[#3a5d94]';
                 }
 
                 this.calendarDays.appendChild(dayElement);
             }
 
+            // Método para verificar si el día es hoy
             isToday(day) {
                 const today = new Date();
                 return day === today.getDate() && 
                        this.currentMonth === today.getMonth() && 
                        this.currentYear === today.getFullYear();
             }
-            // setupModalEventListeners() {
-            //     const modal = document.getElementById('eventModal');
-            //     const cancelButton = document.getElementById('cancelEvent');
-            //     const eventForm = document.getElementById('eventForm');
 
-            //     cancelButton.addEventListener('click', () => {
-            //         modal.classList.add('hidden');
-            //         this.clearSelection();
-            //     });
+            // Método para procesar los eventos próximos
+            renderUpcomingEvents() {
+                const upcomingEventsContainer = document.getElementById('upcoming-events');
+                upcomingEventsContainer.innerHTML = '';
 
-            //     eventForm.addEventListener('submit', (e) => {
-            //         e.preventDefault();
-            //         this.saveEvent();
-            //     });
-            // }
+                const today = new Date();
+                today.setHours(0, 0, 0, 0);
 
-            // addDay(day) {
-            //     const dayElement = document.createElement('div');
-            //     const date = day ? new Date(this.currentYear, this.currentMonth, day) : null;
-            //     const dateString = date ? date.toISOString().split('T')[0] : '';
-                
-            //     let classes = [
-            //         'aspect-square',
-            //         'flex',
-            //         'items-center',
-            //         'justify-center',
-            //         'rounded-lg',
-            //         day ? 'hover:bg-gray-100 cursor-pointer' : '',
-            //         day ? 'text-gray-700' : ''
-            //     ];
+                // Convertir eventos a array y ordenar por fecha
+                const eventsList = Object.entries(this.events)
+                    .map(([date, event]) => ({ date: new Date(date), ...event }))
+                    .filter(event => event.date >= today)
+                    .sort((a, b) => a.date - b.date);
 
-            //     // Marcar días seleccionados
-            //     if (date && this.isInSelectedRange(date)) {
-            //         classes.push('bg-arenna-green bg-opacity-20');
-            //     }
+                if (eventsList.length === 0) {
+                    upcomingEventsContainer.innerHTML = `
+                        <div class="text-center text-gray-500 py-4">
+                            No hay eventos próximos programados
+                        </div>
+                    `;
+                    return;
+                }
 
-            //     // Marcar días con eventos
-            //     if (date && this.events[dateString]) {
-            //         classes.push('border-2 border-arenna-green');
-            //     }
+                eventsList.forEach(event => {
+                    const eventElement = document.createElement('div');
+                    eventElement.className = 'bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors';
+                    
+                    const dateFormatted = event.date.toLocaleDateString('es-ES', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
 
-            //     // Marcar el día actual
-            //     if (this.isToday(day)) {
-            //         classes.push('bg-arenna-green text-white hover:bg-arenna-hover');
-            //     }
+                    eventElement.innerHTML = `
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-[#4672b5] rounded-lg flex items-center justify-center text-white">
+                                <span class="text-lg font-bold">${event.date.getDate()}</span>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="font-semibold text-gray-800">${event.title}</h3>
+                                <p class="text-sm text-gray-600">${dateFormatted}</p>
+                            </div>
+                        </div>
+                    `;
 
-            //     dayElement.className = classes.filter(Boolean).join(' ');
-            //     dayElement.textContent = day;
+                    upcomingEventsContainer.appendChild(eventElement);
+                });
+            }
 
-            //     if (day) {
-            //         dayElement.addEventListener('click', () => this.handleDateClick(date));
-            //     }
-
-            //     this.calendarDays.appendChild(dayElement);
-            // }
-
-            // handleDateClick(date) {
-            //     if (!this.selectedStartDate) {
-            //         this.selectedStartDate = date;
-            //     } else if (!this.selectedEndDate) {
-            //         if (date < this.selectedStartDate) {
-            //             this.selectedEndDate = this.selectedStartDate;
-            //             this.selectedStartDate = date;
-            //         } else {
-            //             this.selectedEndDate = date;
-            //         }
-            //         this.showEventModal();
-            //     } else {
-            //         this.clearSelection();
-            //         this.selectedStartDate = date;
-            //     }
-            //     this.render();
-            // }
-
-            // isInSelectedRange(date) {
-            //     if (!this.selectedStartDate) return false;
-            //     if (!this.selectedEndDate) return date.toDateString() === this.selectedStartDate.toDateString();
-            //     return date >= this.selectedStartDate && date <= this.selectedEndDate;
-            // }
-
-            // showEventModal() {
-            //     const modal = document.getElementById('eventModal');
-            //     const selectedDates = document.getElementById('selectedDates');
-            //     selectedDates.textContent = `${this.selectedStartDate.toLocaleDateString()} - ${this.selectedEndDate.toLocaleDateString()}`;
-            //     modal.classList.remove('hidden');
-            // }
-
-            // saveEvent() {
-            //     const title = document.getElementById('eventTitle').value;
-            //     if (!title) return;
-
-            //     const currentDate = new Date(this.selectedStartDate);
-            //     while (currentDate <= this.selectedEndDate) {
-            //         const dateString = currentDate.toISOString().split('T')[0];
-            //         this.events[dateString] = title;
-            //         currentDate.setDate(currentDate.getDate() + 1);
-            //     }
-
-            //     document.getElementById('eventModal').classList.add('hidden');
-            //     this.clearSelection();
-            //     this.render();
-            // }
-
-            // clearSelection() {
-            //     this.selectedStartDate = null;
-            //     this.selectedEndDate = null;
-            //     document.getElementById('eventTitle').value = '';
-            // }
+            addEvent(title, date) {
+                this.events[date] = { title, type: 'custom' };
+                this.renderUpcomingEvents();
+            }
         }
 
         // Inicializar el calendario
