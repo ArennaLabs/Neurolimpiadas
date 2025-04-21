@@ -1,95 +1,171 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Formulario de contacto</title>
-  <!-- Carga de Tailwind CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Contacto - Neurolimpiadas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        arenna: {
+                            blue: '#4672b5',
+                            hover: '#3a5d94',
+                            yellow: '#e6ba38',
+                            yellowHover: '#c59f33',
+                            lightBlue: '#75addb',
+                            green: '#86b050',
+                            greenHover: '#6b8d40'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body class="bg-gray-100 font-sans">
-  <!-- Menú de navegación sin margen superior -->
-  <nav class="bg-white shadow w-full">
-    <div class="flex items-center justify-between h-16">
-      
-      <a href="home.html" class="flex-shrink-0">
-        <img class="h-16 w-32" src="../static/img/logo.png" alt="Logo de la Empresa">
-      </a>
-      
-      <!-- Menú de escritorio (visible en pantallas lg) -->
-      <div class="hidden lg:flex space-x-4">
-        <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
-        <a href="#competiciones" class="px-3 py-2 text-gray-600 hover:text-gray-800">Competiciones</a>
-        <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
-        <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
-      </div>
-      
-      <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
-      <div class="lg:hidden relative px-4">
-        <button id="menu-toggle" 
-                class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <!-- Icono de hamburguesa -->
-          <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
+<body class="bg-gray-50 font-sans">
+    <!-- ... existing navigation code ... -->
+    <nav class="bg-white shadow w-full">
+      <div class="flex items-center justify-between h-16">
         
-        <!-- Menú desplegable móvil -->
-        <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-          <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
-          <a href="#competiciones" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Competiciones</a>
-          <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
-          <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
+        <a href="home.html" class="flex-shrink-0">
+          <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
+        </a>
+        
+        <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
+        <div class="hidden lg:flex space-x-4">
+          <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
+          <a href="neurolimpiadas.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Sobre Neurolimpiadas</a>
+          <a href="equipos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clubes</a>
+          <a href="calendario.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Calendario</a>
+          <a href="clasificaciones.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clasificaciones</a>
+          <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
+          <a href="galeria.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Galería</a>
+          <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
+        </div>
+        
+        <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
+        <div class="lg:hidden relative px-4">
+          <button id="menu-toggle" 
+                  class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            <!-- Icono de hamburguesa -->
+            <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                    d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          
+          <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
+          <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+            <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
+            <a href="neurolimpiadas.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sobre Neurolimpiadas</a>
+            <a href="equipos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clubes</a>
+            <a href="calendario.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Calendario</a>
+            <a href="clasificaciones.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clasificaciones</a>
+            <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
+            <a href="galeria.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Galería</a>
+            <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
+          </div>
         </div>
       </div>
+    </nav>
+    <!-- Contenedor principal -->
+    <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-2xl mx-auto">
+            <!-- Encabezado -->
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-gray-900 mb-4">Contacta con nosotros</h1>
+                <p class="text-lg text-gray-600">¿Tienes alguna pregunta sobre las Neurolimpiadas? Estamos aquí para ayudarte</p>
+            </div>
+
+            <!-- Formulario -->
+            <div class="bg-white rounded-lg shadow-xl p-8">
+                <form action="#" method="POST" class="space-y-6">
+                    <!-- Nombre y Apellidos en la misma línea -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">
+                                Nombre*
+                            </label>
+                            <input type="text" id="firstName" name="firstName" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-arenna-blue focus:border-transparent"
+                                placeholder="Tu nombre">
+                        </div>
+                        <div>
+                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">
+                                Apellidos*
+                            </label>
+                            <input type="text" id="lastName" name="lastName" required
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-arenna-blue focus:border-transparent"
+                                placeholder="Tus apellidos">
+                        </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
+                            Correo electrónico*
+                        </label>
+                        <input type="email" id="email" name="email" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-arenna-blue focus:border-transparent"
+                            placeholder="tu@ejemplo.com">
+                    </div>
+
+                    <!-- Asunto -->
+                    <div>
+                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">
+                            Asunto*
+                        </label>
+                        <input type="text" id="subject" name="subject" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-arenna-blue focus:border-transparent"
+                            placeholder="Asunto de tu mensaje">
+                    </div>
+
+                    <!-- Mensaje -->
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
+                            Mensaje*
+                        </label>
+                        <textarea id="message" name="message" rows="6" required
+                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-arenna-blue focus:border-transparent resize-none"
+                            placeholder="Escribe tu mensaje aquí..."></textarea>
+                    </div>
+
+                    <!-- Botón de envío -->
+                    <div class="flex justify-end">
+                        <button type="submit"
+                            class="px-6 py-3 bg-arenna-blue text-white font-medium rounded-full hover:bg-arenna-hover transition-colors duration-300 flex items-center space-x-2">
+                            <span>Enviar mensaje</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Información de contacto adicional -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg">
+                    <svg class="w-8 h-8 text-arenna-blue mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Email</h3>
+                    <p class="text-gray-600">info@neurolimpiadas.com</p>
+                </div>
+                <div class="text-center p-6 bg-white rounded-lg shadow-lg">
+                    <svg class="w-8 h-8 text-arenna-blue mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                    </svg>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Teléfono</h3>
+                    <p class="text-gray-600">+34 900 123 456</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </nav>
-  
-  <!-- Contenedor principal del formulario centrado y separado del nav -->
-  <div class="w-full max-w-md bg-white p-8 rounded shadow-md mx-auto mt-8">
-    <!-- Título del formulario -->
-    <h1 class="text-2xl font-bold mb-6">Envíenos su petición</h1>
-
-    <!-- Formulario -->
-    <form action="#" method="POST" class="space-y-4">
-      <!-- Nombre -->
-      <div>
-        <label for="firstName" class="block text-gray-700 font-semibold mb-2">Nombre*</label>
-        <input type="text" id="firstName" name="firstName" 
-               class="w-full border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring focus:ring-blue-200"
-               placeholder="Ingresa tu nombre" required>
-      </div>
-
-      <!-- Apellido -->
-      <div>
-        <label for="lastName" class="block text-gray-700 font-semibold mb-2">Apellido*</label>
-        <input type="text" id="lastName" name="lastName"
-               class="w-full border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring focus:ring-blue-200"
-               placeholder="Ingresa tu apellido" required>
-      </div>
-
-      <!-- Correo -->
-      <div>
-        <label for="businessEmail" class="block text-gray-700 font-semibold mb-2">Correo*</label>
-        <input type="email" id="businessEmail" name="businessEmail"
-               class="w-full border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring focus:ring-blue-200"
-               placeholder="nombre@ejemplo.com" required>
-      </div>
-
-      <!-- Mensaje -->
-      <div>
-        <label for="message" class="block text-gray-700 font-semibold mb-2">Mensaje</label>
-        <textarea id="message" name="message" rows="5"
-                  class="w-full border border-gray-300 rounded py-2 px-3 focus:outline-none focus:ring focus:ring-blue-200"
-                  placeholder="Tu mensaje aquí..."></textarea>
-      </div>
-
-      <!-- Botón de envío -->
-      <button type="submit"
-              class="w-full bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-700 transition-colors">
-        Enviar
-      </button>
-    </form>
-  </div>
 </body>
 </html>
