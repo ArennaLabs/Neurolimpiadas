@@ -103,8 +103,13 @@
       <div className="h-px w-full bg-gray-200 mb-8"></div>
     </div>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-12 py-8">
-          <!-- Noticia 1 -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-12 py-8" id="noticias-container">
+      <!-- Las cards de noticias se generarán aquí -->
+    </div>
+
+
+    <!-- <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-12 py-8">
+
           <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow mx-auto">
             <img src="../static/img/noticias/3.jpg" 
                   alt="Imagen de la Noticia 3" 
@@ -122,7 +127,7 @@
             </div>
           </article>
 
-        <!-- Noticia 2 -->
+
         <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow mx-auto">
           <img src="../static/img/noticias/1.jpg" 
                alt="Imagen de la Noticia 1" 
@@ -140,7 +145,7 @@
           </div>
         </article>
 
-        <!-- Noticia 3 -->
+
         <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow mx-auto">
           <img src="../static/img/noticias/2.jpg" 
                alt="Imagen de la Noticia 2" 
@@ -158,8 +163,8 @@
           </div>
         </article>
 
-        <!-- Puedes agregar más artículos aquí -->
-      </section>
+
+      </section> -->
   </div>
 
   <!-- NOTICIAS SECUNDARIAS -->
@@ -167,6 +172,56 @@
 
   <!-- Script JavaScript para el slider -->
   <script>
+    async function cargarNoticias() {
+      try {
+          const response = await fetch('/static/json/informacion_noticias.json');
+          const data = await response.json();
+          const container = document.getElementById('noticias-container');
+
+          data.noticias.forEach(noticia => {
+            container.innerHTML += createNoticiaCard(noticia);
+          });
+      } catch (error) {
+          console.error('Error cargando noticias:', error);
+      }
+    }
+
+    function createNoticiaCard(noticia) {
+      const colorClasses = {
+          'Deportes': 'bg-red-100 text-red-800',
+          'Destacados': 'bg-blue-100 text-blue-800',
+          'General': 'bg-green-100 text-green-800'
+      };
+
+      return `
+          <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow mx-auto">
+              <img src="${noticia.imagen}" 
+                  alt="Imagen de ${noticia.titulo}" 
+                  class="w-full h-64 object-cover">
+              <div class="p-4">
+                  <div class="flex justify-between items-center mb-2">
+                      <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-0.5 rounded">
+                          ${noticia.categoria}
+                      </span>
+                      <span class="text-gray-500 text-sm">${noticia.fecha}</span>
+                  </div>
+                  <h3 class="text-xl font-semibold text-gray-800 mb-2 h-14 overflow-hidden">
+                      ${noticia.titulo}
+                  </h3>
+                  <p class="text-gray-600 mb-4 h-20 overflow-hidden">
+                      ${noticia.descripcion}
+                  </p>
+                  <a href="${noticia.url_noticia}" 
+                    class="text-blue-600 font-bold hover:underline">
+                    
+                      Leer más
+                  </a>
+              </div>
+          </article>
+          `;
+      }
+
+    document.addEventListener('DOMContentLoaded', cargarNoticias);              
     // Definir un array con la información de cada noticia
     const slides = [
       {

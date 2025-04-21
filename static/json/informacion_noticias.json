@@ -1,0 +1,135 @@
+{
+    "noticias": [
+      {
+        "id": "1",
+        "categoria": "Deportes",
+        "titulo": "Ocho equipos representarán a Fuerteventura en las Neurolimpiadas Canarias",
+        "descripcion": "Éxito del proyecto Neuromajo 2024 del Cabildo de Fuerteventura con diversas pruebas para el bienestar y salud de las personas mayores",
+        "fecha": "18 Noviembre, 2024",
+        "imagen": "../static/img/noticias/3.jpg",
+        "url_noticia": "/template/noticia.html?id=1",
+        "url": "https://www.cabildofuer.es/cabildo/ocho-equipos-representaran-a-fuerteventura-en-las-neurolimpiadas-canarias/",
+        "contenido": [
+          {
+            "tipo": "parrafo",
+            "texto": "Cerca de una treintena de equipos de todos los municipios participaron este fin de semana en el proyecto Neuromajo 2024, celebrado en el Polideportivo Insular de Puerto del Rosario y organizado por la Consejería de Acción Social del Cabildo de Fuerteventura. En total, fueron casi 300 personas mayores los que participaron en este campeonato para la salud, el bienestar y la autonomía"
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "En la entrega de trofeos estuvieron presentes la presidenta Lola García, el consejero del área, Víctor Alonso, así como los alcaldes de Pájara, Alejandro Jorge, y Betancuria, Enrique Cerdeña, la alcaldesa de Tuineje, Candelaria Umpiérrez, y concejalas del área de los diferentes ayuntamientos."
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "Los equipos participaron en diferentes pruebas físicas y cognitivas: relevos, aro canario, carrera de letras y carrera de cifras. Quedaron como campeones los equipos Héroes en Silencio (Antigua), A por todas (La Oliva) Tahona (La Oliva) y Camellitos (Tuineje). Además, se proclamaron subcampeones Trompiezo (Pájara), Tahona (La Oliva) y Arriba d’ellos (La Oliva), mientras que Espíritu Neurolímpico (Betancuria) recibió un premio honorífico. Todos estos equipos representarán a Fuerteventura en las Neurolimpiadas Canarias que se desarrollará en La Palma el fin de semana del 29, 30 de noviembre y 1 de diciembre."
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "categoria": "Destacados",
+        "titulo": "Granadilla de Abona acogió las 'Neurolimpiadas' de Tenerife 2024",
+        "descripcion": "600 mayores se dieron cita en el pabellón municipal de Los Hinojeros este fin de semana para participar en las actividades deportivas",
+        "fecha": "04 Noviembre, 2024",
+        "imagen": "../static/img/noticias/1.jpg",
+        "url_noticia": "/template/noticia.html?id=2",
+        "url": "https://www.granadilladeabona.org/granadilla-de-abona-acogio-las-neurolimpiadas-de-tenerife-2024/",
+        "contenido": [
+          {
+            "tipo": "parrafo",
+            "texto": "El Ayuntamiento de Granadilla de Abona, a través de la concejalía de Mayores cuyo responsable es Nacho Mendoza Morales, conjuntamente con el Cabildo Insular de Tenerife y el Club del Mayor, organizaron este pasado fin de semana las ‘Neurolimpiadas Granadilla 2024’ en el pabellón municipal de Los Hinojeros."
+          },
+          
+          {
+            "tipo": "parrafo",
+            "texto": "Bajo el lema ‘No se trata solo de vivir más años sino en mejores condiciones’, en el evento se dieron cita alrededor de 600 mayores, que participaron activamente en un amplio programa de actividades deportivas. La iniciativa contó con representantes de los municipios de Güímar, Arafo, Santa Úrsula, Granadilla de Abona, La Victoria, Santiago del Teide y El Rosario."
+          }, {
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia2_2.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          },
+          
+          {
+            "tipo": "parrafo",
+            "texto": "La alcaldesa, Jennifer Miranda, felicitó a todos los mayores que forman parte de estas ‘Neurolimpiadas’, cuyo objetivo es promover el envejecimiento activo a través de la práctica de la actividad física de manera inclusiva y mental, además de facilitar su socialización y convivencia, y combatir la soledad no deseada entre los mayores."
+          },{
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia2_1.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "Mendoza Morales destacó estar “orgulloso” de que Granadilla de Abona haya sido sede de este encuentro y del nivel de implicación de los mayores granadilleros en este evento, que se enmarca en las políticas que a nivel municipal se están llevando a cabo para mejorar el bienestar y la calidad de vida de este sector poblacional."
+          },
+         
+          {
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia2_3.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          }
+  
+
+        ]
+      },
+      {
+        "id": "3",
+        "categoria": "General",
+        "titulo": "Más de 200 mayores de ocho municipio de La Palma competirán en Las Neurolimpiadas",
+        "descripcion": "La actividad se desarrollará los días 5, 6 y 7 de julio en el Pabellón Deportivo David Jiménez Silva de Villa de Mazo",
+        "fecha": "28 Junio, 2024",
+        "imagen": "../static/img/noticias/2.jpg",
+        "url_noticia": "/template/noticia.html?id=3",
+        "url": "https://www.cabildodelapalma.es/es/mas-de-200-mayores-de-ocho-municipio-de-la-palma-competiran-en-las-neurolimpiadas",
+        "contenido": [
+          {
+            "tipo": "parrafo",
+            "texto": "El Cabildo de La Palma pone en marcha las Neurolimpiadas, una iniciativa destinada a promover la autonomía y la participación activa de las personas mayores en nuestra comunidad. El acto de presentación contó con la presencia de los representantes de los ocho ayuntamientos de la Isla participantes, así como los portavoces de ‘El Club del Mayor’, Besay Rodríguez y Óscar Morales. "
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "Este evento, organizado en colaboración con ‘El Club del Mayor’, contará con la participación de 250 personas mayores de ocho municipios de la Isla y busca impulsar el deporte y el bienestar entre la población de la tercera edad. La actividad se desarrollará los días 5, 6 y 7 de julio en el Pabellón Deportivo David Jiménez Silva de Villa de Mazo."
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "El presidente Sergio Rodríguez, destacó la relevancia de este evento ya que “no solo representa una oportunidad para que nuestros mayores se mantengan activos y saludables, sino también una ocasión para fortalecer los lazos comunitarios y resaltar la importancia de su rol en nuestra sociedad. Este tipo de iniciativas demuestran nuestro compromiso con el bienestar y la inclusión de las personas mayores, fomentando un entorno donde puedan compartir, aprender y disfrutar plenamente de su tiempo”."
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "La consejera de Acción Social, Ángeles Fernández, subraya la importancia de estas actividades para el crecimiento personal de las personas mayores dependientes y afirma que “estas actividades son una pieza clave para fomentar un envejecimiento activo, ayudando a mejorar las relaciones personales y la calidad de vida diaria”."
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "“Además, contaremos con la participación este año de los municipios de Tazacorte, Los Llanos, El Paso, Fuencaliente, Villa de Mazo, Breña Alta, Santa Cruz de La Palma y Barlovento”, añadió."
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "El consejero de Deportes, Yurguen Hernández, resaltó la amplitud y el alcance del evento que ofrecerá una variedad de actividades diseñadas para desarrollar las habilidades psicomotoras y neurológicas de los participantes, contribuyendo a una mejor calidad de vida. Además, hizo hincapié en la mejora de esta actividad con respecto a años anteriores donde solo participaban tres municipios de La Palma, frente a los ocho actuales. Asimismo explicó que  “cada isla contará con su propia liga insular, y al final de la temporada, se celebrará el Campeona Insular Isla de La Palma y el Campeonato Autonómico por selecciones, ambos en la Isla, a través de un evento que destacará el esfuerzo y la dedicación de todos los participantes a lo largo del año”."
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "El alcalde del Ayuntamiento de Villa de Mazo, Idafe Hernández, expresó que “es un honor y un privilegio para nosotros ser la sede de las Neurolimpiadas. Este evento no solo celebra el bienestar mental y físico de nuestros mayores, sino que también destaca la importancia de mantener una vida activa y saludable en todas las etapas de la vida”."
+          },{
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia3_1.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "“Desde el Ayuntamiento de Villa de Mazo, estamos comprometidos con el apoyo y la promoción de actividades que enriquezcan la vida de las personas. Este evento es una oportunidad maravillosa para mostrar nuestro compromiso con el bienestar de nuestros mayores, ofreciéndoles una plataforma para participar, competir y, sobre todo, disfrutar”, añadió."
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "Las Neurolimpiadas ofrecerán una variedad de actividades diseñadas para desarrollar las habilidades psicomotoras y neurológicas de los participantes, contribuyendo a una mejor calidad de vida. El evento incluirá coloquios, debates y talleres que pondrán en valor la experiencia y el conocimiento de las personas mayores, haciendo hincapié en su visibilidad y participación en la sociedad. "
+          },
+          {
+            "tipo": "parrafo",
+            "texto": "Esta competición deportiva, lúdica y cognitiva se llevará a cabo en equipos formados por usuarios de diversos centros y asociaciones de mayores de los municipios donde El Club del Mayor está presente. Todos los miembros de los equipos deberán inscribirse en al menos una de las pruebas propuestas por la organización, y cada centro o asociación seleccionará a sus representantes para las distintas pruebas."
+          }
+          
+        ]
+      }
+    ]
+  }
