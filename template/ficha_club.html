@@ -66,36 +66,129 @@
             </div>
         </div>
 
-        <!-- Información del pabellón -->
-        <div class="max-w-7xl mx-auto py-8 px-4">
-            <div class="bg-white shadow-lg rounded-lg p-6">
-                <h2 class="text-2xl font-bold mb-4">Información del Pabellón</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <p class="text-gray-600">Nombre:</p>
-                        <p id="pabellon-nombre" class="font-semibold"></p>
-                    </div>
-                    <div>
-                        <p class="text-gray-600">Dirección:</p>
-                        <p id="pabellon-direccion" class="font-semibold"></p>
-                    </div>
-                    <div>
-                        <p class="text-gray-600">Capacidad:</p>
-                        <p id="pabellon-capacidad" class="font-semibold"></p>
-                    </div>
+        <!-- Barra con enlace a las diferentes secciones para permitir el acceso directo -->
+        <div class="bg-white shadow-lg border-t border-gray-200">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex justify-around items-center h-16">
+                    <a href="#perfil" class="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 transition-all duration-200">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                        </svg>
+                        Perfil
+                    </a>
+                    <a href="#plantilla" class="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 transition-all duration-200">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        Plantilla
+                    </a>
+                    <a href="#resultados-link" class="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 transition-all duration-200">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                        </svg>
+                        Resultados
+                    </a>
+                    <a href="#noticias-link" class="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 transition-all duration-200">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
+                        </svg>
+                        Noticias
+                    </a>
+                    <a href="#galeria-link" class="flex items-center px-4 py-2 text-gray-700 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 transition-all duration-200">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        Galería
+                    </a>
                 </div>
             </div>
         </div>
 
+        <!-- Información del club -->
+        <section class="profile container mx-auto px-4 py-8" id="perfil">
+          <div class="mb-6">
+            <div class="container mx-auto">
+              <h2 class="text-3xl font-bold text-gray-800">Perfil del Club</h2>
+            </div>
+          </div>
+          
+          <div class="container mx-auto">
+            <div class="flex flex-col lg:flex-row">
+              <!-- Imagen del Pabellón -->
+              <div class="w-full lg:w-2/3 mb-6">
+                <img 
+                  id="pabellon-imagen"
+                  alt="Imagen del Pabellón" 
+                  class="w-full h-[400px] object-cover rounded-lg shadow-md"
+                />
+                
+                <!-- Información del Pabellón -->
+                <div class="mt-4 py-4 px-6 bg-white rounded-lg shadow-sm flex flex-col sm:flex-row justify-between items-center">
+                  <div class="flex items-center mb-4 sm:mb-0">
+                    <svg class="h-7 w-7 mr-3 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                            d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                    </svg>
+                    <div class="flex flex-col">
+                      <span class="text-sm text-gray-500">Pabellón</span>
+                      <span id="pabellon-nombre" class="font-bold text-gray-800"></span>
+                    </div>
+                  </div>
+                  <div class="flex items-center">
+                    <div class="flex flex-col text-right">
+                      <span class="text-sm text-gray-500">Capacidad</span>
+                      <span id="pabellon-capacidad" class="font-bold text-gray-800"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <!-- Información del Club -->
+              <div class="w-full lg:w-1/3 lg:pl-6">
+                <div class="bg-white rounded-lg shadow-sm p-6">
+                  <div class="space-y-4">
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600">Nombre completo</span>
+                      <span id="nombre-completo" class="text-gray-800 font-medium text-right"></span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600">Colores del club</span>
+                      <div class="flex space-x-2">
+                        <div id="color-principal" class="w-6 h-6 rounded-full"></div>
+                        <div id="color-secundario" class="w-6 h-6 rounded-full"></div>
+                      </div>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600">Dirección</span>
+                      <span id="pabellon-direccion" class="text-gray-800 font-medium text-right"></span>
+                    </div>
+                    
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600">Municipio</span>
+                      <span id="municipio" class="text-gray-800 font-medium"></span>
+                    </div>
+
+                    <div class="flex justify-between items-center">
+                      <span class="text-gray-600">Isla</span>
+                      <span id="isla" class="text-gray-800 font-medium"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!-- Plantilla del equipo -->
-        <div class="max-w-7xl mx-auto py-8 px-4">
+        <div id="plantilla" class="max-w-7xl mx-auto py-8 px-4">
             <div class="bg-white shadow-lg rounded-lg p-6">
                 <h2 class="text-2xl font-bold mb-4">Plantilla</h2>
                 
                 <!-- Jugadores -->
                 <div class="mb-8">
                     <h3 class="text-xl font-semibold mb-4">Jugadores</h3>
-                    <div id="lista-jugadores" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <div id="lista-jugadores" class="grid grid-cols-2 gap-4">
                         <!-- Los jugadores se cargarán dinámicamente -->
                     </div>
                 </div>
@@ -111,12 +204,32 @@
         </div>
 
         <!-- Resultados -->
-        <div class="max-w-7xl mx-auto py-8 px-4">
-            <div class="bg-white shadow-lg rounded-lg p-6">
-                <h2 class="text-2xl font-bold mb-4">Resultados</h2>
-                <div id="resultados" class="grid grid-cols-1 gap-4">
+        <div id="resultados-link" class="max-w-7xl mx-auto py-8 px-4">
+            <div class="bg-gray-800 shadow-xl rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-6 text-white">Resultados</h2>
+                <div id="resultados" class="grid grid-cols-1 gap-6">
                     <!-- Los resultados se cargarán dinámicamente -->
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Noticias -->
+    <div id="noticias-link" class="max-w-7xl mx-auto py-8 px-4">
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-4">Noticias</h2>
+            <div id="noticias" class="grid grid-cols-1 gap-4">
+                <!-- Las noticias se cargarán dinámicamente -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Galería -->
+    <div id="galeria-link" class="max-w-7xl mx-auto py-8 px-4">
+        <div class="bg-white shadow-lg rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-4">Galería</h2>
+            <div id="galeria" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Las imágenes de la galería se cargarán dinámicamente -->
             </div>
         </div>
     </div>
@@ -131,7 +244,7 @@
         // Función para cargar y mostrar la información del club
         async function cargarInformacionClub() {
             try {
-                const response = await fetch('/static/json/información_clubes.json');
+                const response = await fetch('/static/json/informacion_clubes.json');
                 const data = await response.json();
                 
                 const clubId = getClubId();
@@ -151,26 +264,56 @@
                 document.getElementById('club-location').textContent = `${club.ubicacion.municipio}, ${club.ubicacion.isla}`;
                 
                 // Actualizar información del pabellón
+                document.getElementById('pabellon-imagen').src = club.pabellon.imagen || '/static/img/default-stadium.jpg';
                 document.getElementById('pabellon-nombre').textContent = club.pabellon.nombre;
+                document.getElementById('pabellon-capacidad').textContent = `${club.pabellon.capacidad.toLocaleString()} espectadores`;
                 document.getElementById('pabellon-direccion').textContent = club.pabellon.direccion;
-                document.getElementById('pabellon-capacidad').textContent = `${club.pabellon.capacidad} espectadores`;
 
-                // Cargar jugadores
+                // Actualizar información del club
+                document.getElementById('nombre-completo').textContent = club.nombre;
+                document.getElementById('municipio').textContent = club.ubicacion.municipio;
+                document.getElementById('isla').textContent = club.ubicacion.isla;
+
+                // Actualizar colores del club
+                const colorPrincipal = document.getElementById('color-principal');
+                const colorSecundario = document.getElementById('color-secundario');
+
+                colorPrincipal.style.backgroundColor = club.colores.principal;
+                if (club.colores.secundario) {
+                    colorSecundario.style.backgroundColor = club.colores.secundario;
+                    colorSecundario.style.display = 'block';
+                } else {
+                    colorSecundario.style.display = 'none';
+                }
+
+                // Modificar la sección de carga de jugadores en el script
                 const listaJugadores = document.getElementById('lista-jugadores');
                 listaJugadores.innerHTML = club.plantilla.jugadores.map(jugador => `
-                    <div class="p-4 border rounded-lg">
-                        <p class="font-bold">${jugador.nombre}</p>
-                        <p class="text-gray-600">Número: ${jugador.numero}</p>
-                        <p class="text-gray-600">Posición: ${jugador.posicion}</p>
+                    <div class="flex items-center bg-white shadow-lg rounded-lg overflow-hidden">
+                        <div class="flex items-center justify-center w-24 h-full py-6" style="background-color: ${club.colores.principal}">
+                            <span class="text-4xl font-bold text-white">${jugador.numero}</span>
+                        </div>
+                        <div class="flex items-center flex-1 p-4">
+                            <img src="${jugador.foto}" alt="${jugador.nombre}" 
+                                 class="w-20 h-20 rounded-full border-4 border-gray-200 mr-4">
+                            <div class="flex flex-col">
+                                <h3 class="text-xl font-bold text-gray-800 mb-1">${jugador.nombre}</h3>
+                                <p class="text-gray-600">Edad: ${jugador.edad || 'No especificada'}</p>
+                            </div>
+                        </div>
                     </div>
                 `).join('');
 
                 // Cargar entrenadores
                 const listaEntrenadores = document.getElementById('lista-entrenadores');
                 listaEntrenadores.innerHTML = club.plantilla.entrenadores.map(entrenador => `
-                    <div class="p-4 border rounded-lg">
-                        <p class="font-bold">${entrenador.nombre}</p>
-                        <p class="text-gray-600">${entrenador.cargo}</p>
+                    <div class="flex items-center flex-1 p-4">
+                        <img src="${entrenador.foto}" alt="${entrenador.nombre}" 
+                              class="w-20 h-20 rounded-full border-4 border-gray-200 mr-4">
+                        <div class="flex flex-col">
+                            <h3 class="text-xl font-bold text-gray-800 mb-1">${entrenador.nombre}</h3>
+                            <p class="text-gray-600">${entrenador.cargo || 'No especificada'}</p>
+                        </div>
                     </div>
                 `).join('');
 
@@ -178,13 +321,72 @@
                 const resultadosContainer = document.getElementById('resultados');
                 if (club.resultados && club.resultados.length > 0) {
                     resultadosContainer.innerHTML = club.resultados.map(resultado => `
-                        <div class="p-4 border rounded-lg">
-                            <p class="font-bold">${resultado.fecha}</p>
-                            <p>${resultado.local} ${resultado.resultadoLocal} - ${resultado.resultadoVisitante} ${resultado.visitante}</p>
+                        <div class="bg-gray-900 rounded-lg shadow-xl overflow-hidden">
+                            <div class="px-6 py-3 bg-gray-900 border-b border-gray-700">
+                                <p class="text-gray-400 text-sm">${new Date(resultado.fecha).toLocaleDateString('es-ES', {
+                                    weekday: 'long',
+                                    year: 'numeric',
+                                    month: 'long',
+                                    day: 'numeric'
+                                })}</p>
+                            </div>
+                            <div class="p-6">
+                                <div class="flex items-center justify-between">
+                                    <div class="flex items-center flex-1">
+                                        <img src="${resultado.logoLocal}" alt="${resultado.local}" 
+                                             class="w-16 h-16 object-contain">
+                                        <div class="ml-4">
+                                            <p class="text-white font-bold text-lg">${resultado.local}</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-center px-6">
+                                        <span class="text-3xl font-bold text-white mx-2">${resultado.resultadoLocal}</span>
+                                        <span class="text-gray-500 text-2xl mx-2">-</span>
+                                        <span class="text-3xl font-bold text-white mx-2">${resultado.resultadoVisitante}</span>
+                                    </div>
+                                    <div class="flex items-center flex-1 justify-end">
+                                        <div class="mr-4 text-right">
+                                            <p class="text-white font-bold text-lg">${resultado.visitante}</p>
+                                        </div>
+                                        <img src="${resultado.logoVisitante}" alt="${resultado.visitante}" 
+                                             class="w-16 h-16 object-contain">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     `).join('');
                 } else {
-                    resultadosContainer.innerHTML = '<p class="text-gray-600">No hay resultados disponibles</p>';
+                    resultadosContainer.innerHTML = `
+                        <div class="bg-gray-900 rounded-lg shadow-xl p-6">
+                            <p class="text-gray-400 text-center">No hay resultados disponibles</p>
+                        </div>
+                    `;
+                }
+
+                // Cargar noticias si existen
+                const noticiasContainer = document.getElementById('noticias');
+                if (club.noticias && club.noticias.length > 0) {
+                    noticiasContainer.innerHTML = club.noticias.map(noticia => `
+                        <div class="p-4 border rounded-lg">
+                            <h3 class="font-bold">${noticia.titulo}</h3>
+                            <p>${noticia.descripcion}</p>
+                            <p class="text-gray-600">${noticia.fecha}</p>
+                        </div>
+                    `).join('');
+                } else {
+                    noticiasContainer.innerHTML = '<p class="text-gray-600">No hay noticias disponibles</p>';
+                }
+
+                // Cargar galería si existen imágenes
+                const galeriaContainer = document.getElementById('galeria');
+                if (club.galeria && club.galeria.length > 0) {
+                    galeriaContainer.innerHTML = club.galeria.map(imagen => `
+                        <div class="p-4 border rounded-lg">
+                            <img src="${imagen}" alt="Imagen de la galería" class="w-full h-48 object-cover rounded-lg">
+                        </div>
+                    `).join('');
+                } else {
+                    galeriaContainer.innerHTML = '<p class="text-gray-600">No hay imágenes en la galería</p>';
                 }
 
             } catch (error) {

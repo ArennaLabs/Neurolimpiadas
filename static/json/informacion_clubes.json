@@ -8,33 +8,111 @@
         "municipio": "La Orotava"
       },
       "pabellon": {
-        "nombre": "Pabellón Municipal de La Orotava",
-        "direccion": "C/ Los Lavaderos s/n",
-        "capacidad": 1200
+        "nombre": "Estadio Municipal Los Cuartos",
+        "direccion": "C/ San Andrés 1",
+        "capacidad": 6500,
+        "imagen": "/static/img/clubes/orotava/pabellon.jpg"
       },
       "imagenes": {
-        "logo": "/static/img/clubes/1.png",
-        "banner": "/static/img/banners/ud_orotava.jpg"
+        "logo": "/static/img/clubes/orotava/logo.png",
+        "banner": "/static/img/clubes/orotava/banner.jpg"
       },
       "colores": {
-        "principal": "#4ab7ff"
+        "principal": "#4ab7ff",
+        "secundario": "#d9d9d9"
       },
       "plantilla": {
         "jugadores": [
           {
             "numero": 1,
             "nombre": "Nombre Jugador 1",
-            "posicion": "Base"
+            "edad": 25,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Nombre Jugador 2",
+            "edad": 22,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Nombre Jugador 3",
+            "edad": 28,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Nombre Jugador 4",
+            "edad": 30,
+            "foto": "/static/img/jugador.png"
           }
         ],
         "entrenadores": [
           {
             "nombre": "Nombre Entrenador",
-            "cargo": "Primer entrenador"
+            "cargo": "Primer entrenador",
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Nombre Entrenador 2",
+            "cargo": "Segundo entrenador",
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Nombre Entrenador 3",
+            "cargo": "Preparador físico",
+            "foto": "/static/img/jugador.png"
           }
         ]
       },
-      "resultados": []
+      "resultados": [
+        {
+          "fecha": "2024-09-01",
+          "local": "C.D. FLORIDA",
+          "logoLocal": "/static/img/clubes/2.png",
+          "resultadoLocal": "2",
+          "logoVisitante": "/static/img/clubes/orotava/logo.png",
+          "visitante": "U.D. OROTAVA",
+          "resultadoVisitante": "1"
+        },
+        {
+          "fecha": "2024-09-08",
+          "local": "U.D. OROTAVA",
+          "logoLocal": "/static/img/clubes/orotava/logo.png",
+          "resultadoLocal": "3",
+          "logoVisitante": "/static/img/clubes/3.png",
+          "visitante": "C.D. SALESIANOS",
+          "resultadoVisitante": "0"
+        },
+        {
+          "fecha": "2024-09-15",
+          "local": "C.D. SALESIANOS",
+          "logoLocal": "/static/img/clubes/3.png",
+          "resultadoLocal": "1",
+          "logoVisitante": "/static/img/clubes/orotava/logo.png",
+          "visitante": "U.D. OROTAVA",
+          "resultadoVisitante": "2"
+        },
+        {
+          "fecha": "2024-09-22",
+          "local": "U.D. OROTAVA",
+          "logoLocal": "/static/img/clubes/orotava/logo.png",
+          "resultadoLocal": "4",
+          "logoVisitante": "/static/img/clubes/4.png",
+          "visitante": "REAL UNIÓN TENERIFE",
+          "resultadoVisitante": "1"
+        },
+        {
+          "fecha": "2024-09-29",
+          "local": "C.D. TENERIFE",
+          "logoLocal": "/static/img/clubes/1.svg",
+          "resultadoLocal": "0",
+          "logoVisitante": "/static/img/clubes/orotava/logo.png",
+          "visitante": "U.D. OROTAVA",
+          "resultadoVisitante": "0"
+        }
+      ]
     },
     {
       "id": 2,
