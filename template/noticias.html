@@ -6,6 +6,7 @@
   <title>Ventana de Noticias</title>
   <!-- Incluir Tailwind CSS desde CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../static/js/colors.js"></script> 
   <style>
     /* Estilos adicionales para la animación de los puntos indicadores */
     .dot {
@@ -111,7 +112,12 @@
         <div class="h-px w-full bg-gray-200 mb-8"></div>
 
         <!-- Card de Noticia Destacada -->
-        <div class="flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hidden mb-16">
+         
+        <div id="contenedor-destacado" class="flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hiddenhover:shadow-2xl 
+                            transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+                            hover:ring-2 hover:ring-[#4672b5] group hover:shadow-2xl 
+                            transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+                            hover:ring-2 hover:ring-[#4672b5] group mb-16" >
             <div class="lg:w-1/2">
                 <img id="data-imagen" 
                     alt="Noticia destacada" 
@@ -121,7 +127,7 @@
                 <div>
                     <div class="flex justify-between items-center mb-4">
                         <span id="data-categoria" 
-                              class="bg-arenna-blue text-white text-xs font-medium px-3 py-1 rounded-full">
+                              class="bg-neurolimpiadas-blue text-white text-xs font-medium px-3 py-1 rounded-full">
                         </span>
                         <span id="data-fecha" class="text-gray-500 text-sm"></span>
                     </div>
@@ -132,13 +138,7 @@
                       class="text-gray-600 leading-relaxed mb-6">
                     </p>
                 </div>
-                <a href="#" 
-                  class="inline-flex items-center text-arenna-blue hover:text-arenna-hover font-medium">
-                    Leer más
-                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                </a>
+                
             </div>
         </div>
 
@@ -180,6 +180,9 @@
             document.getElementById('data-descripcion').textContent = noticiaDestacada.descripcion;
             document.getElementById('data-fecha').textContent = noticiaDestacada.fecha;
             document.getElementById('data-imagen').src = noticiaDestacada.imagen;
+            document.getElementById('contenedor-destacado').addEventListener('click', () => {
+              window.location.href = noticiaDestacada.url_noticia
+            });
         }
 
         // 2. Luego, manejar las noticias del grid
@@ -229,43 +232,45 @@
 
 
     function createNoticiaCard(noticia) {
-    const colorClasses = {
-        'Deportes': 'bg-red-100 text-red-800',
-        'Destacados': 'bg-blue-100 text-blue-800',
-        'General': 'bg-green-100 text-green-800'
-    };
+        const colorClasses = {
+            'Deportes': 'bg-[#e6ba38] text-yellow-800',
+            'Destacados': 'bg-[#75addb] text-blue-800',
+            'General': 'bg-[#86b050] text-green-800',
+            'Entrevistas': 'bg-[#c084fc] text-purple-800',
+            'Cultura': 'bg-[#818cf8] text-indigo-800',
+            'Salud': 'bg-[#4fd1c5] text-teal-800',
+            'Voluntariado': 'bg-[#f472b6] text-pink-800',
+        };
 
-    return `
-        <article class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="relative">
-                <img src="${noticia.imagen}" 
-                     alt="Imagen de ${noticia.titulo}" 
-                     class="w-full h-48 object-cover">
-                <div class="absolute top-4 left-4">
-                    <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-1 rounded">
-                        ${noticia.categoria}
-                    </span>
+        return `
+            <article id="noticia-${noticia.id}" 
+                    onclick="window.location.href='${noticia.url_noticia}'"
+                    class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl 
+                            transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+                            hover:ring-2 hover:ring-[#4672b5] group">
+                <div class="relative">
+                    <img src="${noticia.imagen}" 
+                        alt="Imagen de ${noticia.titulo}" 
+                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                    <div class="absolute top-4 left-4">
+                        <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-1 rounded">
+                            ${noticia.categoria}
+                        </span>
+                    </div>
                 </div>
-            </div>
-            <div class="p-5">
-                <div class="text-gray-500 text-sm mb-3">${noticia.fecha}</div>
-                <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-                    ${noticia.titulo}
-                </h3>
-                <p class="text-gray-600 mb-4 line-clamp-3">
-                    ${noticia.descripcion}
-                </p>
-                <a href="${noticia.url_noticia}" 
-                   class="inline-flex items-center text-arenna-blue hover:text-arenna-hover font-medium">
-                    Leer más
-                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                    </svg>
-                </a>
-            </div>
-        </article>
-    `;
-}
+                <div class="p-5">
+                    <div class="text-gray-500 text-sm mb-3">${noticia.fecha}</div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#4672b5]">
+                        ${noticia.titulo}
+                    </h3>
+                    <p class="text-gray-600 mb-4 line-clamp-3">
+                        ${noticia.descripcion}
+                    </p>
+                    
+                </div>
+            </article>
+        `;
+    }
 
     document.addEventListener('DOMContentLoaded', cargarNoticias);              
     // Definir un array con la información de cada noticia

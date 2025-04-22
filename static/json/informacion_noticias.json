@@ -81,7 +81,7 @@
         "id": "3",
         "destacada": false,
         "slides": false,
-        "categoria": "General",
+        "categoria": "Cultura",
         "titulo": "Más de 200 mayores de ocho municipio de La Palma competirán en Las Neurolimpiadas",
         "descripcion": "La actividad se desarrollará los días 5, 6 y 7 de julio en el Pabellón Deportivo David Jiménez Silva de Villa de Mazo",
         "fecha": "28 Junio, 2024",
@@ -167,41 +167,10 @@
           
         ]
       },{
-        "id": "5",
-        "slides": false,
-        "destacada": false,
-        "categoria": "Deportes",
-        "titulo": "El alcalde presentó las Neurolimpiadas Provinciales de Santiago del Teide 2024",
-        "descripcion": "Durante la mañana de hoy, 22 de enero, el patio central del Ayuntamiento acogió la presentación de las ‘Neurolimpiadas Provinciales de Santiago del Teide 2024’.",
-        "fecha": "22 Enero, 2024",
-        "imagen": "/static/img/noticias/3.jpg",
-        "url_noticia": "/template/noticia.html?id=5",
-        "url": "https://www.canal4tenerife.tv/el-alcalde-presento-las-neurolimpiadas-provinciales-de-santiago-del-teide-2024/",
-        "contenido": [
-          {
-            "tipo": "parrafo",
-            "texto": "Durante la mañana de hoy, 22 de enero, el patio central del Ayuntamiento acogió la presentación de las ‘Neurolimpiadas Provinciales de Santiago del Teide 2024’, que se llevarán a cabo del 2 al 4 de febrero en el Complejo Deportivo Pancracio Socas García; contando en esta ocasión con un total de 8 municipios participantes y una previsión de 450 mayores concursantes."
-          },{
-            "tipo": "parrafo",
-            "texto": "Durante dicha presentación, comparecieron ante los allí presentes el alcalde del municipio, Emilio Navarro; la consejera de Acción Social del Cabildo de Tenerife, Águeda Fumero; la concejala de Servicios Sociales, Tania Cuadrado; así como Besay Rodríguez y Óscar Morales, director y cofundador de dicho evento."
-          },{
-            "tipo": "parrafo",
-            "texto": "Para el alcalde, Emilio Navarro, “desde el consistorio acogemos con orgullo e ilusión el poder constituirnos como la sede de un evento provincial de tal envergadura; sin duda alguna, un desafío para el que hemos puesto todo nuestro empeño y cuya finalidad no es otra sino seguir apostando por acciones que promuevan el envejecimiento activo de nuestros mayores, así como su máximo bienestar”."
-          },{
-            "tipo": "parrafo",
-            "texto": "Respecto a la presente edición de las Neurolimpiadas Provinciales que están a punto de celebrarse en nuestro municipio, se constituyen como una competición de carácter deportivo, lúdico y cognitivo, dirigido a personas mayores de 60 años."
-          },{
-            "tipo": "parrafo",
-            "texto": "Para ello, en esta ocasión dicha iniciativa contará con un total de 8 municipios participantes, de los cuales 3 proceden de la isla de La Palma, siendo los siguientes: Arafo, El Rosario, La Victoria de Acentejo, Los Llanos de Aridane, Santa Cruz de La Palma, Santa Úrsula, Villa de Mazo y Santiago del Teide."
-          }
-
-          
-        ]
-      },{
         "id": "4",
         "destacada": false,
         "slides": true,
-        "categoria": "Deportes",
+        "categoria": "Destacados",
         "titulo": "Final regional de las NeurOlimpiadas",
         "descripcion": "Arrancó en Santa Cruz de La Palma la final autonómica de las NeurOlimpiadas en el pabellón capitalino Roberto Estrello.",
         "fecha": "30 Noviembre 2024",
@@ -225,10 +194,41 @@
           
         ]
       },{
+        "id": "5",
+        "slides": true,
+        "destacada": false ,
+        "categoria": "Entrevistas",
+        "titulo": "El alcalde presentó las Neurolimpiadas Provinciales de Santiago del Teide 2024",
+        "descripcion": "Durante la mañana de hoy, 22 de enero, el patio central del Ayuntamiento acogió la presentación de las ‘Neurolimpiadas Provinciales de Santiago del Teide 2024’.",
+        "fecha": "22 Enero, 2024",
+        "imagen": "/static/img/noticias/noticias3.jpg",
+        "url_noticia": "/template/noticia.html?id=5",
+        "url": "https://www.canal4tenerife.tv/el-alcalde-presento-las-neurolimpiadas-provinciales-de-santiago-del-teide-2024/",
+        "contenido": [
+          {
+            "tipo": "parrafo",
+            "texto": "Durante la mañana de hoy, 22 de enero, el patio central del Ayuntamiento acogió la presentación de las ‘Neurolimpiadas Provinciales de Santiago del Teide 2024’, que se llevarán a cabo del 2 al 4 de febrero en el Complejo Deportivo Pancracio Socas García; contando en esta ocasión con un total de 8 municipios participantes y una previsión de 450 mayores concursantes."
+          },{
+            "tipo": "parrafo",
+            "texto": "Durante dicha presentación, comparecieron ante los allí presentes el alcalde del municipio, Emilio Navarro; la consejera de Acción Social del Cabildo de Tenerife, Águeda Fumero; la concejala de Servicios Sociales, Tania Cuadrado; así como Besay Rodríguez y Óscar Morales, director y cofundador de dicho evento."
+          },{
+            "tipo": "parrafo",
+            "texto": "Para el alcalde, Emilio Navarro, “desde el consistorio acogemos con orgullo e ilusión el poder constituirnos como la sede de un evento provincial de tal envergadura; sin duda alguna, un desafío para el que hemos puesto todo nuestro empeño y cuya finalidad no es otra sino seguir apostando por acciones que promuevan el envejecimiento activo de nuestros mayores, así como su máximo bienestar”."
+          },{
+            "tipo": "parrafo",
+            "texto": "Respecto a la presente edición de las Neurolimpiadas Provinciales que están a punto de celebrarse en nuestro municipio, se constituyen como una competición de carácter deportivo, lúdico y cognitivo, dirigido a personas mayores de 60 años."
+          },{
+            "tipo": "parrafo",
+            "texto": "Para ello, en esta ocasión dicha iniciativa contará con un total de 8 municipios participantes, de los cuales 3 proceden de la isla de La Palma, siendo los siguientes: Arafo, El Rosario, La Victoria de Acentejo, Los Llanos de Aridane, Santa Cruz de La Palma, Santa Úrsula, Villa de Mazo y Santiago del Teide."
+          }
+
+          
+        ]
+      },{
         "id": "7",
         "destacada": false,
-        "slides": true,
-        "categoria": "Deportes",
+        "slides": false,
+        "categoria": "Voluntariado",
         "titulo": "Neurolimpiadas en Granadilla",
         "descripcion": "Casi 600 mayores participarán en las NeurOlimpiadas 2024, este fin de semana en Granadilla.",
         "fecha": "31 Octubre 2024",
@@ -260,8 +260,8 @@
       },{
         "id": "8",
         "destacada": false,
-        "slides": true,
-        "categoria": "Deportes",
+        "slides": false,
+        "categoria": "Salud",
         "titulo": "Santa Cruz de La Palma reúne a los mayores de Canarias en la final regional de las Neurolimpiadas 2024",
         "descripcion": "Más de 400 personas de 60 años en adelante de diferentes municipios de las islas participarán en la competición autonómica que se celebrará los días 29 y 30 de noviembre y 1 de diciembre.",
         "fecha": "26 de noviembre de 2024",
@@ -275,105 +275,321 @@
           }, {
             "tipo": "parrafo",
             "texto": "La rueda de prensa contó con el alcalde capitalino, Asier Antona, y la edil de Bienestar Social e Igualdad de Oportunidades, Yéssica Pérez; la directora general de Deportes Autóctonos del Gobierno de Canarias, Lorena Hernández Labrador; el presidente del Cabildo de La Palma, Sergio Rodríguez, la consejera de Bienestar Social, Ángeles Fernández, los coordinadores del Club del Mayor, Besay Rodríguez y Oscar Morales, junto a una amplia representación de los clubes palmeros participantes."
-          }, {
+          },{
             "tipo": "parrafo",
             "texto": "Asier Antona destacó el compromiso del Ayuntamiento de Santa Cruz de La Palma con las personas mayores en su apuesta por mejorar su calidad de vida desde el ámbito psicosocial, impulsando el programa de envejecimiento activo."
           }, {
             "tipo": "parrafo",
             "texto": "En esta línea, Yéssica Pérez celebró que este “gran encuentro tenga lugar en Santa Cruz de La Palma donde se ha acogido con muchísima ilusión un proyecto que solo aporta beneficios para quienes participan y las personas que lo lideran”."
+          },{
+            "tipo": "parrafo",
+            "texto": "La directora general de Deportes Autóctonos, Lorena Hernández, quiso resaltar el apoyo del Gobierno de Canarias en este tipo de iniciativas tan necesarias para visibilizar el ejemplo de nuestros mayores a la hora de afrontar una nueva etapa de su vida a través del ejercicio físico."
           }, {
-              "tipo": "parrafo",
-              "texto": "La directora general de Deportes Autóctonos, Lorena Hernández, quiso resaltar el apoyo del Gobierno de Canarias en este tipo de iniciativas tan necesarias para visibilizar el ejemplo de nuestros mayores a la hora de afrontar una nueva etapa de su vida a través del ejercicio físico."
+            "tipo": "parrafo",
+            "texto": "Por su parte, Sergio Rodríguez confesó durante su intervención que desea que el título de este año se quedara en La Palma, en un guiño a la Isla que acoge esta propuesta por primera vez."
+          },{
+            "tipo": "parrafo",
+            "texto": "Los cofundadores del Club del Mayor, Besay Rodríguez y Oscar Morales, organizadores ejecutivos de las Neurolimpiadas, explicaron que esta propuesta nació de la escucha activa de los mayores que demandaban poder competir e ir más allá en estas actividades que nacieron como una yincana realizada hace años."
           }, {
-              "tipo": "parrafo",
-              "texto": "Por su parte, Sergio Rodríguez confesó durante su intervención que desea que el título de este año se quedara en La Palma, en un guiño a la Isla que acoge esta propuesta por primera vez."
+            "tipo": "parrafo",
+            "texto": "Así, se apunta en la nota, más de 400 personas de más de 60 años serán las protagonistas de esta final en la que participarán municipios de las islas de Tenerife, Fuerteventura y La Palma."
+          }, {
+            "tipo": "parrafo",
+            "texto": "El próximo 29 de noviembre, añade, se celebrará un desempate entre los equipos palmeros en el pabellón deportivo Roberto Rodríguez Estrello, en la capital palmera, para posteriormente, realizar un desfile con todos los participantes desde la plaza de San Francisco hasta la plaza de La Alameda. Los días 29 y 30 la competición se disputará en el centro insular de Miraflores."
           }
           
         ]
       },{
         "id": "9",
         "destacada": false,
-        "slides": true,
+        "slides": false,
         "categoria": "Deportes",
-        "titulo": "Neurolimpiadas en Granadilla",
-        "descripcion": "Casi 600 mayores participarán en las NeurOlimpiadas 2024, este fin de semana en Granadilla.",
-        "fecha": "31 Octubre 2024",
-        "imagen": "/static/img/noticias/7.jpg",
-        "url_noticia": "/template/noticia.html?id=7",
-        "url": "https://www.iass.es/noticias/259-mayores/5616-casi-600-mayores-participaran-en-las-neuroolimpiadas-2024-este-fin-de-semana-en-granadilla",
+        "titulo": "Más de cincuenta mayores representaron a Fuerteventura en las Neurolimpiadas Canarias",
+        "descripcion": "Más de 50 personas mayores de Fuerteventura compitieron este fin de semana en las Neurolimpiadas Canarias de Santa Cruz de La Palma, participando en pruebas físicas, cognitivas y de socialización para fomentar su salud, bienestar y autonomía.",
+        "fecha": "2 diciembre, 2024",
+        "imagen": "/static/img/noticias/9.jpg",
+        "url_noticia": "/template/noticia.html?id=9",
+        "url": "https://www.cabildofuer.es/cabildo/mas-de-cincuenta-mayores-representaron-a-fuerteventura-en-las-neurolimpiadas-canarias/",
         "contenido": [
           {
             "tipo": "parrafo",
-            "texto": ""
+            "texto": "Más de cincuenta personas de diferentes municipios representaron a Fuerteventura este fin de semana en las Neurolimpiadas Canarias, que se celebraron en la Ciudad de Deportes de Miraflores en Santa Cruz de La Palma. Los equipos majoreros fueron Héroes en Silencio (Antigua), A por todas (La Oliva) Tahona (La Oliva), Camellitos (Tuineje), Trompiezo (Pájara), Tahona (La Oliva) y Arriba d’ellos (La Oliva). Los equipos participaron en diferentes pruebas físicas y cognitivas."
           }, {
             "tipo": "parrafo",
-            "texto": ""
-            }, {
+            "texto": "Los mencionados equipos se clasificaron previamente en las Neuromajo 2024 que organizó el Cabildo de Fuerteventura desde la Consejería de Acción Social en el Polideportivo Insular de Puerto del Rosario, con la colaboración de todos los ayuntamientos y la participación de casi 300 personas. Se trata de un proyecto para la salud, el bienestar y la autonomía de las personas mayores."
+          }, {
             "tipo": "parrafo",
-            "texto": ""
-            }, {
+            "texto": "La presidenta del Cabildo, Lola García, felicitó a todas las personas participantes, “esperando que hayan disfrutado y lo hayan pasado bien con esta gran iniciativa”. Por su parte, el consejero de Acción Social, Víctor Alonso, ha mostrado el apoyo del Cabildo y de la Isla de Fuerteventura para que todas estas personas formen parte de las neurolimpiadas, “y el año que viene nos volveremos a ver”."
+          },  {
             "tipo": "parrafo",
-            "texto": ""
-            }
+            "texto": "Los representantes de El Club del Mayor, entidad que realizó la actividad, apuntaron que “estamos hablando de un proyecto para el envejecimiento activo, basado en tres pilares: ejercicio físico, cognitivo y socialización. Este último punto es lo más importante. Tratar de conectar a las personas y lo hemos conseguido”."
+          }, {
+            "tipo": "parrafo",
+            "texto": "Durante el fin de semana en La Palma, estuvo presente el consejero de Medio Ambiente y Caza, Carlos Rodríguez, y los concejales y concejalas Johana Pérez (La Oliva), América Soto (Antigua), Noelia García (Tuineje) y Cathaisa Rodríguez (Pájara)."
+          },{
+            "tipo": "parrafo",
+            "texto": "El programa Neuromajo 2024 culminará con una gala especial de reconocimientos el próximo mes de febrero, como acto de clausura para honrar su esfuerzo a lo largo de la temporada neurolímpica."
+          }
           
         ]
       },{
         "id": "10",
         "destacada": false,
-        "slides": true,
-        "categoria": "Deportes",
-        "titulo": "Neurolimpiadas en Granadilla",
+        "slides": false,
+        "categoria": "Entrevistas",
+        "titulo": "Mayores de El Rosario participan en la gran final de las “Neurolimpiadas” 2024, celebradas en Santa Cruz de La Palma",
         "descripcion": "Casi 600 mayores participarán en las NeurOlimpiadas 2024, este fin de semana en Granadilla.",
-        "fecha": "31 Octubre 2024",
-        "imagen": "/static/img/noticias/7.jpg",
-        "url_noticia": "/template/noticia.html?id=7",
-        "url": "https://www.iass.es/noticias/259-mayores/5616-casi-600-mayores-participaran-en-las-neuroolimpiadas-2024-este-fin-de-semana-en-granadilla",
+        "fecha": "4 Diciembre, 2024",
+        "imagen": "/static/img/noticias/10.jpg",
+        "url_noticia": "/template/noticia.html?id=10",
+        "url": "https://www.ayuntamientoelrosario.org/index.php/2024/12/04/mayores-de-el-rosario-participan-en-la-gran-final-de-las-neurolimpiadas-2024-celebradas-en-santa-cruz-de-la-palma/",
         "contenido": [
           {
             "tipo": "parrafo",
-            "texto": ""
+            "texto": "El Rosario formó parte de la gran final de las “Neurolimpiadas” 2024, celebradas el pasado fin de semana en Santa Cruz de La Palma. Hasta la capital palmera se desplazó un equipo de mayores, acompañados de la concejala de Acción Social, Fátima Gutiérrez, para participar en este evento que reunió a más de 400 personas de más de 60 años, procedentes de municipios de Tenerife, Fuerteventura y La Palma, para medirse en diferentes pruebas físicas y cognitivas. El equipo rosariero alcanzó las semifinales en varias categorías, despidiéndose con un gran sabor de boca. La también primera teniente de alcalde, Fátima Gutiérrez, destacó “el apoyo que desde El Rosario estamos dando, desde hace ya varios años, a esta importante iniciativa que favorece el envejecimiento activo y la socialización de nuestros mayores”."
           }, {
-            "tipo": "parrafo",
-            "texto": ""
-            }, {
-            "tipo": "parrafo",
-            "texto": ""
-            }, {
-            "tipo": "parrafo",
-            "texto": ""
-            }
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia10_1.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          }, {
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia10_2.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          }, {
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia10_3.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          }
           
         ]
       },{
         "id": "11",
         "destacada": false,
-        "slides": true,
-        "categoria": "Deportes",
-        "titulo": "Neurolimpiadas en Granadilla",
-        "descripcion": "Casi 600 mayores participarán en las NeurOlimpiadas 2024, este fin de semana en Granadilla.",
-        "fecha": "31 Octubre 2024",
-        "imagen": "/static/img/noticias/7.jpg",
-        "url_noticia": "/template/noticia.html?id=7",
-        "url": "https://www.iass.es/noticias/259-mayores/5616-casi-600-mayores-participaran-en-las-neuroolimpiadas-2024-este-fin-de-semana-en-granadilla",
+        "slides": false,
+        "categoria": "General",
+        "titulo": "Casi 300 personas mayores de todos los municipios participan en el proyecto Neuromajo 2024",
+        "descripcion": "La iniciativa de Acción Social del Cabildo de Fuerteventura busca fomentar la inclusión de los mayores desde el deporte y su envejecimiento activo.",
+        "fecha": "28 octubre, 2024",
+        "imagen": "/static/img/noticias/11.jpeg",
+        "url_noticia": "/template/noticia.html?id=11",
+        "url": "https://www.cabildofuer.es/cabildo/casi-300-personas-mayores-de-todos-los-municipios-participan-en-el-proyecto-neuromajo-2024/",
         "contenido": [
           {
             "tipo": "parrafo",
+            "texto": "El campeonato para la salud y el bienestar de los mayores del Cabildo de Fuerteventura, Neuromajo2024, se desarrollará del 15 al 17 de noviembre con la participación de casi 300 personas mayores de todos los municipios de la Isla. Los entrenamientos tendrán lugar en el Polideportivo Insular de Puerto del Rosario."
+          },{
+            "tipo": "parrafo",
+            "texto": "Así lo comunicaron la presidenta insular, Lola García, y el consejero de Acción Social, Víctor Alonso, en la presentación del proyecto que busca fomentar la inclusión de las personas mayores a través del deporte, fomentar el envejecimiento activo y mejorar sus habilidades psicomotoras y neurológicas. Estuvieron acompañados por Óscar Morales y Besay Rodríguez como representantes de El Club del Mayor, entidad que realizará la actividad, así como la alcaldesa de Tuineje, Candelaria Umpiérrez, y concejales de todos los municipios, además de personal técnico del Cabildo."
+          },{
+            "tipo": "parrafo",
+            "texto": "Según la presidenta Lola García, “NeuroMajo24 ofrece una oportunidad única de ver a nuestros mayores brillar en el ámbito deportivo con una serie de encuentros en nuestras islas”. “Esto es posible gracias a la colaboración del Cabildo de Fuerteventura con los diferentes ayuntamientos, quienes ceden los espacios para el desarrollo de la actividad”."
+          },{
+            "tipo": "parrafo",
+            "texto": "“Estas personas han trabajado y siguen trabajando para que Fuerteventura sea lo que es hoy. Por eso debemos cuidarlas y promover su envejecimiento activo y el espíritu deportivo”, concluyó García."
+          },{
+            "tipo": "parrafo",
+            "texto": "El consejero insular, Víctor Alonso, explicó que “los participantes llevan entrenando desde el mes de septiembre para la competición. Los semifinalistas representarán a Fuerteventura en las Neurolimpiadas Canarias. Además, el programa culminará con una gala especial de reconocimientos en el mes de febrero, como acto de clausura para honrar su esfuerzo a lo largo de la temporada neurolímpica”."
+          },{
+            "tipo": "parrafo",
+            "texto": "Alonso señaló que “fueron los propios mayores los que nos pidieron trabajar en acciones conjuntas y, entre todos y todas, hemos planteado una actividad coordinada y pronto veremos los resultados en un tema enriquecedor y de interés general para nuestros mayores”."
+          },{
+            "tipo": "parrafo",
+            "texto": "Óscar Morales y Besay Rodríguez apuntaron que “este proyecto nace del concepto de neurogym para trabajar el cuerpo y la mente al mismo tiempo. Más allá de la competencia, el objetivo último es fortalecer un pilar tan importante como es la socialización”. Asimismo, destacaron la gran acogida que ha tenido la iniciativa entre los mayores de todos los municipios. Las Neurolimpiadas han venido a Fuerteventura para quedarse”."
+          },{
+            "tipo": "parrafo",
+            "texto": "Por su parte, los representantes municipales mostraron su total disposición para colaborar y ser partícipes desde el primer minuto, indicando que los mayores mostraron su entusiasmo nada más conocer la idea."
+          }
+          
+        ]
+      },{
+        "id": "12",
+        "destacada": false,
+        "slides": false,
+        "categoria": "Deportes",
+        "titulo": "Más de 50 mayores de Fuerteventura participan en las Neurolimpiadas Canarias en La Palma",
+        "descripcion": "Mayores de Fuerteventura compitieron en las Neurolimpiadas Canarias de Santa Cruz de La Palma, representando a Antigua, La Oliva, Tuineje y Pájara en pruebas físicas y cognitivas tras clasificarse en Neuromajo 2024.",
+        "fecha": "2 diciembre, 2024",
+        "imagen": "/static/img/noticias/12.jpeg",
+        "url_noticia": "/template/noticia.html?id=12",
+        "url": "https://ondafuerteventura.es/mas-de-50-mayores-de-fuerteventura-participan-en-las-neurolimpiadas-canarias-en-la-palma",
+        "contenido": [
+          {
+            "tipo": "parrafo",
+            "texto": "Un total de más de cincuenta personas mayores de diferentes municipios de Fuerteventura participaron este fin de semana en las Neurolimpiadas Canarias, celebradas en la Ciudad de Deportes de Miraflores, en Santa Cruz de La Palma. Los equipos majoreros, que competían en pruebas tanto físicas como cognitivas, representaron a localidades como Antigua, La Oliva, Tuineje y Pájara. Los equipos participantes fueron Héroes en Silencio (Antigua), A por todas (La Oliva), Tahona (La Oliva), Camellitos (Tuineje), Trompiezo (Pájara), Tahona (La Oliva) y Arriba d’ellos (La Oliva). Más de 50 mayores de Fuerteventura participan en las Neurolimpiadas Canarias en La Palma."
+          },{
+            "tipo": "parrafo",
+            "texto": "Estos equipos lograron su clasificación tras su participación en las Neuromajo 2024, un evento organizado por el Cabildo de Fuerteventura, en colaboración con los ayuntamientos de la isla, que tuvo lugar en el Polideportivo Insular de Puerto del Rosario y reunió a casi 300 personas. El proyecto busca promover la salud, el bienestar y la autonomía de las personas mayores, fomentando el envejecimiento activo a través del ejercicio físico, la estimulación cognitiva y la socialización."
+          },{
+            "tipo": "parrafo",
+            "texto": "La presidenta del Cabildo, Lola García, expresó su felicitación a los participantes, destacando la importancia de iniciativas como esta para el bienestar de las personas mayores. El consejero de Acción Social, Víctor Alonso, reiteró el apoyo del Cabildo y reafirmó el compromiso de seguir promoviendo este tipo de actividades en futuras ediciones."
+          },{
+            "tipo": "parrafo",
+            "texto": "Los organizadores del evento, representados por el Club del Mayor, resaltaron la relevancia de la socialización como uno de los pilares clave de este proyecto, señalando que uno de sus mayores logros fue la conexión entre las personas participantes."
+          },{
+            "tipo": "parrafo",
+            "texto": "Durante la jornada en La Palma, estuvieron presentes representantes del Cabildo y los concejales de los municipios participantes, quienes también mostraron su apoyo al evento. La temporada de Neuromajo 2024 culminará en febrero con una gala de reconocimiento para los participantes. Más de 50 mayores de Fuerteventura participan en las Neurolimpiadas Canarias en La Palma."
+          }
+          
+        ]
+      },{
+        "id": "13",
+        "destacada": false,
+        "slides": false,
+        "categoria": "General",
+        "titulo": "Granadilla de Abona se suma al programa ‘Neurolimpiadas’ para mayores",
+        "descripcion": "El Ayuntamiento de Granadilla de Abona, bajo la dirección de Nacho Mendoza Morales, lanza las Neurolimpiadas Granadilla 2024 para mayores de 60 años, coordinando espacios y horarios con asociaciones y responsables municipales.",
+        "fecha": "4 abril de 2024 ",
+        "imagen": "/static/img/noticias/13.jpg",
+        "url_noticia": "/template/noticia.html?id=13",
+        "url": "https://www.granadilladeabona.org/granadilla-de-abona-se-suma-al-programa-neurolimpiadas-para-mayores/",
+        "contenido": [
+          {
+            "tipo": "parrafo",
+            "texto": "El Ayuntamiento de Granadilla de Abona, a través de la concejalía de Mayores que dirige Nacho Mendoza Morales, llevará a cabo el programa ‘Neurolimpiadas Granadilla 2024’, dirigido a personas mayores de 60 años."
+          },{
+            "tipo": "parrafo",
+            "texto": "El responsable del área ha mantenido recientemente numerosas reuniones con el objetivo de planificar y coordinar este proyecto, contando con la asistencia del concejal de Bienestar Comunitario, Adán García Casañas, así como con Óscar Morales y Besay Rodríguez, fundadores de la Asociación Deportiva Neurolímpica de Personas Mayores. La intención es presentar próximamente la actividad a los diferentes colectivos de mayores, para consensuar y determinar los espacios y horarios en que se desarrollará las sesiones de las Neurolimpiadas."
+          },{
+            "tipo": "parrafo",
+            "texto": "Con esta iniciativa se pretende preparar a las personas mayores del municipio, para participar en las próximas Neurolimpiadas Insulares de Tenerife 2024, uniéndose así a la decena de municipios adscritos ya a este Programa Deportivo. Se trata de una apuesta importante para mejorar el bienestar de los mayores del municipio, que servirá para trabajar la actividad física, psíquica y la socialización entre las personas mayores, combatiendo la soledad no deseada, además de fomentar espacios de ocio y tiempo libre, promover el deporte de una manera inclusiva y el acercamiento entre mayores."
+          },{
+            "tipo": "parrafo",
+            "texto": "El edil, Nacho Mendoza, señala que las Neurolimpiadas “tiene como objetivo promover la actividad física, cognitiva y el contacto social entre los mayores del municipio para ayudar a un envejecimiento activo, además del desarrollo de habilidades psicomotoras y neurológicas que permiten mejorar su día a día, y en definitiva su calidad de vida”. De igual manera, recuerda que “esta actividad responde al compromiso que tiene el Ayuntamiento de seguir trabajando por el bienestar de las personas mayores”."
+          }
+          
+        ]
+      },{
+        "id": "14",
+        "destacada": false,
+        "slides": false,
+        "categoria": "Deportes",
+        "titulo": "Villa de Mazo se proclama ganador en la prueba de letras y la prueba de letras y cifras de las neurolimpiadas",
+        "descripcion": "Más de 35 vecinos de Villa de Mazo participaron del 2 al 4 de febrero en las Neurolimpiadas provinciales de Santiago del Teide, compitiendo en relevos, aro canario, calculadora humana y carrera de letras.",
+        "fecha": "5 febrero 2024 ",
+        "imagen": "/static/img/noticias/14.jpg",
+        "url_noticia": "/template/noticia.html?id=14",
+        "url": "https://villademazo.com/villa-de-mazo-se-proclama-ganador-en-la-prueba-de-letras-y-la-prueba-de-letras-y-cifras-de-las-neurolimpiadas/",
+        "contenido": [
+          {
+            "tipo": "parrafo",
+            "texto": "El Ayuntamiento de Villa de Mazo participa con un grupo de más de 35 personas en el encuentro provincial de ‘Las neurolimpiadas’ en la isla de Tenerife. Una prueba organizada por ‘El Club del Mayor’ los días 2, 3 y 4 de febrero en el Complejo Deportivo Pancracio Socas García, en el municipio de Santiago del Teide."
+          },{
+            "tipo": "parrafo",
+            "texto": "Los mayores del municipio de Villa de Mazo compitieron en distintas modalidades como los relevos, el aro canario, la calculadora humana y la carrera de letras."
+          },{
+            "tipo": "parrafo",
+            "texto": "El alcalde Idafe Hernández destacó la realización de este tipo de pruebas para los mayores donde “no solo se descubren e implican valores de convivencia y fraternidad, sino un importante valor deportivo y participativo durante todo el fin de semana en el encuentro con diferentes municipios”."
+          },{
+            "tipo": "parrafo",
+            "texto": "Por su parte, el concejal de Mayores, Joshua Pérez Martín, felicitó a los neurolímpincos y neurolímpicas por su implicación y participación y porque “de las cuatro pruebas que se disputaban, se han proclamado campeonas en la prueba de carrera de letras y en carrera de letras y cifras”."
+          },{
+            "tipo": "parrafo",
+            "texto": "Se trató de una competición de carácter deportivo, lúdico y cognitivo dirigido a las personas mayores con el objetivo principal de lograr en ellas un envejecimiento activo, permitiendo el desarrollo de sus habilidades psicomotoras y neurológicas con el fin de lograr una mejor calidad de vida a largo plazo."
+          },{
+            "tipo": "parrafo",
             "texto": ""
+          }        
+        ]
+      },{
+        "id": "15",
+        "destacada": false,
+        "slides": false,
+        "categoria": "General",
+        "titulo": "San Miguel organiza unas neurolimpiadas para mayores",
+        "descripcion": "Más de 35 vecinos de Villa de Mazo participaron del 2 al 4 de febrero en las Neurolimpiadas provinciales de Santiago del Teide, compitiendo en relevos, aro canario, calculadora humana y carrera de letras.",
+        "fecha": "14 Ene 2023",
+        "imagen": "/static/img/noticias/15.jpg",
+        "url_noticia": "/template/noticia.html?id=15",
+        "url": "https://www.sanmigueldeabona.es/2023/01/14/san-miguel-organiza-unas-neurolimpiadas-para-mayores-para-seguir-potenciando-el-envejecimiento-activo/",
+        "contenido": [
+          {
+            "tipo": "parrafo",
+            "texto": "El ayuntamiento de San Miguel de Abona, a través de la Concejalía de Servicios Sociales, y en colaboración con el Cabildo de Tenerife dentro del programa “Conecta Mayores” del Instituto de Atención Social y Sociosanitaria (IASS), ya se encuentra preparando a sus mayores para que sean partícipes de una neurolimpiadas, adaptadas a las necesidades de este perfil de población, con el objetivo de seguir potenciando el envejecimiento activo a través de diversas pruebas. Se trata, en definitiva, de una competición de carácter deportivo, lúdico y cognitivo, donde la diversión, la convivencia y una sana competitividad, cobrarán protagonismo."
+          },{
+            "tipo": "parrafo",
+            "texto": "Las diferentes actividades en grupo de este particular evento,  tendrán lugar el próximo mes de marzo. Allí, se pondrán a prueba las capacidades cognitivas a través de distintos juegos eliminatorios. “El Reto”, Los Relevos”, “Apalabrado” o “La Calculadora Humana” son algunos de los nombres de las distintas disciplinas que deberán superar los participantes para llegar a ser el equipo campeón."
+          },{
+            "tipo": "parrafo",
+            "texto": "Tanto el alcalde, Arturo González, como la concejala de Servicios Sociales, Nuria Marrero, ponen de manifiesto que “este proyecto pretende cuidar de la autonomía personal para mejorar la calidad de vida de nuestros mayores porque, tengamos la edad que tengamos, lo que está claro es que lo que hagamos hoy influirá en la calidad de vida que tendremos mañana”."
+          },{
+            "tipo": "parrafo",
+            "texto": "Por su parte, el concejal de Mayores, Joshua Pérez Martín, felicitó a los neurolímpincos y neurolímpicas por su implicación y participación y porque “de las cuatro pruebas que se disputaban, se han proclamado campeonas en la prueba de carrera de letras y en carrera de letras y cifras”."
+          },{
+            "tipo": "parrafo",
+            "texto": "Las “neurolimpiadas” están ideadas por “El Club del Mayor” bajo la premisa de, no solo vivir más años, sino en mejores condiciones; un equipo interdisciplinar de profesionales especializados en atención al mayor que apuesta por un cambio de perspectiva en lo referente a envejecer y a las estrategias convencionales para disfrutar de dicha etapa."
+          }, {
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia15_1.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          }         
+        ]
+      },{
+        "id": "16",
+        "destacada": false,
+        "slides": false,
+        "categoria": "Deportes",
+        "titulo": "Las I “Neurolimpiadas” de El Rosario o cómo envejecer de forma activa a través de la competición",
+        "descripcion": "El Pabellón de El Chorrillo acogió esta mañana las I Neurolimpiadas de El Rosario, con ocho equipos que competian en pruebas físicas y cognitivas.",
+        "fecha": "29 octubre 2024 ",
+        "imagen": "/static/img/noticias/16.jpg",
+        "url_noticia": "/template/noticia.html?id=16",
+        "url": "https://villademazo.com/villa-de-mazo-se-proclama-ganador-en-la-prueba-de-letras-y-la-prueba-de-letras-y-cifras-de-las-neurolimpiadas/",
+        "contenido": [
+          {
+            "tipo": "parrafo",
+            "texto": "El pabellón de El Chorrillo acogió en la mañana de hoy, sábado, las I “Neurolimpiadas” para personas mayores de El Rosario. Esta competición, llevada a cabo por el Ayuntamiento de El Rosario, con la colaboración del Cabildo de Tenerife dentro del programa Mayores de Tenerife y la organización de El club del mayor, apuesta por desarrollar un envejecimiento activo, tanto físico como cognitivo, a través de diversas pruebas. El alcalde de El Rosario, Escolástico Gil, acompañado por el consejero insular y vicepresidente del IASS Tenerife, Nauzet Gugliotta, y por la concejala de Acción Social, Fátima Gutiérrez, acudieron a las I 'Neurolimpiadas' e hicieron entrega de los diplomas a los integrantes de los ocho equipos participantes, pertenecientes a los núcleos de Lomo Pelado, La Esperanza, El Chorrillo y Llano del Moro. Diversión, convivencia y hasta una sana competitividad fueron los ingredientes de esta actividad dirigida a personas de más de 65 años y/o con discapacidad."
+          }, {
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia16_1.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          }, {
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia16_2.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          }, {
+            "tipo": "imagen",
+            "url": "/static/img/noticias/contenido/noticia16_3.jpg",
+            "descripcion": "Participantes durante las pruebas físicas",
+            "ancho": "half" 
+          }      
+        ]
+      },{
+        "id": "17",
+        "destacada": false,
+        "slides": false,
+        "categoria": "Deportes",
+        "titulo": "Villa de Mazo acoge este fin de semana el Campeonato insular de las Neurolimpiadas",
+        "descripcion": "El evento reunirá a más de 200 mayores en una serie de actividades físicas y cognitivas para fomentar un envejecimiento activo.",
+        "fecha": "5 julio 2024 ",
+        "imagen": "/static/img/noticias/17.jpg",
+        "url_noticia": "/template/noticia.html?id=17",
+        "url": "https://villademazo.com/villa-de-mazo-acoge-este-fin-de-semana-el-campeonato-insular-de-las-neurolimpiadas/",
+        "contenido": [
+          {
+            "tipo": "parrafo",
+            "texto": "El Ayuntamiento de Villa de Mazo acoge este fin de semana el Campeonato insular de las Neurolimpiadas. Este evento, gestionado por el Club del Mayor, reunirá a más de 200 mayores en una serie de actividades físicas y cognitivas diseñadas para fomentar un envejecimiento activo y promover las relaciones sociales entre los participantes."
+          },{
+            "tipo": "parrafo",
+            "texto": "El alcalde de Villa de Mazo, Idafe Hernández, expresó su entusiasmo por la celebración de este evento en el municipio y relató que “es un honor para nosotros acoger las Neurolimpiadas este año. Esta iniciativa no solo subraya nuestro compromiso con el bienestar de nuestros mayores, sino que también ofrece una excelente oportunidad para que puedan mantenerse activos y socialmente conectados. Estamos orgullosos de apoyar este tipo de actividades que enriquecen la vida de nuestra comunidad»."
           }, {
             "tipo": "parrafo",
-            "texto": ""
-            }, {
+            "texto": "Por su parte, el concejal de Servicios Sociales, Joshua Pérez, destacó la importancia de las actividades psicomotoras y neurológicas para los mayores y explicó que este evento «son una plataforma magnífica para impulsar el desarrollo de habilidades tanto físicas como cognitivas en nuestros mayores. Este tipo de eventos son cruciales para promover un estilo de vida saludable y activo, lo cual es esencial para un envejecimiento de calidad. Agradecemos al Club del Mayor por su dedicación en la organización de este evento»."
+          }, {
             "tipo": "parrafo",
-            "texto": ""
-            }, {
-            "tipo": "parrafo",
-            "texto": ""
-            }
-          
+            "texto": "El programa de las Neurolimpiadas empezará el viernes, 5 de julio, a las 19:00 horas, con la Ceremonia de inauguración. Continuará el sábado, 6 de julio, de 10:00 a 14:00 horas, con la ronda de calificación. El domingo, 7 de julio, a las 10:00 horas, tendrán lugar las rondas finales para culminar a las 12:30 horas, con la ceremonia de clausura y entrega de trofeos."
+          }     
         ]
       }
     ]
   }
 
+
+  
 
   

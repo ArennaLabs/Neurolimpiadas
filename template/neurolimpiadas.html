@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Neurolimpiadas</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../static/js/colors.js"></script>
 </head>
 <body>
     <nav class="bg-white shadow w-full">
@@ -51,5 +52,261 @@
           </div>
         </div>
       </nav>
+      <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Hero Section -->
+        <div class="relative h-[400px] mb-16 rounded-2xl overflow-hidden">
+            <img src="/static/img/SobreNosotros.jpg" alt="Participantes de las Neurolimpiadas" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent flex items-center">
+                <div class="text-white px-8 md:px-16 max-w-2xl">
+                    <h1 class="text-4xl md:text-5xl font-bold mb-4">Neurolimpiadas Canarias</h1>
+                    <p class="text-lg md:text-xl">Fomentando el envejecimiento activo y saludable a través de la competición deportiva y cognitiva</p>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Sección ¿Qué son las Neurolimpiadas? -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">¿Qué son las Neurolimpiadas?</h2>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="prose prose-lg">
+                    <p>Las Neurolimpiadas son competiciones deportivas y cognitivas diseñadas específicamente para personas mayores en las Islas Canarias. Este evento único promueve un estilo de vida activo y saludable, fomentando la participación y la socialización entre los mayores de diferentes municipios.</p>
+                    <p>Cada municipio participa con sus equipos en diversas pruebas, compitiendo primero a nivel insular. Los ganadores de cada isla avanzan a la gran final interinsular para determinar los campeones de las Islas Canarias.</p>
+                </div>
+                <div class="rounded-lg overflow-hidden shadow-lg">
+                    <img src="/static/img/SobreNosotros1.jpg" alt="Competición en las Neurolimpiadas" 
+                         class="w-full h-64 object-cover">
+                </div>
+            </div>
+        </section>
+  
+        <!-- Estructura de la Competición -->
+        <section class="mb-16 bg-gray-50 rounded-2xl p-8">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Estructura de la Competición</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-neurolimpiadas-lightBlue text-4xl font-bold mb-4">1</div>
+                    <h3 class="text-xl font-semibold mb-3">Fase Municipal</h3>
+                    <p class="text-gray-600">Los equipos compiten dentro de su municipio para clasificarse para la fase insular.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-neurolimpiadas-yellow text-4xl font-bold mb-4">2</div>
+                    <h3 class="text-xl font-semibold mb-3">Fase Insular</h3>
+                    <p class="text-gray-600">Los mejores equipos de cada municipio compiten por representar a su isla.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <div class="text-[#86b050] text-4xl font-bold mb-4">3</div>
+                    <h3 class="text-xl font-semibold mb-3">Final Interinsular</h3>
+                    <p class="text-gray-600">Los campeones de cada isla compiten en la gran final de las Islas Canarias.</p>
+                </div>
+            </div>
+        </section>
+  
+        <!-- Tipos de Pruebas -->
+        <section class="mb-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-8">Pruebas de la Competición</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="card-prueba border border-gray-200 rounded-lg p-6 text-center hover:shadow-2xl 
+                  transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+                  hover:ring-2 hover:ring-neurolimpiadas-lightBlue group" data-tipo="fisicas">
+                    <h3 class="text-xl font-semibold mb-6">Pruebas Físicas</h3>
+                    <svg class="w-12 h-12 mx-auto mb-4 text-neurolimpiadas-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    
+                </div>
+                <div class="card-prueba border border-gray-200 rounded-lg p-6 text-center hover:shadow-2xl 
+                transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+                hover:ring-2 hover:ring-neurolimpiadas-lightBlue group" data-tipo="cognitivas">
+                    <h3 class="text-xl font-semibold mb-6">Pruebas Cognitivas</h3>
+                    <svg class="w-12 h-12 mx-auto mb-4 text-neurolimpiadas-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    </svg>
+         
+                </div>
+                <div class="card-prueba border border-gray-200 rounded-lg p-6 text-center hover:shadow-2xl 
+                transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+                hover:ring-2 hover:ring-neurolimpiadas-lightBlue group" data-tipo="equipo">
+                    <h3 class="text-xl font-semibold mb-6">Pruebas en Equipo</h3>
+                    <svg class="w-12 h-12 mx-auto mb-4 text-neurolimpiadas-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                    
+                </div>
+                <div class="card-prueba border border-gray-200 rounded-lg p-6 text-center hover:shadow-2xl 
+                transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+                hover:ring-2 hover:ring-neurolimpiadas-lightBlue group" data-tipo="culturales">
+                    <h3 class="text-xl font-semibold mb-6">Actividades Culturales</h3>
+                    <svg class="w-12 h-12 mx-auto mb-4 text-neurolimpiadas-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                    
+                </div>
+            </div>
+        </section>
+        <section id="explicacionPruebas" class="hidden mb-16 bg-white rounded-lg shadow-xl p-8 transition-all duration-300">
+          <!-- Pruebas Físicas -->
+          <div id="pruebasFisicas" class="hidden prueba-detalle">
+              <div class="grid md:grid-cols-2 gap-8">
+                  <div>
+                      <h3 class="text-2xl font-bold text-neurolimpiadas-blue mb-4">Pruebas Físicas</h3>
+                      <p class="text-gray-600 mb-4">Las pruebas físicas están diseñadas específicamente para mantener y mejorar la condición física de nuestros mayores. Incluyen actividades como:</p>
+                      <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+                          <li>Ejercicios de equilibrio y coordinación</li>
+                          <li>Actividades de resistencia suave</li>
+                          <li>Juegos tradicionales adaptados</li>
+                          <li>Ejercicios de flexibilidad</li>
+                      </ul>
+                      <div class="bg-neurolimpiadas-bluepalido p-6 rounded-lg">
+                          <h4 class="font-bold text-neurolimpiadas-blue mb-3">Beneficios para la salud:</h4>
+                          <ul class="list-disc list-inside text-gray-700 space-y-2">
+                              <li>Mejora del equilibrio y prevención de caídas</li>
+                              <li>Mantenimiento de la masa muscular</li>
+                              <li>Aumento de la flexibilidad</li>
+                              <li>Mejora de la coordinación motriz</li>
+                              <li>Fortalecimiento del sistema cardiovascular</li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="space-y-4">
+                      <img src="/static/img/pruebas-fisicas.jpg" alt="Participantes en pruebas físicas" class="rounded-lg shadow-md w-full h-64 object-cover">
+                      <p class="text-sm text-gray-500 italic">Nuestros participantes durante las actividades físicas adaptadas</p>
+                  </div>
+              </div>
+          </div>
+        
+          <!-- Pruebas Cognitivas -->
+          <div id="pruebasCognitivas" class="hidden prueba-detalle">
+              <div class="grid md:grid-cols-2 gap-8">
+                  <div>
+                      <h3 class="text-2xl font-bold text-neurolimpiadas-yellow mb-4">Pruebas Cognitivas</h3>
+                      <p class="text-gray-600 mb-4">Las pruebas cognitivas están diseñadas para mantener activa la mente y estimular las funciones cerebrales. Incluyen:</p>
+                      <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+                          <li>Ejercicios de memoria</li>
+                          <li>Juegos de lógica y razonamiento</li>
+                          <li>Actividades de cálculo mental</li>
+                          <li>Ejercicios de atención y concentración</li>
+                      </ul>
+                      <div class="bg-neurolimpiadas-yellowpalido p-6 rounded-lg">
+                          <h4 class="font-bold text-neurolimpiadas-yellow mb-3">Beneficios cognitivos:</h4>
+                          <ul class="list-disc list-inside text-gray-700 space-y-2">
+                              <li>Prevención del deterioro cognitivo</li>
+                              <li>Mejora de la memoria a corto plazo</li>
+                              <li>Mantenimiento de la agilidad mental</li>
+                              <li>Estimulación de la creatividad</li>
+                              <li>Fortalecimiento de la capacidad de concentración</li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="space-y-4">
+                      <img src="/static/img/pruebas-cognitivas.jpg" alt="Participantes en pruebas cognitivas" class="rounded-lg shadow-md w-full h-64 object-cover">
+                      <p class="text-sm text-gray-500 italic">Participantes resolviendo ejercicios cognitivos en grupo</p>
+                  </div>
+              </div>
+          </div>
+          <!-- Pruebas Equipo -->
+          <div id="pruebasEquipo" class="hidden prueba-detalle">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold text-neurolimpiadas-red mb-4">Pruebas Cognitivas</h3>
+                    <p class="text-gray-600 mb-4">Las pruebas cognitivas están diseñadas para mantener activa la mente y estimular las funciones cerebrales. Incluyen:</p>
+                    <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+                        <li>Ejercicios de memoria</li>
+                        <li>Juegos de lógica y razonamiento</li>
+                        <li>Actividades de cálculo mental</li>
+                        <li>Ejercicios de atención y concentración</li>
+                    </ul>
+                    <div class="bg-neurolimpiadas-redpalido p-6 rounded-lg">
+                        <h4 class="font-bold text-neurolimpiadas-red mb-3">Beneficios cognitivos:</h4>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Prevención del deterioro cognitivo</li>
+                            <li>Mejora de la memoria a corto plazo</li>
+                            <li>Mantenimiento de la agilidad mental</li>
+                            <li>Estimulación de la creatividad</li>
+                            <li>Fortalecimiento de la capacidad de concentración</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <img src="/static/img/pruebas-cognitivas.jpg" alt="Participantes en pruebas cognitivas" class="rounded-lg shadow-md w-full h-64 object-cover">
+                    <p class="text-sm text-gray-500 italic">Participantes resolviendo ejercicios cognitivos en grupo</p>
+                </div>
+            </div>
+        </div>
+        <!-- Pruebas Culturales -->
+        <div id="pruebasCulturales" class="hidden prueba-detalle">
+          <div class="grid md:grid-cols-2 gap-8">
+              <div>
+                  <h3 class="text-2xl font-bold text-neurolimpiadas-green mb-4">Pruebas Cognitivas</h3>
+                  <p class="text-gray-600 mb-4">Las pruebas cognitivas están diseñadas para mantener activa la mente y estimular las funciones cerebrales. Incluyen:</p>
+                  <ul class="list-disc list-inside text-gray-600 space-y-2 mb-6">
+                      <li>Ejercicios de memoria</li>
+                      <li>Juegos de lógica y razonamiento</li>
+                      <li>Actividades de cálculo mental</li>
+                      <li>Ejercicios de atención y concentración</li>
+                  </ul>
+                  <div class="bg-neurolimpiadas-greenpalido p-6 rounded-lg">
+                      <h4 class="font-bold text-neurolimpiadas-green mb-3">Beneficios cognitivos:</h4>
+                      <ul class="list-disc list-inside text-gray-700 space-y-2">
+                          <li>Prevención del deterioro cognitivo</li>
+                          <li>Mejora de la memoria a corto plazo</li>
+                          <li>Mantenimiento de la agilidad mental</li>
+                          <li>Estimulación de la creatividad</li>
+                          <li>Fortalecimiento de la capacidad de concentración</li>
+                      </ul>
+                  </div>
+              </div>
+              <div class="space-y-4">
+                  <img src="/static/img/pruebas-cognitivas.jpg" alt="Participantes en pruebas cognitivas" class="rounded-lg shadow-md w-full h-64 object-cover">
+                  <p class="text-sm text-gray-500 italic">Participantes resolviendo ejercicios cognitivos en grupo</p>
+              </div>
+          </div>
+      </div>
+  
+        </section>
+    </main>
+  
+    <script>
+        // Toggle para el menú móvil
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('mobile-dropdown').classList.toggle('hidden');
+        });
+
+        const tiposPruebas = {
+            'pruebasFisicas': document.querySelector('[data-tipo="fisicas"]'),
+            'pruebasCognitivas': document.querySelector('[data-tipo="cognitivas"]'),
+            'pruebasEquipo': document.querySelector('[data-tipo="equipo"]'),
+            'actividadesCulturales': document.querySelector('[data-tipo="culturales"]')
+        };
+
+        const seccionExplicacion = document.getElementById('explicacionPruebas');
+        const detallesPruebas = document.querySelectorAll('.prueba-detalle');
+
+        // Añadir atributos data-tipo a los divs de las pruebas
+        document.querySelectorAll('.card-prueba').forEach(card => {
+            card.addEventListener('click', function() {
+                const tipo = this.dataset.tipo;
+                
+                // Ocultar todas las explicaciones
+                detallesPruebas.forEach(detalle => {
+                    detalle.classList.add('hidden');
+                });
+
+                // Mostrar la sección de explicación
+                seccionExplicacion.classList.remove('hidden');
+                
+                // Mostrar el detalle específico
+                document.getElementById(`pruebas${tipo.charAt(0).toUpperCase() + tipo.slice(1)}`).classList.remove('hidden');
+                
+                // Scroll suave hasta la explicación
+                seccionExplicacion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
 </body>
 </html>
+
+
+
+
+
