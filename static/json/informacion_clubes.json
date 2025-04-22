@@ -112,6 +112,65 @@
           "visitante": "U.D. OROTAVA",
           "resultadoVisitante": "0"
         }
+      ],
+      "noticias": [
+        {
+          "titulo": "Victoria en el último minuto",
+          "fecha": "2024-09-01",
+          "contenido": "El U.D. Orotava se llevó la victoria en un emocionante partido contra el C.D. Florida.",
+          "imagen": "/static/img/news.jpg"
+        },
+        {
+          "titulo": "Empate en casa",
+          "fecha": "2024-09-08",
+          "contenido": "El U.D. Orotava empató 0-0 contra el C.D. Salesianos.",
+          "imagen": "/static/img/news.jpg"
+        },
+        {
+          "titulo": "Gran victoria en la jornada 3",
+          "fecha": "2024-09-15",
+          "contenido": "El U.D. Orotava ganó 2-1 al C.D. Salesianos.",
+          "imagen": "/static/img/news.jpg"
+        },
+        {
+          "titulo": "Victoria contundente",
+          "fecha": "2024-09-22",
+          "contenido": "El U.D. Orotava venció 4-1 al Real Unión Tenerife.",
+          "imagen": "/static/img/news.jpg"
+        },
+        {
+          "titulo": "Empate en el derbi",
+          "fecha": "2024-09-29",
+          "contenido": "El U.D. Orotava empató 0-0 contra el C.D. Tenerife.",
+          "imagen": "/static/img/news.jpg"
+        }
+      ],
+      "galeria": [
+        {
+          "titulo": "Celebración del equipo",
+          "fecha": "2024-09-01",
+          "imagen": "/static/img/image.jpg"
+        },
+        {
+          "titulo": "Entrenamiento del equipo",
+          "fecha": "2024-09-08",
+          "imagen": "/static/img/image.jpg"
+        },
+        {
+          "titulo": "Victoria en el último minuto",
+          "fecha": "2024-09-15",
+          "imagen": "/static/img/image.jpg"
+        },
+        {
+          "titulo": "Celebración del gol",
+          "fecha": "2024-09-22",
+          "imagen": "/static/img/image.jpg"
+        },
+        {
+          "titulo": "Entrenamiento del equipo",
+          "fecha": "2024-09-29",
+          "imagen": "/static/img/image.jpg"
+        }
       ]
     },
     {

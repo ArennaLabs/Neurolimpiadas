@@ -216,12 +216,26 @@
 
     <!-- Noticias -->
     <div id="noticias-link" class="max-w-7xl mx-auto py-8 px-4">
-        <div class="bg-white shadow-lg rounded-lg p-6">
-            <h2 class="text-2xl font-bold mb-4">Noticias</h2>
-            <div id="noticias" class="grid grid-cols-1 gap-4">
-                <!-- Las noticias se cargarán dinámicamente -->
-            </div>
-        </div>
+      <div class="shadow-xl rounded-lg p-6">
+          <h2 class="text-2xl font-bold mb-6 text-black flex justify-between items-center">
+              Noticias
+              <div class="flex space-x-4">
+                  <button id="prev-noticias" class="px-4 py-2 bg-gray-800 text-gray-300 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                      </svg>
+                  </button>
+                  <button id="next-noticias" class="px-4 py-2 bg-gray-800 text-gray-300 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed">
+                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                      </svg>
+                  </button>
+              </div>
+          </h2>
+          <div id="noticias" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <!-- Las noticias se cargarán dinámicamente -->
+          </div>
+      </div>
     </div>
 
     <!-- Galería -->
@@ -233,6 +247,17 @@
             </div>
         </div>
     </div>
+
+    <!-- Botón de volver atrás -->
+    <div class="fixed bottom-8 right-8">
+      <a href="equipos.html" 
+          class="bg-[#4672b5] hover:bg-[#3a5d94] text-white px-6 py-3 rounded-full shadow-lg transition-colors duration-300 flex items-center">
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+          </svg>
+          Volver
+      </a>
+  </div>
 
     <script>
         // Función para obtener el ID del club de la URL
@@ -364,17 +389,81 @@
                 }
 
                 // Cargar noticias si existen
-                const noticiasContainer = document.getElementById('noticias');
+                let paginaActualNoticias = 0;
+                const noticiasPorPagina = 3;
+
+                function mostrarNoticias(noticias) {
+                    const noticiasContainer = document.getElementById('noticias');
+                    const inicio = paginaActualNoticias * noticiasPorPagina;
+                    const fin = inicio + noticiasPorPagina;
+                    const noticiasPagina = noticias.slice(inicio, fin);
+
+                    // Actualizar botones de navegación
+                    const btnPrev = document.getElementById('prev-noticias');
+                    const btnNext = document.getElementById('next-noticias');
+                    
+                    btnPrev.disabled = paginaActualNoticias === 0;
+                    btnNext.disabled = (paginaActualNoticias + 1) * noticiasPorPagina >= noticias.length;
+
+                    if (noticiasPagina.length > 0) {
+                        noticiasContainer.innerHTML = noticiasPagina.map(noticia => `
+                            <div class="bg-gray-100 rounded-lg overflow-hidden shadow-lg transition-transform duration-300">
+                                <div class="relative h-48">
+                                    <img src="${noticia.imagen}" alt="${noticia.titulo}" 
+                                         class="w-full h-full object-cover">
+                                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                                        <h3 class="text-white font-bold text-lg line-clamp-2">${noticia.titulo}</h3>
+                                    </div>
+                                </div>
+                                <div class="p-4">
+                                    <p class="text-gray-600 text-sm mb-2">${new Date(noticia.fecha).toLocaleDateString('es-ES', {
+                                        year: 'numeric',
+                                        month: 'long',
+                                        day: 'numeric'
+                                    })}</p>
+                                    <p class="text-black line-clamp-3 mb-4">${noticia.contenido}</p>
+                                    <button class="text-blue-400 hover:text-blue-300 text-sm font-semibold flex items-center">
+                                        Leer más
+                                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('');
+                    } else {
+                        noticiasContainer.innerHTML = `
+                            <div class="col-span-full bg-gray-800 rounded-lg p-6">
+                                <p class="text-gray-400 text-center">No hay noticias disponibles</p>
+                            </div>
+                        `;
+                    }
+                }
+
+                // Dentro del bloque if de noticias existente
                 if (club.noticias && club.noticias.length > 0) {
-                    noticiasContainer.innerHTML = club.noticias.map(noticia => `
-                        <div class="p-4 border rounded-lg">
-                            <h3 class="font-bold">${noticia.titulo}</h3>
-                            <p>${noticia.descripcion}</p>
-                            <p class="text-gray-600">${noticia.fecha}</p>
-                        </div>
-                    `).join('');
+                    mostrarNoticias(club.noticias);
+
+                    // Añadir event listeners para los botones
+                    document.getElementById('prev-noticias').addEventListener('click', () => {
+                        if (paginaActualNoticias > 0) {
+                            paginaActualNoticias--;
+                            mostrarNoticias(club.noticias);
+                        }
+                    });
+
+                    document.getElementById('next-noticias').addEventListener('click', () => {
+                        if ((paginaActualNoticias + 1) * noticiasPorPagina < club.noticias.length) {
+                            paginaActualNoticias++;
+                            mostrarNoticias(club.noticias);
+                        }
+                    });
                 } else {
-                    noticiasContainer.innerHTML = '<p class="text-gray-600">No hay noticias disponibles</p>';
+                    document.getElementById('noticias').innerHTML = `
+                        <div class="col-span-full bg-gray-800 rounded-lg p-6">
+                            <p class="text-gray-400 text-center">No hay noticias disponibles</p>
+                        </div>
+                    `;
                 }
 
                 // Cargar galería si existen imágenes
@@ -382,7 +471,7 @@
                 if (club.galeria && club.galeria.length > 0) {
                     galeriaContainer.innerHTML = club.galeria.map(imagen => `
                         <div class="p-4 border rounded-lg">
-                            <img src="${imagen}" alt="Imagen de la galería" class="w-full h-48 object-cover rounded-lg">
+                            <img src="${imagen.imagen}" alt="Imagen de la galería" class="w-full h-48 object-cover rounded-lg">
                         </div>
                     `).join('');
                 } else {
