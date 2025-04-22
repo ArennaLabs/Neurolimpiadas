@@ -1,0 +1,165 @@
+{
+  "equipos": [
+    {
+      "id": 1,
+      "nombre": "U.D. OROTAVA",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "La Orotava"
+      },
+      "pabellon": {
+        "nombre": "Pabellón Municipal de La Orotava",
+        "direccion": "C/ Los Lavaderos s/n",
+        "capacidad": 1200
+      },
+      "imagenes": {
+        "logo": "/static/img/clubes/1.png",
+        "banner": "/static/img/banners/ud_orotava.jpg"
+      },
+      "colores": {
+        "principal": "#4ab7ff"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Nombre Jugador 1",
+            "posicion": "Base"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Nombre Entrenador",
+            "cargo": "Primer entrenador"
+          }
+        ]
+      },
+      "resultados": []
+    },
+    {
+      "id": 2,
+      "nombre": "FLORIDA C.F.",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "La Orotava"
+      },
+      "pabellon": {
+        "nombre": "Pabellón Florida",
+        "direccion": "C/ Florida s/n",
+        "capacidad": 800
+      },
+      "imagenes": {
+        "logo": "/static/img/clubes/2.png",
+        "banner": "/static/img/banners/florida_cf.jpg"
+      },
+      "colores": {
+        "principal": "#0013bd"
+      },
+      "plantilla": {
+        "jugadores": [],
+        "entrenadores": []
+      },
+      "resultados": []
+    },
+    {
+      "id": 3,
+      "nombre": "C.D. SALESIANOS",
+      "ubicacion": {
+        "isla": "Tenerife", 
+        "municipio": "La Orotava"
+      },
+      "pabellon": {
+        "nombre": "Pabellón Salesianos",
+        "direccion": "C/ Salesianos 1",
+        "capacidad": 600
+      },
+      "imagenes": {
+        "logo": "/static/img/clubes/3.png",
+        "banner": "/static/img/banners/cd_salesianos.jpg"
+      },
+      "colores": {
+        "principal": "#fffaa3"
+      },
+      "plantilla": {
+        "jugadores": [],
+        "entrenadores": []
+      },
+      "resultados": []
+    },
+    {
+      "id": 4,
+      "nombre": "REAL UNIÓN TENERIFE",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santa Cruz de Tenerife"
+      },
+      "pabellon": {
+        "nombre": "Pabellón Real Unión",
+        "direccion": "Avda. Buenos Aires s/n",
+        "capacidad": 1500
+      },
+      "imagenes": {
+        "logo": "/static/img/clubes/4.png",
+        "banner": "/static/img/banners/real_union.jpg"
+      },
+      "colores": {
+        "principal": "#bd1600"
+      },
+      "plantilla": {
+        "jugadores": [],
+        "entrenadores": []
+      },
+      "resultados": []
+    },
+    {
+      "id": 5,
+      "nombre": "C.D. TENERIFE",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santa Cruz de Tenerife"
+      },
+      "pabellon": {
+        "nombre": "Pabellón CD Tenerife",
+        "direccion": "C/ Heliodoro Rodríguez López s/n",
+        "capacidad": 2000
+      },
+      "imagenes": {
+        "logo": "/static/img/clubes/1.svg",
+        "banner": "/static/img/banners/cd_tenerife.jpg"
+      },
+      "colores": {
+        "principal": "#000cfa"
+      },
+      "plantilla": {
+        "jugadores": [],
+        "entrenadores": []
+      },
+      "resultados": []
+    },
+    {
+      "id": 6,
+      "nombre": "GARAFÍA C.F.",
+      "ubicacion": {
+        "isla": "La Palma",
+        "municipio": "Garafía"
+      },
+      "pabellon": {
+        "nombre": "Pabellón Municipal de Garafía",
+        "direccion": "C/ Santo Domingo s/n",
+        "capacidad": 500
+      },
+      "imagenes": {
+        "logo": "/static/img/clubes/5.png",
+        "banner": "/static/img/banners/garafia_cf.jpg"
+      },
+      "colores": {
+        "principal": "#08007a"
+      },
+      "plantilla": {
+        "jugadores": [],
+        "entrenadores": []
+      },
+      "resultados": []
+    }
+  ]
+}

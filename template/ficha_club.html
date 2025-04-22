@@ -51,5 +51,149 @@
           </div>
         </div>
       </nav>
+
+    <!-- Contenedor principal para la información del club -->
+    <div id="club-info">
+        <!-- El banner se cargará dinámicamente -->
+        <div id="club-banner" class="relative bg-cover bg-center h-64">
+            <div class="absolute inset-0 bg-black opacity-50"></div>
+            <div class="relative flex items-center justify-center h-full">
+                <img id="club-logo" alt="Logo del Club" class="h-32 w-32 rounded-full border-4 border-white shadow-lg">
+                <div class="ml-4">
+                    <h1 id="club-name" class="text-white text-3xl font-bold"></h1>
+                    <p id="club-location" class="text-white text-xl"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Información del pabellón -->
+        <div class="max-w-7xl mx-auto py-8 px-4">
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">Información del Pabellón</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-gray-600">Nombre:</p>
+                        <p id="pabellon-nombre" class="font-semibold"></p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600">Dirección:</p>
+                        <p id="pabellon-direccion" class="font-semibold"></p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600">Capacidad:</p>
+                        <p id="pabellon-capacidad" class="font-semibold"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plantilla del equipo -->
+        <div class="max-w-7xl mx-auto py-8 px-4">
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">Plantilla</h2>
+                
+                <!-- Jugadores -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-semibold mb-4">Jugadores</h3>
+                    <div id="lista-jugadores" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Los jugadores se cargarán dinámicamente -->
+                    </div>
+                </div>
+
+                <!-- Entrenadores -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Cuerpo Técnico</h3>
+                    <div id="lista-entrenadores" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Los entrenadores se cargarán dinámicamente -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resultados -->
+        <div class="max-w-7xl mx-auto py-8 px-4">
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">Resultados</h2>
+                <div id="resultados" class="grid grid-cols-1 gap-4">
+                    <!-- Los resultados se cargarán dinámicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para obtener el ID del club de la URL
+        function getClubId() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+
+        // Función para cargar y mostrar la información del club
+        async function cargarInformacionClub() {
+            try {
+                const response = await fetch('/static/json/información_clubes.json');
+                const data = await response.json();
+                
+                const clubId = getClubId();
+                const club = data.equipos.find(e => e.id === parseInt(clubId));
+                
+                if (!club) {
+                    console.error('Club no encontrado');
+                    return;
+                }
+
+                // Actualizar banner y logo
+                document.getElementById('club-banner').style.backgroundImage = `url('${club.imagenes.banner}')`;
+                document.getElementById('club-logo').src = club.imagenes.logo;
+                
+                // Actualizar información básica
+                document.getElementById('club-name').textContent = club.nombre;
+                document.getElementById('club-location').textContent = `${club.ubicacion.municipio}, ${club.ubicacion.isla}`;
+                
+                // Actualizar información del pabellón
+                document.getElementById('pabellon-nombre').textContent = club.pabellon.nombre;
+                document.getElementById('pabellon-direccion').textContent = club.pabellon.direccion;
+                document.getElementById('pabellon-capacidad').textContent = `${club.pabellon.capacidad} espectadores`;
+
+                // Cargar jugadores
+                const listaJugadores = document.getElementById('lista-jugadores');
+                listaJugadores.innerHTML = club.plantilla.jugadores.map(jugador => `
+                    <div class="p-4 border rounded-lg">
+                        <p class="font-bold">${jugador.nombre}</p>
+                        <p class="text-gray-600">Número: ${jugador.numero}</p>
+                        <p class="text-gray-600">Posición: ${jugador.posicion}</p>
+                    </div>
+                `).join('');
+
+                // Cargar entrenadores
+                const listaEntrenadores = document.getElementById('lista-entrenadores');
+                listaEntrenadores.innerHTML = club.plantilla.entrenadores.map(entrenador => `
+                    <div class="p-4 border rounded-lg">
+                        <p class="font-bold">${entrenador.nombre}</p>
+                        <p class="text-gray-600">${entrenador.cargo}</p>
+                    </div>
+                `).join('');
+
+                // Cargar resultados si existen
+                const resultadosContainer = document.getElementById('resultados');
+                if (club.resultados && club.resultados.length > 0) {
+                    resultadosContainer.innerHTML = club.resultados.map(resultado => `
+                        <div class="p-4 border rounded-lg">
+                            <p class="font-bold">${resultado.fecha}</p>
+                            <p>${resultado.local} ${resultado.resultadoLocal} - ${resultado.resultadoVisitante} ${resultado.visitante}</p>
+                        </div>
+                    `).join('');
+                } else {
+                    resultadosContainer.innerHTML = '<p class="text-gray-600">No hay resultados disponibles</p>';
+                }
+
+            } catch (error) {
+                console.error('Error al cargar la información del club:', error);
+            }
+        }
+
+        // Cargar la información cuando se carga la página
+        document.addEventListener('DOMContentLoaded', cargarInformacionClub);
+    </script>
 </body>
 </html>
