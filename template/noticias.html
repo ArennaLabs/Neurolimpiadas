@@ -19,42 +19,51 @@
   </style>
 </head>
 <body class="bg-gray-00">
-    <nav class="bg-white shadow w-full">
-        <div class="flex items-center justify-between h-16">
-          
-          <a href="home.html" class="flex-shrink-0">
-            <img class="h-16 w-32" src="../static/img/logo.png" alt="Logo de la Empresa">
-          </a>
-          
-          <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
-          <div class="hidden lg:flex space-x-4">
-            <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
-            <a href="#competiciones" class="px-3 py-2 text-gray-600 hover:text-gray-800">Competiciones</a>
-            <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
-            <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
-          </div>
-          
-          <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
-          <div class="lg:hidden relative px-4">
-            <button id="menu-toggle" 
-                    class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <!-- Icono de hamburguesa -->
-              <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                      d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-            
-            <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
-            <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-              <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
-              <a href="#competiciones" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Competiciones</a>
-              <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
-              <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
-            </div>
-          </div>
+  <nav class="bg-white shadow w-full">
+    <div class="flex items-center justify-between h-16">
+      
+      <a href="home.html" class="flex-shrink-0">
+        <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
+      </a>
+      
+      <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
+      <div class="hidden lg:flex space-x-4">
+        <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
+        <a href="neurolimpiadas.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Sobre Neurolimpiadas</a>
+        <a href="equipos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clubes</a>
+        <a href="calendario.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Calendario</a>
+        <a href="clasificaciones.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clasificaciones</a>
+        <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
+        <a href="galeria.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Galería</a>
+        <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
+      </div>
+      
+      <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
+      <div class="lg:hidden relative px-4">
+        <button id="menu-toggle" 
+                class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <!-- Icono de hamburguesa -->
+          <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+                  d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        
+        <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
+        <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
+          <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
+          <a href="neurolimpiadas.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sobre Neurolimpiadas</a>
+          <a href="equipos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clubes</a>
+          <a href="calendario.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Calendario</a>
+          <a href="clasificaciones.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clasificaciones</a>
+          <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
+          <a href="galeria.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Galería</a>
+          <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
         </div>
-    </nav>
+      </div>
+    </div>
+  </nav>
+
     <!-- Contenedor principal de la ventana de noticias -->
     <div class="relative h-screen">
       <!-- Sección principal de las noticias: ocupa 70% de la altura de la ventana -->
@@ -91,161 +100,178 @@
           <!-- Agrega más botones si tienes más noticias -->
         </div>
       </div>
+      <!-- Reemplazar la sección después del slider con: -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <!-- Sección de Noticia Destacada -->
+        <div class="flex items-center mb-6">
+            <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
+            <h2 class="font-medium text-lg tracking-wider">NOTICIA DESTACADA</h2>
+        </div>
+        
+        <div class="h-px w-full bg-gray-200 mb-8"></div>
 
-    <!-- Título de la sección de noticias -->
-    <div class="max-w-full mx-auto px-4 md:px-8 lg:px-12">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-          <div class="flex items-center mb-4 md:mb-0">
-              <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
-              <h2 className="font-medium text-lg tracking-wider">ÚLTIMAS NOTICIAS</h2>
-          </div>
+        <!-- Card de Noticia Destacada -->
+        <div class="flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hidden mb-16">
+            <div class="lg:w-1/2">
+                <img id="data-imagen" 
+                    alt="Noticia destacada" 
+                    class="w-full h-full object-cover">
+            </div>
+            <div class="lg:w-1/2 p-8 flex flex-col justify-between">
+                <div>
+                    <div class="flex justify-between items-center mb-4">
+                        <span id="data-categoria" 
+                              class="bg-arenna-blue text-white text-xs font-medium px-3 py-1 rounded-full">
+                        </span>
+                        <span id="data-fecha" class="text-gray-500 text-sm"></span>
+                    </div>
+                    <h3 id="data-titulo" 
+                        class="text-2xl font-bold text-gray-900 mb-4">
+                    </h3>
+                    <p id="data-descripcion" 
+                      class="text-gray-600 leading-relaxed mb-6">
+                    </p>
+                </div>
+                <a href="#" 
+                  class="inline-flex items-center text-arenna-blue hover:text-arenna-hover font-medium">
+                    Leer más
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Sección de Últimas Noticias -->
+        <div class="flex items-center mb-6">
+            <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
+            <h2 class="font-medium text-lg tracking-wider">ÚLTIMAS NOTICIAS</h2>
+        </div>
+        
+        <div class="h-px w-full bg-gray-200 mb-8"></div>
+
+        <!-- Grid de Noticias -->
+        <div id="noticias-container" 
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        </div>
       </div>
-      <div className="h-px w-full bg-gray-200 mb-8"></div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-12 py-8" id="noticias-container">
-      <!-- Las cards de noticias se generarán aquí -->
-    </div>
-
-
-    <!-- <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-4 md:px-8 lg:px-12 py-8">
-
-          <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow mx-auto">
-            <img src="../static/img/noticias/3.jpg" 
-                  alt="Imagen de la Noticia 3" 
-                  class="w-full h-64 object-cover">
-            <div class="p-4">
-              <div class="flex justify-between items-center mb-2">
-                <span class="bg-red-100 text-red-800 text-xs font-medium px-2.5 py-0.5 rounded">Deportes</span>
-                <span class="text-gray-500 text-sm">18 Noviembre, 2024</span>
-              </div>
-              <h3 class="text-xl font-semibold text-gray-800 mb-2 h-14 overflow-hidden">Ocho equipos representarán a Fuerteventura en las Neurolimpiadas Canarias</h3>
-              <p class="text-gray-600 mb-4 h-20 overflow-hidden">
-                Éxito del proyecto Neuromajo 2024 del Cabildo de Fuerteventura con diversas pruebas para el bienestar y salud de las personas mayores
-              </p>
-              <a href="https://www.cabildofuer.es/cabildo/ocho-equipos-representaran-a-fuerteventura-en-las-neurolimpiadas-canarias/" class="text-blue-600 font-bold hover:underline" target="_blank">Leer más</a>
-            </div>
-          </article>
-
-
-        <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow mx-auto">
-          <img src="../static/img/noticias/1.jpg" 
-               alt="Imagen de la Noticia 1" 
-               class="w-full h-64 object-cover">
-          <div class="p-4">
-            <div class="flex justify-between items-center mb-2">
-              <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded">Destacados</span>
-              <span class="text-gray-500 text-sm">04 Noviembre, 2024</span>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2 h-14 overflow-hidden">Granadilla de Abona acogió las 'Neurolimpiadas' de Tenerife 2024</h3>
-            <p class="text-gray-600 mb-4 h-20 overflow-hidden">
-              600 mayores se dieron cita en el pabellón municipal de Los Hinojeros este fin de semana para participar en las actividades deportivas
-            </p>
-            <a href="https://www.granadilladeabona.org/granadilla-de-abona-acogio-las-neurolimpiadas-de-tenerife-2024/" class="text-blue-600 font-bold hover:underline" target="_blank">Leer más</a>
-          </div>
-        </article>
-
-
-        <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow mx-auto">
-          <img src="../static/img/noticias/2.jpg" 
-               alt="Imagen de la Noticia 2" 
-               class="w-full h-64 object-cover">
-          <div class="p-4">
-            <div class="flex justify-between items-center mb-2">
-              <span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">General</span>
-              <span class="text-gray-500 text-sm">28 Junio, 2024</span>
-            </div>
-            <h3 class="text-xl font-semibold text-gray-800 mb-2 h-14 overflow-hidden">Más de 200 mayores de ocho municipio de La Palma competirán en Las Neurolimpiadas</h3>
-            <p class="text-gray-600 mb-4 h-20 overflow-hidden">
-              La actividad se desarrollará los días 5, 6 y 7 de julio en el Pabellón Deportivo David Jiménez Silva de Villa de Mazo
-            </p>
-            <a href="https://www.cabildodelapalma.es/es/mas-de-200-mayores-de-ocho-municipio-de-la-palma-competiran-en-las-neurolimpiadas" class="text-blue-600 font-bold hover:underline" target="_blank">Leer más</a>
-          </div>
-        </article>
-
-
-      </section> -->
-  </div>
 
   <!-- NOTICIAS SECUNDARIAS -->
   
 
   <!-- Script JavaScript para el slider -->
   <script>
-    async function cargarNoticias() {
-      try {
-          const response = await fetch('/static/json/informacion_noticias.json');
-          const data = await response.json();
-          const container = document.getElementById('noticias-container');
+    // Eliminar la constante slides y reemplazar con:
+    let slides = [];
+    let currentIndex = 0;
+    const slider = document.getElementById('slider');
 
-          data.noticias.forEach(noticia => {
-            container.innerHTML += createNoticiaCard(noticia);
-          });
-      } catch (error) {
-          console.error('Error cargando noticias:', error);
-      }
+    // Modificar la función cargarNoticias para cargar también el slider
+    async function cargarNoticias() {
+    try {
+        const response = await fetch('/static/json/informacion_noticias.json');
+        const data = await response.json();
+        
+        // 1. Primero, manejar la noticia destacada
+        const noticiaDestacada = data.noticias.find(noticia => noticia.destacada === true);
+        if (noticiaDestacada) {
+            document.getElementById('data-categoria').textContent = noticiaDestacada.categoria;
+            document.getElementById('data-titulo').textContent = noticiaDestacada.titulo;
+            document.getElementById('data-descripcion').textContent = noticiaDestacada.descripcion;
+            document.getElementById('data-fecha').textContent = noticiaDestacada.fecha;
+            document.getElementById('data-imagen').src = noticiaDestacada.imagen;
+        }
+
+        // 2. Luego, manejar las noticias del grid
+        const noticias_container = document.getElementById('noticias-container');
+        noticias_container.innerHTML = ''; // Limpiar el contenedor primero
+
+        // Mostrar todas las noticias excepto la destacada
+        data.noticias
+            .filter(noticia => !noticia.destacada)
+            .forEach(noticia => {
+                noticias_container.innerHTML += createNoticiaCard(noticia);
+            });
+
+        // 3. Finalmente, manejar el slider
+        slides = data.noticias
+            .filter(noticia => noticia.slides === true)
+            .map(noticia => ({
+                image: noticia.imagen,
+                title: noticia.titulo,
+                subtitle: noticia.descripcion,
+                link: noticia.url_noticia
+            }));
+
+        if (slides.length > 0) {
+            const dotsContainer = document.querySelector('.absolute.bottom-6');
+            dotsContainer.innerHTML = slides
+                .map(() => '<button class="dot w-3 h-3 rounded-full bg-gray-400"></button>')
+                .join('');
+
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(timer);
+                    showSlide(index);
+                    timer = setInterval(nextSlide, 5000);
+                });
+            });
+
+            showSlide(0);
+        }
+
+    } catch (error) {
+        console.error('Error cargando noticias:', error);
     }
+}
+
+
 
     function createNoticiaCard(noticia) {
-      const colorClasses = {
-          'Deportes': 'bg-red-100 text-red-800',
-          'Destacados': 'bg-blue-100 text-blue-800',
-          'General': 'bg-green-100 text-green-800'
-      };
+    const colorClasses = {
+        'Deportes': 'bg-red-100 text-red-800',
+        'Destacados': 'bg-blue-100 text-blue-800',
+        'General': 'bg-green-100 text-green-800'
+    };
 
-      return `
-          <article class="bg-white rounded-lg overflow-hidden shadow hover:shadow-lg transition-shadow mx-auto">
-              <img src="${noticia.imagen}" 
-                  alt="Imagen de ${noticia.titulo}" 
-                  class="w-full h-64 object-cover">
-              <div class="p-4">
-                  <div class="flex justify-between items-center mb-2">
-                      <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-0.5 rounded">
-                          ${noticia.categoria}
-                      </span>
-                      <span class="text-gray-500 text-sm">${noticia.fecha}</span>
-                  </div>
-                  <h3 class="text-xl font-semibold text-gray-800 mb-2 h-14 overflow-hidden">
-                      ${noticia.titulo}
-                  </h3>
-                  <p class="text-gray-600 mb-4 h-20 overflow-hidden">
-                      ${noticia.descripcion}
-                  </p>
-                  <a href="${noticia.url_noticia}" 
-                    class="text-blue-600 font-bold hover:underline">
-                    
-                      Leer más
-                  </a>
-              </div>
-          </article>
-          `;
-      }
+    return `
+        <article class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div class="relative">
+                <img src="${noticia.imagen}" 
+                     alt="Imagen de ${noticia.titulo}" 
+                     class="w-full h-48 object-cover">
+                <div class="absolute top-4 left-4">
+                    <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-1 rounded">
+                        ${noticia.categoria}
+                    </span>
+                </div>
+            </div>
+            <div class="p-5">
+                <div class="text-gray-500 text-sm mb-3">${noticia.fecha}</div>
+                <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                    ${noticia.titulo}
+                </h3>
+                <p class="text-gray-600 mb-4 line-clamp-3">
+                    ${noticia.descripcion}
+                </p>
+                <a href="${noticia.url_noticia}" 
+                   class="inline-flex items-center text-arenna-blue hover:text-arenna-hover font-medium">
+                    Leer más
+                    <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+    `;
+}
 
     document.addEventListener('DOMContentLoaded', cargarNoticias);              
     // Definir un array con la información de cada noticia
-    const slides = [
-      {
-        image: '../static/img/noticias/noticias1.jpeg',
-        title: 'Final regional de las NeurOlimpiadas',
-        subtitle: 'Arrancó en Santa Cruz de La Palma la final autonómica de las NeurOlimpiadas en el pabellón capitalino Roberto Estrello.',
-        link: 'https://www.eltime.es/isla-bonita/178-municipios/51172-arranca-la-final-regional-de-las-neurolimpiadas-en-santa-cruz-de-la-palma.html'
-      },
-      {
-        image: '../static/img/noticias/noticias2.webp',
-        title: 'Unas 300 personas mayores compiten en Neuromajo 2024',
-        subtitle: 'Las competiciones del proyecto Neuromajo 2024 arrancaron este viernes con la ceremonia inaugural en el polideportivo de Puerto del Rosario.',
-        link: 'https://www.lavozdefuerteventura.com/articulo/fuerteventura/300-personas-mayores-compiten-salud-bienestar-neuromajo-2024/20241116095407019705.html'
-      },
-      {
-        image: '../static/img/noticias/noticias3.jpg',
-        title: 'El alcalde presentó las Neurolimpiadas Provinciales de Santiago del Teide 2024',
-        subtitle: 'Durante la mañana de hoy, 22 de enero, el patio central del Ayuntamiento acogió la presentación de las ‘Neurolimpiadas Provinciales de Santiago del Teide 2024’.',
-        link: 'https://www.canal4tenerife.tv/el-alcalde-presento-las-neurolimpiadas-provinciales-de-santiago-del-teide-2024/'
-      }
-    ];
 
-    let currentIndex = 0;
-    const slider = document.getElementById('slider');
+
+
     
     // Función para mostrar el slide de acuerdo al índice
     function showSlide(index) {
