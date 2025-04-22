@@ -3,8 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equipos</title>
+    <title>Clubes</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Estilos para el menú desplegable */
+      .dropDown {
+        position: relative;
+        width: 250px;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        background-color: white;
+        cursor: pointer;
+      }
+      
+      .dropDown.active .dropdownListContainer {
+        display: block;
+      }
+      
+      .label {
+        font-size: 14px;
+        color: #6e6e6e;
+        padding: 8px 12px 0;
+      }
+      
+      .current {
+        font-weight: bold;
+        padding: 0 12px 8px;
+        position: relative;
+      }
+      
+      .current:after {
+        content: '';
+        position: absolute;
+        right: 12px;
+        top: 50%;
+        width: 0;
+        height: 0;
+        border-left: 5px solid transparent;
+        border-right: 5px solid transparent;
+        border-top: 5px solid #333;
+        transform: translateY(-50%);
+      }
+      
+      .dropdownListContainer {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        border: 1px solid #e5e5e5;
+        border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 10;
+        max-height: 300px;
+        overflow-y: auto;
+      }
+      
+      .dropdownMobileHeader {
+        display: none;
+        padding: 12px;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      
+      .dropdownMobileHeaderButton {
+        display: flex;
+        align-items: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+      }
+      
+      .dropdownMobileHeaderButton svg {
+        margin-right: 5px;
+      }
+      
+      .dropdownList {
+        list-style: none;
+      }
+      
+      .dropdownList li {
+        padding: 10px 12px;
+        transition: background-color 0.2s;
+      }
+      
+      .dropdownList li:hover {
+        background-color: #f5f5f5;
+      }
+      
+      @media (max-width: 768px) {
+        .dropDown.mobile.active {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1000;
+          border: none;
+        }
+        
+        .dropDown.mobile.active .label,
+        .dropDown.mobile.active .current {
+          display: none;
+        }
+        
+        .dropDown.mobile.active .dropdownListContainer {
+          position: relative;
+          height: 100%;
+          border: none;
+          box-shadow: none;
+        }
+        
+        .dropdownMobileHeader {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+        
+        .dropdownMobileHeader h4 {
+          font-size: 16px;
+        }
+      }
+    </style>
 </head>
 <body>
     <nav class="bg-white shadow w-full">
@@ -51,5 +174,333 @@
           </div>
         </div>
       </nav>
+
+      <header class="bg-gradient-to-r from-[#4672b5] to-[#3a5d94] text-white py-12 px-4 flex items-center justify-between">
+        <div class="max-w-7xl mx-auto w-full flex px-4 py-4 items-center justify-between">
+          <h1 class="text-5xl font-bold">CLUBES</h1>
+          <div class="relative w-full max-w-md">
+            <input type="text" placeholder="Buscar..." class="w-full p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-blue-500" />
+            <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600">
+              <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17a6 6 0 100-12 6 6 0 000 12zm0 0l4.35 4.35m0-4.35L11 17z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <!-- Filtro para buscar por isla -->
+      <div class="max-w-7xl mx-auto py-8 px-4 flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <div class="dropDown mobile" data-dropdown-block="filterIslas" data-dropdown-default="" data-listen-keypress="true" data-listen-click="true">
+            <div class="label js-dropdown-label" id="dd-filterIslas">Filtrar por Isla</div>
+            <div class="current" data-dropdown-current="filterIslas" role="button" tabindex="0" aria-expanded="false" aria-labelledby="dd-filterIslas">Todas</div>
+            <div class="dropdownListContainer">
+              <header class="dropdownMobileHeader">
+                <button class="dropdownMobileHeaderButton js-dropdown-close" data-listen-keypress="true" data-listen-click="true">
+                  <svg width="16" height="10" viewBox="0 0 16 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M0.926016 5.01732C0.938708 4.74167 1.02892 4.45424 1.24084 4.2603C1.24115 4.2603 1.24146 4.25999 1.24177 4.25968L2.41825 3.0832L4.2987 1.20275L4.72967 0.771778C4.92345 0.577997 5.21305 0.458021 5.48669 0.456956C5.74963 0.456976 6.06328 0.573122 6.24376 0.771893C6.42982 0.975935 6.56952 1.24307 6.55869 1.52896C6.54662 1.81361 6.4499 2.07995 6.24387 2.28598L5.06429 3.46556L4.58402 3.94583L6.21051 3.9458C7.41328 3.94589 8.61854 3.94598 9.82007 3.94607C10.8582 3.94615 11.8938 3.94623 12.9329 3.9463C13.4355 3.94634 13.9419 3.94018 14.4445 3.94642L14.4662 3.94642C14.7425 3.94644 15.0278 4.06584 15.2233 4.26135C15.4099 4.44803 15.5486 4.75006 15.5382 5.01842C15.5257 5.29392 15.4355 5.58166 15.2234 5.77544C15.0116 5.96922 14.7541 6.09091 14.4664 6.09026L13.2214 6.09017L10.2539 6.0901L6.64415 6.08967C5.95579 6.08962 5.26743 6.08957 4.57938 6.08952L5.8131 7.32324L6.24444 7.75458C6.43825 7.94839 6.55811 8.23785 6.55938 8.51165C6.55924 8.77443 6.44314 9.08806 6.2444 9.26851C6.04038 9.45454 5.77342 9.59436 5.48753 9.58349C5.20413 9.56889 4.93575 9.47384 4.73047 9.26855L3.55055 8.08864L1.66997 6.20806L1.23878 5.77687C1.12916 5.66725 1.05132 5.5367 1.00031 5.39701C0.95115 5.27282 0.921219 5.14181 0.926016 5.01732Z"></path>
+                  </svg>
+                  <span>Atrás</span>
+                </button>
+                <h4>Filtrar por Isla</h4>
+              </header>
+              <ul class="dropdownList" data-dropdown-list="filterIslas" role="listbox" aria-labelledby="dd-filterIslas" data-listen-keypress="true" data-listen-click="true">
+                <li role="option" tabindex="0" data-option-name="Todas" data-option-id="" data-option-index="0" class="">Todas</li>
+                <li role="option" tabindex="0" data-option-name="Tenerife" data-option-id="tenerife" data-option-index="1" class="">Tenerife</li>
+                <li role="option" tabindex="0" data-option-name="La Palma" data-option-id="la_palma" data-option-index="2" class="">La Palma</li>
+                <li role="option" tabindex="0" data-option-name="El Hierro" data-option-id="el_hierro" data-option-index="3" class="">El Hierro</li>
+                <li role="option" tabindex="0" data-option-name="La Gomera" data-option-id="la_gomera" data-option-index="4" class="">La Gomera</li>
+                <li role="option" tabindex="0" data-option-name="Gran Canaria" data-option-id="gran_canaria" data-option-index="5" class="">Gran Canaria</li>
+                <li role="option" tabindex="0" data-option-name="Fuerteventura" data-option-id="fuerteventura" data-option-index="6" class="">Fuerteventura</li>
+                <li role="option" tabindex="0" data-option-name="Lanzarote" data-option-id="lanzarote" data-option-index="7" class="">Lanzarote</li>
+                <li role="option" tabindex="0" data-option-name="La Graciosa" data-option-id="la_graciosa" data-option-index="8" class="">La Graciosa</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Botón para restablecer el filtro -->
+        <button id="reset-filter" class="text-black border border-gray-200 px-4 py-2 hover:bg-gray-100 focus:outline-none">Restablecer Filtro</button>
+      </div>
+
+      <!-- Tenerife -->
+      <div class="max-w-7xl mx-auto py-4 px-4">
+        <h2 class="text-2xl font-bold">Tenerife</h2>
+        <div class="border-b-4 border-[#4672b5] w-12 py-4"></div>
+      </div>
+
+      <!-- Municipio 1 -->
+      <div class="max-w-7xl mx-auto py-4 px-4">
+        <h3 class="text-xl font-semibold underline decoration-[#4672b5]">La Orotava</h3>
+        <p class="text-gray-600">Descripción breve de los clubes en La Orotava.</p>
+      </div>
+
+      <!-- Equipos Municipio 1 -->
+      <div class="max-w-7xl mx-auto py-6 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Tarjeta de Club -->
+          <div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#4ab7ff] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
+              <!-- SVG como fondo -->
+              <div class="absolute inset-0 z-0">
+                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
+              </div>
+              <!-- Logo del club -->
+              <div class="relative z-10 h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/1.png" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">U.D. OROTAVA</h2>
+              <a href="ficha_club_1.html" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+
+          <!-- Tarjeta de Club -->
+          <div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#0013bd] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
+              <!-- SVG como fondo -->
+              <div class="absolute inset-0 z-0">
+                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
+              </div>
+              <!-- Logo del club -->
+              <div class="relative z-10 h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/2.png" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">FLORIDA C.F.</h2>
+              <a href="ficha_club_1.html" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+          <!-- Tarjeta de Club -->
+          <div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#fffaa3] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
+              <!-- SVG como fondo -->
+              <div class="absolute inset-0 z-0">
+                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
+              </div>
+              <!-- Logo del club -->
+              <div class="relative z-10 h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/3.png" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">C.D. SALESIANOS</h2>
+              <a href="ficha_club_1.html" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Municipio 2 -->
+      <div class="max-w-7xl mx-auto py-4 px-4">
+        <h3 class="text-xl font-semibold underline decoration-[#4672b5]">Santa Cruz de Tenerife</h3>
+        <p class="text-gray-600">Descripción breve de los clubes en Santa Cruz de Tenerife.</p>
+      </div>
+
+      <!-- Equipos Municipio 2 -->
+      <div class="max-w-7xl mx-auto py-6 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Tarjeta de Club -->
+          <div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#bd1600] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
+              <!-- SVG como fondo -->
+              <div class="absolute inset-0 z-0">
+                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
+              </div>
+              <!-- Logo del club -->
+              <div class="relative z-10 h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/4.png" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">REAL UNIÓN TENERIFE</h2>
+              <a href="ficha_club_1.html" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+
+          <!-- Tarjeta de Club -->
+          <div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#000cfa] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
+              <!-- SVG como fondo -->
+              <div class="absolute inset-0 z-0">
+                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
+              </div>
+              <!-- Logo del club -->
+              <div class="relative z-10 h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/1.svg" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">C.D. TENERIFE</h2>
+              <a href="ficha_club_1.html" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- La Palma -->
+      <div class="max-w-7xl mx-auto py-4 px-4">
+        <h2 class="text-2xl font-bold">La Palma</h2>
+        <div class="border-b-4 border-[#4672b5] w-12 py-4"></div>
+      </div>
+
+      <!-- Municipio 1 -->
+      <div class="max-w-7xl mx-auto py-4 px-4">
+        <h3 class="text-xl font-semibold underline decoration-[#4672b5]">Garafía</h3>
+        <p class="text-gray-600">Descripción breve de los clubes en Garafía.</p>
+      </div>
+
+      <!-- Equipos Municipio 1 -->
+      <div class="max-w-7xl mx-auto py-6 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Tarjeta de Club -->
+          <div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#08007a] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
+              <!-- SVG como fondo -->
+              <div class="absolute inset-0 z-0">
+                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
+              </div>
+              <!-- Logo del club -->
+              <div class="relative z-10 h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/5.png" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">GARAFÍA C.F.</h2>
+              <a href="ficha_club_1.html" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- JavaScript para el menú desplegable -->
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+          // Función para manejar clicks en el dropdown
+          function setupDropdowns() {
+            const dropdowns = document.querySelectorAll('.dropDown');
+            
+            dropdowns.forEach(dropdown => {
+              const current = dropdown.querySelector('[data-dropdown-current]');
+              const listContainer = dropdown.querySelector('.dropdownListContainer');
+              const options = dropdown.querySelectorAll('.dropdownList li');
+              const closeButton = dropdown.querySelector('.js-dropdown-close');
+              
+              // Toggle dropdown on click
+              current.addEventListener('click', function() {
+                dropdown.classList.toggle('active');
+                const expanded = dropdown.classList.contains('active');
+                current.setAttribute('aria-expanded', expanded);
+              });
+              
+              // Close on mobile back button
+              if (closeButton) {
+                closeButton.addEventListener('click', function() {
+                  dropdown.classList.remove('active');
+                  current.setAttribute('aria-expanded', false);
+                });
+              }
+              
+              // Select option
+              options.forEach(option => {
+                option.addEventListener('click', function() {
+                  const optionName = this.getAttribute('data-option-name');
+                  const optionId = this.getAttribute('data-option-id');
+                  
+                  current.textContent = optionName;
+                  
+                  // Simulate form submission or filter change
+                  console.log(`Selected island: ${optionName}, ID: ${optionId}`);
+                  
+                  // Close dropdown
+                  dropdown.classList.remove('active');
+                  current.setAttribute('aria-expanded', false);
+                  
+                  // You could trigger a form submission or other action here
+                  // Example: document.getElementById('hidden-isla').value = optionId;
+                  // Example: document.getElementById('filter-form').submit();
+                });
+              });
+              
+              // Close dropdown when clicking outside
+              document.addEventListener('click', function(event) {
+                if (!dropdown.contains(event.target)) {
+                  dropdown.classList.remove('active');
+                  current.setAttribute('aria-expanded', false);
+                }
+              });
+              
+              // Handle keyboard navigation
+              dropdown.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                  dropdown.classList.remove('active');
+                  current.setAttribute('aria-expanded', false);
+                  current.focus();
+                }
+                
+                if (event.key === 'Enter' && document.activeElement === current) {
+                  dropdown.classList.toggle('active');
+                  const expanded = dropdown.classList.contains('active');
+                  current.setAttribute('aria-expanded', expanded);
+                  
+                  if (expanded) {
+                    options[0].focus();
+                  }
+                }
+                
+                if (event.key === 'Tab' && dropdown.classList.contains('active')) {
+                  // Keep focus within dropdown when it's open
+                  const focusableElements = dropdown.querySelectorAll('li[role="option"], button');
+                  const firstElement = focusableElements[0];
+                  const lastElement = focusableElements[focusableElements.length - 1];
+                  
+                  if (event.shiftKey && document.activeElement === firstElement) {
+                    event.preventDefault();
+                    lastElement.focus();
+                  } else if (!event.shiftKey && document.activeElement === lastElement) {
+                    event.preventDefault();
+                    firstElement.focus();
+                  }
+                }
+                
+                // Arrow key navigation through options
+                if (dropdown.classList.contains('active')) {
+                  if (event.key === 'ArrowDown') {
+                    event.preventDefault();
+                    if (document.activeElement.nextElementSibling && 
+                        document.activeElement.nextElementSibling.getAttribute('role') === 'option') {
+                      document.activeElement.nextElementSibling.focus();
+                    } else {
+                      options[0].focus();
+                    }
+                  }
+                  
+                  if (event.key === 'ArrowUp') {
+                    event.preventDefault();
+                    if (document.activeElement.previousElementSibling && 
+                        document.activeElement.previousElementSibling.getAttribute('role') === 'option') {
+                      document.activeElement.previousElementSibling.focus();
+                    } else {
+                      options[options.length - 1].focus();
+                    }
+                  }
+                }
+              });
+            });
+          }
+          
+          setupDropdowns();
+        });
+      </script>
 </body>
 </html>
