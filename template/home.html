@@ -8,6 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script async src="//www.instagram.com/embed.js"></script>
   <style>
     .neurolimpiadas-font{
       color: white;
@@ -337,6 +338,55 @@
           </div>
   </section>
 
+  <!-- Sección de Publicaciones -->
+  <section class="w-full bg-white py-10">
+    <div class="max-w-full px-8 md:px-24">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+          <div class="flex items-center mb-4 md:mb-0">
+              <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
+              <h2 class="font-medium text-lg tracking-wider">ÚLTIMAS PUBLICACIONES</h2>
+          </div>
+          
+          <!-- Iconos de Instagram y Facebook -->
+          <div class="flex space-x-4 mb-4 md:mb-0">
+              <a href="https://www.instagram.com/elclubdelmayor/?hl=es" target="_blank" class="text-[#4672b5] hover:text-[#3b5f8d] font-medium text-2xl"><i class="fab fa-instagram"></i></a>
+              <a href="https://www.facebook.com/Elclubdelmayor/?locale=es_ES" target="_blank" class="text-[#4672b5] hover:text-[#3b5f8d] font-medium text-2xl"><i class="fab fa-facebook-square"></i></a>
+          </div>
+      </div>
+
+      <div class="h-px w-full bg-gray-200 mb-8"></div>
+
+      <!-- Contenedor para la última publicación de Instagram y Facebook -->
+      <div class="flex flex-col md:flex-row gap-8 mb-8">
+        <!-- Publicación de Instagram -->
+        <div class="w-full md:w-1/2 bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center">
+          <h3 class="text-xl font-semibold text-gray-800 p-4 mx-auto">¡No te pierdas nuestra última publicación en Instagram!</h3>
+          <div class="p-4 flex justify-center w-full">
+            <!-- Aquí se puede insertar el código de la publicación de Instagram -->
+            <blockquote 
+              class="instagram-media" 
+              data-instgrm-captioned 
+              data-instgrm-permalink="https://www.instagram.com/p/DIg4bRrC6fq/?utm_source=ig_embed&amp;utm_campaign=loading" 
+              data-instgrm-version="14" 
+              style="background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
+              <!-- Contenido del blockquote de Instagram -->
+            </blockquote>
+          </div>
+        </div>
+
+        <!-- Publicación de Facebook -->
+        <div class="w-full md:w-1/2 bg-white shadow-lg rounded-lg overflow-hidden flex flex-col items-center">
+          <h3 class="text-xl font-semibold text-gray-800 p-4 mx-auto">¡No te pierdas nuestra última publicación en Facebook!</h3>
+          <div class="p-4 flex justify-center w-full">
+            <!-- Contenedor responsive para el iframe de Facebook -->
+            <div class="relative mx-auto">
+              <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fphoto.php%3Ffbid%3D1286213949955713%26set%3Da.559396599304122%26type%3D3&show_text=true&width=500" width="500" height="639" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+
   <!-- Sección de Colabora -->
   <section class="w-full bg-gray-100 py-10">
     <div class="max-w-full px-8 md:px-24">
@@ -386,8 +436,8 @@
       </div>
       <div class="flex space-x-4">
 
-        <a href="#" class="hover:text-white"><i class="fab fa-facebook-square"></i></a>
         <a href="https://www.instagram.com/elclubdelmayor/reels/?hl=es" target="_blank" class="text-white hover:text-white"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/Elclubdelmayor/?locale=es_ES" class="hover:text-white"><i class="fab fa-facebook-square"></i></a>
       </div>
     </div>
   </footer>
