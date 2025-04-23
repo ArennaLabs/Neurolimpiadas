@@ -2,66 +2,63 @@
   "equipos": [
     {
       "id": 1,
-      "nombre": "U.D. OROTAVA",
+      "nombre": "A POR TODAS",
       "ubicacion": {
-        "isla": "Tenerife",
-        "municipio": "La Orotava"
+        "isla": "Fuerteventura",
+        "municipio": "La Oliva"
       },
       "pabellon": {
-        "nombre": "Estadio Municipal Los Cuartos",
-        "direccion": "C/ San Andrés 1",
-        "capacidad": 6500,
-        "imagen": "/static/img/clubes/orotava/pabellon.jpg"
+        "nombre": "Pabellón Municipal de La Oliva",
+        "direccion": "C. Emilio Castellot Martínez, 2",
+        "capacidad": 500,
+        "imagen": "/static/img/clubes/laoliva/instalacion.jpg"
       },
       "imagenes": {
-        "logo": "/static/img/clubes/orotava/logo.png",
-        "banner": "/static/img/clubes/orotava/banner.jpg"
+        "logo": "/static/img/clubes/laoliva/logo.png",
+        "banner": "/static/img/clubes/laoliva/banner.jpg"
       },
       "colores": {
-        "principal": "#4ab7ff",
+        "principal": "#caa404",
         "secundario": "#d9d9d9"
       },
       "plantilla": {
         "jugadores": [
           {
             "numero": 1,
-            "nombre": "Nombre Jugador 1",
-            "edad": 25,
+            "nombre": "María Cabrera",
+            "edad": 65,
             "foto": "/static/img/jugador.png"
           },
           {
             "numero": 2,
-            "nombre": "Nombre Jugador 2",
-            "edad": 22,
+            "nombre": "Carmen Martín",
+            "edad": 70,
             "foto": "/static/img/jugador.png"
           },
           {
             "numero": 3,
-            "nombre": "Nombre Jugador 3",
-            "edad": 28,
+            "nombre": "José Betancor",
+            "edad": 68,
             "foto": "/static/img/jugador.png"
           },
           {
             "numero": 4,
-            "nombre": "Nombre Jugador 4",
-            "edad": 30,
+            "nombre": "Ana González",
+            "edad": 72,
             "foto": "/static/img/jugador.png"
           }
         ],
         "entrenadores": [
           {
-            "nombre": "Nombre Entrenador",
-            "cargo": "Primer entrenador",
+            "nombre": "Victoria Rodríguez",
+            "cargo": "Primera entrenadora",
+            "edad": 63,
             "foto": "/static/img/jugador.png"
           },
           {
-            "nombre": "Nombre Entrenador 2",
-            "cargo": "Segundo entrenador",
-            "foto": "/static/img/jugador.png"
-          },
-          {
-            "nombre": "Nombre Entrenador 3",
-            "cargo": "Preparador físico",
+            "nombre": "Isabel Perdomo",
+            "cargo": "Segunda entrenadora",
+            "edad": 67,
             "foto": "/static/img/jugador.png"
           }
         ]
@@ -69,175 +66,373 @@
       "resultados": [
         {
           "fecha": "2024-09-01",
-          "local": "C.D. FLORIDA",
-          "logoLocal": "/static/img/clubes/2.png",
+          "local": "HÉROES EN SILENCIO",
+          "logoLocal": "/static/img/clubes/antigua/logo.png",
           "resultadoLocal": "2",
-          "logoVisitante": "/static/img/clubes/orotava/logo.png",
-          "visitante": "U.D. OROTAVA",
+          "logoVisitante": "/static/img/clubes/laoliva/logo.png",
+          "visitante": "A POR TODAS",
           "resultadoVisitante": "1"
         },
         {
           "fecha": "2024-09-08",
-          "local": "U.D. OROTAVA",
-          "logoLocal": "/static/img/clubes/orotava/logo.png",
+          "local": "A POR TODAS",
+          "logoLocal": "/static/img/clubes/laoliva/logo.png",
           "resultadoLocal": "3",
-          "logoVisitante": "/static/img/clubes/3.png",
-          "visitante": "C.D. SALESIANOS",
+          "logoVisitante": "/static/img/clubes/pajara/logo.png",
+          "visitante": "TROMPIEZO",
           "resultadoVisitante": "0"
         },
         {
           "fecha": "2024-09-15",
-          "local": "C.D. SALESIANOS",
-          "logoLocal": "/static/img/clubes/3.png",
+          "local": "TROMPIEZO",
+          "logoLocal": "/static/img/clubes/pajara/logo.png",
           "resultadoLocal": "1",
-          "logoVisitante": "/static/img/clubes/orotava/logo.png",
-          "visitante": "U.D. OROTAVA",
+          "logoVisitante": "/static/img/clubes/laoliva/logo.png",
+          "visitante": "A POR TODAS",
           "resultadoVisitante": "2"
         },
         {
           "fecha": "2024-09-22",
-          "local": "U.D. OROTAVA",
-          "logoLocal": "/static/img/clubes/orotava/logo.png",
+          "local": "A POR TODAS",
+          "logoLocal": "/static/img/clubes/laoliva/logo.png",
           "resultadoLocal": "4",
-          "logoVisitante": "/static/img/clubes/4.png",
-          "visitante": "REAL UNIÓN TENERIFE",
+          "logoVisitante": "/static/img/clubes/antigua/logo.png",
+          "visitante": "HÉROES EN SILENCIO",
           "resultadoVisitante": "1"
         },
         {
           "fecha": "2024-09-29",
-          "local": "C.D. TENERIFE",
-          "logoLocal": "/static/img/clubes/1.svg",
+          "local": "TROMPIEZO",
+          "logoLocal": "/static/img/clubes/pajara/logo.png",
           "resultadoLocal": "0",
-          "logoVisitante": "/static/img/clubes/orotava/logo.png",
-          "visitante": "U.D. OROTAVA",
+          "logoVisitante": "/static/img/clubes/laoliva/logo.png",
+          "visitante": "A POR TODAS",
           "resultadoVisitante": "0"
+        }
+      ],
+      "noticias": [
+        {
+          "titulo": "Victoria en el último minuto",
+          "fecha": "2024-09-01",
+          "contenido": "El HÉROES EN SILENCIO se llevó la victoria en un emocionante partido contra el A POR TODAS.",
+          "imagen": "/static/img/news.jpg"
+        },
+        {
+          "titulo": "Empate en casa",
+          "fecha": "2024-09-08",
+          "contenido": "El A POR TODAS empató 0-0 contra el TROMPIEZO.",
+          "imagen": "/static/img/news.jpg"
+        },
+        {
+          "titulo": "Gran victoria en la jornada 3",
+          "fecha": "2024-09-15",
+          "contenido": "El A POR TODAS ganó 2-1 al TROMPIEZO.",
+          "imagen": "/static/img/news.jpg"
+        },
+        {
+          "titulo": "Victoria contundente",
+          "fecha": "2024-09-22",
+          "contenido": "El A POR TODAS venció 4-1 al HÉROES EN SILENCIO.",
+          "imagen": "/static/img/news.jpg"
+        },
+        {
+          "titulo": "Empate en el derbi",
+          "fecha": "2024-09-29",
+          "contenido": "El A POR TODAS empató 0-0 contra el TROMPIEZO.",
+          "imagen": "/static/img/news.jpg"
+        }
+      ],
+      "galeria": [
+        {
+          "titulo": "Celebración del equipo",
+          "fecha": "2024-09-01",
+          "imagen": "/static/img/image.jpg"
+        },
+        {
+          "titulo": "Entrenamiento del equipo",
+          "fecha": "2024-09-08",
+          "imagen": "/static/img/image.jpg"
+        },
+        {
+          "titulo": "Victoria en el último minuto",
+          "fecha": "2024-09-15",
+          "imagen": "/static/img/image.jpg"
+        },
+        {
+          "titulo": "Celebración del gol",
+          "fecha": "2024-09-22",
+          "imagen": "/static/img/image.jpg"
+        },
+        {
+          "titulo": "Entrenamiento del equipo",
+          "fecha": "2024-09-29",
+          "imagen": "/static/img/image.jpg"
         }
       ]
     },
     {
       "id": 2,
-      "nombre": "FLORIDA C.F.",
+      "nombre": "HÉROES EN SILENCIO",
       "ubicacion": {
-        "isla": "Tenerife",
-        "municipio": "La Orotava"
+        "isla": "Fuerteventura",
+        "municipio": "Antigua"
       },
       "pabellon": {
-        "nombre": "Pabellón Florida",
-        "direccion": "C/ Florida s/n",
-        "capacidad": 800
+        "nombre": "Pabellón Municipal de Antigua",
+        "direccion": "Calle Guirre, 1",
+        "capacidad": 800,
+        "imagen": "/static/img/clubes/antigua/instalacion.webp"
       },
       "imagenes": {
-        "logo": "/static/img/clubes/2.png",
-        "banner": "/static/img/banners/florida_cf.jpg"
+        "logo": "/static/img/clubes/antigua/logo.png",
+        "banner": "/static/img/clubes/antigua/banner.jpg"
       },
       "colores": {
-        "principal": "#0013bd"
+        "principal": "#79ce7b",
+        "secundario": "#000000"
       },
       "plantilla": {
-        "jugadores": [],
-        "entrenadores": []
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Lucía Saavedra",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Carlos Betancor",
+            "edad": 73,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Juana Hernández",
+            "edad": 66,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Dolores Morales",
+            "edad": 71,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Francisca Perdomo",
+            "cargo": "Primera entrenadora",
+            "edad": 64,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Luis Cabrera",
+            "cargo": "Segundo entrenador",
+            "edad": 68,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
       },
-      "resultados": []
+      "resultados": [
+        {
+          "fecha": "2024-09-01",
+          "local": "HÉROES EN SILENCIO",
+          "logoLocal": "/static/img/clubes/antigua/logo.png",
+          "resultadoLocal": "2",
+          "logoVisitante": "/static/img/clubes/laoliva/logo.png",
+          "visitante": "A POR TODAS",
+          "resultadoVisitante": "1"
+        },
+        {
+          "fecha": "2024-09-08",
+          "local": "TROMPIEZO",
+          "logoLocal": "/static/img/clubes/pajara/logo.png",
+          "resultadoLocal": "1",
+          "logoVisitante": "/static/img/clubes/antigua/logo.png",
+          "visitante": "HÉROES EN SILENCIO",
+          "resultadoVisitante": "3"
+        },
+        {
+          "fecha": "2024-09-15",
+          "local": "HÉROES EN SILENCIO",
+          "logoLocal": "/static/img/clubes/antigua/logo.png",
+          "resultadoLocal": "2",
+          "logoVisitante": "/static/img/clubes/pajara/logo.png",
+          "visitante": "TROMPIEZO",
+          "resultadoVisitante": "2"
+        },
+        {
+          "fecha": "2024-09-22",
+          "local": "A POR TODAS",
+          "logoLocal": "/static/img/clubes/laoliva/logo.png",
+          "resultadoLocal": "4",
+          "logoVisitante": "/static/img/clubes/antigua/logo.png",
+          "visitante": "HÉROES EN SILENCIO",
+          "resultadoVisitante": "1"
+        },
+        {
+          "fecha": "2024-09-29",
+          "local": "HÉROES EN SILENCIO",
+          "logoLocal": "/static/img/clubes/antigua/logo.png",
+          "resultadoLocal": "2",
+          "logoVisitante": "/static/img/clubes/pajara/logo.png",
+          "visitante": "TROMPIEZO",
+          "resultadoVisitante": "0"
+        }
+      ],
+      "noticias": [
+        {
+          "titulo": "Nueva temporada, nuevos retos",
+          "fecha": "2024-09-01",
+          "contenido": "El equipo comienza la temporada con grandes expectativas.",
+          "imagen": "/static/img/news.jpg"
+        },
+        {
+          "titulo": "Victoria convincente",
+          "fecha": "2024-09-08",
+          "contenido": "El equipo mostró su mejor versión en el partido de hoy.",
+          "imagen": "/static/img/news.jpg"
+        }
+      ],
+      "galeria": [
+        {
+          "titulo": "Entrenamiento pretemporada",
+          "fecha": "2024-09-01",
+          "imagen": "/static/img/image.jpg"
+        }
+      ]
     },
     {
       "id": 3,
-      "nombre": "C.D. SALESIANOS",
+      "nombre": "TROMPIEZO",
       "ubicacion": {
-        "isla": "Tenerife", 
-        "municipio": "La Orotava"
+        "isla": "Fuerteventura",
+        "municipio": "Pájara"
       },
       "pabellon": {
-        "nombre": "Pabellón Salesianos",
-        "direccion": "C/ Salesianos 1",
-        "capacidad": 600
+        "nombre": "Pabellón Municipal de Morro Jable",
+        "direccion": "Avenida del Saladar, 13",
+        "capacidad": 600,
+        "imagen": "/static/img/clubes/pajara/instalacion.jpg"
       },
       "imagenes": {
-        "logo": "/static/img/clubes/3.png",
-        "banner": "/static/img/banners/cd_salesianos.jpg"
+        "logo": "/static/img/clubes/pajara/logo.png",
+        "banner": "/static/img/clubes/pajara/banner.jpg"
       },
       "colores": {
-        "principal": "#fffaa3"
+        "principal": "#a4e8fc",
+        "secundario": "#fbbf24"
       },
       "plantilla": {
-        "jugadores": [],
-        "entrenadores": []
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Rosa Rodríguez",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Roberto Santana",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Patricia González",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Manuela Torres",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Antonia Ramírez",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "José María García",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
       },
-      "resultados": []
-    },
-    {
-      "id": 4,
-      "nombre": "REAL UNIÓN TENERIFE",
-      "ubicacion": {
-        "isla": "Tenerife",
-        "municipio": "Santa Cruz de Tenerife"
-      },
-      "pabellon": {
-        "nombre": "Pabellón Real Unión",
-        "direccion": "Avda. Buenos Aires s/n",
-        "capacidad": 1500
-      },
-      "imagenes": {
-        "logo": "/static/img/clubes/4.png",
-        "banner": "/static/img/banners/real_union.jpg"
-      },
-      "colores": {
-        "principal": "#bd1600"
-      },
-      "plantilla": {
-        "jugadores": [],
-        "entrenadores": []
-      },
-      "resultados": []
-    },
-    {
-      "id": 5,
-      "nombre": "C.D. TENERIFE",
-      "ubicacion": {
-        "isla": "Tenerife",
-        "municipio": "Santa Cruz de Tenerife"
-      },
-      "pabellon": {
-        "nombre": "Pabellón CD Tenerife",
-        "direccion": "C/ Heliodoro Rodríguez López s/n",
-        "capacidad": 2000
-      },
-      "imagenes": {
-        "logo": "/static/img/clubes/1.svg",
-        "banner": "/static/img/banners/cd_tenerife.jpg"
-      },
-      "colores": {
-        "principal": "#000cfa"
-      },
-      "plantilla": {
-        "jugadores": [],
-        "entrenadores": []
-      },
-      "resultados": []
-    },
-    {
-      "id": 6,
-      "nombre": "GARAFÍA C.F.",
-      "ubicacion": {
-        "isla": "La Palma",
-        "municipio": "Garafía"
-      },
-      "pabellon": {
-        "nombre": "Pabellón Municipal de Garafía",
-        "direccion": "C/ Santo Domingo s/n",
-        "capacidad": 500
-      },
-      "imagenes": {
-        "logo": "/static/img/clubes/5.png",
-        "banner": "/static/img/banners/garafia_cf.jpg"
-      },
-      "colores": {
-        "principal": "#08007a"
-      },
-      "plantilla": {
-        "jugadores": [],
-        "entrenadores": []
-      },
-      "resultados": []
+      "resultados": [
+        {
+          "fecha": "2024-09-01",
+          "local": "TROMPIEZO",
+          "logoLocal": "/static/img/clubes/pajara/logo.png",
+          "resultadoLocal": "1",
+          "logoVisitante": "/static/img/clubes/antigua/logo.png",
+          "visitante": "HÉROES EN SILENCIO",
+          "resultadoVisitante": "1"
+        },
+        {
+          "fecha": "2024-09-08",
+          "local": "A POR TODAS",
+          "logoLocal": "/static/img/clubes/laoliva/logo.png",
+          "resultadoLocal": "3",
+          "logoVisitante": "/static/img/clubes/pajara/logo.png",
+          "visitante": "TROMPIEZO",
+          "resultadoVisitante": "0"
+        },
+        {
+          "fecha": "2024-09-15",
+          "local": "TROMPIEZO",
+          "logoLocal": "/static/img/clubes/pajara/logo.png",
+          "resultadoLocal": "1",
+          "logoVisitante": "/static/img/clubes/laoliva/logo.png",
+          "visitante": "A POR TODAS",
+          "resultadoVisitante": "2"
+        },
+        {
+          "fecha": "2024-09-22",
+          "local": "HÉROES EN SILENCIO",
+          "logoLocal": "/static/img/clubes/antigua/logo.png",
+          "resultadoLocal": "3",
+          "logoVisitante": "/static/img/clubes/pajara/logo.png",
+          "visitante": "TROMPIEZO",
+          "resultadoVisitante": "1"
+        },
+        {
+          "fecha": "2024-09-29",
+          "local": "TROMPIEZO",
+          "logoLocal": "/static/img/clubes/pajara/logo.png",
+          "resultadoLocal": "0",
+          "logoVisitante": "/static/img/clubes/laoliva/logo.png",
+          "visitante": "A POR TODAS",
+          "resultadoVisitante": "0"
+        }
+      ],
+      "noticias": [
+        {
+          "titulo": "Preparados para competir",
+          "fecha": "2024-09-01",
+          "contenido": "El equipo completa su preparación para la nueva temporada.",
+          "imagen": "/static/img/news.jpg"
+        },
+        {
+          "titulo": "Mejorando día a día",
+          "fecha": "2024-09-08",
+          "contenido": "El equipo muestra una evolución positiva en su juego.",
+          "imagen": "/static/img/news.jpg"
+        }
+      ],
+      "galeria": [
+        {
+          "titulo": "Primer entrenamiento",
+          "fecha": "2024-09-01",
+          "imagen": "/static/img/image.jpg"
+        }
+      ]
     }
   ]
 }
