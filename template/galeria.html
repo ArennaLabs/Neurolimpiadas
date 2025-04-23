@@ -51,5 +51,111 @@
           </div>
         </div>
       </nav>
+
+      <div class="container mx-auto px-4 py-8">
+          <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Galería</h1>
+          <!-- Linea horizontal debajo de la palabra de color azul-->
+          <div class="border-b-2 border-blue-500 w-16 mx-auto mb-8"></div>
+          <p class="text-gray-600 text-center mb-8">Explora nuestra galería de imágenes y descubre los momentos más destacados de nuestras actividades.</p>           
+          <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              <!-- Las imágenes se cargarán aquí dinámicamente -->
+          </div>
+      </div>
+
+      <!-- Modal para visualizar las imagenes en pantalla completa -->
+      <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 hidden justify-center items-center z-50">
+          <img id="modal-image" class="max-w-full max-h-full mx-auto" src="" alt="Imagen ampliada">
+          <button id="close-modal" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
+
+          <!-- Flechas de navegación -->
+          <button id="prev" class="absolute left-4 bottom-1/2 text-white text-2xl">&lt;</button>
+          <button id="next" class="absolute right-4 bottom-1/2 text-white text-2xl">&gt;</button>
+      </div>
+      
+      <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('/static/json/imagenes_galeria.json');
+                const data = await response.json();
+                const gallery = document.getElementById('gallery');
+
+                data.images.forEach(images => {
+                    const sizeClasses = {
+                        'small': 'row-span-1 col-span-1',
+                        'medium': 'row-span-2 col-span-1',
+                        'large': 'row-span-2 col-span-2'
+                    };
+
+                    const article = document.createElement('article');
+                    article.className = `relative overflow-hidden rounded-lg shadow-lg ${sizeClasses[images.size]}`;
+                    
+                    article.innerHTML = `
+                        <img src="${images.url}" 
+                            alt="${images.title}"
+                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
+                            <h3 class="text-white text-lg font-semibold">${images.title}</h3>
+                        </div>
+                    `;
+
+                    gallery.appendChild(article);
+                });
+            } catch (error) {
+                console.error('Error cargando la galería:', error);
+            }
+        });
+
+        // Código para el modal
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modal-image');
+        const closeModal = document.getElementById('close-modal');
+
+        const gallery = document.getElementById('gallery');
+        gallery.addEventListener('click', (event) => {
+            if (event.target.tagName === 'IMG') {
+                modalImage.src = event.target.src;
+                modal.classList.remove('hidden');
+            }
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+        modal.addEventListener('click', () => {
+            modal.classList.add('hidden');
+        });
+
+        // Navegación entre imágenes
+        let currentIndex = 0;
+        const images = Array.from(gallery.querySelectorAll('img'));
+        const prevButton = document.getElementById('prev');
+        const nextButton = document.getElementById('next');
+
+        prevButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            modalImage.src = images[currentIndex].src;
+        });
+        nextButton.addEventListener('click', (event) => {
+            event.stopPropagation();
+            currentIndex = (currentIndex + 1) % images.length;
+            modalImage.src = images[currentIndex].src;
+        });
+
+        // Cerrar el modal al presionar la tecla "Escape"
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                modal.classList.add('hidden');
+            }
+        });
+
+        // Código para el menú móvil
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileDropdown = document.getElementById('mobile-dropdown');
+
+        menuToggle.addEventListener('click', () => {
+            mobileDropdown.classList.toggle('hidden');
+        });
+      </script>
 </body>
 </html>
