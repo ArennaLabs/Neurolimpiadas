@@ -9,7 +9,6 @@
 <body>
     <nav class="bg-white shadow w-full">
         <div class="flex items-center justify-between h-16">
-          
           <a href="home.html" class="flex-shrink-0">
             <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
           </a>
@@ -50,36 +49,68 @@
             </div>
           </div>
         </div>
-      </nav>
+    </nav>
 
-      <div class="container mx-auto px-4 py-8">
-          <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Galería</h1>
-          <!-- Linea horizontal debajo de la palabra de color azul-->
-          <div class="border-b-2 border-blue-500 w-16 mx-auto mb-8"></div>
-          <p class="text-gray-600 text-center mb-8">Explora nuestra galería de imágenes y descubre los momentos más destacados de nuestras actividades.</p>           
-          <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              <!-- Las imágenes se cargarán aquí dinámicamente -->
-          </div>
-      </div>
+    <div class="container mx-auto px-4 py-8">
+        <h1 class="text-3xl font-bold text-gray-800 mb-8 text-center">Galería</h1>
+        <!-- Linea horizontal debajo de la palabra de color azul-->
+        <div class="border-b-2 border-blue-500 w-16 mx-auto mb-8"></div>
+        <p class="text-gray-600 text-center mb-8">Explora nuestra galería de imágenes y descubre los momentos más destacados de nuestras actividades.</p>           
+        <div id="gallery" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Las imágenes se cargarán aquí dinámicamente -->
+        </div>
+    </div>
 
-      <!-- Modal para visualizar las imagenes en pantalla completa -->
-      <div id="modal" class="fixed inset-0 bg-black bg-opacity-75 hidden justify-center items-center z-50">
-          <img id="modal-image" class="max-w-full max-h-full mx-auto" src="" alt="Imagen ampliada">
-          <button id="close-modal" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
-
-          <!-- Flechas de navegación -->
-          <button id="prev" class="absolute left-4 bottom-1/2 text-white text-2xl">&lt;</button>
-          <button id="next" class="absolute right-4 bottom-1/2 text-white text-2xl">&gt;</button>
-      </div>
+    <!-- Modal para visualizar las imagenes en pantalla completa -->
+    <div id="modal" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 transition-opacity duration-300">
+        <div class="relative w-full h-full flex flex-col justify-center items-center p-4">
+            <!-- Botón de cierre -->
+            <button id="close-modal" class="absolute top-4 right-4 bg-gray-800 bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-2 transition-all duration-200 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+            
+            <!-- Contenedor para la imagen -->
+            <div class="relative max-w-4xl mx-auto shadow-2xl rounded-lg overflow-hidden bg-gray-900">
+                <img id="modal-image" class="max-w-full max-h-screen object-contain" src="" alt="Imagen ampliada">
+                
+                <!-- Título de la imagen -->
+                <div id="image-title" class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
+                    <h3 class="text-white text-xl font-medium"></h3>
+                </div>
+            </div>
+            
+            <!-- Controles de navegación -->
+            <div class="absolute inset-x-0 bottom-8 flex justify-center items-center space-x-8">
+                <!-- Botón anterior -->
+                <button id="prev" class="bg-gray-800 bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-3 transition-all duration-200 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                    </svg>
+                </button>
+                
+                <!-- Contador de imágenes -->
+                <div id="image-counter" class="bg-gray-800 bg-opacity-50 text-white px-4 py-2 rounded-full text-sm font-medium"></div>
+                
+                <!-- Botón siguiente -->
+                <button id="next" class="bg-gray-800 bg-opacity-50 hover:bg-opacity-70 text-white rounded-full p-3 transition-all duration-200 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
       
-      <script>
+    <script>
         document.addEventListener('DOMContentLoaded', async () => {
             try {
                 const response = await fetch('/static/json/imagenes_galeria.json');
                 const data = await response.json();
                 const gallery = document.getElementById('gallery');
 
-                data.images.forEach(images => {
+                data.images.forEach(image => {
                     const sizeClasses = {
                         'small': 'row-span-1 col-span-1',
                         'medium': 'row-span-2 col-span-1',
@@ -87,65 +118,138 @@
                     };
 
                     const article = document.createElement('article');
-                    article.className = `relative overflow-hidden rounded-lg shadow-lg ${sizeClasses[images.size]}`;
+                    article.className = `relative overflow-hidden rounded-lg shadow-lg ${sizeClasses[image.size]} cursor-pointer transform transition-transform duration-300 hover:scale-105`;
                     
                     article.innerHTML = `
-                        <img src="${images.url}" 
-                            alt="${images.title}"
-                            class="w-full h-full object-cover transition-transform duration-300 hover:scale-110">
+                        <img src="${image.url}" 
+                            alt="${image.title}"
+                            class="w-full h-full object-cover">
                         <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4">
-                            <h3 class="text-white text-lg font-semibold">${images.title}</h3>
+                            <h3 class="text-white text-lg font-semibold">${image.title}</h3>
                         </div>
                     `;
 
+                    // Almacenamos el título para usarlo en el modal
+                    article.dataset.title = image.title;
+                    
                     gallery.appendChild(article);
                 });
+
+                // Configurar navegación después de cargar las imágenes
+                const galleryItems = Array.from(gallery.querySelectorAll('article'));
+                const images = galleryItems.map(item => {
+                    return {
+                        src: item.querySelector('img').src,
+                        title: item.dataset.title
+                    };
+                });
+                
+                let currentIndex = 0;
+                const modal = document.getElementById('modal');
+                const modalImage = document.getElementById('modal-image');
+                const imageTitle = document.getElementById('image-title').querySelector('h3');
+                const closeModal = document.getElementById('close-modal');
+                const prevButton = document.getElementById('prev');
+                const nextButton = document.getElementById('next');
+
+                // Actualizar el contador de imágenes
+                const updateCounter = (index) => {
+                    const imageCounter = document.getElementById('image-counter');
+                    imageCounter.textContent = `${index + 1} / ${images.length}`;
+                };
+                
+                // Función para abrir el modal con una animación
+                const openModal = () => {
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                    // Pequeña animación de fadeIn
+                    modal.style.opacity = 0;
+                    setTimeout(() => {
+                        modal.style.opacity = 1;
+                    }, 10);
+                };
+
+                // Función para cerrar el modal con una animación
+                const closeModalWithAnimation = () => {
+                    modal.style.opacity = 0;
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                        modal.classList.remove('flex');
+                    }, 300);
+                };
+
+                // Navegar a la imagen seleccionada
+                const navigateToImage = (newIndex) => {
+                    currentIndex = newIndex;
+                    modalImage.src = images[currentIndex].src;
+                    imageTitle.textContent = images[currentIndex].title;
+                    updateCounter(currentIndex);
+                };
+
+                // Event listeners para navegación - anterior y siguiente
+                prevButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const newIndex = (currentIndex - 1 + images.length) % images.length;
+                    navigateToImage(newIndex);
+                });
+                
+                nextButton.addEventListener('click', (event) => {
+                    event.stopPropagation();
+                    const newIndex = (currentIndex + 1) % images.length;
+                    navigateToImage(newIndex);
+                });
+
+                // Abrir modal y actualizar índice
+                gallery.addEventListener('click', (event) => {
+                    const article = event.target.closest('article');
+                    if (article) {
+                        const img = article.querySelector('img');
+                        currentIndex = images.findIndex(image => image.src === img.src);
+                        modalImage.src = img.src;
+                        imageTitle.textContent = article.dataset.title;
+                        openModal();
+                        updateCounter(currentIndex);
+                    }
+                });
+
+                // Cerrar modal
+                closeModal.addEventListener('click', () => {
+                    closeModalWithAnimation();
+                });
+
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal) {
+                        closeModalWithAnimation();
+                    }
+                });
+
+                // Navegación con teclado
+                document.addEventListener('keydown', (event) => {
+                    if (!modal.classList.contains('hidden')) {
+                        switch(event.key) {
+                            case 'ArrowLeft':
+                                const prevIndex = (currentIndex - 1 + images.length) % images.length;
+                                navigateToImage(prevIndex);
+                                break;
+                            case 'ArrowRight':
+                                const nextIndex = (currentIndex + 1) % images.length;
+                                navigateToImage(nextIndex);
+                                break;
+                            case 'Escape':
+                                closeModalWithAnimation();
+                                break;
+                        }
+                    }
+                });
+
+                // Precargar imágenes para mejorar la experiencia
+                images.forEach(image => {
+                    const img = new Image();
+                    img.src = image.src;
+                });
+
             } catch (error) {
                 console.error('Error cargando la galería:', error);
-            }
-        });
-
-        // Código para el modal
-        const modal = document.getElementById('modal');
-        const modalImage = document.getElementById('modal-image');
-        const closeModal = document.getElementById('close-modal');
-
-        const gallery = document.getElementById('gallery');
-        gallery.addEventListener('click', (event) => {
-            if (event.target.tagName === 'IMG') {
-                modalImage.src = event.target.src;
-                modal.classList.remove('hidden');
-            }
-        });
-
-        closeModal.addEventListener('click', () => {
-            modal.classList.add('hidden');
-        });
-        modal.addEventListener('click', () => {
-            modal.classList.add('hidden');
-        });
-
-        // Navegación entre imágenes
-        let currentIndex = 0;
-        const images = Array.from(gallery.querySelectorAll('img'));
-        const prevButton = document.getElementById('prev');
-        const nextButton = document.getElementById('next');
-
-        prevButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            modalImage.src = images[currentIndex].src;
-        });
-        nextButton.addEventListener('click', (event) => {
-            event.stopPropagation();
-            currentIndex = (currentIndex + 1) % images.length;
-            modalImage.src = images[currentIndex].src;
-        });
-
-        // Cerrar el modal al presionar la tecla "Escape"
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                modal.classList.add('hidden');
             }
         });
 
@@ -156,6 +260,6 @@
         menuToggle.addEventListener('click', () => {
             mobileDropdown.classList.toggle('hidden');
         });
-      </script>
+    </script>
 </body>
 </html>
