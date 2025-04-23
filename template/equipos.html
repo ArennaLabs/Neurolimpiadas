@@ -14,12 +14,10 @@
         border-radius: 4px;
         background-color: white;
         cursor: pointer;
-        z-index: 9998;
       }
       
       .dropDown.active .dropdownListContainer {
         display: block;
-        animation: fadeIn 0.2s ease-in-out;
       }
       
       .label {
@@ -56,8 +54,8 @@
         background: white;
         border: 1px solid #e5e5e5;
         border-radius: 4px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-        z-index: 9999;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        z-index: 10;
         max-height: 300px;
         overflow-y: auto;
       }
@@ -103,9 +101,8 @@
           bottom: 0;
           width: 100%;
           height: 100%;
-          z-index: 9999;
+          z-index: 1000;
           border: none;
-          background-color: white;
         }
         
         .dropDown.mobile.active .label,
@@ -118,7 +115,6 @@
           height: 100%;
           border: none;
           box-shadow: none;
-          animation: none;
         }
         
         .dropdownMobileHeader {
@@ -129,17 +125,6 @@
         
         .dropdownMobileHeader h4 {
           font-size: 16px;
-        }
-      }
-
-      @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
         }
       }
     </style>
@@ -239,158 +224,137 @@
         <button id="reset-filter" class="text-black border border-gray-200 px-4 py-2 hover:bg-gray-100 focus:outline-none">Restablecer Filtro</button>
       </div>
 
-      <!-- Tenerife -->
+      <!-- Fuerteventura -->
       <div class="max-w-7xl mx-auto py-4 px-4">
-        <h2 class="text-2xl font-bold">Tenerife</h2>
+        <h2 class="text-2xl font-bold">Fuerteventura</h2>
         <div class="border-b-4 border-[#4672b5] w-12 py-4"></div>
       </div>
 
       <!-- Municipio 1 -->
       <div class="max-w-7xl mx-auto py-4 px-4">
-        <h3 class="text-xl font-semibold underline decoration-[#4672b5]">La Orotava</h3>
-        <p class="text-gray-600">Descripción breve de los clubes en La Orotava.</p>
+        <h3 class="text-xl font-semibold underline decoration-[#4672b5]">La Oliva</h3>
+        <p class="text-gray-600">Descripción breve de los clubes en La Oliva.</p>
       </div>
 
-      <!-- Equipos Municipio 1 (La Orotava) -->
+      <!-- Equipos Municipio 1 (La Oliva) -->
       <div class="max-w-7xl mx-auto py-6 px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- U.D. OROTAVA -->
+          <!-- A POR TODAS -->
           <div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#4ab7ff] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
-              <!-- SVG como fondo -->
-              <div class="absolute inset-0 z-0">
-                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
-              </div>
-              <!-- Logo del club -->
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
               <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/orotava/logo.png" alt="Club 1">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
             <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
-              <h2 class="text-xl font-bold">U.D. OROTAVA</h2>
+              <h2 class="text-xl font-bold">A POR TODAS</h2>
               <a href="ficha_club.html?id=1" class="text-blue-500 hover:underline">Ver Ficha</a>
             </div>
           </div>
 
-          <!-- FLORIDA C.F. -->
-          <div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#0013bd] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
+          <!-- HÉROES EN SILENCIO -->
+          <!-- <div>
+            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#79ce7b] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]"> -->
               <!-- SVG como fondo -->
-              <div class="absolute inset-0 z-0">
+              <!-- <div class="absolute inset-0 z-0">
                 <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
+              </div> -->
+              <!-- Camiseta del club -->
+              <!-- <div class="relative z-10 h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/antigua.svg" alt="Club 1">
               </div>
-              <!-- Logo del club -->
+            </div> -->
+            <!-- Información del club -->
+            <!-- <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">HÉROES EN SILENCIO</h2>
+              <a href="ficha_club.html?id=5" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div> -->
+
+          <!-- HÉROES EN SILENCIO -->
+          <div>
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
               <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/2.png" alt="Club 1">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/antigua.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
             <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
-              <h2 class="text-xl font-bold">FLORIDA C.F.</h2>
+              <h2 class="text-xl font-bold">HÉROES EN SILENCIO</h2>
               <a href="ficha_club.html?id=2" class="text-blue-500 hover:underline">Ver Ficha</a>
             </div>
           </div>
-          <!-- Tarjeta de Club -->
+
+          <!-- TROMPIEZO -->
           <div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#fffaa3] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
-              <!-- SVG como fondo -->
-              <div class="absolute inset-0 z-0">
-                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
-              </div>
-              <!-- Logo del club -->
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
               <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/3.png" alt="Club 1">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/pajara.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
             <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
-              <h2 class="text-xl font-bold">C.D. SALESIANOS</h2>
+              <h2 class="text-xl font-bold">TROMPIEZO</h2>
               <a href="ficha_club.html?id=3" class="text-blue-500 hover:underline">Ver Ficha</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Municipio 2 -->
+      <!-- Municipio 1 -->
       <div class="max-w-7xl mx-auto py-4 px-4">
-        <h3 class="text-xl font-semibold underline decoration-[#4672b5]">Santa Cruz de Tenerife</h3>
-        <p class="text-gray-600">Descripción breve de los clubes en Santa Cruz de Tenerife.</p>
+        <h3 class="text-xl font-semibold underline decoration-[#4672b5]">La Oliva</h3>
+        <p class="text-gray-600">Descripción breve de los clubes en La Oliva.</p>
       </div>
 
-      <!-- Equipos Municipio 2 (Santa Cruz de Tenerife) -->
+      <!-- Equipos Municipio 1 (La Oliva) -->
       <div class="max-w-7xl mx-auto py-6 px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- REAL UNIÓN TENERIFE -->
+          <!-- A POR TODAS -->
           <div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#bd1600] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
-              <!-- SVG como fondo -->
-              <div class="absolute inset-0 z-0">
-                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
-              </div>
-              <!-- Logo del club -->
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
               <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/4.png" alt="Club 1">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva/laoliva.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
             <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
-              <h2 class="text-xl font-bold">REAL UNIÓN TENERIFE</h2>
+              <h2 class="text-xl font-bold">A POR TODAS</h2>
               <a href="ficha_club.html?id=4" class="text-blue-500 hover:underline">Ver Ficha</a>
             </div>
           </div>
-
-          <!-- C.D. TENERIFE -->
+          
+          <!-- A POR TODAS -->
           <div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#000cfa] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
-              <!-- SVG como fondo -->
-              <div class="absolute inset-0 z-0">
-                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
-              </div>
-              <!-- Logo del club -->
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
               <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/1.svg" alt="Club 1">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva/laoliva3.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
             <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
-              <h2 class="text-xl font-bold">C.D. TENERIFE</h2>
+              <h2 class="text-xl font-bold">A POR TODAS</h2>
               <a href="ficha_club.html?id=5" class="text-blue-500 hover:underline">Ver Ficha</a>
             </div>
           </div>
-        </div>
-      </div>
 
-      <!-- La Palma -->
-      <div class="max-w-7xl mx-auto py-4 px-4">
-        <h2 class="text-2xl font-bold">La Palma</h2>
-        <div class="border-b-4 border-[#4672b5] w-12 py-4"></div>
-      </div>
-
-      <!-- Municipio 1 -->
-      <div class="max-w-7xl mx-auto py-4 px-4">
-        <h3 class="text-xl font-semibold underline decoration-[#4672b5]">Garafía</h3>
-        <p class="text-gray-600">Descripción breve de los clubes en Garafía.</p>
-      </div>
-
-      <!-- Equipos La Palma (Garafía) -->
-      <div class="max-w-7xl mx-auto py-6 px-4">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          <!-- GARAFÍA C.F. -->
+          <!-- A POR TODAS -->
           <div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#08007a] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]">
-              <!-- SVG como fondo -->
-              <div class="absolute inset-0 z-0">
-                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
-              </div>
-              <!-- Logo del club -->
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
               <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/5.png" alt="Club 1">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva/laoliva3-1.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
             <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
-              <h2 class="text-xl font-bold">GARAFÍA C.F.</h2>
+              <h2 class="text-xl font-bold">A POR TODAS</h2>
               <a href="ficha_club.html?id=6" class="text-blue-500 hover:underline">Ver Ficha</a>
             </div>
           </div>
