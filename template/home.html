@@ -312,7 +312,7 @@
   <!-- Sección de noticias -->
   <section class="w-full bg-white py-10">
     <div class="max-w-full px-8 md:px-24">
-      <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-center  mb-8">
           <div class="flex items-center mb-4 md:mb-0">
               <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
               <h2 class="font-medium text-lg tracking-wider">NOTICIA DESTACADA</h2>
@@ -325,7 +325,11 @@
       <div class="h-px w-full bg-gray-200 mb-8"></div>
 
       <!-- Tarjeta con imagen a la izquierda y texto a la derecha con título, subtitulo, categoría, fecha y enlace -->
-      <div class="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden mb-8">
+      <div id="noticia-home" class="flex flex-col md:flex-row bg-white shadow-lg rounded-lg overflow-hidden verflow-hiddenhover:shadow-2xl 
+      transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+      hover:ring-2 hover:ring-[#4672b5] group hover:shadow-2xl 
+      transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+      hover:ring-2 hover:ring-[#4672b5] mb-8">
           <img src="/static/img/noticias/1.jpg" alt="Noticia destacada" class="w-full md:w-1/2 h-64 object-cover">
           <div class="p-6 flex flex-col justify-between">
               <h3 class="text-xl font-semibold text-gray-800 mb-2">Granadilla de Abona acogió las 'Neurolimpiadas' de Tenerife 2024</h3>
@@ -429,18 +433,79 @@
     </div>
     
   </section>
-  <footer class="bg-gray-800 text-gray-300 py-8">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
-      <div class="mb-4 md:mb-0">
-        <p class="text-sm">© 2025 Neurolimpiadas. Expertos en envejecimiento activo</p>
-      </div>
-      <div class="flex space-x-4">
+  <footer class="bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Contenido principal del footer -->
+        <div class="flex justify-between  p-8">
+            <!-- Columna 1: Logo y descripción -->
+            <div class="space-y-4">
+                <img src="/static/img/logo.png" alt="Logo Neurolimpiadas" class="h-16 mx-auto">
+            
+                <p class="text-sm text-white font-weight: bold;">Expertos en Envejecimiento Activo</p>
+                <div class="space-y-2">
+                    <a href="/template/cookies.html" class="block text-gray-400 hover:text-white transition-colors duration-300">
+                        Desarrollado por <span class="text-neurolimpiadas-green">Arenna Labs</span>
+                    </a>
+                    <a href="/template/privacidad.html" class="block text-gray-400 hover:text-white transition-colors duration-300">
+                        Política de Privacidad
+                    </a>
+                    <a href="/template/cookies.html" class="block text-gray-400 hover:text-white transition-colors duration-300">
+                        Política de Cookies
+                    </a>
+                </div>
+            </div>
 
-        <a href="https://www.instagram.com/elclubdelmayor/reels/?hl=es" target="_blank" class="text-white hover:text-white"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.facebook.com/Elclubdelmayor/?locale=es_ES" class="hover:text-white"><i class="fab fa-facebook-square"></i></a>
-      </div>
+            <!-- Columna 2: Enlaces rápidos -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Enlaces Rápidos</h3>
+                <ul class="space-y-2">
+                    <li>
+                        <a href="neurolimpiadas.html" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            Sobre Neurolimpiadas
+                        </a>
+                    </li>
+                    <li>
+                        <a href="calendario.html" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            Calendario
+                        </a>
+                    </li>
+                    <li>
+                        <a href="noticias.html" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            Noticias
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contactanos.html" class="text-gray-400 hover:text-white transition-colors duration-300">
+                            Contacto
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Columna 3: Redes sociales -->
+            <div>
+                <h3 class="text-lg font-semibold text-white mb-4">Síguenos</h3>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-facebook-square text-2xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/elclubdelmayor/reels/?hl=es" 
+                       target="_blank" 
+                       class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i class="fab fa-instagram text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Línea divisoria -->
+        <div class="border-t border-gray-700 pt-8 pb-8">
+            <p class="text-center text-sm text-gray-400">
+                © 2025 Neurolimpiadas. Todos los derechos reservados.
+            </p>
+        </div>
     </div>
-  </footer>
+</footer>
 
   <script src="../static/js/imageMapResizer.min.js"></script>
   <script>
@@ -1052,6 +1117,9 @@
   // Desplaza la vista suavemente a la sección de detalles
   document.getElementById('detalle').scrollIntoView({ behavior: 'smooth' });
 }
+  document.getElementById('noticia-home').addEventListener('click', () => {
+    window.location.href = "/template/noticia.html?id=2"
+  });
 
   </script>
   

@@ -58,7 +58,7 @@
     <main class="max-w-4xl mx-auto px-4 py-8">
         <!-- Categoría -->
         <div class="mb-6">
-            <span class="bg-neurolimpiadas-blue text-white text-sm font-medium px-3 py-1 rounded-full" id="data-categoria">
+            <span class="data-categoria text-white text-sm font-medium px-3 py-1 rounded-full" >
                 
             </span>
         </div>
@@ -90,13 +90,14 @@
                  alt="Neurolimpiadas Canarias" 
                  class="w-full h-[500px] object-cover rounded-lg shadow-lg" 
                  id="data-imagen">
+            
         </div>
 
         <!-- Contenido de la noticia -->
         <article class="prose prose-lg max-w-none" id="data-contenido"> 
             
         </article>
-
+      
         
         <div class="mt-12 flex justify-center">
             <a href="${noticia.url}" 
@@ -115,7 +116,13 @@
                 </svg>
             </a>
         </div>
-       
+    <!-- Añadir antes del cierre del main -->
+    <div class="mt-12 border-t border-gray-200 pt-6">
+        <p class="text-xs text-gray-400 text-center">
+            Este contenido ha sido reproducido con el permiso expreso de los titulares de los derechos. 
+            Todas las marcas registradas, imágenes y contenidos pertenecen a sus respectivos propietarios.
+        </p>
+    </div>   
         
     </main>
 
@@ -162,9 +169,22 @@
             window.location.href = 'noticias.html';
             return;
         }
+        const colorClasses = {
+            'Deportes': 'bg-[#e6ba38] text-yellow-800',
+            'Destacados': 'bg-[#75addb] text-blue-800',
+            'General': 'bg-[#86b050] text-green-800',
+            'Entrevistas': 'bg-[#c084fc] text-purple-800',
+            'Cultura': 'bg-[#818cf8] text-indigo-800',
+            'Salud': 'bg-[#4fd1c5] text-teal-800',
+            'Voluntariado': 'bg-[#f472b6] text-pink-800',
+        };
 
         // 7. Actualizar el contenido
-        document.getElementById('data-categoria').textContent = noticia.categoria;
+        const dataCategoria = document.querySelector('.data-categoria');
+        dataCategoria.className = `data-categoria text-white text-sm font-medium px-3 py-1 rounded-full ${colorClasses[noticia.categoria]}`;
+
+        dataCategoria.textContent = noticia.categoria;
+        
         document.getElementById('data-titulo').textContent = noticia.titulo;
         document.getElementById('data-descripcion').textContent = noticia.descripcion;
         document.getElementById('data-fecha').textContent = noticia.fecha;
@@ -205,6 +225,37 @@
                     break;
             }
         });
+
+        // Dentro de la función cargarNoticia, añade:
+        const atribucionHTML = `
+            <div class="mt-8 border-t border-gray-200 pt-6">
+                <div class="text-sm text-gray-500">
+                    <p class="mb-2">
+                        <span class="font-semibold">Fuente original:</span> 
+                        <a href="${noticia.url}" 
+                        class="text-[#4672b5] hover:text-[#3a5d94] underline"
+                        target="_blank"
+                        rel="noopener noreferrer">
+                            ${noticia.fuente}
+                        </a>
+                    </p>
+                    ${noticia.autor ? `
+                        <p class="mb-2">
+                            <span class="font-semibold">Autor:</span> 
+                            ${noticia.autor}
+                        </p>
+                    ` : ''}
+                    ${noticia.creditos_imagen ? `
+                        <p>
+                            <span class="font-semibold">Créditos de imagen:</span> 
+                            ${noticia.creditos_imagen}
+                        </p>
+                    ` : ''}
+                </div>
+            </div>
+        `;
+
+        article.insertAdjacentHTML('afterend', atribucionHTML);
 
     
 
