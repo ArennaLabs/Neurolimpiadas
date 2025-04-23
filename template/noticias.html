@@ -252,21 +252,22 @@
                     <img src="${noticia.imagen}" 
                         alt="Imagen de ${noticia.titulo}" 
                         class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
-                    <div class="absolute top-4 left-4">
-                        <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-1 rounded">
-                            ${noticia.categoria}
-                        </span>
-                    </div>
+                    
                 </div>
                 <div class="p-5">
-                    <div class="text-gray-500 text-sm mb-3">${noticia.fecha}</div>
+                    <div class="flex justify-between items-center mb-3">
+                      <div class="text-gray-500 text-sm mb-3">${noticia.fecha}</div>
+                      <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-1 rounded">
+                            ${noticia.categoria}
+                      </span>
+                    </div>
                     <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#4672b5]">
                         ${noticia.titulo}
                     </h3>
                     <p class="text-gray-600 mb-4 line-clamp-3">
                         ${noticia.descripcion}
                     </p>
-                    
+                    <a href="${noticia.url_noticia}" class="mt-4 text-[#4672b5] hover:text-[#3b5f8d] font-medium">Leer más</a>
                 </div>
             </article>
         `;
@@ -287,10 +288,19 @@
         <a href="${slide.link}" class="block h-full relative" target="_blank">
           <div class="absolute inset-0 bg-black opacity-50"></div>
           <img src="${slide.image}" alt="${slide.title}" class="h-full w-full object-cover">
-          <div class="absolute left-20 bottom-0 transform -translate-y-1/2 w-[30%] w-full  p-4">
-            <h1 class="text-2xl font-bold text-white">${slide.title}</h1>
-            <p class="text-white mt-2">${slide.subtitle}</p>
-          </div>
+          <div class="absolute bottom-8 left-0 right-0 p-6 md:p-8 lg:p-12">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 
+                             line-clamp-2 md:line-clamp-none">
+                        ${slide.title}
+                    </h1>
+                    <p class="text-sm md:text-base text-white mt-2 
+                             line-clamp-2 md:line-clamp-3 lg:line-clamp-none 
+                             opacity-90">
+                        ${slide.subtitle}
+                    </p>
+                </div>
+            </div>
         </a>
       `;
       updateDots();

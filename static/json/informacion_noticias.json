@@ -9,6 +9,10 @@
         "descripcion": "Éxito del proyecto Neuromajo 2024 del Cabildo de Fuerteventura con diversas pruebas para el bienestar y salud de las personas mayores",
         "fecha": "18 Noviembre, 2024",
         "imagen": "/static/img/noticias/3.jpg",
+        "fuente":"Cabildo Fuerteventura",
+        "autor":"Cabildo Fuerteventura",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Cabildo Fuerteventura",
         "url_noticia": "/template/noticia.html?id=1",
         "url": "https://www.cabildofuer.es/cabildo/ocho-equipos-representaran-a-fuerteventura-en-las-neurolimpiadas-canarias/",
         "contenido": [
@@ -37,6 +41,10 @@
         "imagen": "/static/img/noticias/1.jpg",
         "url_noticia": "/template/noticia.html?id=2",
         "url": "https://www.granadilladeabona.org/granadilla-de-abona-acogio-las-neurolimpiadas-de-tenerife-2024/",
+        "fuente":"Ilustre Ayuntamiento Granadilla de Abona",
+        "autor":"Ilustre Ayuntamiento Granadilla de Abona",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Ayuntamiento Granadilla de Abona",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -49,7 +57,7 @@
           }, {
             "tipo": "imagen",
             "url": "/static/img/noticias/contenido/noticia2_2.jpg",
-            "descripcion": "Participantes durante las pruebas físicas",
+            "descripcion": "Participantes durante de Neurolimpiadas",
             "ancho": "half" 
           },
           
@@ -59,7 +67,7 @@
           },{
             "tipo": "imagen",
             "url": "/static/img/noticias/contenido/noticia2_1.jpg",
-            "descripcion": "Participantes durante las pruebas físicas",
+            "descripcion": "Comunicado de los representantes de los municipios",
             "ancho": "half" 
           },
           {
@@ -70,7 +78,7 @@
           {
             "tipo": "imagen",
             "url": "/static/img/noticias/contenido/noticia2_3.jpg",
-            "descripcion": "Participantes durante las pruebas físicas",
+            "descripcion": "Equipo de Granadilla de Abona",
             "ancho": "half" 
           }
   
@@ -88,6 +96,10 @@
         "imagen": "/static/img/noticias/2.jpg",
         "url_noticia": "/template/noticia.html?id=3",
         "url": "https://www.cabildodelapalma.es/es/mas-de-200-mayores-de-ocho-municipio-de-la-palma-competiran-en-las-neurolimpiadas",
+        "fuente":"Cabildo La Palma",
+        "autor":"Cabildo La Palma",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Cabildo La Palma",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -147,6 +159,10 @@
         "imagen": "/static/img/noticias/noticias2.webp",
         "url_noticia": "/template/noticia.html?id=6",
         "url": "https://www.lavozdefuerteventura.com/articulo/fuerteventura/300-personas-mayores-compiten-salud-bienestar-neuromajo-2024/20241116095407019705.html",
+        "fuente":"La Voz de Fuerteventura",
+        "autor":"La Voz de Fuerteventura",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de La Voz de Fuerteventura",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -177,6 +193,10 @@
         "imagen": "/static/img/noticias/noticias1.jpeg",
         "url_noticia": "/template/noticia.html?id=4",
         "url": "https://www.eltime.es/isla-bonita/178-municipios/51172-arranca-la-final-regional-de-las-neurolimpiadas-en-santa-cruz-de-la-palma.html",
+        "fuente":"El Time",
+        "autor":"El Time",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de El Time",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -204,6 +224,10 @@
         "imagen": "/static/img/noticias/noticias3.jpg",
         "url_noticia": "/template/noticia.html?id=5",
         "url": "https://www.canal4tenerife.tv/el-alcalde-presento-las-neurolimpiadas-provinciales-de-santiago-del-teide-2024/",
+        "fuente":"Digital Canal 4 Tenerife",
+        "autor":"Digital Canal 4 Tenerife",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Digital Canal 4 Tenerife",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -235,6 +259,10 @@
         "imagen": "/static/img/noticias/7.jpg",
         "url_noticia": "/template/noticia.html?id=7",
         "url": "https://www.iass.es/noticias/259-mayores/5616-casi-600-mayores-participaran-en-las-neuroolimpiadas-2024-este-fin-de-semana-en-granadilla",
+        "fuente":"IASS",
+        "autor":"IASS",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de IASS",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -268,6 +296,10 @@
         "imagen": "/static/img/noticias/8.webp",
         "url_noticia": "/template/noticia.html?id=8",
         "url": "https://www.eldiario.es/canariasahora/lapalmaahora/municipios/santa_cruz_de_la_palma/santa-cruz-palma-reune-mayores-canarias-final-regional-neurolimpiadas_1_11853771.html",
+        "fuente":"El Diario",
+        "autor":"La Palma Ahora",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de El Diario",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -310,6 +342,10 @@
         "imagen": "/static/img/noticias/9.jpg",
         "url_noticia": "/template/noticia.html?id=9",
         "url": "https://www.cabildofuer.es/cabildo/mas-de-cincuenta-mayores-representaron-a-fuerteventura-en-las-neurolimpiadas-canarias/",
+        "fuente":"Cabildo Fuerteventura",
+        "autor":"Cabildo Fuerteventura",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Cabildo Fuerteventura",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -343,6 +379,10 @@
         "imagen": "/static/img/noticias/10.jpg",
         "url_noticia": "/template/noticia.html?id=10",
         "url": "https://www.ayuntamientoelrosario.org/index.php/2024/12/04/mayores-de-el-rosario-participan-en-la-gran-final-de-las-neurolimpiadas-2024-celebradas-en-santa-cruz-de-la-palma/",
+        "fuente":"El Rosario",
+        "autor":"Gabinete de Prensa El Rosario",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Gabinete de Prensa El Rosario",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -376,6 +416,10 @@
         "imagen": "/static/img/noticias/11.jpeg",
         "url_noticia": "/template/noticia.html?id=11",
         "url": "https://www.cabildofuer.es/cabildo/casi-300-personas-mayores-de-todos-los-municipios-participan-en-el-proyecto-neuromajo-2024/",
+        "fuente":"Cabildo Fuerteventura",
+        "autor":"Cabildo Fuerteventura",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Cabildo Fuerteventura",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -415,6 +459,10 @@
         "imagen": "/static/img/noticias/12.jpeg",
         "url_noticia": "/template/noticia.html?id=12",
         "url": "https://ondafuerteventura.es/mas-de-50-mayores-de-fuerteventura-participan-en-las-neurolimpiadas-canarias-en-la-palma",
+        "fuente":"Onda Fuerteventura",
+        "autor":"Onda Fuerteventura",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Onda Fuerteventura",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -445,6 +493,10 @@
         "imagen": "/static/img/noticias/13.jpg",
         "url_noticia": "/template/noticia.html?id=13",
         "url": "https://www.granadilladeabona.org/granadilla-de-abona-se-suma-al-programa-neurolimpiadas-para-mayores/",
+        "fuente":"Ilustre Ayuntamiento Granadilla de Abona",
+        "autor":"Ilustre Ayuntamiento Granadilla de Abona",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Ayuntamiento Granadilla de Abona",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -472,6 +524,10 @@
         "imagen": "/static/img/noticias/14.jpg",
         "url_noticia": "/template/noticia.html?id=14",
         "url": "https://villademazo.com/villa-de-mazo-se-proclama-ganador-en-la-prueba-de-letras-y-la-prueba-de-letras-y-cifras-de-las-neurolimpiadas/",
+        "fuente":"Ayuntamiento Vialla de Mazo",
+        "autor":"Ayuntamiento Vialla de Mazo",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Ayuntamiento Vialla de Mazo",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -504,6 +560,10 @@
         "imagen": "/static/img/noticias/15.jpg",
         "url_noticia": "/template/noticia.html?id=15",
         "url": "https://www.sanmigueldeabona.es/2023/01/14/san-miguel-organiza-unas-neurolimpiadas-para-mayores-para-seguir-potenciando-el-envejecimiento-activo/",
+        "fuente":"Ayuntamiento De San Miguel de Abona",
+        "autor":"Ayuntamiento De San Miguel de Abona",
+        "creditos_imagen": "© 2023 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Ayuntamiento De San Miguel de Abona",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -538,6 +598,10 @@
         "imagen": "/static/img/noticias/16.jpg",
         "url_noticia": "/template/noticia.html?id=16",
         "url": "https://villademazo.com/villa-de-mazo-se-proclama-ganador-en-la-prueba-de-letras-y-la-prueba-de-letras-y-cifras-de-las-neurolimpiadas/",
+        "fuente":"Ayuntamiento Vialla de Mazo",
+        "autor":"Ayuntamiento Vialla de Mazo",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Ayuntamiento Vialla de Mazo",
         "contenido": [
           {
             "tipo": "parrafo",
@@ -570,6 +634,10 @@
         "imagen": "/static/img/noticias/17.jpg",
         "url_noticia": "/template/noticia.html?id=17",
         "url": "https://villademazo.com/villa-de-mazo-acoge-este-fin-de-semana-el-campeonato-insular-de-las-neurolimpiadas/",
+        "fuente":"Ayuntamiento Vialla de Mazo",
+        "autor":"Ayuntamiento Vialla de Mazo",
+        "creditos_imagen": "© 2024 Autor desconocido",
+        "permiso_uso": "Usado con permiso de Ayuntamiento Vialla de Mazo",
         "contenido": [
           {
             "tipo": "parrafo",
