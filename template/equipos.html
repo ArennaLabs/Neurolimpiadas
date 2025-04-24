@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clubes</title>
+    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>
     <style>
       /* Estilos para el menú desplegable */
       .dropDown {
@@ -451,126 +454,132 @@
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- JavaScript para el menú desplegable -->
-      
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          // Función para manejar clicks en el dropdown
-          function setupDropdowns() {
-            const dropdowns = document.querySelectorAll('.dropDown');
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    <!-- JavaScript para el menú desplegable -->
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Función para manejar clicks en el dropdown
+        function setupDropdowns() {
+          const dropdowns = document.querySelectorAll('.dropDown');
+          
+          dropdowns.forEach(dropdown => {
+            const current = dropdown.querySelector('[data-dropdown-current]');
+            const listContainer = dropdown.querySelector('.dropdownListContainer');
+            const options = dropdown.querySelectorAll('.dropdownList li');
+            const closeButton = dropdown.querySelector('.js-dropdown-close');
             
-            dropdowns.forEach(dropdown => {
-              const current = dropdown.querySelector('[data-dropdown-current]');
-              const listContainer = dropdown.querySelector('.dropdownListContainer');
-              const options = dropdown.querySelectorAll('.dropdownList li');
-              const closeButton = dropdown.querySelector('.js-dropdown-close');
+            // Toggle dropdown on click
+            current.addEventListener('click', function() {
+              dropdown.classList.toggle('active');
+              const expanded = dropdown.classList.contains('active');
+              current.setAttribute('aria-expanded', expanded);
+            });
+            
+            // Close on mobile back button
+            if (closeButton) {
+              closeButton.addEventListener('click', function() {
+                dropdown.classList.remove('active');
+                current.setAttribute('aria-expanded', false);
+              });
+            }
+            
+            // Select option
+            options.forEach(option => {
+              option.addEventListener('click', function() {
+                const optionName = this.getAttribute('data-option-name');
+                const optionId = this.getAttribute('data-option-id');
+                
+                current.textContent = optionName;
+                
+                // Simulate form submission or filter change
+                console.log(`Selected island: ${optionName}, ID: ${optionId}`);
+                
+                // Close dropdown
+                dropdown.classList.remove('active');
+                current.setAttribute('aria-expanded', false);
+                
+                // You could trigger a form submission or other action here
+                // Example: document.getElementById('hidden-isla').value = optionId;
+                // Example: document.getElementById('filter-form').submit();
+              });
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+              if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+                current.setAttribute('aria-expanded', false);
+              }
+            });
+            
+            // Handle keyboard navigation
+            dropdown.addEventListener('keydown', function(event) {
+              if (event.key === 'Escape') {
+                dropdown.classList.remove('active');
+                current.setAttribute('aria-expanded', false);
+                current.focus();
+              }
               
-              // Toggle dropdown on click
-              current.addEventListener('click', function() {
+              if (event.key === 'Enter' && document.activeElement === current) {
                 dropdown.classList.toggle('active');
                 const expanded = dropdown.classList.contains('active');
                 current.setAttribute('aria-expanded', expanded);
-              });
-              
-              // Close on mobile back button
-              if (closeButton) {
-                closeButton.addEventListener('click', function() {
-                  dropdown.classList.remove('active');
-                  current.setAttribute('aria-expanded', false);
-                });
+                
+                if (expanded) {
+                  options[0].focus();
+                }
               }
               
-              // Select option
-              options.forEach(option => {
-                option.addEventListener('click', function() {
-                  const optionName = this.getAttribute('data-option-name');
-                  const optionId = this.getAttribute('data-option-id');
-                  
-                  current.textContent = optionName;
-                  
-                  // Simulate form submission or filter change
-                  console.log(`Selected island: ${optionName}, ID: ${optionId}`);
-                  
-                  // Close dropdown
-                  dropdown.classList.remove('active');
-                  current.setAttribute('aria-expanded', false);
-                  
-                  // You could trigger a form submission or other action here
-                  // Example: document.getElementById('hidden-isla').value = optionId;
-                  // Example: document.getElementById('filter-form').submit();
-                });
-              });
-              
-              // Close dropdown when clicking outside
-              document.addEventListener('click', function(event) {
-                if (!dropdown.contains(event.target)) {
-                  dropdown.classList.remove('active');
-                  current.setAttribute('aria-expanded', false);
-                }
-              });
-              
-              // Handle keyboard navigation
-              dropdown.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape') {
-                  dropdown.classList.remove('active');
-                  current.setAttribute('aria-expanded', false);
-                  current.focus();
-                }
+              if (event.key === 'Tab' && dropdown.classList.contains('active')) {
+                // Keep focus within dropdown when it's open
+                const focusableElements = dropdown.querySelectorAll('li[role="option"], button');
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
                 
-                if (event.key === 'Enter' && document.activeElement === current) {
-                  dropdown.classList.toggle('active');
-                  const expanded = dropdown.classList.contains('active');
-                  current.setAttribute('aria-expanded', expanded);
-                  
-                  if (expanded) {
+                if (event.shiftKey && document.activeElement === firstElement) {
+                  event.preventDefault();
+                  lastElement.focus();
+                } else if (!event.shiftKey && document.activeElement === lastElement) {
+                  event.preventDefault();
+                  firstElement.focus();
+                }
+              }
+              
+              // Arrow key navigation through options
+              if (dropdown.classList.contains('active')) {
+                if (event.key === 'ArrowDown') {
+                  event.preventDefault();
+                  if (document.activeElement.nextElementSibling && 
+                      document.activeElement.nextElementSibling.getAttribute('role') === 'option') {
+                    document.activeElement.nextElementSibling.focus();
+                  } else {
                     options[0].focus();
                   }
                 }
                 
-                if (event.key === 'Tab' && dropdown.classList.contains('active')) {
-                  // Keep focus within dropdown when it's open
-                  const focusableElements = dropdown.querySelectorAll('li[role="option"], button');
-                  const firstElement = focusableElements[0];
-                  const lastElement = focusableElements[focusableElements.length - 1];
-                  
-                  if (event.shiftKey && document.activeElement === firstElement) {
-                    event.preventDefault();
-                    lastElement.focus();
-                  } else if (!event.shiftKey && document.activeElement === lastElement) {
-                    event.preventDefault();
-                    firstElement.focus();
+                if (event.key === 'ArrowUp') {
+                  event.preventDefault();
+                  if (document.activeElement.previousElementSibling && 
+                      document.activeElement.previousElementSibling.getAttribute('role') === 'option') {
+                    document.activeElement.previousElementSibling.focus();
+                  } else {
+                    options[options.length - 1].focus();
                   }
                 }
-                
-                // Arrow key navigation through options
-                if (dropdown.classList.contains('active')) {
-                  if (event.key === 'ArrowDown') {
-                    event.preventDefault();
-                    if (document.activeElement.nextElementSibling && 
-                        document.activeElement.nextElementSibling.getAttribute('role') === 'option') {
-                      document.activeElement.nextElementSibling.focus();
-                    } else {
-                      options[0].focus();
-                    }
-                  }
-                  
-                  if (event.key === 'ArrowUp') {
-                    event.preventDefault();
-                    if (document.activeElement.previousElementSibling && 
-                        document.activeElement.previousElementSibling.getAttribute('role') === 'option') {
-                      document.activeElement.previousElementSibling.focus();
-                    } else {
-                      options[options.length - 1].focus();
-                    }
-                  }
-                }
-              });
+              }
             });
-          }
-          
-          setupDropdowns();
-        });
-      </script>
+          });
+        }
+        
+        setupDropdowns();
+      });
+    </script>
+
+    <!-- Cargar componentes -->
+    <script src="/static/js/loadComponents.js"></script>
 </body>
 </html>

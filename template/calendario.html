@@ -3,24 +3,15 @@
 <head>
     <title>Calendario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        arenna: {
-                            green: '#2BB673',
-                            hover: '#229A61'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>    
+    <!-- Cargar componentes -->
+    <script src="/static/js/loadComponents.js"></script>
 </head>
 <body class="min-h-screen bg-gray-50">
-    <nav class="bg-white shadow w-full mb-6">
+    <nav class="bg-white shadow w-full">
         <div class="flex items-center justify-between h-16">
           
           <a href="home.html" class="flex-shrink-0">
@@ -65,9 +56,9 @@
         </div>
       </nav>
     
-    <!-- Reemplazar el div contenedor actual del calendario por este -->
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-4">
-        <!-- Contenedor del calendario (ocupará 2 columnas) -->
+    <!-- Calendario -->
+    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 py-6">
+        <!-- Contenedor del calendario -->
         <div class="lg:col-span-2 bg-white rounded-xl shadow-2xl p-6">
             <!-- Cabecera del calendario -->
             <div class="flex items-center justify-between mb-6">
@@ -115,6 +106,9 @@
             </div>
         </div>
     </div>
+
+    <!-- Footer -->
+    <div id="footer-container"></div>
 
     <script>
         class Calendar {
@@ -209,18 +203,23 @@
 
             addDay(day, inactive = false, isNextMonth = false) {
                 const dayElement = document.createElement('div');
-                dayElement.className = `
-                    aspect-square flex items-center justify-center rounded-lg
-                    ${inactive ? 'text-gray-400' : 'text-gray-700'}
-                    ${inactive ? '' : 'hover:bg-gray-100 cursor-pointer'}
+                const baseClasses = `
+                    aspect-square flex items-center justify-center rounded-lg transition-colors
+                    ${inactive ? 'text-gray-400' : 'text-gray-700 hover:bg-gray-100'}
+                    ${inactive ? '' : 'cursor-pointer'}
                 `;
-                dayElement.textContent = day;
 
-                // Marcar el día actual (solo para el mes actual)
+                // Si es el día actual, usar !important en las clases críticas para evitar conflictos
                 if (!inactive && this.isToday(day)) {
-                    dayElement.className += ' bg-[#4672b5] text-white hover:bg-[#3a5d94]';
+                    dayElement.className = `
+                        ${baseClasses}
+                        !bg-[#4672b5] !text-white hover:!bg-[#3a5d94]
+                    `;
+                } else {
+                    dayElement.className = baseClasses;
                 }
 
+                dayElement.textContent = day;
                 this.calendarDays.appendChild(dayElement);
             }
 

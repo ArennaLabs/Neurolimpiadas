@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer</title>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOM8d7xj1z5l5e5e5e5e5e5e5e5e5e5e5e5e5" crossorigin="anonymous">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .footer-link:hover {
+            color: #000;
+            transition: color 0.3s;
+        }
+        .social-icon:hover {
+            color: #000;
+            transition: color 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <footer id="footer-container" class="relative bg-gradient-to-t from-gray-100 to-white text-black pt-16 pb-10 md:pt-20 w-full px-4 overflow-hidden">
+        <div class="relative z-10 w-full max-w-[2160px] mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16 px-4 md:px-8 lg:px-12">
+                <!-- Logo y Descripción -->
+                <div class="flex flex-col items-start space-y-6 reveal">
+                    <img src="/picconia.png" alt="Logo de Picconia" loading="lazy" class="h-12">
+                    <p class="text-gray-600 text-sm leading-relaxed max-w-sm">
+                        Envio a domicilio a todas las Islas Canarias, antes de 48 horas
+                    </p>
+                </div>
+
+                <!-- Enlaces Rápidos -->
+                <div class="flex flex-col items-start space-y-6 reveal">
+                    <h3 class="text-xl font-semibold text-black">Enlaces Rápidos</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/Sobre_Nosotros" class="footer-link">Sobre Nosotros</a></li>
+                        <li><a href="/Servicios" class="footer-link">Soluciones</a></li>
+                        <li><a href="/Virtual-Card" class="footer-link">Blog</a></li>
+                        <li><a href="/Contacto" class="footer-link">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contacto -->
+                <div class="flex flex-col items-start space-y-6 reveal">
+                    <h3 class="text-xl font-semibold text-black">Contacto</h3>
+                    <ul class="space-y-4">
+                        <li class="contact-item flex items-start space-x-3">
+                            <i class="fas fa-map-marker-alt text-[#e90000]"></i>
+                            <span class="text-gray-600 text-sm">Cam. La Atalaya, 6, 38350 Tacoronte, Tenerife</span>
+                        </li>
+                        <li class="contact-item flex items-center space-x-3">
+                            <i class="fas fa-phone text-[#e90000]"></i>
+                            <span class="text-gray-600 text-sm">+34 629 826 610</span>
+                        </li>
+                        <li class="contact-item flex items-center space-x-3">
+                            <i class="fas fa-envelope text-[#e90000]"></i>
+                            <span class="text-gray-600 text-sm">info@picconia.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="flex flex-col items-start space-y-6 reveal">
+                    <h3 class="text-xl font-semibold text-black">Newsletter</h3>
+                    <p class="text-gray-600 text-sm max-w-sm">
+                        Suscríbete para recibir las últimas novedades y actualizaciones.
+                    </p>
+                    <form class="w-full space-y-4 newsletter-form">
+                        <div class="relative">
+                            <input type="email" placeholder="Tu correo electrónico" class="w-full">
+                            <button type="submit" class="absolute right-2 top-1/2 -translate-y-1/2">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Redes Sociales -->
+            <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 pt-8 border-t">
+                <div class="flex items-center space-x-6">
+                    <a href="https://www.facebook.com/picconia/?locale=es_ES" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fpicconiagest" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/in/picconia-administraci%C3%B3n-917763132/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/picconiacespedartificial/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="flex items-center space-x-6 text-sm text-gray-600">
+                    <a href="/Politica-de-Privacidad" class="footer-link">Política de Privacidad</a>
+                    <a href="#" class="footer-link">Política de Cookies</a>
+                    <a href="#" class="footer-link">Transparencia</a>
+                    <a href="#" class="footer-link">Condiciones de venta y garantía</a>
+                    <a href="#" class="footer-link">Acceso área interna</a>
+                </div>
+            </div>
+
+            <!-- Copyright -->
+            <div class="text-center mt-8 pt-8 border-t">
+                <p class="text-gray-600 text-sm">&copy; <script>document.write(new Date().getFullYear())</script> Picconia. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

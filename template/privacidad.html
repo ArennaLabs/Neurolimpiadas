@@ -4,16 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Política de Privacidad - Neurolimpiadas</title>
+    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Colores Necesarios -->
     <script src="../static/js/colors.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>    
+    <!-- Cargar componentes -->
+    <script src="/static/js/loadComponents.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
-
-
-
-    
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col">
-    
+    <!-- Barra de navegación -->
     <nav class="bg-white shadow w-full">
         <div class="flex items-center justify-between h-16">
         
@@ -59,6 +61,7 @@
         </div>
     </nav>
 
+    <!-- Contenedor principal -->
     <main  class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto">
@@ -239,79 +242,9 @@
             </div>
         </div>
     </main>
-    <footer class="bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Contenido principal del footer -->
-            <div class="flex justify-between  p-8">
-                <!-- Columna 1: Logo y descripción -->
-                <div class="space-y-4">
-                    <img src="/static/img/logo.png" alt="Logo Neurolimpiadas" class="h-16 mx-auto">
-                
-                    <p class="text-sm text-white font-weight: bold;">Expertos en Envejecimiento Activo</p>
-                    <div class="space-y-2">
-                        <a href="/template/cookies.html" class="block text-gray-400 hover:text-white transition-colors duration-300">
-                            Desarrollado por <span class="text-neurolimpiadas-green">Arenna Labs</span>
-                        </a>
-                        <a href="/template/privacidad.html" class="block text-gray-400 hover:text-white transition-colors duration-300">
-                            Política de Privacidad
-                        </a>
-                        <a href="/template/cookies.html" class="block text-gray-400 hover:text-white transition-colors duration-300">
-                            Política de Cookies
-                        </a>
-                    </div>
-                </div>
     
-                <!-- Columna 2: Enlaces rápidos -->
-                <div>
-                    <h3 class="text-lg font-semibold text-white mb-4">Enlaces Rápidos</h3>
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="neurolimpiadas.html" class="text-gray-400 hover:text-white transition-colors duration-300">
-                                Sobre Neurolimpiadas
-                            </a>
-                        </li>
-                        <li>
-                            <a href="calendario.html" class="text-gray-400 hover:text-white transition-colors duration-300">
-                                Calendario
-                            </a>
-                        </li>
-                        <li>
-                            <a href="noticias.html" class="text-gray-400 hover:text-white transition-colors duration-300">
-                                Noticias
-                            </a>
-                        </li>
-                        <li>
-                            <a href="contactanos.html" class="text-gray-400 hover:text-white transition-colors duration-300">
-                                Contacto
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-    
-                <!-- Columna 3: Redes sociales -->
-                <div>
-                    <h3 class="text-lg font-semibold text-white mb-4">Síguenos</h3>
-                    <div class="flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            <i class="fab fa-facebook-square text-2xl"></i>
-                        </a>
-                        <a href="https://www.instagram.com/elclubdelmayor/reels/?hl=es" 
-                           target="_blank" 
-                           class="text-gray-400 hover:text-white transition-colors duration-300">
-                            <i class="fab fa-instagram text-2xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-    
-            <!-- Línea divisoria -->
-            <div class="border-t border-gray-700 pt-8 pb-8">
-                <p class="text-center text-sm text-gray-400">
-                    © 2025 Neurolimpiadas. Todos los derechos reservados.
-                </p>
-            </div>
-        </div>
-    </footer>
+    <!-- Footer -->
+     <div id="footer-container"></div>
     <script>
         // Función para manejar el menú móvil
         document.getElementById('menu-toggle')?.addEventListener('click', function() {
