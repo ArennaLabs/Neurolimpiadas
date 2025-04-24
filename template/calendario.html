@@ -57,7 +57,7 @@
       </nav>
     
     <!-- Calendario -->
-    <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 py-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 px-4 py-6">
         <!-- Contenedor del calendario -->
         <div class="lg:col-span-2 bg-white rounded-xl shadow-2xl p-6">
             <!-- Cabecera del calendario -->
@@ -101,7 +101,7 @@
                 </svg>
                 Próximos Eventos
             </h2>
-            <div id="upcoming-events" class="space-y-4">
+            <div id="upcoming-events" class="space-y-4 max-h-[600px] overflow-y-auto pr-2 scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
                 <!-- Los eventos se insertarán aquí dinámicamente -->
             </div>
         </div>
@@ -115,27 +115,65 @@
             constructor() {
                 // Inicializar la fecha actual
                 this.date = new Date();
-                // Obtener el mes actual
                 this.currentMonth = this.date.getMonth();
-                // Obtener el año actual
                 this.currentYear = this.date.getFullYear();
                 
                 // Obtener los elementos del DOM
                 this.monthYear = document.getElementById('monthYear');
                 this.calendarDays = document.getElementById('calendarDays');
                 
-                this.setupEventListeners();
-                this.render();
-                this.selectedStartDate = null;
-                this.selectedEndDate = null;
-                this.events = {
-                    // Ejemplo de eventos
-                    '2025-04-21': { title: 'Competición Regional', type: 'competition' },
-                    '2025-04-25': { title: 'Entrenamiento Especial', type: 'training' },
-                    '2025-05-01': { title: 'Final Provincial', type: 'competition' }
-                };
-                this.renderUpcomingEvents();
-                this.setupModalEventListeners();
+                // Inicializar eventos
+                this.events = {};
+                
+                // Inicializar el calendario
+                this.init();
+            }
+
+            async init() {
+                try {
+                    // Primero cargar los eventos
+                    await this.loadEvents();
+                    
+                    // Luego configurar listeners y renderizar
+                    this.setupEventListeners();
+                    this.render();
+                    this.selectedStartDate = null;
+                    this.selectedEndDate = null;
+                    this.setupModalEventListeners();
+                } catch (error) {
+                    console.error('Error inicializando el calendario:', error);
+                }
+            }
+
+            async loadEvents() {
+                try {
+                    const response = await fetch('/static/json/calendario_eventos.json');
+                    if (!response.ok) {
+                        throw new Error('No se pudo cargar el archivo de eventos');
+                    }
+                    
+                    const data = await response.json();
+                    
+                    // Limpiar eventos existentes
+                    this.events = {};
+                    
+                    // Convertir los eventos al formato que espera el calendario
+                    data.eventos.forEach(evento => {
+                        this.events[evento.fecha] = {
+                            title: evento.titulo,
+                            type: evento.tipo,
+                            description: evento.descripcion,
+                            time: evento.hora,
+                            location: evento.ubicacion
+                        };
+                    });
+                    
+                    // Renderizar los próximos eventos
+                    this.renderUpcomingEvents();
+                } catch (error) {
+                    console.error('Error al cargar los eventos:', error);
+                    throw error;
+                }
             }
 
             // Método para configurar los event listeners de los botones de navegación
@@ -203,13 +241,16 @@
 
             addDay(day, inactive = false, isNextMonth = false) {
                 const dayElement = document.createElement('div');
+                const dateString = this.getDateString(day, isNextMonth);
+                const event = this.events[dateString];
+                
                 const baseClasses = `
-                    aspect-square flex items-center justify-center rounded-lg transition-colors
+                    aspect-square flex flex-col items-center justify-center rounded-lg transition-colors
                     ${inactive ? 'text-gray-400' : 'text-gray-700 hover:bg-gray-100'}
                     ${inactive ? '' : 'cursor-pointer'}
+                    relative
                 `;
 
-                // Si es el día actual, usar !important en las clases críticas para evitar conflictos
                 if (!inactive && this.isToday(day)) {
                     dayElement.className = `
                         ${baseClasses}
@@ -220,7 +261,40 @@
                 }
 
                 dayElement.textContent = day;
+
+                // Agregar indicador de evento si existe
+                if (event && !inactive) {
+                    const eventDot = document.createElement('div');
+                    // Determinar el color según el tipo de evento
+                    const dotColor = this.getEventColor(event.type);
+                    eventDot.className = `w-2 h-2 rounded-full absolute bottom-1 ${dotColor}`;
+                    dayElement.appendChild(eventDot);
+                    
+                    // Agregar tooltip con información del evento
+                    dayElement.title = `${event.title} - ${event.time}`;
+                }
+
                 this.calendarDays.appendChild(dayElement);
+            }
+
+            // Método para obtener la fecha en formato string
+            getDateString(day, isNextMonth) {
+                let year = this.currentYear;
+                let month = this.currentMonth;
+                
+                if (isNextMonth) {
+                    month++;
+                    if (month > 11) {
+                        month = 0;
+                        year++;
+                    }
+                }
+                
+                // Asegurar que el mes y día tengan dos dígitos
+                const monthStr = String(month + 1).padStart(2, '0');
+                const dayStr = String(day).padStart(2, '0');
+                
+                return `${year}-${monthStr}-${dayStr}`;
             }
 
             // Método para verificar si el día es hoy
@@ -238,12 +312,19 @@
 
                 const today = new Date();
                 today.setHours(0, 0, 0, 0);
+                
+                // Fecha límite (30 días desde hoy)
+                const limitDate = new Date(today);
+                limitDate.setDate(limitDate.getDate() + 30);
 
-                // Convertir eventos a array y ordenar por fecha
+                // Convertir eventos a array y filtrar, limitando a 5 eventos el número máximo a mostrar
                 const eventsList = Object.entries(this.events)
                     .map(([date, event]) => ({ date: new Date(date), ...event }))
-                    .filter(event => event.date >= today)
-                    .sort((a, b) => a.date - b.date);
+                    .filter(event => {
+                        return event.date >= today && event.date <= limitDate;
+                    })
+                    .sort((a, b) => a.date - b.date)
+                    .slice(0, 5);
 
                 if (eventsList.length === 0) {
                     upcomingEventsContainer.innerHTML = `
@@ -256,7 +337,8 @@
 
                 eventsList.forEach(event => {
                     const eventElement = document.createElement('div');
-                    eventElement.className = 'bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors';
+                    const bgColor = this.getEventBgColor(event.type);
+                    eventElement.className = `${bgColor} rounded-lg p-4 hover:bg-opacity-90 transition-colors`;
                     
                     const dateFormatted = event.date.toLocaleDateString('es-ES', {
                         weekday: 'long',
@@ -265,14 +347,15 @@
                         day: 'numeric'
                     });
 
-                    eventElement.innerHTML = `
+                                        eventElement.innerHTML = `
                         <div class="flex items-start">
-                            <div class="flex-shrink-0 w-12 h-12 bg-[#4672b5] rounded-lg flex items-center justify-center text-white">
+                            <div class="flex-shrink-0 w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center text-white">
                                 <span class="text-lg font-bold">${event.date.getDate()}</span>
                             </div>
                             <div class="ml-4">
-                                <h3 class="font-semibold text-gray-800">${event.title}</h3>
-                                <p class="text-sm text-gray-600">${dateFormatted}</p>
+                                    <h3 class="font-semibold text-white">${event.title}</h3>
+                                                                    <p class="text-sm text-white text-opacity-90">${dateFormatted}</p>
+                                <p class="text-sm text-white text-opacity-75 mt-1">${event.time}</p>
                             </div>
                         </div>
                     `;
@@ -284,6 +367,32 @@
             addEvent(title, date) {
                 this.events[date] = { title, type: 'custom' };
                 this.renderUpcomingEvents();
+            }
+
+            getEventColor(type) {
+                switch (type.toLowerCase()) {
+                    case 'competición':
+                        return 'bg-red-500';
+                    case 'entrenamiento':
+                        return 'bg-green-500';
+                    case 'ceremonia':
+                        return 'bg-purple-500';
+                    default:
+                        return 'bg-blue-500';
+                }
+            }
+
+            getEventBgColor(type) {
+                switch (type.toLowerCase()) {
+                    case 'competición':
+                        return 'bg-red-600';
+                    case 'entrenamiento':
+                        return 'bg-green-600';
+                    case 'ceremonia':
+                        return 'bg-purple-600';
+                    default:
+                        return 'bg-blue-600';
+                }
             }
         }
 
