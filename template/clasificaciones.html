@@ -98,6 +98,7 @@
 
                     const row = document.createElement('tr');
                     row.className = rowClasses;
+                    row.onclick = () => { window.location.href = `ficha_club.html?id=${equipo.id}` };
                     row.innerHTML = `
                         <td class="px-6 py-4 ${borderClass} text-center font-semibold ${index < 4 ? 'text-blue-600' : ''}">${index + 1}</td>
                         <td class="px-6 py-4 ${borderClass}">
