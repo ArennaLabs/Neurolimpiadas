@@ -1,0 +1,11 @@
+{
+    "Neurolimpiadas": [
+        {"id": 1, "equipo": "A POR TODAS", "logo": "/static/img/clubes/laoliva/logo.png", "partidos": 12, "puntos": 23},
+        {"id": 2, "nombre": "HÉROES EN SILENCIO", "logo": "/static/img/clubes/antigua/logo_negro.png", "partidos": 12, "puntos": 31},
+        {"id": 3, "nombre": "TROMPIEZO", "logo": "/static/img/clubes/pajara/logo.png", "partidos": 12, "puntos": 16},
+        {"id": 4, "nombre": "EQUIPO 4", "logo": "/static/img/team.png", "partidos": 12, "puntos": 10},
+        {"id": 5, "nombre": "EQUIPO 5", "logo": "/static/img/team.png", "partidos": 12, "puntos": 14},
+        {"id": 6, "nombre": "EQUIPO 6", "logo": "/static/img/team.png", "partidos": 12, "puntos": 7},
+        {"id": 7, "nombre": "EQUIPO 7", "logo": "/static/img/team.png", "partidos": 12, "puntos": 21}
+    ]
+}

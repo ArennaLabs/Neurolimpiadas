@@ -18,32 +18,47 @@
     <!-- Cargar componentes -->
     <script src="/static/js/loadComponents.js"></script>
 </head>
-<body>
+<body class="bg-gray-50">
     <!-- Navbar -->
     <div id="navbar-container"></div>
-    <!-- Contenido principal -->
-    <main class="max-w-7xl mx-auto px-4 py-8">
-        <!-- Título -->
-        <h1 class="text-4xl font-bold text-gray-900 mb-4">Clasificaciones</h1>
 
+    <!-- Contenido principal -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
         <!-- Tabla de clasificaciones -->
-        <div class="overflow-x-auto">
-            <table class="min-w-full bg-white border border-gray-300 rounded-lg shadow-lg">
-                <thead>
-                    <tr class="bg-gray-100 text-gray-700">
-                        <th class="px-6 py-3 text-left text-sm font-medium">Posición</th>
-                        <th class="px-6 py-3 text-left text-sm font-medium">Equipo</th>
-                        <th class="px-6 py-3 text-left text-sm font-medium">Puntos</th>
-                    </tr>
-                </thead>
-                <tbody id="clasificaciones-body">
-                    <!-- Las filas de la tabla se llenarán dinámicamente con JavaScript -->
-                </tbody>
-            </table>
-        </div>
-        <!-- Botón de descarga -->
-        <div class="mt-6 text-center">
-            <a href="#" id="download-button" class="inline-block bg-[#4672b5] text-white px-4 py-2 rounded-lg shadow hover:bg-neurolimpiadas-blue-dark transition duration-300">Descargar Clasificaciones</a>
+        <div class="bg-gray-50 rounded-xl shadow-xl overflow-hidden">
+            <div class="overflow-x-auto">
+                <div class="flex items-center justify-center bg-white p-4">
+                    <img src="/static/img/neurolimpiadas.png" alt="Neurolimpiadas" class="h-12 w-auto">
+                </div>
+                <table class="min-w-full">
+                    <thead>
+                        <tr class="bg-gradient-to-r from-[#4672b5] to-[#3a5d94] text-white">
+                            <th class="px-6 py-4 text-left text-sm font-semibold">Pos.</th>
+                            <th class="px-6 py-4 text-left text-sm font-semibold">Logo</th>
+                            <th class="px-6 py-4 text-left text-sm font-semibold">Equipo</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold">PJ</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold">V</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold">E</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold">D</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold">Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clasificaciones-body">
+                        <!-- Las filas se llenarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+                <!-- Leyenda -->
+                <div class="flex justify-center py-4 space-x-4 text-sm text-gray-600 ">
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-blue-50 border border-blue-200 rounded-full"></div>
+                        <span class="ml-2 text-sm text-gray-600">Clasificado</span>
+                        <div class="w-4 h-4 bg-white border border-gray-500 rounded-full ml-4"></div>
+                        <span class="ml-2 text-sm text-gray-600">No clasificado</span>
+                        <div class="w-4 h-4 bg-[#4672b5] border border-blue-200 ml-4"></div>
+                        <span class="ml-2 text-sm text-gray-600">Zona de clasificación</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     
@@ -52,31 +67,59 @@
 
     <!-- Script para cargar las clasificaciones -->
     <script>
-        // Simulación de datos de clasificaciones
-        const clasificaciones = [
-            { posicion: 1, equipo: 'Equipo A', puntos: 100 },
-            { posicion: 2, equipo: 'Equipo B', puntos: 90 },
-            { posicion: 3, equipo: 'Equipo C', puntos: 85 },
-            { posicion: 4, equipo: 'Equipo D', puntos: 80 },
-            { posicion: 5, equipo: 'Equipo E', puntos: 75 },
-        ];
+        async function cargarClasificaciones() {
+            try {
+                const response = await fetch('/static/json/clasificaciones.json');
+                const data = await response.json();
+                
+                const equiposOrdenados = data.Neurolimpiadas.sort((a, b) => b.puntos - a.puntos);
+                
+                const tbody = document.getElementById('clasificaciones-body');
+                tbody.innerHTML = '';
 
-        // Función para cargar las clasificaciones en la tabla
-        function cargarClasificaciones() {
-            const tbody = document.getElementById('clasificaciones-body');
-            clasificaciones.forEach(clasificacion => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td class="px-6 py-4 border-b border-gray-200">${clasificacion.posicion}</td>
-                    <td class="px-6 py-4 border-b border-gray-200">${clasificacion.equipo}</td>
-                    <td class="px-6 py-4 border-b border-gray-200">${clasificacion.puntos}</td>
-                `;
-                tbody.appendChild(row);
-            });
+                equiposOrdenados.forEach((equipo, index) => {
+                    const partidosJugados = equipo.partidos || 0;
+                    const victorias = Math.floor(equipo.puntos / 3);
+                    const empates = equipo.puntos % 3;
+                    const derrotas = partidosJugados - victorias - empates;
+
+                    // Determinar si es equipo clasificado y aplicar estilos
+                    let rowClasses = "hover:bg-gray-50 transition-colors duration-200";
+                    let borderClass = "border-b border-gray-200";
+                    
+                    // Zona de clasificados (primeros 4)
+                    if (index < 4) {
+                        rowClasses += " bg-blue-50";
+                        // Añadir borde distintivo al último equipo clasificado
+                        if (index === 3) {
+                            borderClass = "border-b-4 border-[#4672b5]";
+                        }
+                    }
+
+                    const row = document.createElement('tr');
+                    row.className = rowClasses;
+                    row.innerHTML = `
+                        <td class="px-6 py-4 ${borderClass} text-center font-semibold ${index < 4 ? 'text-blue-600' : ''}">${index + 1}</td>
+                        <td class="px-6 py-4 ${borderClass}">
+                            <div class="flex items-center">
+                                <img src="${equipo.logo}" alt="${equipo.nombre}" class="h-10 w-10 object-contain">
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 ${borderClass} font-semibold ${index < 4 ? 'text-blue-800' : ''}">${equipo.nombre || equipo.equipo}</td>
+                        <td class="px-6 py-4 ${borderClass} text-center">${partidosJugados}</td>
+                        <td class="px-6 py-4 ${borderClass} text-center text-green-600 font-medium">${victorias}</td>
+                        <td class="px-6 py-4 ${borderClass} text-center text-gray-600 font-medium">${empates}</td>
+                        <td class="px-6 py-4 ${borderClass} text-center text-red-600 font-medium">${derrotas}</td>
+                        <td class="px-6 py-4 ${borderClass} text-center font-bold text-lg ${index < 4 ? 'text-blue-600' : ''}">${equipo.puntos}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error al cargar las clasificaciones:', error);
+            }
         }
 
-        // Llamar a la función al cargar la página
-        window.onload = cargarClasificaciones;
+        window.addEventListener('load', cargarClasificaciones);
     </script>
-  </body>
+</body>
 </html>
