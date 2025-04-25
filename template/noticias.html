@@ -116,8 +116,43 @@
         <div class="flex items-center mb-6">
             <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
             <h2 class="font-medium text-lg tracking-wider">ÚLTIMAS NOTICIAS</h2>
+            <!-- Filtro por categorías -->
+            <div class="hidden ml-auto flex space-x-4 lg:flex">
+                <button class="text-gray-500 hover:text-[#4672b5] font-medium transition-colors" 
+                        onclick="filterNoticias('Todas')">Todas</button>
+                <button class="text-gray-500 hover:text-yellow-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Deportes')">Deportes</button>
+                <button class="text-gray-500 hover:text-blue-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Destacados')">Destacados</button>
+                <button class="text-gray-500 hover:text-green-800 font-medium transition-colors" 
+                        onclick="filterNoticias('General')">General</button>
+                <button class="text-gray-500 hover:text-purple-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Entrevistas')">Entrevistas</button>
+                <button class="text-gray-500 hover:text-indigo-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Cultura')">Cultura</button>
+                <button class="text-gray-500 hover:text-teal-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Salud')">Salud</button>
+                <button class="text-gray-500 hover:text-pink-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Voluntariado')">Voluntariado</button>
+            </div>
+
+            <!-- Filtro para dispositivos móviles a modo de desplegable -->
+            <div class="ml-auto flex space-x-4 lg:hidden">
+                <select id="categoria-select" class="text-gray-500 hover:text-[#4672b5] font-medium transition-colors" 
+                        onchange="filterNoticias(this.value)">
+                    <option value="Todas">Todas</option>
+                    <option value="Deportes">Deportes</option>
+                    <option value="Destacados">Destacados</option>
+                    <option value="General">General</option>
+                    <option value="Entrevistas">Entrevistas</option>
+                    <option value="Cultura">Cultura</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Voluntariado">Voluntariado</option>
+                </select>
+            </div>
         </div>
         
+        <!-- Linea divisoria -->
         <div class="h-px w-full bg-gray-200 mb-8"></div>
 
         <!-- Grid de Noticias -->
@@ -133,6 +168,7 @@
 
   <!-- Script JavaScript para el slider -->
   <script>
+
     // Eliminar la constante slides y reemplazar con:
     let slides = [];
     let currentIndex = 0;
@@ -246,11 +282,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', cargarNoticias);              
-    // Definir un array con la información de cada noticia
 
-
-
-    
     // Función para mostrar el slide de acuerdo al índice
     function showSlide(index) {
       currentIndex = (index + slides.length) % slides.length;
@@ -338,6 +370,74 @@
 
     // Inicializar el slider con el primer slide
     showSlide(currentIndex);
+
+    // Función para filtrar noticias según la categoría seleccionada
+    async function filterNoticias(categoria) {
+        try {
+            const response = await fetch('/static/json/informacion_noticias.json');
+            const data = await response.json();
+            
+            const noticias_container = document.getElementById('noticias-container');
+            noticias_container.innerHTML = '';
+
+            // Filtrar las noticias según la categoría seleccionada
+            const noticiasFiltradas = data.noticias.filter(noticia => {
+                if (categoria === 'Todas') {
+                    return !noticia.destacada;
+                }
+                return !noticia.destacada && noticia.categoria === categoria;
+            });
+
+            // Si no hay noticias en la categoría seleccionada, mostrar mensaje
+            if (noticiasFiltradas.length === 0) {
+                noticias_container.innerHTML = `
+                    <div class="col-span-full text-center py-8">
+                        <p class="text-gray-500 text-lg">
+                            No hay noticias disponibles en la categoría ${categoria}
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Mostrar las noticias filtradas
+            noticiasFiltradas.forEach(noticia => {
+                noticias_container.innerHTML += createNoticiaCard(noticia);
+            });
+
+            // Actualizar estilo de los botones de filtro con colores específicos por categoría
+            const colorClasses = {
+                'Todas': 'text-[#4672b5]',
+                'Deportes': 'text-yellow-800',
+                'Destacados': 'text-blue-800',
+                'General': 'text-green-800',
+                'Entrevistas': 'text-purple-800',
+                'Cultura': 'text-indigo-800',
+                'Salud': 'text-teal-800',
+                'Voluntariado': 'text-pink-800'
+            };
+
+            const filterButtons = document.querySelectorAll('.ml-auto.flex.space-x-4 button');
+            filterButtons.forEach(button => {
+                const buttonText = button.textContent;
+                button.classList.remove(
+                    'text-gray-500', 'text-yellow-800', 'text-blue-800', 
+                    'text-green-800', 'text-purple-800', 'text-indigo-800', 
+                    'text-teal-800', 'text-pink-800', 'text-[#4672b5]', 'font-bold'
+                );
+                
+                if (buttonText === categoria) {
+                    button.classList.add(colorClasses[buttonText], 'font-bold');
+                } else {
+                    button.classList.add('text-gray-500');
+                }
+            });
+
+        } catch (error) {
+            console.error('Error al filtrar noticias:', error);
+        }
+    }
+
   </script>
 
 </body>
