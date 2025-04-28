@@ -25,7 +25,7 @@
     <div id="navbar-container"></div>
 
     <!-- Contenido principal -->
-    <main class="max-w-4xl mx-auto px-4 py-8">
+    <main class="max-w-7xl mx-auto px-4 py-8">
         <!-- Categoría -->
         <div class="mb-6">
             <span class="data-categoria text-white text-sm font-medium px-3 py-1 rounded-full" >
@@ -34,14 +34,10 @@
         </div>
 
         <!-- Título -->
-        <h1 class="text-4xl font-bold text-gray-900 mb-4" id="data-titulo">
-            <!-- Ocho equipos representarán a Fuerteventura en las Neurolimpiadas Canarias -->
-        </h1>
+        <h1 class="text-4xl font-bold text-gray-900 mb-4" id="data-titulo"></h1>
 
         <!-- Descripción breve -->
-        <p class="text-xl text-gray-600 mb-6 font-light leading-relaxed" id ="data-descripcion">
-            <!-- Éxito del proyecto Neuromajo 2024 del Cabildo de Fuerteventura con diversas pruebas para el bienestar y salud de las personas mayores. -->
-        </p>
+        <p class="text-xl text-gray-600 mb-6 font-light leading-relaxed" id ="data-descripcion"></p>
 
         <!-- Fecha y meta información -->
         <div class="flex items-center text-gray-500 text-sm mb-8">
@@ -49,55 +45,36 @@
                 <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <!-- 18 Noviembre, 2024 -->
             </span>
-            
         </div>
 
         <!-- Imagen principal -->
-        <div class="mb-8">
-            <img src="" 
-                 alt="Neurolimpiadas Canarias" 
-                 class="w-full h-[500px] object-cover rounded-lg shadow-lg" 
-                 id="data-imagen">
-            
-        </div>
+        <div class="mb-8"><img src="" alt="Neurolimpiadas Canarias" class="w-full h-[500px] object-cover rounded-lg shadow-lg" id="data-imagen"></div>
 
         <!-- Contenido de la noticia -->
-        <article class="prose prose-lg max-w-none" id="data-contenido"> 
-            
+        <article class="prose prose-lg max-w-none text-lg text-justify leading-relaxed" id="data-contenido"> 
+            <!-- Aquí se insertará el contenido de la noticia -->
         </article>
-      
         
+        <!-- Botón para ver la noticia original -->
         <div class="mt-12 flex justify-center">
-            <a href="${noticia.url}" 
-               id="btn_original"
-               target="_blank"
-               class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-full shadow-lg transition-colors duration-300 flex items-center group">
+            <a href="${noticia.url}" id="btn_original" target="_blank" class="bg-gray-100 hover:bg-gray-200 text-gray-700 px-6 py-3 rounded-full shadow-lg transition-colors duration-300 flex items-center group">
                 <span class="mr-2">Ver noticia original</span>
-                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" 
-                     fill="none" 
-                     stroke="currentColor" 
-                     viewBox="0 0 24 24">
-                    <path stroke-linecap="round" 
-                          stroke-linejoin="round" 
-                          stroke-width="2" 
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                </svg>
+                <svg class="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
             </a>
         </div>
-    <!-- Añadir antes del cierre del main -->
-    <div class="mt-12 border-t border-gray-200 pt-6">
-        <p class="text-xs text-gray-400 text-center">
-            Este contenido ha sido reproducido con el permiso expreso de los titulares de los derechos. 
-            Todas las marcas registradas, imágenes y contenidos pertenecen a sus respectivos propietarios.
-        </p>
-    </div>   
-        
+
+        <!-- Mención a los autores de la noticia -->
+        <div class="mt-12 border-t border-gray-200 pt-6">
+            <p class="text-xs text-gray-400 text-center">
+                Este contenido ha sido reproducido con el permiso expreso de los titulares de los derechos. 
+                Todas las marcas registradas, imágenes y contenidos pertenecen a sus respectivos propietarios.
+            </p>
+        </div>   
     </main>
 
     <!-- Botón de volver a noticias -->
-    <div class="fixed bottom-8 right-8">
+    <div class="fixed bottom-8 right-8 z-50">
         <a href="noticias.html" 
            class="bg-[#4672b5] hover:bg-[#3a5d94] text-white px-6 py-3 rounded-full shadow-lg transition-colors duration-300 flex items-center">
             <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -108,7 +85,7 @@
     </div>
 
     <!-- Footer -->
-     <div id="footer-container"></div>
+    <div id="footer-container"></div>
 </body>
 <script>
     async function cargarNoticia() {

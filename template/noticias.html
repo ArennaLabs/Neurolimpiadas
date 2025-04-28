@@ -23,11 +23,11 @@
     /* Estilos adicionales para la animación de los puntos indicadores */
     .dot {
       transition: all 0.3s ease;
+      opacity: 0.6;
     }
     .dot.active {
-      /* Se expande en ancho cuando está activo */
-      width: 12px;
-      height: 12px;
+      opacity: 1;
+      width: 24px;
     }
   </style>
 </head>
@@ -71,7 +71,7 @@
           <!-- Agrega más botones si tienes más noticias -->
         </div>
       </div>
-      <!-- Reemplazar la sección después del slider con: -->
+      <!-- Apartado de noticias -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <!-- Sección de Noticia Destacada -->
         <div class="flex items-center mb-6">
@@ -81,8 +81,7 @@
         
         <div class="h-px w-full bg-gray-200 mb-8"></div>
 
-        <!-- Card de Noticia Destacada -->
-         
+        <!-- Card de Noticia Destacada -->       
         <div id="contenedor-destacado" class="flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hiddenhover:shadow-2xl 
                             transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
                             hover:ring-2 hover:ring-[#4672b5] group hover:shadow-2xl 
@@ -195,11 +194,28 @@
 
         // 2. Luego, manejar las noticias del grid
         const noticias_container = document.getElementById('noticias-container');
-        noticias_container.innerHTML = ''; // Limpiar el contenedor primero
+        noticias_container.innerHTML = '';
 
-        // Mostrar todas las noticias excepto la destacada
+        // Formatear la fecha para ordenar las noticias de más reciente a más antigua
+        function parseCustomDate(dateStr) {
+            const meses = {
+                'Enero': 0, 'Febrero': 1, 'Marzo': 2, 'Abril': 3,
+                'Mayo': 4, 'Junio': 5, 'Julio': 6, 'Agosto': 7,
+                'Septiembre': 8, 'Octubre': 9, 'Noviembre': 10, 'Diciembre': 11
+            };
+            
+            const [dia, mes, anio] = dateStr.split(/[\s,]+/); // Separa por espacios y coma
+            return new Date(parseInt(anio), meses[mes], parseInt(dia));
+        }
+
+        // Mostrar todas las noticias excepto la destacada ordenadas por fecha
         data.noticias
             .filter(noticia => !noticia.destacada)
+            .sort((a, b) => {
+                const fechaA = parseCustomDate(a.fecha);
+                const fechaB = parseCustomDate(b.fecha);
+                return fechaB - fechaA;
+            })
             .forEach(noticia => {
                 noticias_container.innerHTML += createNoticiaCard(noticia);
             });
@@ -235,50 +251,48 @@
     } catch (error) {
         console.error('Error cargando noticias:', error);
     }
-}
+  }
 
+  function createNoticiaCard(noticia) {
+      const colorClasses = {
+          'Deportes': 'bg-[#e6ba38] text-yellow-800',
+          'Destacados': 'bg-[#75addb] text-blue-800',
+          'General': 'bg-[#86b050] text-green-800',
+          'Entrevistas': 'bg-[#c084fc] text-purple-800',
+          'Cultura': 'bg-[#818cf8] text-indigo-800',
+          'Salud': 'bg-[#4fd1c5] text-teal-800',
+          'Voluntariado': 'bg-[#f472b6] text-pink-800',
+      };
 
-
-    function createNoticiaCard(noticia) {
-        const colorClasses = {
-            'Deportes': 'bg-[#e6ba38] text-yellow-800',
-            'Destacados': 'bg-[#75addb] text-blue-800',
-            'General': 'bg-[#86b050] text-green-800',
-            'Entrevistas': 'bg-[#c084fc] text-purple-800',
-            'Cultura': 'bg-[#818cf8] text-indigo-800',
-            'Salud': 'bg-[#4fd1c5] text-teal-800',
-            'Voluntariado': 'bg-[#f472b6] text-pink-800',
-        };
-
-        return `
-            <article id="noticia-${noticia.id}" 
-                    onclick="window.location.href='${noticia.url_noticia}'"
-                    class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl 
-                            transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
-                            hover:ring-2 hover:ring-[#4672b5] group">
-                <div class="relative">
-                    <img src="${noticia.imagen}" 
-                        alt="Imagen de ${noticia.titulo}" 
-                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
-                    
-                </div>
-                <div class="p-5">
-                    <div class="flex justify-between items-center mb-3">
-                      <div class="text-gray-500 text-sm mb-3">${noticia.fecha}</div>
-                      <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-1 rounded">
-                            ${noticia.categoria}
-                      </span>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#4672b5]">
-                        ${noticia.titulo}
-                    </h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">
-                        ${noticia.descripcion}
-                    </p>
-                    <a href="${noticia.url_noticia}" class="mt-4 text-[#4672b5] hover:text-[#3b5f8d] font-medium">Leer más</a>
-                </div>
-            </article>
-        `;
+      return `
+          <article id="noticia-${noticia.id}" 
+                  onclick="window.location.href='${noticia.url_noticia}'"
+                  class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl 
+                          transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+                          hover:ring-2 hover:ring-[#4672b5] group">
+              <div class="relative">
+                  <img src="${noticia.imagen}" 
+                      alt="Imagen de ${noticia.titulo}" 
+                      class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                  
+              </div>
+              <div class="p-5">
+                  <div class="flex justify-between items-center mb-3">
+                    <div class="text-gray-500 text-sm">${noticia.fecha}</div>
+                    <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-1 rounded">
+                          ${noticia.categoria}
+                    </span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#4672b5]">
+                      ${noticia.titulo}
+                  </h3>
+                  <p class="text-gray-600 mb-4 line-clamp-3">
+                      ${noticia.descripcion}
+                  </p>
+                  <a href="${noticia.url_noticia}" class="mt-4 text-[#4672b5] hover:text-[#3b5f8d] font-medium">Leer más</a>
+              </div>
+          </article>
+      `;
     }
 
     document.addEventListener('DOMContentLoaded', cargarNoticias);              
@@ -312,18 +326,17 @@
 
     // Función para actualizar la apariencia de los puntos indicadores
     function updateDots() {
-        dots.forEach((dot, index) => {
-          if(index === currentIndex) {
-            dot.classList.add('active');
-            dot.classList.remove('bg-gray-400');
-            dot.classList.add('bg-white'); // Para resaltar el seleccionado
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+          if (index === currentIndex) {
+              dot.classList.add('active', 'bg-white', 'w-12');
+              dot.classList.remove('bg-gray-400', 'w-3');
           } else {
-            dot.classList.remove('active');
-            dot.classList.remove('bg-white');
-            dot.classList.add('bg-gray-400');
+              dot.classList.remove('active', 'bg-white', 'w-12');
+              dot.classList.add('bg-gray-400', 'w-3');
           }
-        });
-      }
+      });
+    }
 
     // Función para avanzar al siguiente slide
     function nextSlide() {
@@ -340,12 +353,12 @@
 
     // Agregar eventos a los botones de navegación
     document.getElementById('next').addEventListener('click', () => {
-      clearInterval(timer); // Reiniciar temporizador
+      clearInterval(timer);
       nextSlide();
       timer = setInterval(nextSlide, 5000);
     });
     document.getElementById('prev').addEventListener('click', () => {
-      clearInterval(timer); // Reiniciar temporizador
+      clearInterval(timer);
       prevSlide();
       timer = setInterval(nextSlide, 5000);
     });
@@ -400,8 +413,25 @@
                 return;
             }
 
+            // Formatear la fecha para ordenar las noticias de más reciente a más antigua
+            function parseCustomDate(dateStr) {
+                const meses = {
+                    'Enero': 0, 'Febrero': 1, 'Marzo': 2, 'Abril': 3,
+                    'Mayo': 4, 'Junio': 5, 'Julio': 6, 'Agosto': 7,
+                    'Septiembre': 8, 'Octubre': 9, 'Noviembre': 10, 'Diciembre': 11
+                };
+                
+                const [dia, mes, anio] = dateStr.split(/[\s,]+/); // Separa por espacios y coma
+                return new Date(parseInt(anio), meses[mes], parseInt(dia));
+            }
+
             // Mostrar las noticias filtradas
-            noticiasFiltradas.forEach(noticia => {
+            noticiasFiltradas.sort((a, b) => {
+                const fechaA = parseCustomDate(a.fecha);
+                const fechaB = parseCustomDate(b.fecha);
+                return fechaB - fechaA;
+            })
+            .forEach(noticia => {
                 noticias_container.innerHTML += createNoticiaCard(noticia);
             });
 
