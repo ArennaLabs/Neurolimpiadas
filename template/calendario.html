@@ -73,6 +73,64 @@
         </div>
     </div>
 
+    <!-- Modal para ver la información de los eventos -->
+    <div id="eventModal" class="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-50 hidden transition-opacity duration-300 z-50">
+        <div class="bg-white rounded-2xl shadow-2xl p-0 max-w-2xl w-full m-4 transform transition-transform duration-300 scale-95 opacity-0 relative z-50" id="modalContent">
+            <!-- Imagen del evento (opcional) -->
+            <div id="eventImage" class="w-full h-64 bg-center bg-contain bg-no-repeat rounded-t-2xl hidden"></div>
+
+            <!-- Encabezado del modal -->
+            <div id="modalHeader" class="p-8 rounded-t-2xl text-white">
+                <div class="flex justify-between items-start">
+                    <h2 id="eventTitle" class="text-3xl font-bold"></h2>
+                    <button id="closeModal" class="text-white hover:text-gray-200 transition-colors">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Contenido del modal -->
+            <div class="p-8 space-y-6">
+                <!-- Descripción -->
+                <div class="flex items-start space-x-4">
+                    <svg class="w-7 h-7 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7"/>
+                    </svg>
+                    <p id="eventDescription" class="text-gray-600 text-lg"></p>
+                </div>
+                
+                <!-- Ubicación -->
+                <div class="flex items-start space-x-4">
+                    <svg class="w-7 h-7 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    </svg>
+                    <p id="eventLocation" class="text-gray-600 text-lg"></p>
+                </div>
+
+                <!-- Fecha y Hora -->
+                <div class="grid grid-cols-2 gap-6">
+                    <!-- Fecha -->
+                    <div class="flex items-center space-x-4">
+                        <svg class="w-7 h-7 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                        <p id="eventDate" class="text-gray-600 md:text-lg"></p>
+                    </div>
+                    <!-- Hora -->
+                    <div class="flex items-center space-x-4">
+                        <svg class="w-7 h-7 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <p id="eventTime" class="text-gray-600 md:text-lg"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Footer -->
     <div id="footer-container"></div>
 
@@ -129,7 +187,8 @@
                             type: evento.tipo,
                             description: evento.descripcion,
                             time: evento.hora,
-                            location: evento.ubicacion
+                            location: evento.ubicacion,
+                            image: evento.imagen || null
                         };
                     });
                     
@@ -231,7 +290,7 @@
                 if (event && !inactive) {
                     const eventDot = document.createElement('div');
                     // Determinar el color según el tipo de evento
-                    const dotColor = this.getEventColor(event.type);
+                    const dotColor = this.getEventBgColor(event.type);
                     eventDot.className = `w-2 h-2 rounded-full absolute bottom-1 ${dotColor}`;
                     dayElement.appendChild(eventDot);
                     
@@ -312,18 +371,54 @@
                         day: 'numeric'
                     });
 
-                                        eventElement.innerHTML = `
+                    eventElement.innerHTML = `
                         <div class="flex items-start">
                             <div class="flex-shrink-0 w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center text-white">
                                 <span class="text-lg font-bold">${event.date.getDate()}</span>
                             </div>
                             <div class="ml-4">
-                                    <h3 class="font-semibold text-white">${event.title}</h3>
-                                                                    <p class="text-sm text-white text-opacity-90">${dateFormatted}</p>
+                                <h3 class="font-semibold text-white">${event.title}</h3>
+                                <p class="text-sm text-white text-opacity-90">${dateFormatted}</p>
                                 <p class="text-sm text-white text-opacity-75 mt-1">${event.time}</p>
                             </div>
                         </div>
                     `;
+
+                    // Abrir el modal de detalles al hacer clic en el evento
+                    eventElement.addEventListener('click', () => {
+                        const dateString = this.getDateString(event.date.getDate(), false);
+
+                        const modalContent = document.getElementById('modalContent');
+                        const modalHeader = document.getElementById('modalHeader');
+                        const modal = document.getElementById('eventModal');
+                        const eventImage = document.getElementById('eventImage');
+
+                        // Mostrar la imagen del evento si está disponible
+                        if (event.image) {
+                            eventImage.style.backgroundImage = `url(${event.image})`;
+                            eventImage.classList.remove('hidden');
+                            modalHeader.classList.remove('rounded-t-2xl');
+                        } else {
+                            eventImage.classList.add('hidden');
+                            modalHeader.classList.add('rounded-t-2xl');
+                        }
+                        
+                        // Establecer el color del encabezado según el tipo de evento
+                        modalHeader.className = `p-8 rounded-t-2xl text-white ${this.getEventBgColor(event.type)}`;
+                        
+                        document.getElementById('eventTitle').textContent = event.title;
+                        document.getElementById('eventDescription').textContent = event.description || 'No hay descripción disponible.';
+                        document.getElementById('eventLocation').textContent = event.location || 'Ubicación no especificada.';
+                        document.getElementById('eventDate').textContent = dateString;
+                        document.getElementById('eventTime').textContent = event.time;
+                        
+                        modal.classList.remove('hidden');
+                        // Animar la entrada del modal
+                        setTimeout(() => {
+                            modalContent.classList.remove('scale-95', 'opacity-0');
+                            modalContent.classList.add('scale-100', 'opacity-100');
+                        }, 10);
+                    });
 
                     upcomingEventsContainer.appendChild(eventElement);
                 });
@@ -332,19 +427,6 @@
             addEvent(title, date) {
                 this.events[date] = { title, type: 'custom' };
                 this.renderUpcomingEvents();
-            }
-
-            getEventColor(type) {
-                switch (type.toLowerCase()) {
-                    case 'competición':
-                        return 'bg-red-500';
-                    case 'entrenamiento':
-                        return 'bg-green-500';
-                    case 'ceremonia':
-                        return 'bg-purple-500';
-                    default:
-                        return 'bg-blue-500';
-                }
             }
 
             getEventBgColor(type) {
@@ -363,6 +445,79 @@
 
         // Inicializar el calendario
         const calendar = new Calendar();
+
+        // Abrir el modal al hacer clic en un día con evento en el calendario
+        document.getElementById('calendarDays').addEventListener('click', (event) => {
+            const dayElement = event.target.closest('div');
+            if (dayElement && !dayElement.classList.contains('text-gray-400')) {
+                const day = parseInt(dayElement.textContent);
+                const dateString = calendar.getDateString(day, false);
+                const event = calendar.events[dateString];
+
+                if (event) {
+                    const modalContent = document.getElementById('modalContent');
+                    const modalHeader = document.getElementById('modalHeader');
+                    const modal = document.getElementById('eventModal');
+                    const eventImage = document.getElementById('eventImage');
+
+                    // Mostrar la imagen del evento si está disponible
+                    if (event.image) {
+                        eventImage.style.backgroundImage = `url(${event.image})`;
+                        eventImage.classList.remove('hidden');
+                        modalHeader.classList.remove('rounded-t-2xl');
+                    } else {
+                        eventImage.classList.add('hidden');
+                        modalHeader.classList.add('rounded-t-2xl');
+                    }
+                    
+                    // Establecer el color del encabezado según el tipo de evento
+                    modalHeader.className = `p-8 rounded-t-2xl text-white ${calendar.getEventBgColor(event.type)}`;
+                    
+                    document.getElementById('eventTitle').textContent = event.title;
+                    document.getElementById('eventDescription').textContent = event.description || 'No hay descripción disponible.';
+                    document.getElementById('eventLocation').textContent = event.location || 'Ubicación no especificada.';
+                    document.getElementById('eventDate').textContent = dateString || 'Fecha no especificada.';
+                    document.getElementById('eventTime').textContent = event.time || 'Hora no especificada.';
+                    
+                    modal.classList.remove('hidden');
+                    // Animar la entrada del modal
+                    setTimeout(() => {
+                        modalContent.classList.remove('scale-95', 'opacity-0');
+                        modalContent.classList.add('scale-100', 'opacity-100');
+                    }, 10);
+                }
+            }
+        });
+
+        // Cerrar el modal al hacer clic en el botón de cerrar
+        document.getElementById('closeModal').addEventListener('click', () => {
+            const modalContent = document.getElementById('modalContent');
+            const modal = document.getElementById('eventModal');
+            
+            // Animar la salida del modal
+            modalContent.classList.remove('scale-100', 'opacity-100');
+            modalContent.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 200);
+        });
+
+        // Cerrar el modal al hacer clic fuera de él
+        document.getElementById('eventModal').addEventListener('click', (event) => {
+            if (event.target === event.currentTarget) {
+                const modalContent = document.getElementById('modalContent');
+                const modal = document.getElementById('eventModal');
+
+                // Animar la salida del modal
+                modalContent.classList.remove('scale-100', 'opacity-100');
+                modalContent.classList.add('scale-95', 'opacity-0');
+
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                }, 200);
+            }
+        });
     </script>
 </body>
 </html>

@@ -200,55 +200,55 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Noticias -->
-    <div id="noticias-link" class="max-w-7xl mx-auto py-8 px-4">
-      <div class="shadow-xl rounded-lg p-6">
-          <h2 class="text-2xl font-bold mb-6 text-black flex justify-between items-center">
-              Noticias
-              <div class="flex space-x-4">
-                  <button id="prev-noticias" class="px-4 py-2 bg-gray-800 text-gray-300 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
-                      </svg>
-                  </button>
-                  <button id="next-noticias" class="px-4 py-2 bg-gray-800 text-gray-300 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed">
-                      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                      </svg>
-                  </button>
-              </div>
-          </h2>
-          <div id="noticias" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <!-- Las noticias se cargarán dinámicamente -->
-          </div>
-      </div>
-    </div>
-
-    <!-- Galería -->
-    <div id="galeria-link" class="max-w-7xl mx-auto py-8 px-4">
-        <div class="bg-white shadow-lg rounded-lg p-6">
-            <h2 class="text-2xl font-bold mb-4">Galería</h2>
-            <div id="galeria" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <!-- Las imágenes de la galería se cargarán dinámicamente -->
+        <!-- Noticias -->
+        <div id="noticias-link" class="max-w-7xl mx-auto py-8 px-4">
+        <div class="shadow-xl rounded-lg p-6">
+            <h2 class="text-2xl font-bold mb-6 text-black flex justify-between items-center">
+                Noticias
+                <div class="flex space-x-4">
+                    <button id="prev-noticias" class="px-4 py-2 bg-gray-800 text-gray-300 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button id="next-noticias" class="px-4 py-2 bg-gray-800 text-gray-300 rounded-lg hover:bg-gray-700 disabled:opacity-50 disabled:cursor-not-allowed">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+            </h2>
+            <div id="noticias" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Las noticias se cargarán dinámicamente -->
             </div>
         </div>
+        </div>
+
+        <!-- Galería -->
+        <div id="galeria-link" class="max-w-7xl mx-auto py-8 px-4">
+            <div class="bg-white shadow-lg rounded-lg p-6">
+                <h2 class="text-2xl font-bold mb-4">Galería</h2>
+                <div id="galeria" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    <!-- Las imágenes de la galería se cargarán dinámicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Botón de volver atrás -->
+        <div class="hidden lg:block fixed bottom-8 right-8 z-50">
+            <a href="equipos.html" 
+                class="bg-[#4672b5] hover:bg-[#3a5d94] text-white px-6 py-3 rounded-full shadow-lg transition-colors duration-300 flex items-center">
+                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                Volver
+            </a>
+        </div>
+
+        <!-- Footer -->
+        <div id="footer-container"></div>
     </div>
-
-    <!-- Botón de volver atrás -->
-    <div class="fixed bottom-8 right-8">
-      <a href="equipos.html" 
-          class="bg-[#4672b5] hover:bg-[#3a5d94] text-white px-6 py-3 rounded-full shadow-lg transition-colors duration-300 flex items-center">
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-          </svg>
-          Volver
-      </a>
-  </div>
-
-  <!-- Footer -->
-   <div id="footer-container"></div>
 
     <script>
         // Función para obtener el ID del club de la URL
