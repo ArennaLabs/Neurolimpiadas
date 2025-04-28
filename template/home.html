@@ -38,9 +38,9 @@
     <div class="slider-container relative h-full w-full">
       <!-- Imágenes del slider (añade más según necesites) -->
       <div class="slides absolute inset-0 flex h-full w-full">
-        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('../static/img/slider/1.jpg');"></div>
-        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('../static/img/slider/2.jpeg');"></div>
-        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('../static/img/slider/3.webp');"></div>
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('/static/img/slider/1.jpg');"></div>
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('/static/img/slider/2.jpeg');"></div>
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('/static/img/slider/3.webp');"></div>
       </div>
       
       <!-- Capa oscura semitransparente para mejor contraste -->
@@ -376,28 +376,28 @@
         <!-- Logos de ayuntamientos -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/1.png" alt="Granadilla de Abona" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/1.png" alt="Granadilla de Abona" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/2.png" alt="Villa de Mazo" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/2.png" alt="Villa de Mazo" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/3.png" alt="Puerto del Rosario" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/3.png" alt="Puerto del Rosario" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/4.png" alt="Arrecife" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/4.png" alt="Arrecife" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-              <img src="../static/img/colabora/5.png" alt="Santiago del Teide" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+              <img src="/static/img/colabora/5.png" alt="Santiago del Teide" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/6.webp" alt="Betancuria" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/6.webp" alt="Betancuria" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/7.png" alt="El Rosario" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/7.png" alt="El Rosario" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/8.png" alt="Los Llanos de Aridane" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/8.png" alt="Los Llanos de Aridane" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
         </div>
     </div>
@@ -408,7 +408,7 @@
   <div id="footer-container"></div>
 
   <!-- Scripts -->
-  <script src="../static/js/imageMapResizer.min.js"></script>
+  <script src="/static/js/imageMapResizer.min.js"></script>
   <script>
       
       imageMapResize();
@@ -520,13 +520,13 @@
 
       // Rutas de las imágenes (para formato no SVG)
       const imagenesIslas = {
-        'La Palma': '../static/img/islas/La_Palma.svg',
-        'El Hierro': '../static/img/islas/El_Hierro.svg',
-        'Tenerife': '../static/img/islas/Tenerife.svg',
-        'Gran Canaria': '../static/img/islas/Grancanarias.svg',
-        'Fuerteventura': '../static/img/islas/Fuerteventura.svg',
-        'Lanzarote': '../static/img/islas/Lanzarote.svg',
-        'La Gomera': '../static/img/islas/La_Gomera.svg'
+        'La Palma': '/static/img/islas/La_Palma.svg',
+        'El Hierro': '/static/img/islas/El_Hierro.svg',
+        'Tenerife': '/static/img/islas/Tenerife.svg',
+        'Gran Canaria': '/static/img/islas/Grancanarias.svg',
+        'Fuerteventura': '/static/img/islas/Fuerteventura.svg',
+        'Lanzarote': '/static/img/islas/Lanzarote.svg',
+        'La Gomera': '/static/img/islas/La_Gomera.svg'
       };
       function seleccionarMunicipio(isla, nombreMunicipio) {
         
@@ -1012,6 +1012,6 @@
   </script>
   
   <!-- Importar JS -->
-  <script src="../static/js/slider.js"></script>  
+  <script src="/static/js/slider.js"></script>  
 </body>
 </html>
