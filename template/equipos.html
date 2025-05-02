@@ -147,7 +147,7 @@
         <div class="max-w-7xl mx-auto w-full flex px-4 py-4 items-center justify-between">
           <h1 class="text-5xl font-bold">CLUBES</h1>
           <div class="relative w-full max-w-md">
-            <input type="text" placeholder="Buscar..." class="w-full p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-blue-500" />
+            <input type="text" placeholder="Buscar..." class="w-full p-2 rounded-lg border border-gray-300 text-black focus:outline-none focus:ring focus:ring-blue-500" />
             <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600">
               <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17a6 6 0 100-12 6 6 0 000 12zm0 0l4.35 4.35m0-4.35L11 17z" />
@@ -541,6 +541,21 @@
         }
         
         setupDropdowns();
+      });
+
+      // Función para la barra de búsqueda
+      document.querySelector('input[type="text"]').addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const items = document.querySelectorAll('.grid > div');
+        
+        items.forEach(item => {
+          const title = item.querySelector('h2').textContent.toLowerCase();
+          if (title.includes(searchTerm)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
       });
     </script>
 
