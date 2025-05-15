@@ -1,0 +1,90 @@
+{
+    "images": [
+        {
+            "url": "/static/img/galeria/1.jpg",
+            "title": "Evento 1",
+            "size": "large"
+        },
+        {
+            "url": "/static/img/galeria/2.jpg",
+            "title": "Evento 2",
+            "size": "small"
+        },
+        {
+            "url": "/static/img/galeria/3.jpg",
+            "title": "Evento 3",
+            "size": "medium"
+        },
+        {
+            "url": "/static/img/galeria/4.jpg",
+            "title": "Evento 4",
+            "size": "large"
+        },
+        {
+            "url": "/static/img/galeria/5.jpg",
+            "title": "Evento 5",
+            "size": "small"
+        },
+        {
+            "url": "/static/img/galeria/6.jpg",
+            "title": "Evento 6",
+            "size": "medium"
+        },
+        {
+            "url": "/static/img/galeria/7.jpg",
+            "title": "Evento 7",
+            "size": "large"
+        },
+        {
+            "url": "/static/img/galeria/8.jpg",
+            "title": "Evento 8",
+            "size": "small"
+        },
+        {
+            "url": "/static/img/galeria/9.jpg",
+            "title": "Evento 9",
+            "size": "small"
+        }
+        ,
+        {
+            "url": "/static/img/galeria/10.jpg",
+            "title": "Evento 10",
+            "size": "small"
+        },
+        {
+            "url": "/static/img/galeria/11.jpg",
+            "title": "Evento 11",
+            "size": "large"
+        },
+        {
+            "url": "/static/img/galeria/12.jpeg",
+            "title": "Evento 12",
+            "size": "medium"
+        },
+        {
+            "url": "/static/img/galeria/13.jpg",
+            "title": "Evento 13",
+            "size": "large"
+        },
+        {
+            "url": "/static/img/galeria/14.jpg",
+            "title": "Evento 14",
+            "size": "small"
+        },
+        {
+            "url": "/static/img/galeria/15.jpg",
+            "title": "Evento 15",
+            "size": "medium"
+        },
+        {
+            "url": "/static/img/galeria/16.jpg",
+            "title": "Evento 16",
+            "size": "large"
+        },
+        {
+            "url": "/static/img/galeria/17.jpg",
+            "title": "Evento 17",
+            "size": "small"
+        }
+    ]
+}

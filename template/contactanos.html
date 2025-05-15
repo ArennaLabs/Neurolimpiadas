@@ -2,154 +2,143 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Contacto - Neurolimpiadas</title>
+    <title>Contacto | Neurolimpiadas</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Neurolimpiadas" />
+    <link rel="manifest" href="/static/img/favicon/site.webmanifest" />
+    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="../static/js/colors.js"></script>  
+    <!-- Colores necesarios -->
+    <script src="/static/js/colors.js"></script>  
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>    
+    <!-- Cargar componentes -->
+    <script src="/static/js/loadComponents.js"></script>
 
 </head>
 <body class="bg-gray-50 font-sans">
-    <!-- ... existing navigation code ... -->
-    <nav class="bg-white shadow w-full">
-      <div class="flex items-center justify-between h-16">
-        
-        <a href="home.html" class="flex-shrink-0">
-          <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
-        </a>
-        
-        <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
-        <div class="hidden lg:flex space-x-4">
-          <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
-          <a href="neurolimpiadas.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Sobre Neurolimpiadas</a>
-          <a href="equipos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clubes</a>
-          <a href="calendario.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Calendario</a>
-          <a href="clasificaciones.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clasificaciones</a>
-          <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
-          <a href="galeria.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Galería</a>
-          <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
-        </div>
-        
-        <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
-        <div class="lg:hidden relative px-4">
-          <button id="menu-toggle" 
-                  class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            <!-- Icono de hamburguesa -->
-            <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-          
-          <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
-          <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-            <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
-            <a href="neurolimpiadas.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sobre Neurolimpiadas</a>
-            <a href="equipos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clubes</a>
-            <a href="calendario.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Calendario</a>
-            <a href="clasificaciones.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clasificaciones</a>
-            <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
-            <a href="galeria.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Galería</a>
-            <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
     <!-- Contenedor principal -->
-    <div class="min-h-screen py-12 px-4 sm:px-6 lg:px-8">
-        <div class="max-w-2xl mx-auto">
-            <!-- Encabezado -->
-            <div class="text-center mb-12">
-                <h1 class="text-4xl font-bold text-gray-900 mb-4">Contacta con nosotros</h1>
-                <p class="text-lg text-gray-600">¿Tienes alguna pregunta sobre las Neurolimpiadas? Estamos aquí para ayudarte</p>
-            </div>
+    <div class="w-full max-w-7xl mx-auto my-4 sm:my-8 px-4 sm:px-6 lg:px-8 bg-white shadow-lg rounded-xl">
+        <!-- Encabezado -->
+        <div class="py-6 sm:py-8 border-l-4 border-[#4672b5] pl-4 sm:pl-6">
+            <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-2">¿Quieres formar parte de las <span class="text-[#4672b5]">Neurolimpiadas</span>?</h2>
+            <p class="text-sm sm:text-base text-gray-600">Complete el formulario y nos pondremos en contacto con usted lo antes posible</p>
+        </div>
 
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 pb-8">
             <!-- Formulario -->
-            <div class="bg-white rounded-lg shadow-xl p-8">
-                <form action="#" method="POST" class="space-y-6">
-                    <!-- Nombre y Apellidos en la misma línea -->
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">
-                                Nombre*
-                            </label>
-                            <input type="text" id="firstName" name="firstName" required
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-neurolimpiadas-blue focus:border-transparent"
-                                placeholder="Tu nombre">
+            <div class="bg-gray-50 p-4 sm:p-6 lg:p-8 rounded-xl shadow-sm">
+                <h3 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4 sm:mb-6">Envía tu consulta</h3>
+                <form action="" class="flex flex-col gap-4 sm:gap-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                        <div class="flex flex-col">
+                            <label for="name" class="text-sm font-medium text-gray-700 mb-1">Nombre</label>
+                            <input type="text" name="name" id="name" 
+                                   class="p-3 sm:p-4 rounded-lg border border-gray-300 bg-white font-medium text-gray-800 outline-none focus:ring-2 focus:ring-[#4672b5] focus:border-transparent transition-all w-full" 
+                                   placeholder="Ingresa tu nombre" required>
                         </div>
-                        <div>
-                            <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">
-                                Apellidos*
-                            </label>
-                            <input type="text" id="lastName" name="lastName" required
-                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-neurolimpiadas-blue focus:border-transparent"
-                                placeholder="Tus apellidos">
+                        <div class="flex flex-col">
+                            <label for="email" class="text-sm font-medium text-gray-700 mb-1">Correo electrónico</label>
+                            <input type="email" name="email" id="email" 
+                                   class="p-3 sm:p-4 rounded-lg border border-gray-300 bg-white font-medium text-gray-800 outline-none focus:ring-2 focus:ring-[#4672b5] focus:border-transparent transition-all w-full" 
+                                   placeholder="Ingresa tu correo" required>
                         </div>
                     </div>
-
-                    <!-- Email -->
-                    <div>
-                        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">
-                            Correo electrónico*
-                        </label>
-                        <input type="email" id="email" name="email" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-neurolimpiadas-blue focus:border-transparent"
-                            placeholder="tu@ejemplo.com">
+                    
+                    <div class="flex flex-col">
+                        <label for="message" class="text-sm font-medium text-gray-700 mb-1">Consulta</label>
+                        <textarea name="message" id="message" rows="6"
+                                class="p-3 sm:p-4 rounded-lg border border-gray-300 bg-white font-medium text-gray-800 outline-none resize-vertical min-h-32 sm:min-h-40 focus:ring-2 focus:ring-[#4672b5] focus:border-transparent transition-all w-full" 
+                                placeholder="Deja tu mensaje" required></textarea>
                     </div>
 
-                    <!-- Asunto -->
-                    <div>
-                        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">
-                            Asunto*
-                        </label>
-                        <input type="text" id="subject" name="subject" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-neurolimpiadas-blue focus:border-transparent"
-                            placeholder="Asunto de tu mensaje">
-                    </div>
-
-                    <!-- Mensaje -->
-                    <div>
-                        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">
-                            Mensaje*
-                        </label>
-                        <textarea id="message" name="message" rows="6" required
-                            class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-neurolimpiadas-blue focus:border-transparent resize-none"
-                            placeholder="Escribe tu mensaje aquí..."></textarea>
-                    </div>
-
-                    <!-- Botón de envío -->
-                    <div class="flex justify-end">
-                        <button type="submit"
-                            class="px-6 py-3 bg-neurolimpiadas-blue text-white font-medium rounded-full hover:bg-neurolimpiadas-bluehover transition-colors duration-300 flex items-center space-x-2">
-                            <span>Enviar mensaje</span>
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-                            </svg>
-                        </button>
-                    </div>
+                    <button type="submit" 
+                            class="p-3 sm:p-4 rounded-lg bg-[#4672b5] text-white font-semibold text-base sm:text-lg cursor-pointer hover:bg-[#3a5d94] transition-all shadow-sm flex items-center justify-center gap-2 mt-2 w-full">
+                        Enviar consulta
+                    </button>
                 </form>
             </div>
 
-            <!-- Información de contacto adicional -->
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg">
-                    <svg class="w-8 h-8 text-neurolimpiadas-blue mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                            d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                    </svg>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Email</h3>
-                    <p class="text-gray-600">
-                        lacademiasse@gmail.comm</p>
+            <!-- Información de contacto -->
+            <div class="flex flex-col gap-4 sm:gap-6 mt-4 lg:mt-0">
+                <!-- Sección Ponte en Contacto -->
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2 sm:mb-3 flex items-center">
+                        <span class="w-7 h-7 sm:w-8 sm:h-8 bg-[#4672b5] rounded-full mr-3 flex items-center justify-center text-white flex-shrink-0">
+                            <i class="fas fa-info text-sm"></i>
+                        </span>
+                        Ponte en Contacto
+                    </h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed ml-10 sm:ml-11">
+                        Contáctanos si quieres conocer más sobre las Neurolimpiadas
+                    </p>
                 </div>
-                <div class="text-center p-6 bg-white rounded-lg shadow-lg">
-                    <svg class="w-8 h-8 text-neurolimpiadas-blue mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                            d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                    </svg>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2">Teléfono</h3>
-                    <p class="text-gray-600">+34 638 490 997</p>
+
+                <!-- Sección Dirección -->
+                <div>
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2 sm:mb-3 flex items-center">
+                        <span class="w-7 h-7 sm:w-8 sm:h-8 bg-[#4672b5] rounded-full mr-3 flex items-center justify-center text-white flex-shrink-0">
+                            <i class="fas fa-map-marker-alt text-sm"></i>
+                        </span>
+                        Dirección
+                    </h3>
+                    <p class="text-sm sm:text-base text-gray-600 leading-relaxed ml-10 sm:ml-11">
+                        Calle Sabino Berthelot 13, 1º Izquierda<br>
+                        38003, Santa Cruz de Tenerife<br>
+                    </p>
+                </div>
+
+                <!-- Sección Contacto -->
+                <div class="mt-1 sm:mt-2">
+                    <h3 class="text-xl sm:text-2xl font-bold text-gray-800 mb-2 sm:mb-3 flex items-center">
+                        <span class="w-7 h-7 sm:w-8 sm:h-8 bg-[#4672b5] rounded-full mr-3 flex items-center justify-center text-white flex-shrink-0">
+                            <i class="fas fa-phone text-sm"></i>
+                        </span>
+                        Contacto
+                    </h3>
+                    <div class="flex flex-col gap-3 ml-10 sm:ml-11">
+                        <a href="mailto:info@neurolimpiadas.com" 
+                           class="flex items-center justify-between p-3 sm:p-4 hover:bg-gray-50 rounded-lg group border border-gray-100 transition-all">
+                            <div class="flex items-center gap-2 sm:gap-3">
+                                <i class="fas fa-envelope text-[#4672b5] text-lg"></i>
+                                <span class="font-medium text-gray-800 text-sm sm:text-base break-all">info@neurolimpiadas.com</span>
+                            </div>
+                            <span class="text-[#4672b5] group-hover:translate-x-1 transition-transform flex-shrink-0 ml-2">→</span>
+                        </a>
+
+                        <a href="tel:612345678" 
+                           class="flex items-center justify-between p-3 sm:p-4 hover:bg-gray-50 rounded-lg group border border-gray-100 transition-all">
+                            <div class="flex items-center gap-2 sm:gap-3">
+                                <i class="fas fa-phone text-[#4672b5] text-lg"></i>
+                                <span class="font-medium text-gray-800 text-sm sm:text-base">612 345 678</span>
+                            </div>
+                            <span class="text-[#4672b5] group-hover:translate-x-1 transition-transform flex-shrink-0 ml-2">→</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Redes Sociales -->
+                <div class="mt-4 sm:mt-6 ml-10 sm:ml-11 mb-4">
+                    <h4 class="text-xs sm:text-sm uppercase tracking-wider text-gray-500 font-medium mb-3 sm:mb-4">Síguenos en</h4>
+                    <div class="flex gap-3 sm:gap-4">
+                        <a href="#" class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-gray-100 hover:bg-[#4672b5] rounded-full text-gray-600 hover:text-white transition-all" aria-label="Instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 bg-gray-100 hover:bg-[#4672b5] rounded-full text-gray-600 hover:text-white transition-all" aria-label="Facebook">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Footer -->
+     <div id="footer-container"></div>
 </body>
 </html>

@@ -3,8 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clubes</title>
+    <title>Clubes | Neurolimpiadas</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Neurolimpiadas" />
+    <link rel="manifest" href="/static/img/favicon/site.webmanifest" />
+    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>
     <style>
       /* Estilos para el menú desplegable */
       .dropDown {
@@ -130,56 +140,14 @@
     </style>
 </head>
 <body>
-    <nav class="bg-white shadow w-full">
-        <div class="flex items-center justify-between h-16">
-          
-          <a href="home.html" class="flex-shrink-0">
-            <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
-          </a>
-          
-          <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
-          <div class="hidden lg:flex space-x-4">
-            <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
-            <a href="neurolimpiadas.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Sobre Neurolimpiadas</a>
-            <a href="equipos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clubes</a>
-            <a href="calendario.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Calendario</a>
-            <a href="clasificaciones.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clasificaciones</a>
-            <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
-            <a href="galeria.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Galería</a>
-            <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
-          </div>
-          
-          <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
-          <div class="lg:hidden relative px-4">
-            <button id="menu-toggle" 
-                    class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <!-- Icono de hamburguesa -->
-              <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                      d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-            
-            <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
-            <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-              <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
-              <a href="neurolimpiadas.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sobre Neurolimpiadas</a>
-              <a href="equipos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clubes</a>
-              <a href="calendario.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Calendario</a>
-              <a href="clasificaciones.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clasificaciones</a>
-              <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
-              <a href="galeria.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Galería</a>
-              <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
-            </div>
-          </div>
-        </div>
-      </nav>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
 
       <header class="bg-gradient-to-r from-[#4672b5] to-[#3a5d94] text-white py-12 px-4 flex items-center justify-between">
         <div class="max-w-7xl mx-auto w-full flex px-4 py-4 items-center justify-between">
           <h1 class="text-5xl font-bold">CLUBES</h1>
           <div class="relative w-full max-w-md">
-            <input type="text" placeholder="Buscar..." class="w-full p-2 rounded-lg border border-gray-300 focus:outline-none focus:ring focus:ring-blue-500" />
+            <input type="text" placeholder="Buscar..." class="w-full p-2 rounded-lg border border-gray-300 text-black focus:outline-none focus:ring focus:ring-blue-500" />
             <button class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-600">
               <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 17a6 6 0 100-12 6 6 0 000 12zm0 0l4.35 4.35m0-4.35L11 17z" />
@@ -236,6 +204,11 @@
         <p class="text-gray-600">Descripción breve de los clubes en La Oliva.</p>
       </div>
 
+      <!-- Diseño de camiseta 1 -->
+      <div class="max-w-7xl mx-auto py-4 px-4">
+        <h3 class="text-xl font-semibold">Diseño 1</h3>
+      </div>
+
       <!-- Equipos Municipio 1 (La Oliva) -->
       <div class="max-w-7xl mx-auto py-6 px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -243,8 +216,8 @@
           <div>
             <div class="bg-white overflow-hidden relative h-[300px]">
               <!-- Camiseta del club -->
-              <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva.svg" alt="Club 1">
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva/laoliva.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
@@ -253,32 +226,13 @@
               <a href="ficha_club.html?id=1" class="text-blue-500 hover:underline">Ver Ficha</a>
             </div>
           </div>
-
-          <!-- HÉROES EN SILENCIO -->
-          <!-- <div>
-            <div class="bg-white shadow-md rounded-lg overflow-hidden relative hover:bg-[#79ce7b] hover:bg-opacity-100 transition duration-300 ease-in-out h-[300px]"> -->
-              <!-- SVG como fondo -->
-              <!-- <div class="absolute inset-0 z-0">
-                <img src="/static/img/houndstooth.svg" alt="" class="w-full h-full object-cover">
-              </div> -->
-              <!-- Camiseta del club -->
-              <!-- <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/antigua.svg" alt="Club 1">
-              </div>
-            </div> -->
-            <!-- Información del club -->
-            <!-- <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
-              <h2 class="text-xl font-bold">HÉROES EN SILENCIO</h2>
-              <a href="ficha_club.html?id=5" class="text-blue-500 hover:underline">Ver Ficha</a>
-            </div>
-          </div> -->
-
+          
           <!-- HÉROES EN SILENCIO -->
           <div>
             <div class="bg-white overflow-hidden relative h-[300px]">
               <!-- Camiseta del club -->
-              <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/antigua.svg" alt="Club 1">
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/antigua/antigua.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
@@ -292,8 +246,8 @@
           <div>
             <div class="bg-white overflow-hidden relative h-[300px]">
               <!-- Camiseta del club -->
-              <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/pajara.svg" alt="Club 1">
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/pajara/pajara.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
@@ -305,181 +259,307 @@
         </div>
       </div>
 
-      <!-- Municipio 1 -->
+      <!-- Diseño de camiseta 2 -->
       <div class="max-w-7xl mx-auto py-4 px-4">
-        <h3 class="text-xl font-semibold underline decoration-[#4672b5]">La Oliva</h3>
-        <p class="text-gray-600">Descripción breve de los clubes en La Oliva.</p>
+        <h3 class="text-xl font-semibold">Diseño 2</h3>
       </div>
 
-      <!-- Equipos Municipio 1 (La Oliva) -->
       <div class="max-w-7xl mx-auto py-6 px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- A POR TODAS -->
           <div>
             <div class="bg-white overflow-hidden relative h-[300px]">
               <!-- Camiseta del club -->
-              <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva/laoliva.svg" alt="Club 1">
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva/laoliva2.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
             <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
               <h2 class="text-xl font-bold">A POR TODAS</h2>
-              <a href="ficha_club.html?id=4" class="text-blue-500 hover:underline">Ver Ficha</a>
+              <a href="ficha_club.html?id=1" class="text-blue-500 hover:underline">Ver Ficha</a>
             </div>
           </div>
           
-          <!-- A POR TODAS -->
+          <!-- HÉROES EN SILENCIO -->
           <div>
             <div class="bg-white overflow-hidden relative h-[300px]">
               <!-- Camiseta del club -->
-              <div class="relative z-10 h-full flex items-center justify-center">
-                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva/laoliva3.svg" alt="Club 1">
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/antigua/antigua2.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
             <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
-              <h2 class="text-xl font-bold">A POR TODAS</h2>
-              <a href="ficha_club.html?id=5" class="text-blue-500 hover:underline">Ver Ficha</a>
+              <h2 class="text-xl font-bold">HÉROES EN SILENCIO</h2>
+              <a href="ficha_club.html?id=2" class="text-blue-500 hover:underline">Ver Ficha</a>
             </div>
           </div>
 
+          <!-- TROMPIEZO -->
+          <div>
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/pajara/pajara2.svg" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">TROMPIEZO</h2>
+              <a href="ficha_club.html?id=3" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Diseño de camiseta 3 -->
+      <div class="max-w-7xl mx-auto py-4 px-4">
+        <h3 class="text-xl font-semibold">Diseño 3</h3>
+      </div>
+
+      <div class="max-w-7xl mx-auto py-6 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- A POR TODAS -->
           <div>
             <div class="bg-white overflow-hidden relative h-[300px]">
               <!-- Camiseta del club -->
-              <div class="relative z-10 h-full flex items-center justify-center">
+              <div class="relative h-full flex items-center justify-center">
                 <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva/laoliva3-1.svg" alt="Club 1">
               </div>
             </div>
             <!-- Información del club -->
             <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
               <h2 class="text-xl font-bold">A POR TODAS</h2>
-              <a href="ficha_club.html?id=6" class="text-blue-500 hover:underline">Ver Ficha</a>
+              <a href="ficha_club.html?id=1" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+          
+          <!-- HÉROES EN SILENCIO -->
+          <div>
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/antigua/antigua3-1.svg" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">HÉROES EN SILENCIO</h2>
+              <a href="ficha_club.html?id=2" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+
+          <!-- TROMPIEZO -->
+          <div>
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/pajara/pajara3-1.svg" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">TROMPIEZO</h2>
+              <a href="ficha_club.html?id=3" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+        </div>
+
+      <!-- Diseño de camiseta 4 -->
+      <div class="max-w-7xl mx-auto py-4 px-4">
+        <h3 class="text-xl font-semibold">Diseño 4</h3>
+      </div>
+
+      <div class="max-w-7xl mx-auto py-6 px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- A POR TODAS -->
+          <div>
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/laoliva/laoliva3.svg" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">A POR TODAS</h2>
+              <a href="ficha_club.html?id=1" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+          
+          <!-- HÉROES EN SILENCIO -->
+          <div>
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/antigua/antigua3.svg" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">HÉROES EN SILENCIO</h2>
+              <a href="ficha_club.html?id=2" class="text-blue-500 hover:underline">Ver Ficha</a>
+            </div>
+          </div>
+
+          <!-- TROMPIEZO -->
+          <div>
+            <div class="bg-white overflow-hidden relative h-[300px]">
+              <!-- Camiseta del club -->
+              <div class="relative h-full flex items-center justify-center">
+                <img class="w-full h-full object-contain p-4" src="/static/img/clubes/pajara/pajara3.svg" alt="Club 1">
+              </div>
+            </div>
+            <!-- Información del club -->
+            <div class="p-4 bg-white bg-opacity-90 flex flex-row items-center justify-between">
+              <h2 class="text-xl font-bold">TROMPIEZO</h2>
+              <a href="ficha_club.html?id=3" class="text-blue-500 hover:underline">Ver Ficha</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- JavaScript para el menú desplegable -->
-      
-      <script>
-        document.addEventListener('DOMContentLoaded', function() {
-          // Función para manejar clicks en el dropdown
-          function setupDropdowns() {
-            const dropdowns = document.querySelectorAll('.dropDown');
+    <!-- Footer -->
+    <div id="footer-container"></div>
+    <!-- JavaScript para el menú desplegable -->
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Función para manejar clicks en el dropdown
+        function setupDropdowns() {
+          const dropdowns = document.querySelectorAll('.dropDown');
+          
+          dropdowns.forEach(dropdown => {
+            const current = dropdown.querySelector('[data-dropdown-current]');
+            const listContainer = dropdown.querySelector('.dropdownListContainer');
+            const options = dropdown.querySelectorAll('.dropdownList li');
+            const closeButton = dropdown.querySelector('.js-dropdown-close');
             
-            dropdowns.forEach(dropdown => {
-              const current = dropdown.querySelector('[data-dropdown-current]');
-              const listContainer = dropdown.querySelector('.dropdownListContainer');
-              const options = dropdown.querySelectorAll('.dropdownList li');
-              const closeButton = dropdown.querySelector('.js-dropdown-close');
+            // Toggle dropdown on click
+            current.addEventListener('click', function() {
+              dropdown.classList.toggle('active');
+              const expanded = dropdown.classList.contains('active');
+              current.setAttribute('aria-expanded', expanded);
+            });
+            
+            // Close on mobile back button
+            if (closeButton) {
+              closeButton.addEventListener('click', function() {
+                dropdown.classList.remove('active');
+                current.setAttribute('aria-expanded', false);
+              });
+            }
+            
+            // Select option
+            options.forEach(option => {
+              option.addEventListener('click', function() {
+                const optionName = this.getAttribute('data-option-name');
+                const optionId = this.getAttribute('data-option-id');
+                
+                current.textContent = optionName;
+                
+                // Simulate form submission or filter change
+                console.log(`Selected island: ${optionName}, ID: ${optionId}`);
+                
+                // Close dropdown
+                dropdown.classList.remove('active');
+                current.setAttribute('aria-expanded', false);
+                
+                // You could trigger a form submission or other action here
+                // Example: document.getElementById('hidden-isla').value = optionId;
+                // Example: document.getElementById('filter-form').submit();
+              });
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(event) {
+              if (!dropdown.contains(event.target)) {
+                dropdown.classList.remove('active');
+                current.setAttribute('aria-expanded', false);
+              }
+            });
+            
+            // Handle keyboard navigation
+            dropdown.addEventListener('keydown', function(event) {
+              if (event.key === 'Escape') {
+                dropdown.classList.remove('active');
+                current.setAttribute('aria-expanded', false);
+                current.focus();
+              }
               
-              // Toggle dropdown on click
-              current.addEventListener('click', function() {
+              if (event.key === 'Enter' && document.activeElement === current) {
                 dropdown.classList.toggle('active');
                 const expanded = dropdown.classList.contains('active');
                 current.setAttribute('aria-expanded', expanded);
-              });
-              
-              // Close on mobile back button
-              if (closeButton) {
-                closeButton.addEventListener('click', function() {
-                  dropdown.classList.remove('active');
-                  current.setAttribute('aria-expanded', false);
-                });
+                
+                if (expanded) {
+                  options[0].focus();
+                }
               }
               
-              // Select option
-              options.forEach(option => {
-                option.addEventListener('click', function() {
-                  const optionName = this.getAttribute('data-option-name');
-                  const optionId = this.getAttribute('data-option-id');
-                  
-                  current.textContent = optionName;
-                  
-                  // Simulate form submission or filter change
-                  console.log(`Selected island: ${optionName}, ID: ${optionId}`);
-                  
-                  // Close dropdown
-                  dropdown.classList.remove('active');
-                  current.setAttribute('aria-expanded', false);
-                  
-                  // You could trigger a form submission or other action here
-                  // Example: document.getElementById('hidden-isla').value = optionId;
-                  // Example: document.getElementById('filter-form').submit();
-                });
-              });
-              
-              // Close dropdown when clicking outside
-              document.addEventListener('click', function(event) {
-                if (!dropdown.contains(event.target)) {
-                  dropdown.classList.remove('active');
-                  current.setAttribute('aria-expanded', false);
-                }
-              });
-              
-              // Handle keyboard navigation
-              dropdown.addEventListener('keydown', function(event) {
-                if (event.key === 'Escape') {
-                  dropdown.classList.remove('active');
-                  current.setAttribute('aria-expanded', false);
-                  current.focus();
-                }
+              if (event.key === 'Tab' && dropdown.classList.contains('active')) {
+                // Keep focus within dropdown when it's open
+                const focusableElements = dropdown.querySelectorAll('li[role="option"], button');
+                const firstElement = focusableElements[0];
+                const lastElement = focusableElements[focusableElements.length - 1];
                 
-                if (event.key === 'Enter' && document.activeElement === current) {
-                  dropdown.classList.toggle('active');
-                  const expanded = dropdown.classList.contains('active');
-                  current.setAttribute('aria-expanded', expanded);
-                  
-                  if (expanded) {
+                if (event.shiftKey && document.activeElement === firstElement) {
+                  event.preventDefault();
+                  lastElement.focus();
+                } else if (!event.shiftKey && document.activeElement === lastElement) {
+                  event.preventDefault();
+                  firstElement.focus();
+                }
+              }
+              
+              // Arrow key navigation through options
+              if (dropdown.classList.contains('active')) {
+                if (event.key === 'ArrowDown') {
+                  event.preventDefault();
+                  if (document.activeElement.nextElementSibling && 
+                      document.activeElement.nextElementSibling.getAttribute('role') === 'option') {
+                    document.activeElement.nextElementSibling.focus();
+                  } else {
                     options[0].focus();
                   }
                 }
                 
-                if (event.key === 'Tab' && dropdown.classList.contains('active')) {
-                  // Keep focus within dropdown when it's open
-                  const focusableElements = dropdown.querySelectorAll('li[role="option"], button');
-                  const firstElement = focusableElements[0];
-                  const lastElement = focusableElements[focusableElements.length - 1];
-                  
-                  if (event.shiftKey && document.activeElement === firstElement) {
-                    event.preventDefault();
-                    lastElement.focus();
-                  } else if (!event.shiftKey && document.activeElement === lastElement) {
-                    event.preventDefault();
-                    firstElement.focus();
+                if (event.key === 'ArrowUp') {
+                  event.preventDefault();
+                  if (document.activeElement.previousElementSibling && 
+                      document.activeElement.previousElementSibling.getAttribute('role') === 'option') {
+                    document.activeElement.previousElementSibling.focus();
+                  } else {
+                    options[options.length - 1].focus();
                   }
                 }
-                
-                // Arrow key navigation through options
-                if (dropdown.classList.contains('active')) {
-                  if (event.key === 'ArrowDown') {
-                    event.preventDefault();
-                    if (document.activeElement.nextElementSibling && 
-                        document.activeElement.nextElementSibling.getAttribute('role') === 'option') {
-                      document.activeElement.nextElementSibling.focus();
-                    } else {
-                      options[0].focus();
-                    }
-                  }
-                  
-                  if (event.key === 'ArrowUp') {
-                    event.preventDefault();
-                    if (document.activeElement.previousElementSibling && 
-                        document.activeElement.previousElementSibling.getAttribute('role') === 'option') {
-                      document.activeElement.previousElementSibling.focus();
-                    } else {
-                      options[options.length - 1].focus();
-                    }
-                  }
-                }
-              });
+              }
             });
+          });
+        }
+        
+        setupDropdowns();
+      });
+
+      // Función para la barra de búsqueda
+      document.querySelector('input[type="text"]').addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        const items = document.querySelectorAll('.grid > div');
+        
+        items.forEach(item => {
+          const title = item.querySelector('h2').textContent.toLowerCase();
+          if (title.includes(searchTerm)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
           }
-          
-          setupDropdowns();
         });
-      </script>
+      });
+    </script>
+
+    <!-- Cargar componentes -->
+    <script src="/static/js/loadComponents.js"></script>
 </body>
 </html>

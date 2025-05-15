@@ -1,0 +1,69 @@
+{
+    "eventos": [
+        {
+            "id": 1,
+            "titulo": "Neurolimpiadas 2025",
+            "fecha": "2025-04-17",
+            "hora": "10:00",
+            "tipo": "Competición",
+            "descripcion": "Descripción del evento 1",
+            "ubicacion": "Ubicación del evento 1",
+            "imagen": "/static/img/eventos/la_palma/cartel.jpg"
+        },
+        {
+            "id": 2,
+            "titulo": "Entrenamiento",
+            "fecha": "2025-05-02",
+            "hora": "11:00",
+            "tipo": "Entrenamiento",
+            "descripcion": "Descripción del evento 2",
+            "ubicacion": "Ubicación del evento 2"
+        },
+        {
+            "id": 3,
+            "titulo": "Neurolimpiadas 2025",
+            "fecha": "2025-05-03",
+            "hora": "12:00",
+            "tipo": "Competición",
+            "descripcion": "Descripción del evento 3",
+            "ubicacion": "Ubicación del evento 3",
+            "imagen": "/static/img/eventos/la_palma/cartel.jpg"
+        },
+        {
+            "id": 4,
+            "titulo": "Entrega de premios",
+            "fecha": "2025-05-04",
+            "hora": "20:00",
+            "tipo": "Ceremonia",
+            "descripcion": "Descripción del evento 4",
+            "ubicacion": "Ubicación del evento 4"
+        },
+        {
+            "id": 5,
+            "titulo": "Charla",
+            "fecha": "2025-05-07",
+            "hora": "19:00",
+            "tipo": "Charla",
+            "descripcion": "Descripción del evento 5",
+            "ubicacion": "Ubicación del evento 5"
+        },
+        {
+            "id": 6,
+            "titulo": "Taller de habilidades",
+            "fecha": "2025-05-23",
+            "hora": "15:00",
+            "tipo": "Taller",
+            "descripcion": "Descripción del evento 6",
+            "ubicacion": "Ubicación del evento 6"
+        },
+        {
+            "id": 7,
+            "titulo": "Reunión de participantes",
+            "fecha": "2025-04-01",
+            "hora": "18:00",
+            "tipo": "Reunión",
+            "descripcion": "Descripción del evento 7",
+            "ubicacion": "Ubicación del evento 7"
+        }
+    ]
+}

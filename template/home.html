@@ -4,73 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Neurolimpiadas</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/static/img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Neurolimpiadas" />
+  <link rel="manifest" href="/static/img/favicon/site.webmanifest" />
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"/>
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>
   <script async src="//www.instagram.com/embed.js"></script>
+  <!-- Cargar Componentes -->
+   <script src="/static/js/loadComponents.js"></script>
   <style>
     .neurolimpiadas-font{
       color: white;
     }
   </style>
+  
 </head>
 
 <body class="bg-gray-300">
   <section id="inicio" class="relative h-screen overflow-hidden">
-    <nav class="bg-white shadow w-full">
-      <div class="flex items-center justify-between h-16">
-        
-        <a href="home.html" class="flex-shrink-0">
-          <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
-        </a>
-        
-        <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
-        <div class="hidden lg:flex space-x-4">
-          <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
-          <a href="neurolimpiadas.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Sobre Neurolimpiadas</a>
-          <a href="equipos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clubes</a>
-          <a href="calendario.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Calendario</a>
-          <a href="clasificaciones.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clasificaciones</a>
-          <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
-          <a href="galeria.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Galería</a>
-          <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
-        </div>
-        
-        <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
-        <div class="lg:hidden relative px-4">
-          <button id="menu-toggle" 
-                  class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-            <!-- Icono de hamburguesa -->
-            <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-          
-          <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
-          <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-            <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
-            <a href="neurolimpiadas.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sobre Neurolimpiadas</a>
-            <a href="equipos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clubes</a>
-            <a href="calendario.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Calendario</a>
-            <a href="clasificaciones.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clasificaciones</a>
-            <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
-            <a href="galeria.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Galería</a>
-            <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
-          </div>
-        </div>
-      </div>
-    </nav>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
 
     <!-- Sección Principal (Hero) -->
     <!-- Contenedor del slider -->
     <div class="slider-container relative h-full w-full">
       <!-- Imágenes del slider (añade más según necesites) -->
       <div class="slides absolute inset-0 flex h-full w-full">
-        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('../static/img/slider/1.jpg');"></div>
-        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('../static/img/slider/2.jpeg');"></div>
-        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('../static/img/slider/3.webp');"></div>
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('/static/img/slider/1.jpg');"></div>
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('/static/img/slider/2.jpeg');"></div>
+        <div class="slide absolute inset-0 bg-cover bg-center opacity-0 transition-opacity duration-1000" style="background-image: url('/static/img/slider/3.webp');"></div>
       </div>
       
       <!-- Capa oscura semitransparente para mejor contraste -->
@@ -406,111 +376,43 @@
         <!-- Logos de ayuntamientos -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/1.png" alt="Granadilla de Abona" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/1.png" alt="Granadilla de Abona" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/2.png" alt="Villa de Mazo" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/2.png" alt="Villa de Mazo" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/3.png" alt="Puerto del Rosario" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/3.png" alt="Puerto del Rosario" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/4.png" alt="Arrecife" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/4.png" alt="Arrecife" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-              <img src="../static/img/colabora/5.png" alt="Santiago del Teide" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+              <img src="/static/img/colabora/5.png" alt="Santiago del Teide" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/6.webp" alt="Betancuria" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/6.webp" alt="Betancuria" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/7.png" alt="El Rosario" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/7.png" alt="El Rosario" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img src="../static/img/colabora/8.png" alt="Los Llanos de Aridane" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img src="/static/img/colabora/8.png" alt="Los Llanos de Aridane" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
         </div>
     </div>
     
   </section>
-  <footer class="bg-gradient-to-b from-gray-800 to-gray-900 text-gray-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Contenido principal del footer -->
-        <div class="flex justify-between  p-8">
-            <!-- Columna 1: Logo y descripción -->
-            <div class="space-y-4">
-                <img src="/static/img/logo.png" alt="Logo Neurolimpiadas" class="h-16 mx-auto">
-            
-                <p class="text-sm text-white font-weight: bold;">Expertos en Envejecimiento Activo</p>
-                <div class="space-y-2">
-                    <a href="/template/cookies.html" class="block text-gray-400 hover:text-white transition-colors duration-300">
-                        Desarrollado por <span class="text-neurolimpiadas-green">Arenna Labs</span>
-                    </a>
-                    <a href="/template/privacidad.html" class="block text-gray-400 hover:text-white transition-colors duration-300">
-                        Política de Privacidad
-                    </a>
-                    <a href="/template/cookies.html" class="block text-gray-400 hover:text-white transition-colors duration-300">
-                        Política de Cookies
-                    </a>
-                </div>
-            </div>
 
-            <!-- Columna 2: Enlaces rápidos -->
-            <div>
-                <h3 class="text-lg font-semibold text-white mb-4">Enlaces Rápidos</h3>
-                <ul class="space-y-2">
-                    <li>
-                        <a href="neurolimpiadas.html" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            Sobre Neurolimpiadas
-                        </a>
-                    </li>
-                    <li>
-                        <a href="calendario.html" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            Calendario
-                        </a>
-                    </li>
-                    <li>
-                        <a href="noticias.html" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            Noticias
-                        </a>
-                    </li>
-                    <li>
-                        <a href="contactanos.html" class="text-gray-400 hover:text-white transition-colors duration-300">
-                            Contacto
-                        </a>
-                    </li>
-                </ul>
-            </div>
+  <!-- Footer -->
+  <div id="footer-container"></div>
 
-            <!-- Columna 3: Redes sociales -->
-            <div>
-                <h3 class="text-lg font-semibold text-white mb-4">Síguenos</h3>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-facebook-square text-2xl"></i>
-                    </a>
-                    <a href="https://www.instagram.com/elclubdelmayor/reels/?hl=es" 
-                       target="_blank" 
-                       class="text-gray-400 hover:text-white transition-colors duration-300">
-                        <i class="fab fa-instagram text-2xl"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Línea divisoria -->
-        <div class="border-t border-gray-700 pt-8 pb-8">
-            <p class="text-center text-sm text-gray-400">
-                © 2025 Neurolimpiadas. Todos los derechos reservados.
-            </p>
-        </div>
-    </div>
-</footer>
-
-  <script src="../static/js/imageMapResizer.min.js"></script>
+  <!-- Scripts -->
+  <script src="/static/js/imageMapResizer.min.js"></script>
   <script>
       
       imageMapResize();
+<<<<<<< HEAD
       const menuToggle = document.getElementById('menu-toggle');
       const mobileDropdown = document.getElementById('mobile-dropdown');
 
@@ -526,6 +428,10 @@
       });
 
             // Datos de ejemplo de municipios para cada isla, con colores de Tailwind (para la lista)
+=======
+      
+      // Datos de ejemplo de municipios para cada isla, con colores de Tailwind (para la lista)
+>>>>>>> f86fc9563d6be9c2a85e21c5039a5054687bdbed
       const municipiosPorIsla = {
         'La Palma': [
           { nombre: 'Barlovento', color: '#ff5733' },
@@ -1254,6 +1160,6 @@
   </script>
   
   <!-- Importar JS -->
-  <script src="../static/js/slider.js"></script>  
+  <script src="/static/js/slider.js"></script>  
 </body>
 </html>

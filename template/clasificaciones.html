@@ -3,53 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clasificaciones</title>
+    <title>Clasificaciones | Neurolimpiadas</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/static/img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Neurolimpiadas" />
+    <link rel="manifest" href="/static/img/favicon/site.webmanifest" />
+    <!-- TailwindCSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>    
+    <!-- Cargar componentes -->
+    <script src="/static/js/loadComponents.js"></script>
 </head>
-<body>
-    <nav class="bg-white shadow w-full">
-        <div class="flex items-center justify-between h-16">
-          
-          <a href="home.html" class="flex-shrink-0">
-            <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
-          </a>
-          
-          <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
-          <div class="hidden lg:flex space-x-4">
-            <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
-            <a href="neurolimpiadas.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Sobre Neurolimpiadas</a>
-            <a href="equipos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clubes</a>
-            <a href="calendario.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Calendario</a>
-            <a href="clasificaciones.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clasificaciones</a>
-            <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
-            <a href="galeria.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Galería</a>
-            <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
-          </div>
-          
-          <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
-          <div class="lg:hidden relative px-4">
-            <button id="menu-toggle" 
-                    class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-              <!-- Icono de hamburguesa -->
-              <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                      d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            </button>
-            
-            <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
-            <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-              <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
-              <a href="neurolimpiadas.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sobre Neurolimpiadas</a>
-              <a href="equipos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clubes</a>
-              <a href="calendario.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Calendario</a>
-              <a href="clasificaciones.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clasificaciones</a>
-              <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
-              <a href="galeria.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Galería</a>
-              <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
+<body class="bg-gray-50">
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    <!-- Contenido principal -->
+    <main class="max-w-7xl mx-auto px-4 py-6">
+        <!-- Tabla de clasificaciones -->
+        <div class="bg-gray-50 rounded-xl shadow-xl overflow-hidden">
+            <div class="overflow-x-auto">
+                <div class="flex items-center justify-center bg-white p-4">
+                    <img src="/static/img/neurolimpiadas.png" alt="Neurolimpiadas" class="h-12 w-auto">
+                </div>
+                <table class="min-w-full">
+                    <thead>
+                        <tr class="bg-gradient-to-r from-[#4672b5] to-[#3a5d94] text-white">
+                            <th class="px-6 py-4 text-left text-sm font-semibold">Pos.</th>
+                            <th class="px-6 py-4 text-left text-sm font-semibold">Logo</th>
+                            <th class="px-6 py-4 text-left text-sm font-semibold">Equipo</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold">PJ</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold">V</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold">E</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold">D</th>
+                            <th class="px-6 py-4 text-center text-sm font-semibold">Pts</th>
+                        </tr>
+                    </thead>
+                    <tbody id="clasificaciones-body">
+                        <!-- Las filas se llenarán dinámicamente con JavaScript -->
+                    </tbody>
+                </table>
+                <!-- Leyenda -->
+                <div class="flex justify-center py-4 space-x-4 text-sm text-gray-600 ">
+                    <div class="flex items-center">
+                        <div class="w-4 h-4 bg-blue-50 border border-blue-200 rounded-full"></div>
+                        <span class="ml-2 text-sm text-gray-600">Clasificado</span>
+                        <div class="w-4 h-4 bg-white border border-gray-500 rounded-full ml-4"></div>
+                        <span class="ml-2 text-sm text-gray-600">No clasificado</span>
+                        <div class="w-4 h-4 bg-[#4672b5] border border-blue-200 ml-4"></div>
+                        <span class="ml-2 text-sm text-gray-600">Zona de clasificación</span>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </nav>
+    </main>
+    
+    <!-- Footer -->
+    <div id="footer-container"></div>
+
+    <!-- Script para cargar las clasificaciones -->
+    <script>
+        async function cargarClasificaciones() {
+            try {
+                const response = await fetch('/static/json/clasificaciones.json');
+                const data = await response.json();
+                
+                const equiposOrdenados = data.Neurolimpiadas.sort((a, b) => b.puntos - a.puntos);
+                
+                const tbody = document.getElementById('clasificaciones-body');
+                tbody.innerHTML = '';
+
+                equiposOrdenados.forEach((equipo, index) => {
+                    const partidosJugados = equipo.partidos || 0;
+                    const victorias = Math.floor(equipo.puntos / 3);
+                    const empates = equipo.puntos % 3;
+                    const derrotas = partidosJugados - victorias - empates;
+
+                    // Determinar si es equipo clasificado y aplicar estilos
+                    let rowClasses = "hover:bg-gray-50 transition-colors duration-200";
+                    let borderClass = "border-b border-gray-200";
+                    
+                    // Zona de clasificados (primeros 4)
+                    if (index < 4) {
+                        rowClasses += " bg-blue-50";
+                        // Añadir borde distintivo al último equipo clasificado
+                        if (index === 3) {
+                            borderClass = "border-b-4 border-[#4672b5]";
+                        }
+                    }
+
+                    const row = document.createElement('tr');
+                    row.className = rowClasses;
+                    row.onclick = () => { window.location.href = `ficha_club.html?id=${equipo.id}` };
+                    row.innerHTML = `
+                        <td class="px-6 py-4 ${borderClass} text-center font-semibold ${index < 4 ? 'text-blue-600' : ''}">${index + 1}</td>
+                        <td class="px-6 py-4 ${borderClass}">
+                            <div class="flex items-center">
+                                <img src="${equipo.logo}" alt="${equipo.nombre}" class="h-10 w-10 object-contain">
+                            </div>
+                        </td>
+                        <td class="px-6 py-4 ${borderClass} font-semibold ${index < 4 ? 'text-blue-800' : ''}">${equipo.nombre || equipo.equipo}</td>
+                        <td class="px-6 py-4 ${borderClass} text-center">${partidosJugados}</td>
+                        <td class="px-6 py-4 ${borderClass} text-center text-green-600 font-medium">${victorias}</td>
+                        <td class="px-6 py-4 ${borderClass} text-center text-gray-600 font-medium">${empates}</td>
+                        <td class="px-6 py-4 ${borderClass} text-center text-red-600 font-medium">${derrotas}</td>
+                        <td class="px-6 py-4 ${borderClass} text-center font-bold text-lg ${index < 4 ? 'text-blue-600' : ''}">${equipo.puntos}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            } catch (error) {
+                console.error('Error al cargar las clasificaciones:', error);
+            }
+        }
+
+        window.addEventListener('load', cargarClasificaciones);
+    </script>
 </body>
 </html>

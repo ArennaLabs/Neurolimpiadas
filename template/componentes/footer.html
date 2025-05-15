@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/styles/footer.css">
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>
+<body>
+    <footer id="footer-container" class="relative bg-gradient-to-t from-gray-800 to-gray-900 text-white pt-10 pb-10 w-full px-4 overflow-hidden">
+        <div class="relative z-10 w-full max-w-[2160px] mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 mb-16 px-4 md:px-8 lg:px-12">
+                <!-- Enlaces rápidos en 2 columnas -->
+                <div class="flex flex-col items-start space-y-6">
+                    <h3 class="text-xl font-semibold text-white section-title">Enlaces Rápidos</h3>
+                    <div class="grid grid-cols-2 gap-x-8 w-full">
+                        <!-- Primera columna -->
+                        <ul class="space-y-3">
+                            <li><a href="home.html" class="footer-link text-gray-400 hover:text-white transition-colors duration-300 text-sm">Inicio</a></li>
+                            <li><a href="neurolimpiadas.html" class="footer-link text-gray-400 hover:text-white transition-colors duration-300 text-sm">Sobre Neurolimpiadas</a></li>
+                            <li><a href="equipos.html" class="footer-link text-gray-400 hover:text-white transition-colors duration-300 text-sm">Clubes</a></li>
+                            <li><a href="calendario.html" class="footer-link text-gray-400 hover:text-white transition-colors duration-300 text-sm">Calendario</a></li>
+                        </ul>
+                        <!-- Segunda columna -->
+                        <ul class="space-y-3">
+                            <li><a href="clasificaciones.html" class="footer-link text-gray-400 hover:text-white transition-colors duration-300 text-sm">Clasificaciones</a></li>
+                            <li><a href="noticias.html" class="footer-link text-gray-400 hover:text-white transition-colors duration-300 text-sm">Noticias</a></li>
+                            <li><a href="galeria.html" class="footer-link text-gray-400 hover:text-white transition-colors duration-300 text-sm">Galería</a></li>
+                            <li><a href="contactanos.html" class="footer-link text-gray-400 hover:text-white transition-colors duration-300 text-sm">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Contacto -->
+                <div class="flex flex-col items-start space-y-6">
+                    <h3 class="text-xl font-semibold text-white section-title">Contacto</h3>
+                    <ul class="space-y-4">
+                        <li class="contact-item flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot"></i>
+                            <span class="text-gray-400 text-sm">C/ Sabino Berthelot 13, 38003, Tenerife</span>
+                        </li>
+                        <li class="contact-item flex items-center space-x-3">
+                            <i class="fa-solid fa-mobile-screen"></i>
+                            <span class="text-gray-400 text-sm">+34 629 826 610</span>
+                        </li>
+                        <li class="contact-item flex items-center space-x-3">
+                            <i class="fas fa-envelope"></i>
+                            <span class="text-gray-400 text-sm">info@neurolimpiadas.com</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="flex flex-col items-start space-y-6">
+                    <h3 class="text-xl font-semibold text-white section-title">
+                        Newsletter
+                    </h3>
+                    <p class="text-gray-400 text-sm max-w-sm">
+                        Suscríbete para recibir las últimas novedades en tu email
+                    </p>
+                    <form action="#" method="POST" class="w-full space-y-4 newsletter-form">
+                        <div class="relative flex items-center">
+                            <input 
+                                type="email" 
+                                placeholder="Tu correo electrónico" 
+                                class="w-full border px-4 py-3 text-sm text-black placeholder-gray-600 focus:outline-none transition-colors duration-300"
+                                required
+                            />
+                            <button 
+                                type="submit" 
+                                class="absolute right-0 h-full px-4 text-white text-sm transition-all duration-300 flex items-center justify-center border-l border-gray-700 hover:brightness-110"
+                            >
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom: Redes Sociales, Políticas y Copyright -->
+            <div class="border-t border-gray-700">
+                <!-- Redes Sociales y Políticas -->
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 pt-8 px-4 md:px-8 lg:px-12">
+                    <!-- Redes Sociales -->
+                    <div class="flex items-center space-x-6">
+                        <a href="https://www.facebook.com/Elclubdelmayor/?locale=es_ES" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="text-gray-400 hover:text-white transition-colors duration-300">
+                           <i class="fa-brands fa-square-facebook"></i>                        
+                        </a>
+                        <a href="https://www.instagram.com/elclubdelmayor/?hl=es" 
+                           target="_blank" 
+                           rel="noopener noreferrer" 
+                           class="text-gray-400 hover:text-white transition-colors duration-300">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <!-- Enlaces a políticas -->
+                    <div class="flex flex-wrap justify-center space-x-6 text-sm">
+                        <a href="privacidad.html" 
+                           class="footer-link text-gray-400 hover:text-white transition-colors duration-300">
+                           Política de Privacidad
+                        </a>
+                        <a href="cookies.html" 
+                           class="footer-link text-gray-400 hover:text-white transition-colors duration-300">
+                           Política de Cookies
+                        </a>
+                        <a href="#" 
+                           class="footer-link text-gray-400 hover:text-white transition-colors duration-300">
+                           Transparencia
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Copyright -->
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-2 md:space-y-0 md:space-x-4 mt-8 pt-8 border-t border-gray-700 px-4 md:px-8 lg:px-12">
+                    <span class="text-gray-400 text-sm text-center">
+                        &copy; 2025 Neurolimpiadas. Todos los derechos reservados.
+                    </span>
+                    <a href="https://www.arennalabs.com/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="text-gray-500 hover:text-white transition-colors duration-300 text-sm">
+                       Desarrollado por Arenna Labs
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

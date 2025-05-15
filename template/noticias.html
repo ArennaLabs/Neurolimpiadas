@@ -3,67 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ventana de Noticias</title>
+  <title>Noticias | Neurolimpiadas</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/static/img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Neurolimpiadas" />
+  <link rel="manifest" href="/static/img/favicon/site.webmanifest" />
   <!-- Incluir Tailwind CSS desde CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <script src="../static/js/colors.js"></script> 
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>
+  <!-- Importar colores necesarios -->
+  <script src="/static/js/colors.js"></script>
+  <!-- Cargar componentes  -->
+  <script src="/static/js/loadComponents.js"></script>
   <style>
     /* Estilos adicionales para la animación de los puntos indicadores */
     .dot {
       transition: all 0.3s ease;
+      opacity: 0.6;
     }
     .dot.active {
-      /* Se expande en ancho cuando está activo */
-      width: 12px;
-      height: 12px;
+      opacity: 1;
+      width: 24px;
     }
   </style>
 </head>
 <body class="bg-gray-00">
-  <nav class="bg-white shadow w-full">
-    <div class="flex items-center justify-between h-16">
-      
-      <a href="home.html" class="flex-shrink-0">
-        <img class="h-16 w-32" src="/static/img/logo.png" alt="Logo de la Empresa">
-      </a>
-      
-      <!-- Menú de escritorio (visible en pantallas lg, es decir ≥1024px) -->
-      <div class="hidden lg:flex space-x-4">
-        <a href="home.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Inicio</a>
-        <a href="neurolimpiadas.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Sobre Neurolimpiadas</a>
-        <a href="equipos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clubes</a>
-        <a href="calendario.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Calendario</a>
-        <a href="clasificaciones.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Clasificaciones</a>
-        <a href="noticias.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Noticias</a>
-        <a href="galeria.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Galería</a>
-        <a href="contactanos.html" class="px-3 py-2 text-gray-600 hover:text-gray-800">Contactanos</a>
-      </div>
-      
-      <!-- Botón del menú móvil (visible en pantallas menores a 1024px) -->
-      <div class="lg:hidden relative px-4">
-        <button id="menu-toggle" 
-                class="p-2 bg-white border border-gray-200 rounded-full shadow hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <!-- Icono de hamburguesa -->
-          <svg class="h-6 w-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                  d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        
-        <!-- Menú desplegable móvil: posicionado justo debajo del botón -->
-        <div id="mobile-dropdown" class="hidden absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50">
-          <a href="home.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Inicio</a>
-          <a href="neurolimpiadas.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Sobre Neurolimpiadas</a>
-          <a href="equipos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clubes</a>
-          <a href="calendario.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Calendario</a>
-          <a href="clasificaciones.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Clasificaciones</a>
-          <a href="noticias.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Noticias</a>
-          <a href="galeria.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Galería</a>
-          <a href="contactanos.html" class="block px-4 py-2 text-gray-600 hover:bg-gray-100">Contactanos</a>
-        </div>
-      </div>
-    </div>
-  </nav>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
 
     <!-- Contenedor principal de la ventana de noticias -->
     <div class="relative h-screen">
@@ -77,7 +47,7 @@
         <!-- Botón de navegación izquierdo (Previo), centrado verticalmente -->
         <button 
           id="prev" 
-          class="absolute top-1/2 left-6 transform -translate-y-1/2 p-3 border border-white rounded-full bg-black bg-opacity-50 text-white hover:bg-white hover:text-black transition-colors duration-300 focus:outline-none z-10" 
+          class="absolute top-1/2 left-6 transform -translate-y-1/2 p-3 text-white hover:text-gray-300 text-5xl transition-colors duration-300 focus:outline-none z-10" 
           aria-label="Anterior proyecto"
         >
           &#10094;
@@ -86,7 +56,7 @@
         <!-- Botón de navegación derecho (Siguiente), centrado verticalmente -->
         <button 
           id="next" 
-          class="absolute top-1/2 right-6 transform -translate-y-1/2 p-3 border border-white rounded-full bg-black bg-opacity-50 text-white hover:bg-white hover:text-black transition-colors duration-300 focus:outline-none z-10" 
+          class="absolute top-1/2 right-6 transform -translate-y-1/2 p-3 text-white hover:text-gray-300 text-5xl transition-colors duration-300 focus:outline-none z-10" 
           aria-label="Siguiente proyecto"
         >
           &#10095;
@@ -101,7 +71,7 @@
           <!-- Agrega más botones si tienes más noticias -->
         </div>
       </div>
-      <!-- Reemplazar la sección después del slider con: -->
+      <!-- Apartado de noticias -->
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <!-- Sección de Noticia Destacada -->
         <div class="flex items-center mb-6">
@@ -111,8 +81,7 @@
         
         <div class="h-px w-full bg-gray-200 mb-8"></div>
 
-        <!-- Card de Noticia Destacada -->
-         
+        <!-- Card de Noticia Destacada -->       
         <div id="contenedor-destacado" class="flex flex-col lg:flex-row bg-white shadow-lg rounded-lg overflow-hiddenhover:shadow-2xl 
                             transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
                             hover:ring-2 hover:ring-[#4672b5] group hover:shadow-2xl 
@@ -145,9 +114,43 @@
         <!-- Sección de Últimas Noticias -->
         <div class="flex items-center mb-6">
             <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
-            <h2 class="font-medium text-lg tracking-wider">ÚLTIMAS NOTICIAS</h2>
+            <h2 class="font-medium text-lg tracking-wider">HEMEROTECA</h2>
+            <!-- Filtro por categorías -->
+            <div class="hidden ml-auto flex space-x-4 lg:flex">
+                <button class="text-gray-500 hover:text-[#4672b5] font-medium transition-colors" 
+                        onclick="filterNoticias('Todas')">Todas</button>
+                <button class="text-gray-500 hover:text-yellow-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Deportes')">Deportes</button>
+                <button class="text-gray-500 hover:text-blue-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Destacados')">Destacados</button>
+                <button class="text-gray-500 hover:text-green-800 font-medium transition-colors" 
+                        onclick="filterNoticias('General')">General</button>
+                <button class="text-gray-500 hover:text-purple-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Entrevistas')">Entrevistas</button>
+                <button class="text-gray-500 hover:text-indigo-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Cultura')">Cultura</button>
+                <button class="text-gray-500 hover:text-teal-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Salud')">Salud</button>
+                <button class="text-gray-500 hover:text-pink-800 font-medium transition-colors" 
+                        onclick="filterNoticias('Voluntariado')">Voluntariado</button>
+            </div>
+
+            <!-- Filtro para dispositivos móviles a modo de desplegable -->
+            <div class="ml-auto flex space-x-4 lg:hidden">
+                <select id="categoria-select" class="text-gray-500 hover:text-[#4672b5] font-medium transition-colors" onchange="filterNoticias(this.value)">
+                    <option value="Todas">Todas</option>
+                    <option value="Deportes">Deportes</option>
+                    <option value="Destacados">Destacados</option>
+                    <option value="General">General</option>
+                    <option value="Entrevistas">Entrevistas</option>
+                    <option value="Cultura">Cultura</option>
+                    <option value="Salud">Salud</option>
+                    <option value="Voluntariado">Voluntariado</option>
+                </select>
+            </div>
         </div>
         
+        <!-- Linea divisoria -->
         <div class="h-px w-full bg-gray-200 mb-8"></div>
 
         <!-- Grid de Noticias -->
@@ -158,9 +161,12 @@
 
   <!-- NOTICIAS SECUNDARIAS -->
   
+  <!-- Footer -->
+  <div id="footer-container"></div>
 
   <!-- Script JavaScript para el slider -->
   <script>
+
     // Eliminar la constante slides y reemplazar con:
     let slides = [];
     let currentIndex = 0;
@@ -187,11 +193,28 @@
 
         // 2. Luego, manejar las noticias del grid
         const noticias_container = document.getElementById('noticias-container');
-        noticias_container.innerHTML = ''; // Limpiar el contenedor primero
+        noticias_container.innerHTML = '';
 
-        // Mostrar todas las noticias excepto la destacada
+        // Formatear la fecha para ordenar las noticias de más reciente a más antigua
+        function parseCustomDate(dateStr) {
+            const meses = {
+                'Enero': 0, 'Febrero': 1, 'Marzo': 2, 'Abril': 3,
+                'Mayo': 4, 'Junio': 5, 'Julio': 6, 'Agosto': 7,
+                'Septiembre': 8, 'Octubre': 9, 'Noviembre': 10, 'Diciembre': 11
+            };
+            
+            const [dia, mes, anio] = dateStr.split(/[\s,]+/); // Separa por espacios y coma
+            return new Date(parseInt(anio), meses[mes], parseInt(dia));
+        }
+
+        // Mostrar todas las noticias excepto la destacada ordenadas por fecha
         data.noticias
             .filter(noticia => !noticia.destacada)
+            .sort((a, b) => {
+                const fechaA = parseCustomDate(a.fecha);
+                const fechaB = parseCustomDate(b.fecha);
+                return fechaB - fechaA;
+            })
             .forEach(noticia => {
                 noticias_container.innerHTML += createNoticiaCard(noticia);
             });
@@ -227,58 +250,71 @@
     } catch (error) {
         console.error('Error cargando noticias:', error);
     }
-}
+  }
 
+  function createNoticiaCard(noticia) {
+      const colorClasses = {
+          'Deportes': 'bg-[#e6ba38] text-yellow-800',
+          'Destacados': 'bg-[#75addb] text-blue-800',
+          'General': 'bg-[#86b050] text-green-800',
+          'Entrevistas': 'bg-[#c084fc] text-purple-800',
+          'Cultura': 'bg-[#818cf8] text-indigo-800',
+          'Salud': 'bg-[#4fd1c5] text-teal-800',
+          'Voluntariado': 'bg-[#f472b6] text-pink-800',
+      };
 
-
-    function createNoticiaCard(noticia) {
-        const colorClasses = {
-            'Deportes': 'bg-[#e6ba38] text-yellow-800',
-            'Destacados': 'bg-[#75addb] text-blue-800',
-            'General': 'bg-[#86b050] text-green-800',
-            'Entrevistas': 'bg-[#c084fc] text-purple-800',
-            'Cultura': 'bg-[#818cf8] text-indigo-800',
-            'Salud': 'bg-[#4fd1c5] text-teal-800',
-            'Voluntariado': 'bg-[#f472b6] text-pink-800',
-        };
-
-        return `
-            <article id="noticia-${noticia.id}" 
-                    onclick="window.location.href='${noticia.url_noticia}'"
-                    class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl 
-                            transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
-                            hover:ring-2 hover:ring-[#4672b5] group">
-                <div class="relative">
-                    <img src="${noticia.imagen}" 
-                        alt="Imagen de ${noticia.titulo}" 
-                        class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
-                    
-                </div>
-                <div class="p-5">
-                    <div class="flex justify-between items-center mb-3">
-                      <div class="text-gray-500 text-sm mb-3">${noticia.fecha}</div>
-                      <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-1 rounded">
-                            ${noticia.categoria}
-                      </span>
-                    </div>
-                    <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#4672b5]">
-                        ${noticia.titulo}
-                    </h3>
-                    <p class="text-gray-600 mb-4 line-clamp-3">
-                        ${noticia.descripcion}
-                    </p>
-                    <a href="${noticia.url_noticia}" class="mt-4 text-[#4672b5] hover:text-[#3b5f8d] font-medium">Leer más</a>
-                </div>
-            </article>
-        `;
+      return `
+          <article id="noticia-${noticia.id}" 
+                  onclick="window.location.href='${noticia.url_noticia}'"
+                  class="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl 
+                          transition-all duration-300 cursor-pointer transform hover:-translate-y-1 
+                          hover:ring-2 hover:ring-[#4672b5] group">
+              <div class="relative">
+                  <img src="${noticia.imagen}" 
+                      alt="Imagen de ${noticia.titulo}" 
+                      class="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105">
+                  
+              </div>
+              <div class="p-5">
+                  <div class="flex justify-between items-center mb-3">
+                    <div class="text-gray-500 text-sm">${noticia.fecha}</div>
+                    <span class="${colorClasses[noticia.categoria]} text-xs font-medium px-2.5 py-1 rounded">
+                          ${noticia.categoria}
+                    </span>
+                  </div>
+                  <h3 class="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#4672b5]">
+                      ${noticia.titulo}
+                  </h3>
+                  <p class="text-gray-600 mb-4 line-clamp-3">
+                      ${noticia.descripcion}
+                  </p>
+                  <a href="${noticia.url_noticia}" class="mt-4 text-[#4672b5] hover:text-[#3b5f8d] font-medium">Leer más</a>
+              </div>
+          </article>
+      `;
     }
 
-    document.addEventListener('DOMContentLoaded', cargarNoticias);              
-    // Definir un array con la información de cada noticia
+    // Seleccionar la categoría por defecto al cargar la página
+    document.addEventListener('DOMContentLoaded', async () => {
+        await cargarNoticias();
 
+        // Filtrar noticias por categoría 'Todas' al cargar la página
+        filterNoticias('Todas');
+        
+        // Aplicar estilo activo al botón 'Todas'
+        const todasButton = document.querySelector('.ml-auto.flex.space-x-4 button');
+        if (todasButton) {
+            todasButton.classList.add('text-[#4672b5]', 'font-bold');
+            todasButton.classList.remove('text-gray-500');
+        }
+        
+        // Seleccionar 'Todas' en el desplegable móvil
+        const selectCategoria = document.getElementById('categoria-select');
+        if (selectCategoria) {
+            selectCategoria.value = 'Todas';
+        }
+    });         
 
-
-    
     // Función para mostrar el slide de acuerdo al índice
     function showSlide(index) {
       currentIndex = (index + slides.length) % slides.length;
@@ -289,7 +325,7 @@
           <div class="absolute inset-0 bg-black opacity-50"></div>
           <img src="${slide.image}" alt="${slide.title}" class="h-full w-full object-cover">
           <div class="absolute bottom-8 left-0 right-0 p-6 md:p-8 lg:p-12">
-                <div class="max-w-4xl mx-auto">
+                <div class="max-w-7xl mx-auto px-8">
                     <h1 class="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-2 
                              line-clamp-2 md:line-clamp-none">
                         ${slide.title}
@@ -308,18 +344,17 @@
 
     // Función para actualizar la apariencia de los puntos indicadores
     function updateDots() {
-        dots.forEach((dot, index) => {
-          if(index === currentIndex) {
-            dot.classList.add('active');
-            dot.classList.remove('bg-gray-400');
-            dot.classList.add('bg-white'); // Para resaltar el seleccionado
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+          if (index === currentIndex) {
+              dot.classList.add('active', 'bg-white', 'w-12');
+              dot.classList.remove('bg-gray-400', 'w-3');
           } else {
-            dot.classList.remove('active');
-            dot.classList.remove('bg-white');
-            dot.classList.add('bg-gray-400');
+              dot.classList.remove('active', 'bg-white', 'w-12');
+              dot.classList.add('bg-gray-400', 'w-3');
           }
-        });
-      }
+      });
+    }
 
     // Función para avanzar al siguiente slide
     function nextSlide() {
@@ -336,12 +371,12 @@
 
     // Agregar eventos a los botones de navegación
     document.getElementById('next').addEventListener('click', () => {
-      clearInterval(timer); // Reiniciar temporizador
+      clearInterval(timer);
       nextSlide();
       timer = setInterval(nextSlide, 5000);
     });
     document.getElementById('prev').addEventListener('click', () => {
-      clearInterval(timer); // Reiniciar temporizador
+      clearInterval(timer);
       prevSlide();
       timer = setInterval(nextSlide, 5000);
     });
@@ -366,6 +401,91 @@
 
     // Inicializar el slider con el primer slide
     showSlide(currentIndex);
+
+    // Función para filtrar noticias según la categoría seleccionada
+    async function filterNoticias(categoria) {
+        try {
+            const response = await fetch('/static/json/informacion_noticias.json');
+            const data = await response.json();
+            
+            const noticias_container = document.getElementById('noticias-container');
+            noticias_container.innerHTML = '';
+
+            // Filtrar las noticias según la categoría seleccionada
+            const noticiasFiltradas = data.noticias.filter(noticia => {
+                if (categoria === 'Todas') {
+                    return !noticia.destacada;
+                }
+                return !noticia.destacada && noticia.categoria === categoria;
+            });
+
+            // Si no hay noticias en la categoría seleccionada, mostrar mensaje
+            if (noticiasFiltradas.length === 0) {
+                noticias_container.innerHTML = `
+                    <div class="col-span-full text-center py-8">
+                        <p class="text-gray-500 text-lg">
+                            No hay noticias disponibles en la categoría ${categoria}
+                        </p>
+                    </div>
+                `;
+                return;
+            }
+
+            // Formatear la fecha para ordenar las noticias de más reciente a más antigua
+            function parseCustomDate(dateStr) {
+                const meses = {
+                    'Enero': 0, 'Febrero': 1, 'Marzo': 2, 'Abril': 3,
+                    'Mayo': 4, 'Junio': 5, 'Julio': 6, 'Agosto': 7,
+                    'Septiembre': 8, 'Octubre': 9, 'Noviembre': 10, 'Diciembre': 11
+                };
+                
+                const [dia, mes, anio] = dateStr.split(/[\s,]+/); // Separa por espacios y coma
+                return new Date(parseInt(anio), meses[mes], parseInt(dia));
+            }
+
+            // Mostrar las noticias filtradas
+            noticiasFiltradas.sort((a, b) => {
+                const fechaA = parseCustomDate(a.fecha);
+                const fechaB = parseCustomDate(b.fecha);
+                return fechaB - fechaA;
+            })
+            .forEach(noticia => {
+                noticias_container.innerHTML += createNoticiaCard(noticia);
+            });
+
+            // Actualizar estilo de los botones de filtro con colores específicos por categoría
+            const colorClasses = {
+                'Todas': 'text-[#4672b5]',
+                'Deportes': 'text-[#e6ba38]',
+                'Destacados': 'text-[#75addb]',
+                'General': 'text-[#86b050]',
+                'Entrevistas': 'text-[#c084fc]',
+                'Cultura': 'text-[#818cf8]',
+                'Salud': 'text-[#4fd1c5]',
+                'Voluntariado': 'text-[#f472b6]',
+            };
+
+            const filterButtons = document.querySelectorAll('.ml-auto.flex.space-x-4 button');
+            filterButtons.forEach(button => {
+                const buttonText = button.textContent;
+                button.classList.remove(
+                    'text-gray-500', 'text-yellow-800', 'text-blue-800', 
+                    'text-green-800', 'text-purple-800', 'text-indigo-800', 
+                    'text-teal-800', 'text-pink-800', 'text-[#4672b5]', 'font-bold'
+                );
+                
+                if (buttonText === categoria) {
+                    button.classList.add(colorClasses[buttonText], 'font-bold');
+                } else {
+                    button.classList.add('text-gray-500');
+                }
+            });
+
+        } catch (error) {
+            console.error('Error al filtrar noticias:', error);
+        }
+    }
+
   </script>
 
 </body>
