@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eventos | Neurolimpiadas</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/static/img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Neurolimpiadas" />
+  <link rel="manifest" href="/static/img/favicon/site.webmanifest" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>
+  <script async src="//www.instagram.com/embed.js"></script>
+  <!-- Cargar Componentes -->
+   <script src="/static/js/loadComponents.js"></script>
+  <style>
+    .neurolimpiadas-font{
+      color: white;
+    }
+  </style>
+  
+</head>
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+
+    
+    <div class="max-w-6xl mx-auto px-4 py-8 space-y-12">
+      <!-- Sección 1 -->
+    <section class="bg-white rounded-2xl shadow-md p-6 hover:scale-105 transition duration 300">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="/static/img/logos/NeuroCanarias.png" alt="Evento 1" class="w-full md:w-48 rounded-xl " />
+        <div class="flex-1">
+        <h3 class="text-black font-bold">29 de Noviembre de 2024, 15:30 (UTC+01:00)</h3>
+          <h2 class="text-2xl font-bold text-[#4672b5]  mb-2" >
+            <a href="infoevento1.html" class="hover:underline" target="_blank">NeurOlimpiadas Canarias 2024</a>
+          </h2>
+          <p class="mb-4">Llegan las NeurOlimpiadas Canarias 2024</p>
+          <div class="bg-gray-100 rounded-md p-4 shadow-inner relative">
+            <h3 class="text-lg font-semibold mb-2">Equipos Participantes:</h3><span class=""><button class="absolute top-2 right-2 text-black font-bold" 
+            onclick="mostrarEquipos(this)">+</button></span>
+            <ul  class="lista-equipos list-disc pl-6 space-y-1 hidden">
+              <!-- Equipos -->
+               <li>Equipo 1</li>
+               <li>Equipo 2</li>
+               <li>Equipo 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 2 -->
+    <section class="bg-white rounded-2xl shadow-md p-6 hover:scale-105 transition duration 300">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="RUTA IMAGEN" alt="Evento 2" class="w-full md:w-48 rounded-xl shadow-md" />
+        <div class="flex-1">
+          <h3 class="text-black font-bold">25 de Mayo de 2025, 16:00 (UTC+01:00)</h3>
+          <h2 class="text-2xl font-bold text-[#4672b5] mb-2 ">Evento 2</h2>
+          <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at fermentum libero. Nulla facilisi. Sed ut nisl eget sem sodales varius.</p>
+          <div class="bg-gray-100 rounded-md p-4 shadow-inner relative">
+            <h3 class="text-lg font-semibold mb-2">Equipos Participantes:</h3><span class=""><button class="absolute top-2 right-2 text-black font-bold" 
+            onclick="mostrarEquipos(this)">+</button></span>
+            <ul class="lista-equipos list-disc pl-6 space-y-1 hidden">
+              <!-- Equipos -->
+               <li>Equipo 1</li>
+               <li>Equipo 2</li>
+               <li>Equipo 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 3 -->
+    <section class="bg-white rounded-2xl shadow-md p-6 hover:scale-105 transition duration 300">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="RUTA IMAGEN" alt="Evento 3" class="w-full md:w-48 rounded-xl shadow-md" />
+        <div class="flex-1">
+          <h3 class="text-black font-bold">25 de Mayo de 2025, 16:00 (UTC+01:00)</h3>
+          <h2 class="text-2xl font-bold text-[#4672b5] mb-2">Evento 3</h2>
+          <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin at fermentum libero. Nulla facilisi. Sed ut nisl eget sem sodales varius.</p>
+          <div class="bg-gray-100 rounded-md p-4 shadow-inner relative">
+            <h3 class="text-lg font-semibold mb-2">Equipos Participantes:</h3><span class=""><button class="absolute top-2 right-2 text-black font-bold" 
+            onclick="mostrarEquipos(this)">+</button></span>
+            <ul  class="lista-equipos list-disc pl-6 space-y-1 hidden">
+              <!-- Equipos -->
+               <li>Equipo 1</li>
+               <li>Equipo 2</li>
+               <li>Equipo 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 4 -->
+    <section class="bg-white rounded-2xl shadow-md p-6 hover:scale-105 transition duration 300">
+      <div class="flex flex-col md:flex-row items-center gap-6">
+        <img src="RUTA IMAGEN" alt="Evento 4" class="w-full md:w-48 rounded-xl shadow-md" />
+        <div class="flex-1">
+          <h3 class="text-black font-bold">25 de Mayo de 2025, 16:00 (UTC+01:00)</h3>
+          <h2 class="text-2xl text-[#4672b5] font-bold mb-2">Evento 4</h2>
+          <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at gravida ligula, in hendrerit libero. Integer porttitor, enim non luctus suscipit.</p>
+          <div class="bg-gray-100 rounded-md p-4 shadow-inner relative">
+            <h3 class="text-lg font-semibold mb-2">Equipos Participantes:</h3><span class=""><button class="absolute top-2 right-2 text-black font-bold" 
+            onclick="mostrarEquipos(this)">+</button></span>
+            <ul class="lista-equipos list-disc pl-6 space-y-1 hidden">
+              <!-- Equipos -->
+               <li>Equipo 1</li>
+               <li>Equipo 2</li>
+               <li>Equipo 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section> 
+    </div>
+     <div id="footer-container"></div>
+
+     <script>
+        function mostrarEquipos(boton){
+            const contenedor = boton.closest("div");
+            const lista = contenedor.querySelector(".lista-equipos");
+
+            if (lista) {
+                lista.classList.toggle("hidden");
+                boton.textContent = lista.classList.contains("hidden") ? "+" : "−";
+            }
+        }
+     </script>
+
+</body>        
+</html>     
