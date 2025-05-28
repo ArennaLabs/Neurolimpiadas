@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Info Evento | Neurolimpiadas</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/static/img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Neurolimpiadas" />
+  <link rel="manifest" href="/static/img/favicon/site.webmanifest" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script></head>
+  <script async src="//www.instagram.com/embed.js"></script>
+  <!-- Cargar Componentes -->
+   <script src="/static/js/loadComponents.js"></script>
+  <style>
+    .neurolimpiadas-font{
+      color: white;
+    }
+  </style>
+  
+</head>
+
+
+<body>
+    <!-- Navbar -->
+    <div id="navbar-container"></div>
+    <!-- Seccion Principal -->
+    <section class="bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4 py-8 space-y-10">
+
+            <!-- Fila: Información + Cartel -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            
+            <!-- Información a la izquierda -->
+            <div class="bg-white rounded-2xl  p-6 space-y-4">
+                <h2 id="titulo" class="text-3xl font-bold text-[#6ca9df]"></h2>
+                <p id="descripcion" class="text-gray-700"></p>
+                <ul class="list-disc pl-5 space-y-1 text-black font-bold">
+                <li>Fecha: <a id="fecha"></a></li>
+                <li>Lugar: <a id="lugar"></a></li>
+                <li>Duración: <a id="duracion"></a></li>
+                <li>Organizador: <a id="organizador"></a></li>
+                <li>Actividades: </li>
+                </ul>
+                <div class="h-px w-full bg-[#6ca9df]"></div>
+                <div class="flex items-center justify-between">
+                    <span class="neurolimpiadas-font text-black text-lg font-bold">Primer Día</span>
+                    <button onclick="toggleDetails('details-1')" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
+                </div>
+                <div id="details-1" class="overflow-hidden max-h-0 opacity-0 transition-max"></div>
+                <div class="h-px w-full bg-[#6ca9df] "></div>
+                <div class="flex items-center justify-between">
+                    <span class="neurolimpiadas-font text-black text-lg font-bold">Segundo Día</span>
+                    <button onclick="toggleDetails('details-2')" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
+                </div>
+                <div id="details-2" class="overflow-hidden max-h-0 opacity-0 transition-max"></div>
+                <div class="h-px w-full bg-[#6ca9df] "></div>
+                <div class="flex items-center justify-between">
+                    <span class="neurolimpiadas-font text-black text-lg font-bold">Tercer Día</span>
+                    <button onclick="toggleDetails('details-3')" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
+                </div>
+                <div id="details-3" class="overflow-hidden max-h-0 opacity-0 transition-max"></div>
+                <div class="h-px w-full bg-[#6ca9df] "></div>
+
+            </div>
+
+                <!-- Cartel del evento a la derecha -->
+                <div class="rounded-2xl overflow-hidden w-full bg-white text-center">
+                    <img src="/static/img/eventos/la_palma/cartel2.jpg" alt="Cartel del evento" class="w-full h-auto object-contain" />
+                    <span class="neurolimpiadas-font text-[#6ca9df] text-2xl font-bold" id="campeonato"></span><br>
+                    <span class ="neurolimpiadas-font text-[#6ca9df] text-2xl font-bold" id="year"></span><br>
+                    <span class="neurolimpiadas-font text-[#6ca9df] text-4xl font-bold" id="date"></span><br>
+                    <span class="neurolimpiadas-font text-[#6ca9df] text-2xl font-bold" id="month"></span><br>
+                    <span class="neurolimpiadas-font text-[#6ca9df] font-bold" id="lugar"></span><br>
+                    <span class="neurolimpiadas-font text-[#6ba9e1] font-bold text-xl" id="municipio"></span><br> 
+                    <div class="grid grid-cols-3   items-start w-full">
+                    <span class="neurolimpiadas-font text-[#6ba9e1] font-bold text-xl ml-10">Organiza </span>
+                    <div></div>
+                    <span class="neurolimpiadas-font text-[#6ba9e1] font-bold text-xl mr-20">Colabora </span><br>
+                    </div>
+                    <div class="grid grid-cols-5 items-start w-full">
+                        <img id="org1"  class="w-4/5 h-auto object-contain ml-3 mb-5"/>
+                        <img id="org2"  class="w-3/5 h-auto object-contain ml-3"/>
+                        <div></div>
+                        <img id="colab1" class="w-2/5 h-auto object-contain"/>
+                        <img id="colab2" class="w-3/4 h-auto object-contain"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- Colaboradores -->
+<section class="w-full bg-white py-10">
+    <div class="max-w-full px-8 md:px-24">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
+                <h2 class="font-medium text-lg tracking-wider">COLABORADORES</h2>
+            </div>
+        </div>
+
+        <div class="h-px w-full bg-gray-200 mb-8"></div>
+        
+        <!-- Logos de ayuntamientos -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8" id="colaboradores">
+          <!-- Se añaden dinámicamente-->  
+        </div>
+    </div>
+    
+</section>
+<!-- Patrocinadores -->
+  <section class="w-full py-10 bg-gray-50">
+    <div class="max-w-full px-8 md:px-24">
+
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+            <div class="flex items-center mb-4 md:mb-0">
+                <div class="w-1 h-6 bg-[#4672b5] mr-3"></div>
+                <h2 class="font-medium text-lg tracking-wider">PATROCINADORES</h2>
+            </div>
+        </div>
+
+        <div class="h-px w-full bg-gray-200 mb-8"></div>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div class="flex justify-center items-center">
+                <img src="" alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="" alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="" alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+            <div class="flex justify-center items-center">
+                <img src="" alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+            </div>
+           
+        </div>
+    </div>
+  </section>
+
+    <!-- Imagen de localización debajo -->
+    <div class="bg-white rounded-2xl p-6 flex justify-center">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.054043163457!2d-17.76789892386124!3d28.688838281520315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6beeaaeb199a7d%3A0xbbb15352b45c5bda!2sPabell%C3%B3n%20Multiusos%20Roberto%20Rodr%C3%ADguez%20Estrello!5e0!3m2!1ses!2ses!4v1748354363742!5m2!1ses!2ses" 
+        class="w-full max-w-2xl h-[450px] rounded-xl shadow-lg"
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+
+       
+     <!--Imagen Modal Auxiliar -->  
+    <div id="imageModal" class="fixed inset-0 bg-black bg-opacity-75 flex justify-center items-center z-50 hidden">
+      <img id="modalImg" class="max-w-6xl max-h-[100vh] rounded shadow-lg">
+      <button onclick="hideImageModal()" class="absolute top-4 right-4 text-white text-4xl font-bold">&times;</button>
+    </div>
+
+
+    <!-- Footer -->
+   <div id="footer-container"></div>
+
+    
+
+    <script>
+    // Función para obtener el ID del evento de la URL
+        function getEventoId() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('id');
+        }
+    // Función para cargar y mostrar la información del evento
+        async function cargarInformacionEvento() {
+    try {
+        const response = await fetch('/static/json/informacion_eventos.json');
+        const data = await response.json();
+
+        const eventoID = getEventoId(); // ejemplo: "neurolimpiadas2024"
+
+        const evento = data.eventos;
+
+        if (!evento || evento.id !== eventoID) {
+            console.error('Evento no encontrado');
+            return;
+        }
+
+        // Actualizar título de la página
+        document.title = `${evento.titulo} | Neurolimpiadas`;
+
+        // Actualizar información básica
+        document.getElementById('titulo').textContent = evento.titulo;
+        document.getElementById('descripcion').textContent = evento.descripcion;
+        document.getElementById('fecha').textContent = evento.fecha;
+        document.getElementById('lugar').textContent = evento.lugar;
+        document.getElementById('duración').textContent = evento.duracion; 
+        document.getElementById('organizador').textContent = evento.organizador;
+        document.getElementById('campeonato').textContent = evento.campeonato;
+        document.getElementById('year').textContent = evento.year;
+        document.getElementById('date').textContent = evento.date;
+        document.getElementById('month').textContent = evento.month;
+        document.getElementById('municipio').textContent = evento.municipio;
+
+        // Actualizar imágenes 
+        document.getElementById('org1').src = evento.imagenes.org1;
+        document.getElementById('org2').src = evento.imagenes.org2;
+        document.getElementById('colab1').src = evento.imagenes.colab1;
+        document.getElementById('colab2').src = evento.imagenes.colab2;
+
+        // Actualizar detalles día a día 
+        ['dia1', 'dia2', 'dia3'].forEach((dia, i) => {
+            const contenedor = document.getElementById(`details-${i + 1}`);
+            contenedor.innerHTML = evento.evento[dia].map(item => `
+                <span class="neurolimpiadas-font text-[#6ca9df] text-base font-bold">${item.hora}</span>
+                <span class="neurolimpiadas-font text-black text-base font-bold">${item.actividad}</span><br>
+            `).join('');
+        });
+
+        // Colaboradores
+        const colaboradores = document.getElementById('logos');
+        colaboradores.innerHTML = ''; // limpiar contenido antes de añadir
+
+        evento.colaboradores.forEach(logo => {
+            const div = document.createElement('div');
+            div.classList.add('flex', 'justify-center', 'items-center');
+
+            const imagen = document.createElement('img');
+            imagen.src = logo.src;
+            imagen.alt = logo.alt;
+            imagen.classList.add('h-24', 'w-auto', 'grayscale', 'hover:grayscale-0', 'transition', 'duration-300');
+
+            div.appendChild(imagen);
+            colaboradores.appendChild(div);
+        });
+
+    } catch (error) {
+        console.error('Error al cargar la información del evento:', error);
+    }
+}
+
+    </script>
+</body>
+</html>
