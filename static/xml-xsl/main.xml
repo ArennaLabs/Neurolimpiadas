@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="main.xsl"?>
+<torneo>
+  <ronda>
+    <partido ronda="1" id="1">
+      <equipo id="1" tipo="pending" nombre="Equipo 1" puntos="0" imagen="../img/camisas/antigua.svg"/>
+      <equipo id="2" tipo="pending" nombre="Equipo 2" puntos="0" imagen="../img/camisas/elrosario.svg"/>
+    </partido>
+    <partido ronda="1" id="2">
+      <equipo id="3" tipo="pending" nombre="Equipo 3" puntos="0" imagen="../img/camisas/pajara.svg"/>
+      <equipo id="4" tipo="pending" nombre="Equipo 4" puntos="0" imagen="../img/camisas/guiadeisora.svg"/>
+    </partido>
+    <partido ronda="1" id="3">
+      <equipo id="5" tipo="pending" nombre="Equipo 5" puntos="0" imagen="../img/camisas/puerto_rosario.svg"/>
+      <equipo id="6" tipo="pending" nombre="Equipo 6" puntos="0" imagen="../img/camisas/tuineje.svg"/>
+    </partido>
+    <partido ronda="1" id="4">
+      <equipo id="7" tipo="pending" nombre="Equipo 7" puntos="0" imagen="../img/camisas/arafo.svg"/>
+      <equipo id="8" tipo="pending" nombre="Equipo 8" puntos="0" imagen="../img/camisas/guimar.svg"/>
+    </partido>
+
+  </ronda>
+  <ronda>
+    <partido ronda="2" id="1">
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+    </partido>
+    <partido ronda="2" id="2">
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+    </partido>
+  
+
+  </ronda>
+  <ronda>
+    <partido ronda="3" id="1">
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+    </partido>
+  </ronda>
+
+  <ronda final="final">
+    <partido ronda="4" id="1">
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+    </partido>
+  </ronda>
+
+<ronda>
+    <partido ronda="3" id="2">
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+    </partido>
+  </ronda>
+
+  <ronda>
+      <partido ronda="2" id="3">
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+    </partido>
+    <partido ronda="2" id="4">
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+      <equipo id="--" tipo="--" nombre="--" puntos="--" imagen="../img/camisas/placeholder.svg"/>
+    </partido>
+    </ronda>
+  <ronda>
+      <partido ronda="1" id="5">
+      <equipo id="9" tipo="pending" nombre="Equipo 9" puntos="0" imagen="../img/camisas/antigua.svg"/>
+      <equipo id="10" tipo="pending" nombre="Equipo 10" puntos="0" imagen="../img/camisas/elrosario.svg"/>
+    </partido>
+    <partido ronda="1" id="6">
+      <equipo id="11" tipo="pending" nombre="Equipo 11" puntos="0" imagen="../img/camisas/pajara.svg"/>
+      <equipo id="12" tipo="pending" nombre="Equipo 12" puntos="0" imagen="../img/camisas/guiadeisora.svg"/>
+    </partido>
+    <partido ronda="1" id="7">
+      <equipo id="13" tipo="pending" nombre="Equipo 13" puntos="0" imagen="../img/camisas/puerto_rosario.svg"/>
+      <equipo id="14" tipo="pending" nombre="Equipo 14" puntos="0" imagen="../img/camisas/tuineje.svg"/>
+    </partido>
+    <partido ronda="1" id="8">
+      <equipo id="15" tipo="pending" nombre="Equipo 15" puntos="0" imagen="../img/camisas/arafo.svg"/>
+      <equipo id="16" tipo="pending" nombre="Equipo 16" puntos="0" imagen="../img/camisas/guimar.svg"/>
+    </partido>
+  </ronda>
+
+</torneo>
