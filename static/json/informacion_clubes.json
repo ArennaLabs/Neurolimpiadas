@@ -433,6 +433,2758 @@
           "imagen": "/static/img/image.jpg"
         }
       ]
+    },
+    {
+      "id": 4,
+      "nombre": "Chinguaro",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Güímar"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#f29d57",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "nombre": "Acaymo",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Güímar"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#f29d57",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 6,
+      "nombre": "Arena",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Güímar"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#f29d57",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 7,
+      "nombre": "Costeras",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Güímar"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#f29d57",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 8,
+      "nombre": "Arguayo 1",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santiago del Teide"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#4672b5",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 9,
+      "nombre": "Las Viudas 1",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santiago del Teide"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#4672b5",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 10,
+      "nombre": "Estrella",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santiago del Teide"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#4672b5",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 11,
+      "nombre": "Coral",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santiago del Teide"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#4672b5",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 12,
+      "nombre": "Vengadoras",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Arafo"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#d55ea7",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 13,
+      "nombre": "Guerreras",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Arafo"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#d55ea7",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 14,
+      "nombre": "Indecisas",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Arafo"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#d55ea7",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 15,
+      "nombre": "Chachis",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Arafo"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#d55ea7",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 16,
+      "nombre": "Marejada Añavingo",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Arafo"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#d55ea7",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 17,
+      "nombre": "Risco Azul",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Arafo"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#d55ea7",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 18,
+      "nombre": "Las Guays",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "La Victoria"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#86b050",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 19,
+      "nombre": "San Juan: Reinas valientes",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "La Victoria"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#86b050",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 20,
+      "nombre": "Arroyadoras",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "La Victoria"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#86b050",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 21,
+      "nombre": "Tagoro",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "La Victoria"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#86b050",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "nombre": "La Tosca: Piña",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santa Úrsula"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#bf3131",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 23,
+      "nombre": "Corujera",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santa Úrsula"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#bf3131",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 24,
+      "nombre": "Guayota",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santa Úrsula"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#bf3131",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 25,
+      "nombre": "L@s Yeyes",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santa Úrsula"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#bf3131",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 26,
+      "nombre": "Los Cipreses",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Santa Úrsula"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#bf3131",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 27,
+      "nombre": "Charco El Pino",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Granadilla"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#8110e4",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 28,
+      "nombre": "Hinojeros",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Granadilla"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#8110e4",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 29,
+      "nombre": "El médano",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Granadilla"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#8110e4",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 30,
+      "nombre": "El Salto",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Granadilla"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#8110e4",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 31,
+      "nombre": "El Desierto",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Granadilla"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#8110e4",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "nombre": "Cardones",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Granadilla"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#8110e4",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 33,
+      "nombre": "Chimiche",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Granadilla"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#8110e4",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "nombre": "Monteji",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Guia de Isora"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#c3dfe2",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "nombre": "Las Chicas de Tingara",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Guia de Isora"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#c3dfe2",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 36,
+      "nombre": "Alacalá: Las Salinas",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Guia de Isora"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#c3dfe2",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 37,
+      "nombre": "Chio: Tagara",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Guia de Isora"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#c3dfe2",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 38,
+      "nombre": "Chiguergue: Intocables",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Guia de Isora"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#c3dfe2",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 39,
+      "nombre": "Las Chicas de Guia",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Guia de Isora"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#c3dfe2",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 40,
+      "nombre": "Las Retamas",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "Guia de Isora"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#c3dfe2",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 41,
+      "nombre": "Lomo Pelado",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "El Rosario"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#e6ba38",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 42,
+      "nombre": "Noveleras",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "El Rosario"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#e6ba38",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 43,
+      "nombre": "Poderosas",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "El Rosario"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#e6ba38",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 44,
+      "nombre": "Neuronas",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "El Rosario"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#e6ba38",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 45,
+      "nombre": "Las Élites",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "El Rosario"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#e6ba38",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
+    },
+    {
+      "id": 46,
+      "nombre": "Madroño",
+      "ubicacion": {
+        "isla": "Tenerife",
+        "municipio": "El Rosario"
+      },
+      "pabellon": {
+        "nombre": "Por Definir",
+        "direccion": "Por Definir",
+        "capacidad": 0,
+        "imagen": ""
+      },
+      "imagenes": {
+        "logo": "/static/img/team.png",
+        "banner": ""
+      },
+      "colores": {
+        "principal": "#e6ba38",
+        "secundario": "#d9d9d9"
+      },
+      "plantilla": {
+        "jugadores": [
+          {
+            "numero": 1,
+            "nombre": "Persona",
+            "edad": 67,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 2,
+            "nombre": "Persona",
+            "edad": 75,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 3,
+            "nombre": "Persona",
+            "edad": 70,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "numero": 4,
+            "nombre": "Persona",
+            "edad": 69,
+            "foto": "/static/img/jugador.png"
+          }
+        ],
+        "entrenadores": [
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Primera entrenadora",
+            "edad": 65,
+            "foto": "/static/img/jugador.png"
+          },
+          {
+            "nombre": "Entrenador/@",
+            "cargo": "Segundo entrenador",
+            "edad": 72,
+            "foto": "/static/img/jugador.png"
+          }
+        ]
+      }
     }
   ]
 }

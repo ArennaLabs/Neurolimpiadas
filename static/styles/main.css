@@ -1,0 +1,188 @@
+/* Honestamente el css mas desordenado que he visto en mi vida, la base del bracket esta pillada de google originalmente era un completo lio de tipos de clases de html y css */
+/* lo he simplificado a tope (y mira que sigue siendo un lio) a si que probablemente queden muchas cosas que no sirvan para nada :33 */
+html, body {
+  height: 100%;
+  overflow-y: hidden;
+}
+.theme {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.bracket {
+  /* padding: 40px; */
+  margin: 5px;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  max-width: 400px;
+  justify-content: space-around;
+  align-content: center;
+}
+.match {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 240px;
+  max-width: 500px;
+  height: 200px;
+  margin: 12px 24px 12px 0;
+}
+.match .team {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border: 1px solid black;
+  position: relative;
+}
+
+.match-lines {
+  display: block;
+  position: absolute;
+  top: 50%;
+  bottom: 0;
+  margin-top: 0px;
+  right: -1px;  
+  border-radius: 2px;
+}
+.match-lines .line {
+  background: red;
+  position: absolute;
+}
+.match-lines .line.one {
+  height: 2px;
+  width: 12px;
+}
+.line.two {
+  width: 2px;
+  left: 11px;
+}
+.match-lines.alt {
+  left: -12px;
+  width: 100px;
+}
+.match:nth-child(even) .match-lines .line.two {
+  transform: translate(0, -100%);
+}
+.column:first-child .match-lines.alt {
+  display: none;
+}
+.column:last-child .match-lines {
+  display: none;
+}
+.column:last-child .match-lines.alt {
+  display: block;
+}
+.disable-borders {
+  border-width: 0px !important;
+}
+.disable-borders .team {
+  border-width: 0px !important;
+}
+.disable-seperator .match-top {
+  border-bottom: 0px !important;
+}
+.disable-seperator .match-bottom {
+  border-top: 0px !important;
+}
+
+.theme-dark .match-lines .line {
+  background: #4672b5;
+}
+.theme-dark .team {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0);
+  color: #000000;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+.theme-dark .match .seed {
+  font-size: 12px;
+  min-width: 10px;
+}
+#loser {
+  background: #e26060;
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0);
+  z-index: 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: all;
+}
+#winner {
+  background: #46b54c;
+  border-color: rgba(0, 0, 0, 0);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  z-index: 10;   
+  pointer-events: all;
+}
+#-- {
+  background: #dfdfdf;
+  color: #000000;
+  border-color: rgba(0, 0, 0, 0);
+  z-index: 0;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+#winner .score{
+  color: white;
+}
+img {
+  height: 70px;
+  width: 20%;
+  margin-left: 5%;
+}
+.name {
+  font-size: 22;
+  width: 80%;
+  margin-left: 5%;
+}
+#hola {
+  text-align: center;
+  width: 20%;
+  margin-right: 15px;
+  font-size:50px;
+}
+.team:hover {
+  background-color: #4672b5;
+  transform: scale(1.05);
+  cursor: pointer;
+  z-index: 100000;
+}
+#final {
+  justify-content: start;
+}
+
+@media (max-width: 768px) {
+  html body {
+    height: 130%;
+    overflow-y: scroll !important;
+
+  }
+  .column {
+    max-width: 100%;
+  }
+
+
+  .seed {
+    display: none;
+  }
+  .name {
+    font-size: auto;
+    
+  }
+
+  #hola {
+    font-size: 24px;
+  }
+  
+}
