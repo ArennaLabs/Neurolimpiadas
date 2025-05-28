@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neurolimpiadas</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/static/img/favicon/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon/favicon.svg" />
+  <link rel="shortcut icon" href="/static/img/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Neurolimpiadas" />
+  <link rel="manifest" href="/static/img/favicon/site.webmanifest" />
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&display=swap"/>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel=""/>
+<script src="https://kit.fontawesome.com/6b1dbe6118.js" crossorigin="anonymous"></script>
+</head>
+  <script async src="//www.instagram.com/embed.js"></script>
+  <!-- Cargar Componentes -->
+   <script src="../static/js/loadComponents.js"></script>
+<style>
+  html body {
+    overflow-x: hidden;
+  }
+
+  .collapsible {
+    background: #4672b5;
+    background: linear-gradient(135deg, #4672b5 0%, #3a5d94 100%);
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    border: 0px;
+    border-radius: 10px;
+  }
+  .collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  .active:after {
+    content: "\2212";
+  }
+  .active, .collapsible:hover {
+    background-color: #3949a7;
+  }
+  .content {
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  .content iframe {
+    width: 100%;
+    height: 120vh;
+    border: 0;
+    display: block;
+    margin: 0;
+    padding: 0;
+  }
+
+
+  #torneos {
+    width: 95%;
+    margin: 0 auto;
+    min-height: 49vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    align-items: auto;
+  }
+  .linea {
+    height: 4px;
+    width: 100%;
+    background: #3a5d94;
+    background: linear-gradient(135deg, #4c79c2 0%, #4672b5 100%);
+  }
+  #footer-container {
+
+  bottom:0;
+  width:100%;
+  }
+
+  @media (max-width: 600px) {
+    .content {
+      max-height: auto;
+    }
+  }
+</style>
+ <script src="https://cdn.tailwindcss.com"></script>
+</head>
+  <body>
+    <div id="navbar-container" media="(max-width: 600px)"></div>
+
+
+    <div class="centro" style="height:30px;"></div>
+      <div class=" shadow-md sm:rounded-lg mt-4 mb-4" id="torneos">
+        <div class="flex items-center justify-center bg-white p-4">
+          <img src="../static/img/neurolimpiadas.png" alt="Neurolimpiadas" class="h-auto w-auto max-h-[100px]">
+        </div>
+        <table class="min-w-full">
+          <div class="linea"></div>
+            <tbody id="clasificaciones-body">
+              <th>
+                <div class="max-w-7xl px-4">
+                  <h2 class="text-2xl font-bold justify-self-start m-4">2024</h2>
+                <div class="border-b-4 border-[#4672b5] w-12"></div>
+              </th>
+              <tr>
+              <th colspan="8" class="px-5 py-4 text-sm font-semibold"><button class="collapsible">Torneo josemanolito 2024</button>
+                <div class="content">
+                  <p><iframe src="../static/xml-xsl/main.xml" style="width: 100%; height: 80vh; border: none;"></iframe></p>
+                </div>
+              </th>
+            </tr>
+              <tr>
+              <th colspan="8" class="px-5 py-4 text-sm font-semibold"><button class="collapsible">Torneo josemanolito 2024</button>
+                <div class="content">
+                  <p><iframe src="../static/xml-xsl/main.xml" width="200%" height="200%" style="border: none;"></iframe></p>
+                </div>
+              </th>
+            </tr>
+              <th>
+                <div class="max-w-7xl px-4">
+                  <h2 class="text-2xl font-bold justify-self-start m-4">2025</h2>
+                <div class="border-b-4 border-[#4672b5] w-12 "></div>
+              </th>           
+            <tr>
+              <th colspan="8" class="px-5 py-4 text-sm font-semibold"><button class="collapsible">Torneo josepepito 2025</button>
+                <div class="content">
+                  <p><iframe src="../static/xml-xsl/main.xml" width="100%" height="100%" style="border: none;"></iframe></p>
+                </div>
+              </th>
+            </tr>
+          </tbody>
+        </table>
+    </div>
+
+    <div style="height:30px;"></div>
+
+    <div id="footer-container"></div>
+
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function() {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.maxHeight){
+            content.style.maxHeight = null;
+          } else {
+            content.style.maxHeight = content.scrollHeight + "px";
+          } 
+        });
+      }
+document.querySelector('input[type="text"]').addEventListener('input', function () {
+    const searchTerm = this.value.toLowerCase();
+    const rows = document.querySelectorAll('#clasificaciones-body tr');
+
+    let currentYearHeader = null;
+    let yearHasVisibleTournament = false;
+    const yearVisibilityMap = new Map();
+
+    // Primera pasada: ocultar torneos según búsqueda
+    rows.forEach(row => {
+      const button = row.querySelector('button.collapsible');
+      if (button) {
+        const title = button.textContent.toLowerCase();
+        const isMatch = title.includes(searchTerm);
+        row.style.display = isMatch ? '' : 'none';
+
+        if (currentYearHeader) {
+          if (isMatch) {
+            yearVisibilityMap.set(currentYearHeader, true);
+          }
+        }
+      } else {
+        // Este row no tiene botón -> probablemente es encabezado de año
+        currentYearHeader = row;
+        yearVisibilityMap.set(currentYearHeader, false); // por ahora lo marcamos como invisible
+      }
+    });
+
+    // Segunda pasada: ocultar o mostrar encabezados de año según si tienen torneos visibles
+    yearVisibilityMap.forEach((isVisible, yearRow) => {
+      yearRow.style.display = isVisible ? '' : 'none';
+    });
+  });
+
+   window.addEventListener("DOMContentLoaded", () => {
+    const iframes = document.querySelectorAll("iframe");
+    iframes.forEach(iframe => {
+      iframe.addEventListener("load", () => {
+        try {
+          const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+          const scrollHeight = iframeDoc.documentElement.scrollHeight;
+          iframe.style.height = scrollHeight + "px";
+        } catch (e) {
+          console.warn("No se pudo ajustar iframe por política de mismo origen.");
+        }
+      });
+    });
+  });
+    </script>
+  </body>
+</html>
