@@ -1,119 +1,60 @@
 {
-  "eventos": {
-    "id":"neurolimpiadas2024",
-    "titulo": "Llegan las NeurOlimpiadas Canarias 2024",
-    "descripcion": "La Palma será la sede de esta gran cita que fomenta el envejecimiento activo a través de actividades físicas y mentales para mayores de las islas. Del 29 de noviembre al 1 de diciembre, el Pabellón Multiusos Roberto Rodríguez Estrello en Santa Cruz de La Palma acogerá competiciones, repescas y emocionantes finales, cerrando con la entrega de trofeos en una gran ceremonia de clausura.",
-    "fecha": "29 Noviembre - 1 Diciembre 2024",
-    "lugar": "Pabellón Roberto Rodríguez Estrello y Ciudad Deportiva Miraflores",
-    "municipio": "Santa Cruz de La Palma",
-    "duracion": "3 días",
-    "organizador": "Neurolimpiadas",
-    "campeonato":"Campeonato de Canrias",
-    "year":"2024",
-    "date":"29-01",
-    "month":"NOV DIC",
-    "imagenes": {
+  "eventos": [
+    {
+      "id": "neurolimpiadas2024",
+      "titulo": "Llegan las NeurOlimpiadas Canarias 2024",
+      "descripcion": "La Palma será la sede de esta gran cita que fomenta el envejecimiento activo a través de actividades físicas y mentales para mayores de las islas. Del 29 de noviembre al 1 de diciembre, el Pabellón Multiusos Roberto Rodríguez Estrello en Santa Cruz de La Palma acogerá competiciones, repescas y emocionantes finales, cerrando con la entrega de trofeos en una gran ceremonia de clausura.",
+      "fecha": "2024-11-29 al 2024-12-01",
+      "lugar": "Pabellón Roberto Rodríguez Estrello y Ciudad Deportiva Miraflores",
+      "lugar2": "Pabellón Roberto Rodríguez Estrello y Ciudad Deportiva Miraflores",
+      "municipio": "Santa Cruz de La Palma",
+      "duracion": "3 días",
+      "date":"29 01",
+      "month":"NOV - DIC",
+      "organizador": "Neurolimpiadas",
+      "campeonato": "Campeonato de Canarias",
+      "year": "2024",
+      "imagenes": {
         "org1": "/static/img/logos/gobcan.png",
         "org2": "/static/img/logos/Neurolimpiadas.png",
         "colab1": "/static/img/logos/cabildoLaPalma.png",
-        "colab2": "/static/img/logos/santaCruzdeLaPalma.png"
+        "colab2": "/static/img/logos/santaCruzdeLaPalma.png",
+        "patro1": "/static/img/logos/arenna.png"
       },
-    "colaboradores":[
-        {
-            "src":"/static/img/colabora/1.png", 
-            "alt":"Granadilla de Abona"            
-        },
-        {
-            "src":"/static/img/colabora/2.png", 
-            "alt":"Villa de Mazo"            
-        },
-        {
-            "src":"/static/img/colabora/3.png", 
-            "alt":"Puerto del Rosario"            
-        },
-        {
-            "src":"/static/img/colabora/4.png", 
-            "alt":"Arrecife"            
-        },
-        {
-            "src":"/static/img/colabora/5.png", 
-            "alt":"Santiago del Teide"            
-        },
-        {
-            "src":"/static/img/colabora/6.png", 
-            "alt":"Betancuria"            
-        },
-        {
-            "src":"/static/img/colabora/7.png", 
-            "alt":"El Rosario"            
-        },
-        {
-            "src":"/static/img/colabora/8.png", 
-            "alt":"Los Llanos de Aridane"            
-        }
-
-        
-
-    ],
-    "evento": {
-      "dia1": [
-          {
-            "hora": "15:30 H",
-            "actividad": "Llegada al Pabellón Multiusuos Roberto Rodríguez Estrello"
-          },
-          {
-            "hora": "16:00 H",
-            "actividad": "Repesca en las pruebas de relevos, Aro Canario y Cifras de los equipos de La Isla de La Palma"
-          },
-          {
-            "hora": "18:30 H",
-            "actividad": "Ceremonia de inauguración"
-          },
-          {
-            "hora": "20:30 H",
-            "actividad": "Regreso al municipio de Origen"
-          }
+      "colaboradores": [
+        { "src": "/static/img/colabora/1.png", "alt": "Granadilla de Abona" },
+        { "src": "/static/img/colabora/2.png", "alt": "Villa de Mazo" },
+        { "src": "/static/img/colabora/3.png", "alt": "Puerto del Rosario" },
+        { "src": "/static/img/colabora/4.png", "alt": "Arrecife" },
+        { "src": "/static/img/colabora/5.png", "alt": "Santiago del Teide" },
+        { "src": "/static/img/colabora/6.png", "alt": "Betancuria" },
+        { "src": "/static/img/colabora/7.png", "alt": "El Rosario" },
+        { "src": "/static/img/colabora/8.png", "alt": "Los Llanos de Aridane" }
+      ],
+      "patrocinadores": [
+        { "src": "/static/img/logos/arenna.png", "alt": "Patrocinador" }
+      ],
+      "evento": {
+        "dia1": [
+          { "hora": "15:30", "actividad": "Llegada al Pabellón Multiusos Roberto Rodríguez Estrello" },
+          { "hora": "16:00", "actividad": "Repesca en las pruebas de relevos, Aro Canario y Cifras de los equipos de La Isla de La Palma" },
+          { "hora": "18:30", "actividad": "Ceremonia de inauguración" },
+          { "hora": "20:30", "actividad": "Regreso al municipio de origen" }
         ],
-      "dia2": [
-          {
-            "hora": "9:30 H",
-            "actividad": "Llegada al Pabellón Multiusuos Roberto Rodríguez Estrello"
-          },
-          {
-            "hora": "10:00 H",
-            "actividad": "Rondas de Clasificación al Campeonato de Canarias"
-          },
-          {
-            "hora": "11:30 H",
-            "actividad": "Repesca en la prueba de carrera de lertras de los equipos de La Isla de La Palma"
-          },
-          {
-            "hora": "14:00 H",
-            "actividad": "Almuerzo de bienvenida"
-          },
-          {
-            "hora": "16:00 H",
-            "actividad": "Regreso al municipio de Origen"
-          }
+        "dia2": [
+          { "hora": "09:30", "actividad": "Llegada al Pabellón Multiusos Roberto Rodríguez Estrello" },
+          { "hora": "10:00", "actividad": "Rondas de Clasificación al Campeonato de Canarias" },
+          { "hora": "11:30", "actividad": "Repesca en la prueba de carrera de letras de los equipos de La Isla de La Palma" },
+          { "hora": "14:00", "actividad": "Almuerzo de bienvenida" },
+          { "hora": "16:00", "actividad": "Regreso al municipio de origen" }
         ],
-      "dia3": [
-          {
-            "hora": "9:30 H",
-            "actividad": "Llegada al Pabellón Multiusuos Roberto Rodríguez Estrello"
-          },
-          {
-            "hora": "10:00 H",
-            "actividad": "Rondas Finales del Campeonato de Canarias"
-          },
-          {
-            "hora": "12:30 H",
-            "actividad": "Ceremonia de Clausura y entrega de Trofeos"
-          },
-          {
-            "hora": "14:00 H",
-            "actividad": "Regreso al municipio de Origen"
-          }
+        "dia3": [
+          { "hora": "09:30", "actividad": "Llegada al Pabellón Multiusos Roberto Rodríguez Estrello" },
+          { "hora": "10:00", "actividad": "Rondas Finales del Campeonato de Canarias" },
+          { "hora": "12:30", "actividad": "Ceremonia de Clausura y entrega de Trofeos" },
+          { "hora": "14:00", "actividad": "Regreso al municipio de origen" }
         ]
+      }
     }
-  }
+  ]
 }

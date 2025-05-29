@@ -53,19 +53,19 @@
                 <div class="h-px w-full bg-[#6ca9df]"></div>
                 <div class="flex items-center justify-between">
                     <span class="neurolimpiadas-font text-black text-lg font-bold">Primer Día</span>
-                    <button onclick="toggleDetails('details-1')" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
+                    <button onclick="toggleDetails('details-1', this)" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
                 </div>
                 <div id="details-1" class="overflow-hidden max-h-0 opacity-0 transition-max"></div>
                 <div class="h-px w-full bg-[#6ca9df] "></div>
                 <div class="flex items-center justify-between">
                     <span class="neurolimpiadas-font text-black text-lg font-bold">Segundo Día</span>
-                    <button onclick="toggleDetails('details-2')" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
+                    <button onclick="toggleDetails('details-2',this)" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
                 </div>
                 <div id="details-2" class="overflow-hidden max-h-0 opacity-0 transition-max"></div>
                 <div class="h-px w-full bg-[#6ca9df] "></div>
                 <div class="flex items-center justify-between">
                     <span class="neurolimpiadas-font text-black text-lg font-bold">Tercer Día</span>
-                    <button onclick="toggleDetails('details-3')" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
+                    <button onclick="toggleDetails('details-3',this)" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
                 </div>
                 <div id="details-3" class="overflow-hidden max-h-0 opacity-0 transition-max"></div>
                 <div class="h-px w-full bg-[#6ca9df] "></div>
@@ -79,7 +79,7 @@
                     <span class ="neurolimpiadas-font text-[#6ca9df] text-2xl font-bold" id="year"></span><br>
                     <span class="neurolimpiadas-font text-[#6ca9df] text-4xl font-bold" id="date"></span><br>
                     <span class="neurolimpiadas-font text-[#6ca9df] text-2xl font-bold" id="month"></span><br>
-                    <span class="neurolimpiadas-font text-[#6ca9df] font-bold" id="lugar"></span><br>
+                    <span class="neurolimpiadas-font text-[#6ca9df] text-xl font-bold "  id="lugar2"></span><br>
                     <span class="neurolimpiadas-font text-[#6ba9e1] font-bold text-xl" id="municipio"></span><br> 
                     <div class="grid grid-cols-3   items-start w-full">
                     <span class="neurolimpiadas-font text-[#6ba9e1] font-bold text-xl ml-10">Organiza </span>
@@ -124,18 +124,17 @@
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
             <div class="flex justify-center items-center">
-                <img alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img id ="patro1"alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img  alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img id ="patro2" alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img  alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img id ="patro3" alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
             <div class="flex justify-center items-center">
-                <img  alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+                <img id ="patro4" alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
             </div>
-           
         </div>
     </div>
   </section>
@@ -176,79 +175,107 @@
     
 
     <script>
+        
     // Función para obtener el ID del evento de la URL
         function getEventoId() {
             const params = new URLSearchParams(window.location.search);
             return params.get('id');
         }
-    // Función para cargar y mostrar la información del evento
-        async function cargarInformacionEvento() {
-    try {
-        const response = await fetch('/static/json/informacion_eventos.json');
-        const data = await response.json();
 
-        const eventoID = getEventoId(); // ejemplo: "neurolimpiadas2024"
+    // Cargar y mostrar la información del evento
+    async function cargarInformacionEvento() {
+        try {
+            const response = await fetch('/static/json/informacion_eventos.json');
+            const data = await response.json();
 
-        const evento = data.eventos;
+            const eventoID = getEventoId(); // id desde URL
+            const evento = data.eventos.find(e => e.id === eventoID);
 
-        if (!evento || evento.id !== eventoID) {
-            console.error('Evento no encontrado');
-            return;
+            if (!evento) {
+                console.error('Evento no encontrado');
+                return;
+            }
+
+            // Actualizar título de la página
+            document.title = `${evento.titulo} | Neurolimpiadas`;
+
+            // Información básica
+            document.getElementById('titulo').textContent = evento.titulo;
+            document.getElementById('descripcion').textContent = evento.descripcion;
+            document.getElementById('fecha').textContent = evento.fecha;
+            document.getElementById('lugar').textContent = evento.lugar;
+            document.getElementById('lugar2').textContent = evento.lugar2;
+            document.getElementById('duracion').textContent = evento.duracion;
+            document.getElementById('organizador').textContent = evento.organizador;
+
+            // Cartel del evento
+            document.getElementById('campeonato').textContent = evento.campeonato;
+            document.getElementById('year').textContent = evento.year;
+            document.getElementById('date').textContent = evento.date;
+            document.getElementById('month').textContent = evento.month;
+            document.getElementById('municipio').textContent = evento.municipio;
+
+            // Imágenes de organizadores/colaboradores
+            document.getElementById('org1').src = evento.imagenes.org1;
+            document.getElementById('org2').src = evento.imagenes.org2;
+            document.getElementById('colab1').src = evento.imagenes.colab1;
+            document.getElementById('colab2').src = evento.imagenes.colab2;
+            document.getElementById('patro1').src = evento.imagenes.patro1;
+            document.getElementById('patro2').src = evento.imagenes.patro1;
+            document.getElementById('patro3').src = evento.imagenes.patro1;
+            document.getElementById('patro4').src = evento.imagenes.patro1;
+
+
+            // Actividades por día
+            ['dia1', 'dia2', 'dia3'].forEach((dia, i) => {
+                const contenedor = document.getElementById(`details-${i + 1}`);
+                if (evento.evento[dia]) {
+                    contenedor.innerHTML = evento.evento[dia].map(item => `
+                        <div class="mb-1">
+                            <span class="neurolimpiadas-font text-[#6ca9df] text-base font-bold">${item.hora}</span> - 
+                            <span class="neurolimpiadas-font text-black text-base font-bold">${item.actividad}</span>
+                        </div>
+                    `).join('');
+                }
+            });
+
+            // Colaboradores
+            const contenedorColabs = document.getElementById('colaboradores');
+            contenedorColabs.innerHTML = '';
+            evento.colaboradores.forEach(logo => {
+                const div = document.createElement('div');
+                div.className = 'flex justify-center items-center';
+
+                const img = document.createElement('img');
+                img.src = logo.src;
+                img.alt = logo.alt || 'Colaborador';
+                img.className = 'h-24 w-auto grayscale hover:grayscale-0 transition duration-300';
+
+                div.appendChild(img);
+                contenedorColabs.appendChild(div);
+            });
+
+        } catch (error) {
+            console.error('Error al cargar la información del evento:', error);
         }
+    }
 
-        // Actualizar título de la página
-        document.title = `${evento.titulo} | Neurolimpiadas`;
+    document.addEventListener('DOMContentLoaded', cargarInformacionEvento);
+    //Funcion para habilitar  los botones de ver mas y menos
+    function toggleDetails(id, btn = null) {
+    const element = document.getElementById(id);
+    const isOpen = element.classList.contains('open');
 
-        // Actualizar información básica
-        document.getElementById('titulo').textContent = evento.titulo;
-        document.getElementById('descripcion').textContent = evento.descripcion;
-        document.getElementById('fecha').textContent = evento.fecha;
-        document.getElementById('lugar').textContent = evento.lugar;
-        document.getElementById('duración').textContent = evento.duracion; 
-        document.getElementById('organizador').textContent = evento.organizador;
-        document.getElementById('campeonato').textContent = evento.campeonato;
-        document.getElementById('year').textContent = evento.year;
-        document.getElementById('date').textContent = evento.date;
-        document.getElementById('month').textContent = evento.month;
-        document.getElementById('municipio').textContent = evento.municipio;
-
-        // Actualizar imágenes 
-        document.getElementById('org1').src = evento.imagenes.org1;
-        document.getElementById('org2').src = evento.imagenes.org2;
-        document.getElementById('colab1').src = evento.imagenes.colab1;
-        document.getElementById('colab2').src = evento.imagenes.colab2;
-
-        // Actualizar detalles día a día 
-        ['dia1', 'dia2', 'dia3'].forEach((dia, i) => {
-            const contenedor = document.getElementById(`details-${i + 1}`);
-            contenedor.innerHTML = evento.evento[dia].map(item => `
-                <span class="neurolimpiadas-font text-[#6ca9df] text-base font-bold">${item.hora}</span>
-                <span class="neurolimpiadas-font text-black text-base font-bold">${item.actividad}</span><br>
-            `).join('');
-        });
-
-        // Colaboradores
-        const colaboradores = document.getElementById('logos');
-        colaboradores.innerHTML = ''; // limpiar contenido antes de añadir
-
-        evento.colaboradores.forEach(logo => {
-            const div = document.createElement('div');
-            div.classList.add('flex', 'justify-center', 'items-center');
-
-            const imagen = document.createElement('img');
-            imagen.src = logo.src;
-            imagen.alt = logo.alt;
-            imagen.classList.add('h-24', 'w-auto', 'grayscale', 'hover:grayscale-0', 'transition', 'duration-300');
-
-            div.appendChild(imagen);
-            colaboradores.appendChild(div);
-        });
-
-    } catch (error) {
-        console.error('Error al cargar la información del evento:', error);
+    if (isOpen) {
+        element.classList.remove('max-h-[1000px]', 'opacity-100', 'open');
+        element.classList.add('max-h-0', 'opacity-0');
+        if (btn) btn.textContent = "Ver más";
+    } else {
+        element.classList.remove('max-h-0', 'opacity-0');
+        element.classList.add('max-h-[1000px]', 'opacity-100', 'open');
+        if (btn) btn.textContent = "Ver menos";
     }
 }
-
     </script>
 </body>
 </html>
