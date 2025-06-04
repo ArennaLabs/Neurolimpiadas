@@ -18,8 +18,7 @@
         "org1": "/static/img/logos/gobcan.png",
         "org2": "/static/img/logos/Neurolimpiadas.png",
         "colab1": "/static/img/logos/cabildoLaPalma.png",
-        "colab2": "/static/img/logos/santaCruzdeLaPalma.png",
-        "patro1": "/static/img/logos/arenna.png"
+        "colab2": "/static/img/logos/santaCruzdeLaPalma.png"
       },
       "colaboradores": [
         { "src": "/static/img/colabora/1.png", "alt": "Granadilla de Abona" },
@@ -32,28 +31,111 @@
         { "src": "/static/img/colabora/8.png", "alt": "Los Llanos de Aridane" }
       ],
       "patrocinadores": [
-        { "src": "/static/img/logos/arenna.png", "alt": "Patrocinador" }
+        { "src": "/static/img/logos/arenna.png", "alt": "Patrocinador1" },
+        { "src": "/static/img/logos/arenna.png", "alt": "Patrocinador2" },
+        { "src": "/static/img/logos/arenna.png", "alt": "Patrocinador3" },
+        { "src": "/static/img/logos/arenna.png", "alt": "Patrocinador4" }
       ],
       "evento": {
-        "dia1": [
+        "Primer Día": [
           { "hora": "15:30", "actividad": "Llegada al Pabellón Multiusos Roberto Rodríguez Estrello" },
           { "hora": "16:00", "actividad": "Repesca en las pruebas de relevos, Aro Canario y Cifras de los equipos de La Isla de La Palma" },
           { "hora": "18:30", "actividad": "Ceremonia de inauguración" },
           { "hora": "20:30", "actividad": "Regreso al municipio de origen" }
         ],
-        "dia2": [
+        "Segundo Día": [
           { "hora": "09:30", "actividad": "Llegada al Pabellón Multiusos Roberto Rodríguez Estrello" },
           { "hora": "10:00", "actividad": "Rondas de Clasificación al Campeonato de Canarias" },
           { "hora": "11:30", "actividad": "Repesca en la prueba de carrera de letras de los equipos de La Isla de La Palma" },
           { "hora": "14:00", "actividad": "Almuerzo de bienvenida" },
           { "hora": "16:00", "actividad": "Regreso al municipio de origen" }
         ],
-        "dia3": [
+        "Tercer Día": [
           { "hora": "09:30", "actividad": "Llegada al Pabellón Multiusos Roberto Rodríguez Estrello" },
           { "hora": "10:00", "actividad": "Rondas Finales del Campeonato de Canarias" },
           { "hora": "12:30", "actividad": "Ceremonia de Clausura y entrega de Trofeos" },
           { "hora": "14:00", "actividad": "Regreso al municipio de origen" }
         ]
+      },
+      
+      "mapa":{
+        "titulo": "Ubicación del Pabellón Multiusos Roberto Rodríguez Estrello",
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.054043163457!2d-17.76789892386124!3d28.688838281520315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6beeaaeb199a7d%3A0xbbb15352b45c5bda!2sPabell%C3%B3n%20Multiusos%20Roberto%20Rodr%C3%ADguez%20Estrello!5e0!3m2!1ses!2ses!4v1748354363742!5m2!1ses!2ses"
+      },
+      "mapa2":{
+        "titulo": "Ciudad Deportiva Miraflores",
+        "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9899.396804804093!2d-17.771148714758958!3d28.690684438301556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6beebb2cb94679%3A0x4b6b2781f6ab6cd4!2sCiudad%20Deportiva%20Miraflores!5e0!3m2!1ses!2ses!4v1748952279254!5m2!1ses!2ses"
+      }
+    },
+    {
+      "id": "neurolimpiadas2025",
+      "titulo": "Llegan las NeurOlimpiadas Canarias 2025",
+      "descripcion": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "fecha": "2025-03-14 al 2025-03-18",
+      "lugar": "Ciudad Deportiva Miraflores",
+      "lugar2": "Ciudad Deportiva Miraflores",
+      "municipio": "Santa Cruz de La Palma",
+      "duracion": "4 días",
+      "date":"14 18",
+      "month":"MAR - MAR",
+      "organizador": "Neurolimpiadas",
+      "campeonato": "Campeonato de Canarias",
+      "year": "2025",
+      "imagenes": {
+        "org1": "/static/img/logos/gobcan.png",
+        "org2": "/static/img/logos/Neurolimpiadas.png",
+        "colab1": "/static/img/logos/cabildoLaPalma.png",
+        "colab2": "/static/img/logos/santaCruzdeLaPalma.png"
+      },
+      "colaboradores": [
+        { "src": "/static/img/colabora/1.png", "alt": "Granadilla de Abona" },
+        { "src": "/static/img/colabora/2.png", "alt": "Villa de Mazo" },
+        { "src": "/static/img/colabora/3.png", "alt": "Puerto del Rosario" },
+        { "src": "/static/img/colabora/4.png", "alt": "Arrecife" },
+        { "src": "/static/img/colabora/5.png", "alt": "Santiago del Teide" },
+        { "src": "/static/img/colabora/6.png", "alt": "Betancuria" },
+        { "src": "/static/img/colabora/7.png", "alt": "El Rosario" },
+        { "src": "/static/img/colabora/8.png", "alt": "Los Llanos de Aridane" }
+      ],
+      "patrocinadores": [
+        { "src": "/static/img/logos/arenna.png", "alt": "Patrocinador1" },
+        { "src": "/static/img/logos/arenna.png", "alt": "Patrocinador2" },
+        { "src": "/static/img/logos/arenna.png", "alt": "Patrocinador3" },
+        { "src": "/static/img/logos/arenna.png", "alt": "Patrocinador4" }
+      ],
+      "evento": {
+        "Primer Día": [
+          { "hora": "15:30", "actividad": "Llegada al Pabellón Multiusos Roberto Rodríguez Estrello" },
+          { "hora": "16:00", "actividad": "Repesca en las pruebas de relevos, Aro Canario y Cifras de los equipos de La Isla de La Palma" },
+          { "hora": "18:30", "actividad": "Ceremonia de inauguración" },
+          { "hora": "20:30", "actividad": "Regreso al municipio de origen" }
+        ],
+        "Segundo Día": [
+          { "hora": "09:30", "actividad": "Llegada al Pabellón Multiusos Roberto Rodríguez Estrello" },
+          { "hora": "10:00", "actividad": "Rondas de Clasificación al Campeonato de Canarias" },
+          { "hora": "11:30", "actividad": "Repesca en la prueba de carrera de letras de los equipos de La Isla de La Palma" },
+          { "hora": "14:00", "actividad": "Almuerzo de bienvenida" },
+          { "hora": "16:00", "actividad": "Regreso al municipio de origen" }
+        ],
+        "Tercer Día": [
+          { "hora": "09:30", "actividad": "Llegada al Pabellón Multiusos Roberto Rodríguez Estrello" },
+          { "hora": "10:00", "actividad": "Rondas de Clasificación al Campeonato de Canarias" },
+          { "hora": "11:30", "actividad": "Repesca en la prueba de carrera de letras de los equipos de La Isla de La Palma" },
+          { "hora": "14:00", "actividad": "Almuerzo de bienvenida" },
+          { "hora": "16:00", "actividad": "Regreso al municipio de origen" }
+        ],
+        "Cuarto Día": [
+          { "hora": "09:30", "actividad": "Llegada al Pabellón Multiusos Roberto Rodríguez Estrello" },
+          { "hora": "10:00", "actividad": "Rondas de Clasificación al Campeonato de Canarias" },
+          { "hora": "11:30", "actividad": "Repesca en la prueba de carrera de letras de los equipos de La Isla de La Palma" },
+          { "hora": "14:00", "actividad": "Almuerzo de bienvenida" },
+          { "hora": "16:00", "actividad": "Regreso al municipio de origen" }
+        ]
+       
+      },
+
+      "mapa":{
+      "src": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9899.396804804093!2d-17.771148714758958!3d28.690684438301556!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6beebb2cb94679%3A0x4b6b2781f6ab6cd4!2sCiudad%20Deportiva%20Miraflores!5e0!3m2!1ses!2ses!4v1748952279254!5m2!1ses!2ses"
       }
     }
   ]

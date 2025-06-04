@@ -24,6 +24,49 @@
     .neurolimpiadas-font{
       color: white;
     }
+    @keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-fadeInLeft {
+  animation: fadeInLeft 3s ease-out forwards;
+}
+
+.animate-fadeInRight {
+  animation: fadeInRight 3s ease-out forwards;
+}
+@keyframes fadeInZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fadeInZoom {
+  animation: fadeInZoom 2s ease-out forwards;
+}
   </style>
   
 </head>
@@ -39,41 +82,24 @@
             <!-- Fila: Información + Cartel -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             
-            <!-- Información a la izquierda -->
-            <div class="bg-white rounded-2xl  p-6 space-y-4">
-                <h2 id="titulo" class="text-3xl font-bold text-[#6ca9df]"></h2>
-                <p id="descripcion" class="text-gray-700"></p>
-                <ul class="list-disc pl-5 space-y-1 text-black font-bold">
-                <li>Fecha: <a id="fecha"></a></li>
-                <li>Lugar: <a id="lugar"></a></li>
-                <li>Duración: <a id="duracion"></a></li>
-                <li>Organizador: <a id="organizador"></a></li>
-                <li>Actividades: </li>
-                </ul>
-                <div class="h-px w-full bg-[#6ca9df]"></div>
-                <div class="flex items-center justify-between">
-                    <span class="neurolimpiadas-font text-black text-lg font-bold">Primer Día</span>
-                    <button onclick="toggleDetails('details-1', this)" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
+                <!-- Información a la izquierda -->
+                <div class="bg-white rounded-2xl  p-6 space-y-4 observe-left">
+                    <h1 id="titulo" class="text-3xl font-bold text-[#6ca9df]"></h1>
+                    <p id="descripcion" class="text-gray-700"></p>
+                    <ul class="list-disc pl-5 space-y-1 text-black font-bold">
+                    <li>Fecha: <a id="fecha"></a></li>
+                    <li>Lugar: <a id="lugar"></a></li>
+                    <li>Duración: <a id="duracion"></a></li>
+                    <li>Organizador: <a id="organizador"></a></li>
+                    <li>Actividades: </li>
+                    </ul>
+                    <div class="p6 space-y-4" id="bloque-dias">
+                    
+                    </div>
                 </div>
-                <div id="details-1" class="overflow-hidden max-h-0 opacity-0 transition-max"></div>
-                <div class="h-px w-full bg-[#6ca9df] "></div>
-                <div class="flex items-center justify-between">
-                    <span class="neurolimpiadas-font text-black text-lg font-bold">Segundo Día</span>
-                    <button onclick="toggleDetails('details-2',this)" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
-                </div>
-                <div id="details-2" class="overflow-hidden max-h-0 opacity-0 transition-max"></div>
-                <div class="h-px w-full bg-[#6ca9df] "></div>
-                <div class="flex items-center justify-between">
-                    <span class="neurolimpiadas-font text-black text-lg font-bold">Tercer Día</span>
-                    <button onclick="toggleDetails('details-3',this)" class="text-[#6ca9df] font-bold text-sm">Ver más</button>
-                </div>
-                <div id="details-3" class="overflow-hidden max-h-0 opacity-0 transition-max"></div>
-                <div class="h-px w-full bg-[#6ca9df] "></div>
-
-            </div>
 
                 <!-- Cartel del evento a la derecha -->
-                <div class="rounded-2xl overflow-hidden w-full bg-white text-center">
+                <div class="rounded-2xl overflow-hidden w-full bg-white text-center observe-right">
                     <img src="/static/img/eventos/la_palma/cartel2.jpg" alt="Cartel del evento" class="w-full h-auto object-contain" />
                     <span class="neurolimpiadas-font text-[#6ca9df] text-2xl font-bold" id="campeonato"></span><br>
                     <span class ="neurolimpiadas-font text-[#6ca9df] text-2xl font-bold" id="year"></span><br>
@@ -94,24 +120,27 @@
                         <img id="colab2" class="w-3/4 h-auto object-contain"/>
                     </div>
                 </div>
-            </div>
+            </div>  
         </div>
     </section>
 
-  <!-- Imagen de localización debajo -->
-    <div class="bg-white rounded-2xl p-6 flex justify-center">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7000.054043163457!2d-17.76789892386124!3d28.688838281520315!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc6beeaaeb199a7d%3A0xbbb15352b45c5bda!2sPabell%C3%B3n%20Multiusos%20Roberto%20Rodr%C3%ADguez%20Estrello!5e0!3m2!1ses!2ses!4v1748354363742!5m2!1ses!2ses" 
-        class="w-full max-w-2xl h-[450px] rounded-xl shadow-lg"
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy" 
-        referrerpolicy="no-referrer-when-downgrade">
-      </iframe>
+<!-- Mapas de localización en una fila -->
+<div class="bg-white rounded-2xl p-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="opacity-0 flex flex-col" id="bloque-mapa1">
+            <h3 class="text-xl font-bold text-[#6ca9df] mb-4 text-center" id="mapa-titulo-1"></h3>
+            <div class="flex-1 flex justify-center items-start hover:opacity-100 hover:scale-105 duration-300" id="mapa1"></div>
+        </div>
+        <div class="opacity-0 flex flex-col" id="bloque-mapa2">
+            <h3 class="text-xl font-bold text-[#6ca9df] mb-4 text-center " id="mapa-titulo-2"></h3>
+            <div class="flex-1 flex justify-center items-start hover:opacity-100 hover:scale-105 duration-300" id="mapa2"></div>
+        </div>
     </div>
+</div>
 
 <!-- Patrocinadores -->
   <section class="w-full py-10 bg-gray-50">
-    <div class="max-w-full px-8 md:px-24">
+    <div class="max-w-full px-8 md:px-24 ">
 
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
             <div class="flex items-center mb-4 md:mb-0">
@@ -121,19 +150,10 @@
         </div>
 
         <div class="h-px w-full bg-gray-200 mb-8"></div>
-
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div class="flex justify-center items-center">
-                <img id ="patro1"alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
-            </div>
-            <div class="flex justify-center items-center">
-                <img id ="patro2" alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
-            </div>
-            <div class="flex justify-center items-center">
-                <img id ="patro3" alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
-            </div>
-            <div class="flex justify-center items-center">
-                <img id ="patro4" alt="Patrocinador" class="h-24 w-auto grayscale hover:grayscale-0 transition duration-300">
+        <div class="items-center">
+            <!-- Logos de Patrocinadores-->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 observe-left" id="patrocinadores">
+                <!-- Se añaden dinámicamente-->  
             </div>
         </div>
     </div>
@@ -152,7 +172,7 @@
         <div class="h-px w-full bg-gray-200 mb-8"></div>
         
         <!-- Logos de ayuntamientos -->
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8" id="colaboradores">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 observe-right" id="colaboradores">
           <!-- Se añaden dinámicamente-->  
         </div>
     </div>
@@ -208,6 +228,7 @@
             document.getElementById('duracion').textContent = evento.duracion;
             document.getElementById('organizador').textContent = evento.organizador;
 
+
             // Cartel del evento
             document.getElementById('campeonato').textContent = evento.campeonato;
             document.getElementById('year').textContent = evento.year;
@@ -215,28 +236,103 @@
             document.getElementById('month').textContent = evento.month;
             document.getElementById('municipio').textContent = evento.municipio;
 
+
             // Imágenes de organizadores/colaboradores
             document.getElementById('org1').src = evento.imagenes.org1;
             document.getElementById('org2').src = evento.imagenes.org2;
             document.getElementById('colab1').src = evento.imagenes.colab1;
             document.getElementById('colab2').src = evento.imagenes.colab2;
-            document.getElementById('patro1').src = evento.imagenes.patro1;
-            document.getElementById('patro2').src = evento.imagenes.patro1;
-            document.getElementById('patro3').src = evento.imagenes.patro1;
-            document.getElementById('patro4').src = evento.imagenes.patro1;
+         
 
 
-            // Actividades por día
-            ['dia1', 'dia2', 'dia3'].forEach((dia, i) => {
-                const contenedor = document.getElementById(`details-${i + 1}`);
-                if (evento.evento[dia]) {
-                    contenedor.innerHTML = evento.evento[dia].map(item => `
-                        <div class="mb-1">
-                            <span class="neurolimpiadas-font text-[#6ca9df] text-base font-bold">${item.hora}</span> - 
-                            <span class="neurolimpiadas-font text-black text-base font-bold">${item.actividad}</span>
-                        </div>
-                    `).join('');
-                }
+           // Bloque dinámico de días del evento
+            const contenedorDias = document.getElementById('bloque-dias');
+            contenedorDias.innerHTML = ''; // Limpiar por si acaso
+
+            const diasOrden = Object.keys(evento.evento); // ["1º Dia", "2º Dia", "3º Dia"]
+
+            diasOrden.forEach((nombreDia, index) => {
+                const numeroDia = index + 1;
+                const detallesID = `details-${numeroDia}`;
+                
+                // Línea superior
+                const linea = document.createElement('div');
+                linea.className = "h-px w-full bg-[#6ca9df]";
+                contenedorDias.appendChild(linea);
+
+                // Título y botón
+                const header = document.createElement('div');
+                header.className = "flex items-center justify-between";
+
+                const titulo = document.createElement('span');
+                titulo.className = "neurolimpiadas-font text-black text-lg font-bold";
+                titulo.textContent = nombreDia.replace('º ', 'º '); // conservar formato
+
+                const boton = document.createElement('button');
+                boton.className = "text-[#6ca9df] font-bold text-sm";
+                boton.textContent = "Ver más";
+                boton.setAttribute("onclick", `toggleDetails('${detallesID}', this)`);
+
+                header.appendChild(titulo);
+                header.appendChild(boton);
+                contenedorDias.appendChild(header);
+
+                // Contenido expandible
+                const detalles = document.createElement('div');
+                detalles.id = detallesID;
+                detalles.className = "overflow-hidden max-h-0 opacity-0 transition-max";
+
+                // Rellenar actividades del día
+                detalles.innerHTML = evento.evento[nombreDia].map(item => `
+                    <span class="neurolimpiadas-font text-[#6ca9df] text-base font-bold">${item.hora}</span>
+                    <span class="neurolimpiadas-font text-black text-base font-bold">${item.actividad}</span><br>
+                `).join('');
+
+                contenedorDias.appendChild(detalles);
+            });
+
+            // Mapa
+            const contenedorMapa = document.getElementById('mapa1');
+            document.getElementById('mapa-titulo-1').textContent = evento.mapa.titulo;
+        if (evento.mapa?.src) {
+            const iframe = document.createElement('iframe');
+            iframe.src = evento.mapa.src;
+            iframe.className = "w-full max-w-2xl h-[450px] rounded-xl shadow-lg";
+            iframe.style.border = "0";
+            iframe.allowFullscreen = true;
+            iframe.loading = "lazy";
+            iframe.referrerPolicy = "no-referrer-when-downgrade";
+            contenedorMapa.appendChild(iframe);
+        }
+
+        // Mapa 2
+        const contenedorMapa2 = document.getElementById('mapa2');
+        document.getElementById('mapa-titulo-2').textContent = evento.mapa2.titulo;
+        if (evento.mapa2?.src) {
+            const iframe = document.createElement('iframe');
+            iframe.src = evento.mapa2.src;
+            iframe.className = "w-full max-w-2xl h-[450px] rounded-xl shadow-lg";
+            iframe.style.border = "0";
+            iframe.allowFullscreen = true;
+            iframe.loading = "lazy";
+            iframe.referrerPolicy = "no-referrer-when-downgrade";
+            contenedorMapa2.appendChild(iframe);
+        }
+        
+            //Patrocinadores
+            const contenedorPatrocinadores = document.getElementById('patrocinadores');
+            contenedorPatrocinadores.innerHTML = '';
+            evento.patrocinadores.forEach(patro => {
+                const div = document.createElement('div');
+                div.className = 'flex justify-center items-center';
+
+                const img = document.createElement('img');
+                img.src = patro.src;
+                img.alt = patro.alt || 'Patrocinador';
+                img.className = 'h-24 w-auto grayscale hover:grayscale-0 transition duration-300';
+
+                div.appendChild(img);
+                contenedorPatrocinadores.appendChild(div);
             });
 
             // Colaboradores
@@ -261,6 +357,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', cargarInformacionEvento);
+
     //Funcion para habilitar  los botones de ver mas y menos
     function toggleDetails(id, btn = null) {
     const element = document.getElementById(id);
@@ -276,6 +373,41 @@
         if (btn) btn.textContent = "Ver menos";
     }
 }
+
+    // Animación de derecha e izquierda
+    document.addEventListener("DOMContentLoaded", () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    if (el.classList.contains('observe-left')) {
+                        el.classList.add('animate-fadeInLeft');
+                    } else if (el.classList.contains('observe-right')) {
+                        el.classList.add('animate-fadeInRight');
+                    }
+                    el.classList.remove('opacity-0');
+                    observer.unobserve(el); // Solo se anima una vez
+                }
+            });
+        }, {
+            threshold: 0.2 // Se activa cuando el 20% del elemento es visible
+        });
+
+        document.querySelectorAll('.observe-left, .observe-right').forEach(el => {
+            observer.observe(el);
+        });
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fadeInZoom');
+        observer.unobserve(entry.target); // Para que no se repita
+        }
+    });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.opacity-0').forEach(el => observer.observe(el));
     </script>
 </body>
 </html>
